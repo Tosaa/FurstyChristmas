@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cardsOverviewFragment"
+    tools:ignore="UnusedNavigation">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.furstychrismas.MainActivity"
+        android:label="MainActivity"></activity>
+    <fragment
+        android:id="@+id/cardsOverviewFragment"
+        android:name="com.example.furstychrismas.CardsOverviewFragment"
+        android:label="fragment_cards_overview"
+        tools:layout="@layout/fragment_cards_overview" >
+        <action
+            android:id="@+id/action_cardsOverviewFragment_to_exersicePreview"
+            app:destination="@id/exersicePreview" />
+    </fragment>
+    <fragment
+        android:id="@+id/exersicePreview"
+        android:name="com.example.furstychrismas.ExercisePreview"
+        android:label="exersice_preview_fragment"
+        tools:layout="@layout/exercise_preview_fragment" />
+</navigation>
