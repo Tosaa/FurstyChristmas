@@ -10,6 +10,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.furstychrismas.databinding.ActivityMainBinding
+import com.example.furstychrismas.koin.myModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,5 +20,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
+        // start Koin!
+        startKoin {
+            // Android context
+            androidContext(applicationContext)
+            // modules
+            modules(myModule)
+        }
     }
 }

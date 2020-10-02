@@ -16,7 +16,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    kotlinOptions{
+    kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     buildFeatures {
@@ -65,4 +65,11 @@ dependencies {
     // Easier Viewmodel handling
     implementation "androidx.fragment:fragment-ktx:1.2.5"
 
+    // koin for DI
+// Koin AndroidX Scope features
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+// Koin AndroidX ViewModel features
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+// Koin AndroidX Fragment features
+    implementation "org.koin:koin-androidx-fragment:$koin_version"
 }
