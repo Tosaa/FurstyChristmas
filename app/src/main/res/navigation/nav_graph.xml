@@ -23,5 +23,9 @@
         android:id="@+id/exersicePreview"
         android:name="com.example.furstychrismas.ExercisePreview"
         android:label="exersice_preview_fragment"
-        tools:layout="@layout/exercise_preview_fragment" />
+        tools:layout="@layout/exercise_preview_fragment" >
+        <argument
+            android:name="day"
+            app:argType="integer" />
+    </fragment>
 </navigation>

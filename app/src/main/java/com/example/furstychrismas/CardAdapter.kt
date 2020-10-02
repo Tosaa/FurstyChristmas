@@ -33,7 +33,8 @@ class CardAdapter(
             holder.binding.button.setBackgroundColor(Color.GREEN)
 
         holder.binding.button.setOnClickListener {
-            navigationController.navigate(R.id.action_cardsOverviewFragment_to_exersicePreview)
+            val action = CardsOverviewFragmentDirections.actionCardsOverviewFragmentToExersicePreview(position)
+            navigationController.navigate(action)
         }
     }
 }
