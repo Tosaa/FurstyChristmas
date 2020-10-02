@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="drill"
+            type="com.example.furstychrismas.model.Drill" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        >
+
+        <ImageView
+            android:layout_width="0pt"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@{drill.exercise.muscles.iterator().next().icon}"
+            app:tint="#000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@{drill.repetition.formatedString()}"
+            app:layout_constraintStart_toStartOf="@+id/image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="test" />
+        <TextView
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@{drill.exercise.excerciseName}"
+            app:layout_constraintStart_toStartOf="@+id/image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="test" />
+        <TextView
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@{drill.breakTime.formatedString()}"
+            app:layout_constraintStart_toStartOf="@+id/image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="test" />
+
+    </LinearLayout>
+</layout>
