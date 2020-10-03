@@ -5,5 +5,6 @@ enum class Excercise(
     val muscles: List<Muscle>,
     val description: String = ""
 ) {
-    PUSHUP("push up", listOf(Muscle.ARM, Muscle.CHEST))
+    PUSHUP("push up", listOf(Muscle.ARM, Muscle.CHEST)),
+    SQUAD("squads", listOf(Muscle.LEG))
 }

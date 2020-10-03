@@ -1,7 +1,6 @@
 package com.example.furstychrismas
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.NavController
@@ -25,12 +24,13 @@ class CardAdapter(
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        holder.binding.button.text = buttons[position].toString()
+        holder.binding.day = buttons[position].toString()
+/*
         if (position % 2 == 0)
             holder.binding.button.setBackgroundColor(Color.RED)
         else
             holder.binding.button.setBackgroundColor(Color.GREEN)
-
+*/
         holder.binding.button.setOnClickListener {
             val action =
                 CardsOverviewFragmentDirections.actionCardsOverviewFragmentToExersicePreview(

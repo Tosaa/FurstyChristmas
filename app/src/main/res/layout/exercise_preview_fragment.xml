@@ -29,26 +29,24 @@
                 android:textSize="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Exercise" />
+                tools:text="Day 0" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/abc_vector_test"
-                app:tint="#000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/muscle_groups"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="@id/day"
+                app:layout_constraintEnd_toEndOf="@id/day"
+                app:layout_constraintTop_toTopOf="@id/day" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <TextView
-            android:id="@+id/reps"
-            android:layout_width="match_parent"
+        <include
+            layout="@layout/set_reps"
+            sets="@{viewmodel.reps}"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@{viewmodel.reps}"
-            android:textSize="25dp"
-            tools:text="5" />
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/exersices"

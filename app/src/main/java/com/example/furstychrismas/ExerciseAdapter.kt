@@ -7,13 +7,12 @@ import com.example.furstychrismas.databinding.ExerciseBinding
 import com.example.furstychrismas.model.Drill
 
 class ExerciseAdapter(
-    private val drills: List<Drill>,
-    val layoutInflater: LayoutInflater
+    private val drills: List<Drill>
 ) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
-        return ExerciseViewHolder(ExerciseBinding.inflate(layoutInflater))
+        return ExerciseViewHolder(ExerciseBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun getItemCount(): Int {
