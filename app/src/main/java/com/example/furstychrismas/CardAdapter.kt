@@ -5,18 +5,17 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.NavController
-import androidx.navigation.NavDirections
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychrismas.databinding.ChristmasCardBinding
 
 class CardAdapter(
-    val layoutInflater: LayoutInflater,
     private val navigationController: NavController
-) : RecyclerView.Adapter<CardViewHolder>() {
+) : RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
     val buttons = IntRange(1, 24).toList()
     lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
-        val binding: ChristmasCardBinding = ChristmasCardBinding.inflate(layoutInflater)
+        val binding: ChristmasCardBinding =
+            ChristmasCardBinding.inflate(LayoutInflater.from(parent.context))
         context = parent.context
         return CardViewHolder(binding)
     }
@@ -33,12 +32,15 @@ class CardAdapter(
             holder.binding.button.setBackgroundColor(Color.GREEN)
 
         holder.binding.button.setOnClickListener {
-            val action = CardsOverviewFragmentDirections.actionCardsOverviewFragmentToExersicePreview(position)
+            val action =
+                CardsOverviewFragmentDirections.actionCardsOverviewFragmentToExersicePreview(
+                    position
+                )
             navigationController.navigate(action)
         }
     }
+
+    inner class CardViewHolder(val binding: ChristmasCardBinding) :
+        RecyclerView.ViewHolder(binding.root)
 }
 
-class CardViewHolder(val binding: ChristmasCardBinding) : RecyclerView.ViewHolder(binding.root) {
-
-}

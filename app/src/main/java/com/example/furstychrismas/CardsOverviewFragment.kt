@@ -1,10 +1,10 @@
 package com.example.furstychrismas
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.furstychrismas.databinding.FragmentCardsOverviewBinding
@@ -18,7 +18,7 @@ class CardsOverviewFragment : Fragment() {
         binding =
             FragmentCardsOverviewBinding.inflate(layoutInflater)
         binding.dayCards.layoutManager = GridLayoutManager(requireContext(), 4)
-        binding.dayCards.adapter = CardAdapter(layoutInflater,findNavController())
+        binding.dayCards.adapter = CardAdapter(findNavController())
     }
 
     override fun onCreateView(

@@ -11,44 +11,43 @@
     </data>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="10"
-        >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="0pt"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@{drill.exercise.muscles.iterator().next().icon}"
-            app:tint="#000"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            icon="@{drill.exercise.muscles.iterator().next().icon}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#000" />
 
         <TextView
-            android:layout_width="0pt"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:lines="1"
             android:text="@{drill.repetition.formatedString()}"
             app:layout_constraintStart_toStartOf="@+id/image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="test" />
+            tools:text="120 seconds" />
+
         <TextView
-            android:layout_width="0pt"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:lines="2"
             android:text="@{drill.exercise.excerciseName}"
             app:layout_constraintStart_toStartOf="@+id/image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="test" />
+            tools:text="Lunges with Arm Rotation" />
+
         <TextView
-            android:layout_width="0pt"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:lines="1"
             android:text="@{drill.breakTime.formatedString()}"
             app:layout_constraintStart_toStartOf="@+id/image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="test" />
+            tools:text="30 seconds" />
 
     </LinearLayout>
 </layout>

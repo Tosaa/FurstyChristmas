@@ -1,6 +1,5 @@
 package com.example.furstychrismas.model
 
-import android.graphics.drawable.Drawable
 import com.example.furstychrismas.R
 
 enum class Muscle(val muscle:String,val icon:Int) {
@@ -12,6 +11,10 @@ enum class Muscle(val muscle:String,val icon:Int) {
     BACK("back", R.drawable.ball),
     STABILITY("stability", R.drawable.ball),
     ALL("all", R.drawable.ball),
-    FLEXIBILITY("flexibility", R.drawable.ball)
+    FLEXIBILITY("flexibility", R.drawable.ball);
 
+
+    fun iconAsDrawable() {
+
+    }
 }
