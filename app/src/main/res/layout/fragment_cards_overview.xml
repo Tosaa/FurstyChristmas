@@ -6,17 +6,27 @@
 
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".CardsOverviewFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/day_cards"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            tools:layout_height="80dp"
             tools:listitem="@layout/christmas_card" />
 
-    </FrameLayout>
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:value="1"
+            android:valueFrom="1"
+            android:valueTo="24" />
+    </LinearLayout>
 </layout>

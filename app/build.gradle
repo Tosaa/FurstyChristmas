@@ -78,4 +78,7 @@ dependencies {
 // Koin AndroidX Fragment features
     implementation "org.koin:koin-androidx-fragment:$koin_version"
 
+    implementation 'com.google.android.material:material:1.2.1'
+
+
 }
