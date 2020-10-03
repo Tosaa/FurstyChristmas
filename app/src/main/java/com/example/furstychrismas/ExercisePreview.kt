@@ -32,9 +32,4 @@ class ExercisePreview : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-//        viewModel = ViewModelProviders.of(this).get(ExerciseViewModel::class.java)
-    }
-
 }

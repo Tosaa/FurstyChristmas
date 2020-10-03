@@ -14,7 +14,4 @@ enum class Muscle(val muscle:String,val icon:Int) {
     FLEXIBILITY("flexibility", R.drawable.ball);
 
 
-    fun iconAsDrawable() {
-
-    }
 }
