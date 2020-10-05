@@ -1,4 +1,4 @@
-package com.example.furstychrismas
+package com.example.furstychrismas.screen.overview
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations

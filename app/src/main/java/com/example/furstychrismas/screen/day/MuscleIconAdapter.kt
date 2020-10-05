@@ -1,4 +1,4 @@
-package com.example.furstychrismas
+package com.example.furstychrismas.screen.day
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,7 +12,9 @@ class MuscleIconAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MuscleIconViewHolder {
-        return MuscleIconViewHolder(MuscleIconBinding.inflate(LayoutInflater.from(parent.context)))
+        return MuscleIconViewHolder(
+            MuscleIconBinding.inflate(LayoutInflater.from(parent.context))
+        )
     }
 
     override fun getItemCount(): Int {

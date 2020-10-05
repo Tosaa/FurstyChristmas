@@ -1,4 +1,4 @@
-package com.example.furstychrismas
+package com.example.furstychrismas.screen.day
 
 import androidx.lifecycle.ViewModel
 import com.example.furstychrismas.model.*

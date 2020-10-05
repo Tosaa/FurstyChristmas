@@ -12,7 +12,7 @@
         android:label="MainActivity"></activity>
     <fragment
         android:id="@+id/cardsOverviewFragment"
-        android:name="com.example.furstychrismas.CardsOverviewFragment"
+        android:name="com.example.furstychrismas.screen.overview.CardsOverviewFragment"
         android:label="fragment_cards_overview"
         tools:layout="@layout/fragment_cards_overview" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/exersicePreview"
-        android:name="com.example.furstychrismas.ExercisePreview"
+        android:name="com.example.furstychrismas.screen.day.ExercisePreview"
         android:label="exersice_preview_fragment"
         tools:layout="@layout/exercise_preview_fragment" >
         <argument

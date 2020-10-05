@@ -7,14 +7,14 @@
 
         <variable
             name="viewmodel"
-            type="com.example.furstychrismas.ExerciseViewModel" />
+            type="com.example.furstychrismas.screen.day.ExerciseViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ExercisePreview">
+        tools:context=".screen.day.ExercisePreview">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

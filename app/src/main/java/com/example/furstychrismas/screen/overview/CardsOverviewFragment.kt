@@ -1,4 +1,4 @@
-package com.example.furstychrismas
+package com.example.furstychrismas.screen.overview
 
 import android.os.Bundle
 import android.view.LayoutInflater

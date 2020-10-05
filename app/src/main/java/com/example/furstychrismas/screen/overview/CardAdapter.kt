@@ -1,4 +1,4 @@
-package com.example.furstychrismas
+package com.example.furstychrismas.screen.overview
 
 import android.content.Context
 import android.graphics.Color
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.furstychrismas.CardsOverviewFragmentDirections
 import com.example.furstychrismas.databinding.ChristmasCardBinding
 import com.example.furstychrismas.model.Card
 

@@ -1,4 +1,4 @@
-package com.example.furstychrismas
+package com.example.furstychrismas.screen.day
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.furstychrismas.ExercisePreviewArgs
 import com.example.furstychrismas.databinding.ExercisePreviewFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -26,9 +27,11 @@ class ExercisePreview : Fragment() {
         binding = ExercisePreviewFragmentBinding.inflate(layoutInflater)
         binding.viewmodel = viewModel
         binding.exersices.layoutManager = LinearLayoutManager(requireContext())
-        binding.exersices.adapter = ExerciseAdapter(viewModel.exercises)
+        binding.exersices.adapter =
+            ExerciseAdapter(viewModel.exercises)
         binding.muscleGroups.layoutManager = GridLayoutManager(requireContext(), 3)
-        binding.muscleGroups.adapter = MuscleIconAdapter(viewModel.muscleGroups.distinct())
+        binding.muscleGroups.adapter =
+            MuscleIconAdapter(viewModel.muscleGroups.distinct())
         return binding.root
     }
 
