@@ -1,6 +1,7 @@
 package com.example.furstychrismas.screen.day
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychrismas.databinding.ExerciseBinding
@@ -18,11 +19,17 @@ class ExerciseAdapter(
     }
 
     override fun getItemCount(): Int {
-    return drills.size
+        return drills.size
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         holder.exerciseBinding.drill = drills[position]
+        holder.exerciseBinding.breakTime.visibility =
+            if (drills[position].breakTime.formatedString().startsWith("0")) {
+                View.INVISIBLE
+            } else {
+                View.VISIBLE
+            }
     }
 
     class ExerciseViewHolder(val exerciseBinding: ExerciseBinding) :

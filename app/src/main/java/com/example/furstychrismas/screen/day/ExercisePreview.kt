@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.furstychrismas.ExercisePreviewArgs
 import com.example.furstychrismas.databinding.ExercisePreviewFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -26,9 +25,8 @@ class ExercisePreview : Fragment() {
     ): View? {
         binding = ExercisePreviewFragmentBinding.inflate(layoutInflater)
         binding.viewmodel = viewModel
-        binding.exersices.layoutManager = LinearLayoutManager(requireContext())
-        binding.exersices.adapter =
-            ExerciseAdapter(viewModel.exercises)
+        binding.exercises.layoutManager = LinearLayoutManager(requireContext())
+        binding.exercises.adapter = ExerciseAdapter(viewModel.exercises)
         binding.muscleGroups.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.muscleGroups.adapter =
             MuscleIconAdapter(viewModel.muscleGroups.distinct())

@@ -1,19 +1,19 @@
 package com.example.furstychrismas.screen.day
 
 import androidx.lifecycle.ViewModel
-import com.example.furstychrismas.model.*
+import com.example.furstychrismas.model.Muscle
+import com.example.furstychrismas.repository.DayRepository
 
-class ExerciseViewModel(number: Int) : ViewModel() {
+class ExerciseViewModel(number: Int, dayRepository: DayRepository) : ViewModel() {
 
-    val day = "Day ${number + 1}"
 
-    val reps = (number % 5 + 1).toString()
+    private val workout = dayRepository.getWorkoutOfDay(number + 1)
 
-    val exercises = listOf(
-        Drill(Seconds(number), Excercise.PUSHUP, Seconds(5)),
-        Drill(Repetition(number), Excercise.PUSHUP, Seconds(number * 2)),
-        if (number % 3 == 0) Drill(Repetition(20), Excercise.SQUAD, Seconds(5)) else null
-    ).filterNotNull()
+    val day = "DAY ${workout.day}"
+
+    val reps = workout.workoutRepetition.toString()
+
+    val exercises = workout.drills
 
     val muscleGroups: Set<Muscle> = exercises.flatMap { it.exercise.muscles }.toSet()
 

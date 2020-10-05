@@ -9,7 +9,9 @@ class CardViewModel : ViewModel() {
     val date = MutableLiveData<Int>(0)
 
     val cards = Transformations.map(date) { currentDate ->
-        IntRange(1, 24).map { Card(it, it <= currentDate, false) }
+        IntRange(1, 24).map {
+            Card(it, it <= currentDate, false)
+        }
     }
 
 }
