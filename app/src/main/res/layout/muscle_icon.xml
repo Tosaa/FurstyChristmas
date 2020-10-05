@@ -16,8 +16,8 @@
         android:layout_margin="4dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:tint="#d44"
             android:src="@drawable/circle"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,13 +30,14 @@
             icon="@{muscle_icon_id}"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_margin="4dp"
+            android:layout_margin="6dp"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="#000"
-            tools:src="@drawable/ball" />
+            tools:src="@drawable/ic_abs" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
