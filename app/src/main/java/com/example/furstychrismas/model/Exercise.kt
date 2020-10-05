@@ -3,7 +3,7 @@ package com.example.furstychrismas.model
 enum class Exercise(
     val exerciseName: String,
     val muscles: List<Muscle>,
-    val description: String = ""
+    val description: String = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 ) {
     PUSHUP("push up", listOf(Muscle.ARM, Muscle.CHEST)),
     PUSHUP_ONE_SIDED("push up with one hand up", listOf(Muscle.ARM, Muscle.CHEST)),

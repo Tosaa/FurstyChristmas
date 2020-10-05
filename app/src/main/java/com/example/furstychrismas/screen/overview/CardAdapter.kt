@@ -39,7 +39,7 @@ class CardAdapter(
         if (card.isAvailable) {
             holder.binding.button.setOnClickListener {
                 val action =
-                    CardsOverviewFragmentDirections.actionCardsOverviewFragmentToExersicePreview(
+                    CardsOverviewFragmentDirections.overviewWorkoutPreview(
                         position
                     )
                 navigationController.navigate(action)

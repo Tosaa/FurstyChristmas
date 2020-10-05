@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/main_margin"
         android:orientation="vertical"
         tools:context=".screen.overview.CardsOverviewFragment">
 
@@ -28,5 +29,11 @@
             android:value="1"
             android:valueFrom="1"
             android:valueTo="24" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/exercises_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercises" />
     </LinearLayout>
 </layout>

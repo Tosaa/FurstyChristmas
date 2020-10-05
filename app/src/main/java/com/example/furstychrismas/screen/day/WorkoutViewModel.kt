@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.furstychrismas.model.Muscle
 import com.example.furstychrismas.repository.DayRepository
 
-class ExerciseViewModel(number: Int, dayRepository: DayRepository) : ViewModel() {
+class WorkoutViewModel(number: Int, dayRepository: DayRepository) : ViewModel() {
 
 
     private val workout = dayRepository.getWorkoutOfDay(number + 1)

@@ -14,18 +14,37 @@
         android:id="@+id/cardsOverviewFragment"
         android:name="com.example.furstychrismas.screen.overview.CardsOverviewFragment"
         android:label="fragment_cards_overview"
-        tools:layout="@layout/fragment_cards_overview" >
+        tools:layout="@layout/fragment_cards_overview_fragment">
         <action
-            android:id="@+id/action_cardsOverviewFragment_to_exersicePreview"
-            app:destination="@id/exersicePreview" />
+            android:id="@+id/overview_workout_preview"
+            app:destination="@id/workoutPreview" />
+        <action
+            android:id="@+id/overview_exercise_overview"
+            app:destination="@id/exerciseOverview" />
     </fragment>
     <fragment
-        android:id="@+id/exersicePreview"
-        android:name="com.example.furstychrismas.screen.day.ExercisePreview"
-        android:label="exersice_preview_fragment"
-        tools:layout="@layout/exercise_preview_fragment" >
+        android:id="@+id/workoutPreview"
+        android:name="com.example.furstychrismas.screen.day.WorkoutPreview"
+        android:label="workout_preview_fragment"
+        tools:layout="@layout/workout_preview_fragment">
         <argument
             android:name="day"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseOverview"
+        android:name="com.example.furstychrismas.screen.exercise.ExerciseOverview"
+        android:label="ExerciseOverview">
+        <action
+            android:id="@+id/exercisePreview"
+            app:destination="@id/exercisePreview" />
+    </fragment>
+    <fragment
+        android:id="@+id/exercisePreview"
+        android:name="com.example.furstychrismas.screen.exercise.ExercisePreview"
+        android:label="ExercisePreview">
+        <argument
+            android:name="exercise"
+            app:argType="com.example.furstychrismas.model.Exercise" />
     </fragment>
 </navigation>

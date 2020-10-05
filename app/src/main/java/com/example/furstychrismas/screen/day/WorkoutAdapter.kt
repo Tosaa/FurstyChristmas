@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychrismas.databinding.ExerciseBinding
 import com.example.furstychrismas.model.Drill
 
-class ExerciseAdapter(
+class WorkoutAdapter(
     private val drills: List<Drill>
-) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
+) : RecyclerView.Adapter<WorkoutAdapter.ExerciseViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
@@ -33,7 +33,5 @@ class ExerciseAdapter(
     }
 
     class ExerciseViewHolder(val exerciseBinding: ExerciseBinding) :
-        RecyclerView.ViewHolder(exerciseBinding.root) {
-
-    }
+        RecyclerView.ViewHolder(exerciseBinding.root)
 }

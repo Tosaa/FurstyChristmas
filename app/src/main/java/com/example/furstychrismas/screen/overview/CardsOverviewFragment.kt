@@ -9,15 +9,15 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.furstychrismas.databinding.FragmentCardsOverviewBinding
+import com.example.furstychrismas.databinding.FragmentCardsOverviewFragmentBinding
 
 class CardsOverviewFragment : Fragment() {
 
-    private lateinit var binding: FragmentCardsOverviewBinding
+    private lateinit var binding: FragmentCardsOverviewFragmentBinding
     private val cardViewModel: CardViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentCardsOverviewBinding.inflate(layoutInflater)
+        binding = FragmentCardsOverviewFragmentBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -34,6 +34,9 @@ class CardsOverviewFragment : Fragment() {
             cardViewModel.date.postValue(
                 value.toInt()
             )
+        }
+        binding.exercisesButton.setOnClickListener {
+            findNavController().navigate(CardsOverviewFragmentDirections.overviewExerciseOverview())
         }
         return binding.root
     }
