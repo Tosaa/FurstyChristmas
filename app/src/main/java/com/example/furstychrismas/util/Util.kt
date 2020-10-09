@@ -3,7 +3,6 @@ package com.example.furstychrismas.util
 import com.example.furstychrismas.model.Card
 import com.example.furstychrismas.persistence.CardDatabase
 import java.time.LocalDate
-import java.util.*
 
 object Util {
     fun intToDayInDecember(day: Int): LocalDate {

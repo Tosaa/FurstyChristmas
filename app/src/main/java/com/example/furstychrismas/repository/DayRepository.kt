@@ -1,26 +1,15 @@
 package com.example.furstychrismas.repository
 
 import com.example.furstychrismas.model.*
-import com.example.furstychrismas.persistence.CardDao
 import com.example.furstychrismas.persistence.CardDatabase
 import com.example.furstychrismas.util.Util
-import org.koin.core.qualifier.named
-import org.koin.java.KoinJavaComponent.inject
 import java.util.*
 
 class DayRepository(db: CardDatabase) {
 
     private val cardDao = db.cardDao()
 
-    private val cards = IntRange(1, 24).map {
-        Card(Util.intToDayInDecember(it), false)
-    }
-
     val cardsld = cardDao.getCards()
-
-    suspend fun createCards() {
-
-    }
 
     fun getWorkoutOfDay(day: Int): Workout {
 
