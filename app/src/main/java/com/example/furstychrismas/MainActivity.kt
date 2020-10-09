@@ -16,6 +16,7 @@ import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
 import org.koin.core.logger.Level
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
+
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(applicationContext)
@@ -35,7 +37,10 @@ class MainActivity : AppCompatActivity() {
                 Util.createDaysInDB(get())
             }
         }
+    }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        stopKoin()
     }
 }

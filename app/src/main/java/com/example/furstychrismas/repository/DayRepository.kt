@@ -1,9 +1,11 @@
 package com.example.furstychrismas.repository
 
+import androidx.lifecycle.*
 import com.example.furstychrismas.model.*
 import com.example.furstychrismas.persistence.CardDatabase
 import com.example.furstychrismas.util.Util
 import java.util.*
+import java.util.logging.Logger
 
 class DayRepository(db: CardDatabase) {
 
@@ -11,11 +13,20 @@ class DayRepository(db: CardDatabase) {
 
     val cardsld = cardDao.getCards()
 
-    fun getWorkoutOfDay(day: Int): Workout {
-
-        if (cardsld.value?.any { card -> card.day == Util.intToDayInDecember(day) } == true) {
-            return Workout(day, chestWorkout(), 4)
+    suspend fun markDayAsDone(dayInDecember: Int) {
+        val card = cardDao.getCard(dayInDecember)
+        if (card != null) {
+            card.isDone = true
+            cardDao.updateCard(card)
         }
+    }
+
+    fun getCard(dayInDecember: Int): LiveData<Card> {
+        return cardDao.getCardLD(dayInDecember)
+    }
+
+
+    fun getWorkoutOfDay(day: Int): LiveData<Workout> {
 
         val date = Calendar.Builder().apply {
             set(Calendar.MONTH, Calendar.DECEMBER)
@@ -38,7 +49,7 @@ class DayRepository(db: CardDatabase) {
         // mondays -> Stretch
         // Tuesdays -> extra set
         // Wednesday -> Back
-        return Workout(day, drills.filterNotNull(), sets)
+        return liveData { emit(Workout(day, drills.filterNotNull(), sets)) }
     }
 
 

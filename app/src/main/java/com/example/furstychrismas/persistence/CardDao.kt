@@ -3,6 +3,8 @@ package com.example.furstychrismas.persistence
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.furstychrismas.model.Card
+import com.example.furstychrismas.util.Util
+import java.time.LocalDate
 
 @Dao
 interface CardDao {
@@ -12,6 +14,21 @@ interface CardDao {
 
     @Query("Select * from card")
     fun getCards(): LiveData<List<Card>>
+
+    @Query("SELECT * FROM card WHERE day=:date")
+    suspend fun getCard(date: LocalDate): Card
+
+    @Query("SELECT * FROM card WHERE day=:date")
+    fun getCardLD(date: LocalDate): LiveData<Card>
+
+    suspend fun getCard(dayInDecember: Int): Card {
+        return getCard(Util.intToDayInDecember(dayInDecember))
+    }
+
+    fun getCardLD(dayInDecember: Int): LiveData<Card> {
+        return getCardLD(Util.intToDayInDecember(dayInDecember))
+    }
+
 
     @Insert
     suspend fun insertCard(card: Card)

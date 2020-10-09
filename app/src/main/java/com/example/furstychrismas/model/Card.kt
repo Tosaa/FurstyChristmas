@@ -9,7 +9,7 @@ import java.time.LocalDate
 data class Card(
     @PrimaryKey
     val day: LocalDate,
-    val isDone: Boolean
+    var isDone: Boolean
 ) {
     @Ignore
     var isAvailable: Boolean = false

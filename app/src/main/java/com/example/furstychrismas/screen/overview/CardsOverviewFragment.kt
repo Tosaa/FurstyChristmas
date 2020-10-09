@@ -26,18 +26,23 @@ class CardsOverviewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding.lifecycleOwner = viewLifecycleOwner
+
         binding.dayCards.layoutManager = GridLayoutManager(requireContext(), 4)
+
         cardViewModel.cards.observe(viewLifecycleOwner) {
             binding.dayCards.adapter = CardAdapter(findNavController(), it)
         }
+
         binding.slider.addOnChangeListener { slider, value, fromUser ->
             cardViewModel.date.postValue(
                 value.toInt()
             )
         }
+
         binding.exercisesButton.setOnClickListener {
             findNavController().navigate(CardsOverviewFragmentDirections.overviewExerciseOverview())
         }
+
         return binding.root
     }
 }

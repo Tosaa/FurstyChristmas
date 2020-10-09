@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View"/>
 
         <variable
             name="viewmodel"
@@ -21,10 +22,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@{viewmodel.day}"
+            android:text="@{viewmodel.day.toString()}"
             android:textSize="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"
             tools:text="Day 0" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -55,5 +57,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/reps"
             tools:listitem="@layout/exercise" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/workout_done_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exercises"
+            android:visibility="@{viewmodel.isDone() ? View.INVISIBLE : View.VISIBLE}"            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
