@@ -1,3 +1,16 @@
 package com.example.furstychrismas.model
 
-data class Card(val day: Int, val isAvailable: Boolean, val isDone: Boolean)
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
+import java.time.LocalDate
+
+@Entity
+data class Card(
+    @PrimaryKey
+    val day: LocalDate,
+    val isDone: Boolean
+) {
+    @Ignore
+    var isAvailable: Boolean = false
+}

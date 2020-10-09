@@ -1,16 +1,24 @@
 package com.example.furstychrismas.screen.overview
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.example.furstychrismas.model.Card
+import com.example.furstychrismas.persistence.CardDao
+import com.example.furstychrismas.repository.DayRepository
+import com.example.furstychrismas.util.Util
+import kotlinx.coroutines.launch
+import java.time.LocalDate
 
-class CardViewModel : ViewModel() {
-    val date = MutableLiveData<Int>(0)
+class CardViewModel(private val dayRepository: DayRepository) : ViewModel() {
+    val date = MutableLiveData(5)
 
-    val cards = Transformations.map(date) { currentDate ->
-        IntRange(1, 24).map {
-            Card(it, it <= currentDate, false)
+    val today = date.map { Util.intToDayInDecember(it) }
+
+    private val allcards = dayRepository.cardsld
+
+    val cards = allcards.map { cards ->
+        cards.map { card ->
+            card.isAvailable = card.day.isBefore(today.value)
+            card
         }
     }
 

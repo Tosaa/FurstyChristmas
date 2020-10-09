@@ -27,7 +27,7 @@ class CardAdapter(
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val card = cards[position]
-        holder.binding.day = card.day.toString()
+        holder.binding.day = card.day.dayOfMonth.toString()
         if (card.isAvailable) {
             if (card.isDone)
                 holder.binding.button.setBackgroundColor(Color.GREEN)
