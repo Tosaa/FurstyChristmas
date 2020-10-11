@@ -11,57 +11,62 @@
     </data>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:paddingVertical="2dp">
 
-        <View
-            android:id="@+id/divider"
+        <com.google.android.material.card.MaterialCardView
+            style="@style/ExerciseCard"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="3dp">
-
-            <ImageView
-                icon="@{drill.exercise.muscles.iterator().next().icon}"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="#000" />
-
-            <TextView
-                android:layout_width="100dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="1"
-                android:text="@{drill.repetition.formatedString()}"
-                app:layout_constraintStart_toStartOf="@+id/image"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="120 seconds" />
+                android:orientation="horizontal"
+                android:paddingVertical="3dp">
 
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:lines="2"
-                android:text="@{drill.exercise.exerciseName}"
-                app:layout_constraintStart_toStartOf="@+id/image"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Lunges with Arm Rotation" />
+                <ImageView
+                    icon="@{drill.exercise.muscles.iterator().next().icon}"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    app:tint="#000" />
 
-            <TextView
-                android:id="@+id/break_time"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:lines="1"
-                android:text="@{drill.breakTime.formatedString()}"
-                app:layout_constraintStart_toStartOf="@+id/image"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="30 seconds" />
-        </LinearLayout>
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="2dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:lines="1"
+                    android:text="@{drill.repetition.formatedString()}"
+                    tools:text="120 seconds" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:lines="2"
+                    android:text="@{drill.exercise.exerciseName}"
+                    android:layout_gravity="center_vertical"
+                    tools:text="Lunges with Arm Rotation" />
+
+                <TextView
+                    android:id="@+id/break_time"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="@{drill.breakTime.formatedString()}"
+                    android:layout_gravity="center_vertical"
+                    tools:text="30 seconds" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </layout>

@@ -30,21 +30,25 @@ class CardAdapter(
         holder.binding.day = card.day.dayOfMonth.toString()
         if (card.isAvailable) {
             if (card.isDone)
-                holder.binding.button.setBackgroundColor(Color.GREEN)
+                holder.binding.button.setBackgroundColor(Color.parseColor("#00d000"))
             else
-                holder.binding.button.setBackgroundColor(Color.RED)
+                holder.binding.button.setBackgroundColor(Color.parseColor("#c00000"))
         } else {
             holder.binding.button.setBackgroundColor(Color.GRAY)
         }
         if (card.isAvailable) {
             holder.binding.button.setOnClickListener {
-                val action =
-                    CardsOverviewFragmentDirections.overviewWorkoutPreview(
-                        position
-                    )
-                navigationController.navigate(action)
+                goToWorkoutPreview(position)
             }
         }
+    }
+
+    private fun goToWorkoutPreview(day: Int) {
+        val action =
+            CardsOverviewFragmentDirections.overviewWorkoutPreview(
+                day
+            )
+        navigationController.navigate(action)
     }
 
     inner class CardViewHolder(val binding: ChristmasCardBinding) :

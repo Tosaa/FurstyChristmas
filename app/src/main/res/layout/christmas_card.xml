@@ -11,14 +11,16 @@
     <FrameLayout
         android:layout_width="40pt"
         android:layout_height="40pt"
-        android:padding="5dp">
+        android:padding="5dp"
+        >
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:text="@{day}" />
+            android:text="@{day}"
+            />
 
     </FrameLayout>
 </layout>

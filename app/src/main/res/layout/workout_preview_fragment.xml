@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
-
+        <import type="android.view.View" />
         <variable
             name="viewmodel"
             type="com.example.furstychrismas.screen.day.WorkoutViewModel" />
@@ -21,31 +20,25 @@
             android:id="@+id/day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:gravity="center_horizontal"
             android:text="@{viewmodel.day.toString()}"
+            android:textColor="@color/white"
             android:textSize="30dp"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="visible"
             tools:text="Day 0" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/muscle_groups"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            app:layout_constraintEnd_toEndOf="@id/day"
-            app:layout_constraintTop_toTopOf="@id/day" />
 
         <include
             android:id="@+id/reps"
             layout="@layout/set_reps"
             sets="@{viewmodel.reps}"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/day" />
 
@@ -63,10 +56,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="done"
+            android:visibility="@{viewmodel.isDone() ? View.INVISIBLE : View.VISIBLE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/exercises"
-            android:visibility="@{viewmodel.isDone() ? View.INVISIBLE : View.VISIBLE}"            />
+            app:layout_constraintTop_toBottomOf="@id/exercises" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/muscle_groups"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/reps"
+            app:layout_constraintEnd_toEndOf="@id/day"
+            app:layout_constraintTop_toTopOf="@id/day"
+            tools:listitem="@layout/muscle_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

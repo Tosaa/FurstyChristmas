@@ -7,4 +7,17 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ExerciseCard" parent="CardView.Light">
+        <item name="cardCornerRadius">5dp</item>
+        <item name="cardElevation">1dp</item>
+        <item name="cardBackgroundColor">@color/colorPrimaryLight</item>
+        <item name="shapeAppearance">
+            @style/ShapeAppearance.ExerciseCard.Wide
+        </item>
+    </style>
+
+    <style name="ShapeAppearance.ExerciseCard.Wide" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">20%</item>
+    </style>
 </resources>
