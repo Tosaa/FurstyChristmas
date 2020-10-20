@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="viewmodel"
             type="com.example.furstychrismas.screen.day.WorkoutViewModel" />
@@ -16,12 +18,14 @@
         android:orientation="vertical"
         tools:context=".screen.day.WorkoutPreview">
 
+
         <TextView
             android:id="@+id/day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:gravity="center_horizontal"
+            android:paddingBottom="10dp"
             android:text="@{viewmodel.day.toString()}"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -35,12 +39,19 @@
             layout="@layout/set_reps"
             sets="@{viewmodel.reps}"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:paddingBottom="10dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/day"
-            app:layout_constraintBottom_toBottomOf="@id/muscle_groups" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/muscle_groups"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            app:layout_constraintEnd_toEndOf="@id/day"
+            app:layout_constraintTop_toTopOf="@id/day"
+            app:layout_constraintBottom_toBottomOf="@id/reps"
+            tools:listitem="@layout/muscle_icon" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/exercises"
@@ -61,14 +72,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/exercises" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/muscle_groups"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_margin="5dp"
-            app:layout_constraintEnd_toEndOf="@id/day"
-            app:layout_constraintTop_toTopOf="@id/day"
-            tools:listitem="@layout/muscle_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

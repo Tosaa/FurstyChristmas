@@ -10,7 +10,6 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.furstychrismas.databinding.WorkoutPreviewFragmentBinding
-import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -31,7 +30,7 @@ class WorkoutPreview : Fragment() {
         binding.viewmodel = viewModel
 
         binding.exercises.layoutManager = LinearLayoutManager(requireContext())
-        binding.muscleGroups.layoutManager = GridLayoutManager(requireContext(), 3)
+        binding.muscleGroups.layoutManager = GridLayoutManager(requireContext(), 2)
 
         binding.workoutDoneButton.setOnClickListener {
             viewModel.markAsDone()
