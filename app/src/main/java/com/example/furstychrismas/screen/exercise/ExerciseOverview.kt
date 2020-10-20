@@ -19,7 +19,7 @@ class ExerciseOverview : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = ExerciseListFragmentBinding.inflate(inflater)
+        binding = ExerciseListFragmentBinding.inflate(inflater, container, false)
         binding.exerciseList.layoutManager = LinearLayoutManager(requireContext())
         binding.exerciseList.adapter =
             ExerciseAdapter(Exercise.values().asList(), findNavController())

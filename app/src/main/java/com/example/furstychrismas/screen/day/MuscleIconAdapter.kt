@@ -13,7 +13,7 @@ class MuscleIconAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MuscleIconViewHolder {
         return MuscleIconViewHolder(
-            MuscleIconBinding.inflate(LayoutInflater.from(parent.context))
+            MuscleIconBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 

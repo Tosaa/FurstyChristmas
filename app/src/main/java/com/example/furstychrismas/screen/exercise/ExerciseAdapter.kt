@@ -29,7 +29,7 @@ class ExerciseAdapter(
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         holder.binding.exerciseName.text = exercises[position].exerciseName
-        holder.binding.muscleIcons.layoutManager = GridLayoutManager(context, 3)
+        holder.binding.muscleIcons.layoutManager = GridLayoutManager(context, 2)
         holder.binding.muscleIcons.adapter = MuscleIconAdapter(exercises[position].muscles)
         holder.binding.item.setOnClickListener {
             navigationController.navigate(ExerciseOverviewDirections.exercisePreview(exercises[position]))

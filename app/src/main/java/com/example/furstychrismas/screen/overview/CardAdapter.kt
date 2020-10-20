@@ -16,7 +16,7 @@ class CardAdapter(
     lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val binding: ChristmasCardBinding =
-            ChristmasCardBinding.inflate(LayoutInflater.from(parent.context))
+            ChristmasCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         context = parent.context
         return CardViewHolder(binding)
     }

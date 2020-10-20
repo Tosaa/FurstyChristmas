@@ -52,9 +52,9 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:lines="2"
                     android:text="@{drill.exercise.exerciseName}"
                     android:layout_gravity="center_vertical"
+                    android:maxLines="2"
                     tools:text="Lunges with Arm Rotation" />
 
                 <TextView

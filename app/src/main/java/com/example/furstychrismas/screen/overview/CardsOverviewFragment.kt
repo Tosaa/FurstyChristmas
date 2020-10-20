@@ -17,7 +17,7 @@ class CardsOverviewFragment : Fragment() {
     private val cardViewModel: CardViewModel by inject()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentCardsOverviewFragmentBinding.inflate(layoutInflater)
+
     }
 
     override fun onCreateView(
@@ -25,6 +25,7 @@ class CardsOverviewFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentCardsOverviewFragmentBinding.inflate(layoutInflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.dayCards.layoutManager = GridLayoutManager(requireContext(), 4)
