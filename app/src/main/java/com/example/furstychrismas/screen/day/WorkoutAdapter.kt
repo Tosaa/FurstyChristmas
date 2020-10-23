@@ -14,7 +14,7 @@ class WorkoutAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         return ExerciseViewHolder(
-            ExerciseBinding.inflate(LayoutInflater.from(parent.context))
+            ExerciseBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         )
     }
 

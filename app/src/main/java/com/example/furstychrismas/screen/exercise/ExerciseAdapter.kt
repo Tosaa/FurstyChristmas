@@ -19,7 +19,7 @@ class ExerciseAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         context = parent.context
         return ExerciseViewHolder(
-            ExerciseOverviewItemBinding.inflate(LayoutInflater.from(parent.context))
+            ExerciseOverviewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
