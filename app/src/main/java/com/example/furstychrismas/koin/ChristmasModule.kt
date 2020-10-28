@@ -5,6 +5,7 @@ import com.example.furstychrismas.persistence.CardDatabase
 import com.example.furstychrismas.repository.DayRepository
 import com.example.furstychrismas.screen.day.WorkoutViewModel
 import com.example.furstychrismas.screen.overview.CardViewModel
+import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -30,7 +31,7 @@ val dbModule = module {
 
 val myModule = module {
 
-    factory { DayRepository(get()) }
+    factory { DayRepository(get(),androidApplication().assets) }
 
     viewModel { (day: Int) ->
         WorkoutViewModel(

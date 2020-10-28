@@ -1,0 +1,40 @@
+{
+  "chest var1": [
+    "5 reps;PUSHUP;0 secs",
+    "5 reps;PUSHUP_TIGHT;0 secs",
+    "5 reps;PUSHUP_WIDE;0 secs",
+    "10 reps;PUSHUP_TO_PLANK;45 secs",
+    "5 reps;MILITARY;0 secs",
+    "15 secs;PLANK;0 secs",
+    "15 secs;PLANK_SIDE;0 secs",
+    "15 secs;PLANK;0 secs",
+    "15 secs;PLANK_SIDE;45 secs"
+  ],
+  "chest var2": [
+    "5 reps;PUSHUP;0 secs",
+    "10 reps;PUSHUP_ONE_SIDED;0 secs",
+    "10 reps;PUSHUP_TO_PLANK;0 secs",
+    "5 reps;SHOULDER_TAPS;45 secs",
+    "15 secs;PLANK;0 secs",
+    "15 secs;PLANK_SIDE;0 secs",
+    "15 secs;PLANK;0 secs",
+    "15 secs;PLANK_SIDE;45 secs"
+  ],
+  "legs": [
+    "20 reps;SQUAD;0 secs",
+    "20 reps;LUNGES_FORWARD;0 secs",
+    "20 reps;LUNGES_BACKWARD;45 secs"
+  ],
+  "core": [
+    "20 reps;ABS_ROTATION;0 secs",
+    "20 reps;LEG_RISES;0 secs",
+    "30 secs;PLANK;45 secs"
+  ],
+  "all": [
+    "10 reps;PUSHUP;0 secs",
+    "20 reps;SHOULDER_TAPS;0 secs",
+    "5 reps;MILITARY;0 secs",
+    "15 reps;LEG_RISES;0 secs",
+    "30 secs;PLANK;60 secs"
+  ]
+}

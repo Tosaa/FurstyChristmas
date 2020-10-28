@@ -93,4 +93,9 @@ dependencies {
     // Livedata extension
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 
+    // moshi for json reading
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.11.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.11.0")
+    implementation("com.squareup.moshi:moshi:1.11.0")
+
 }

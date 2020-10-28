@@ -9,16 +9,13 @@ import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.furstychrismas.databinding.FragmentCardsOverviewFragmentBinding
+import com.example.furstychrismas.util.Util
 import org.koin.android.ext.android.inject
 
 class CardsOverviewFragment : Fragment() {
 
     private lateinit var binding: FragmentCardsOverviewFragmentBinding
     private val cardViewModel: CardViewModel by inject()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,6 +40,8 @@ class CardsOverviewFragment : Fragment() {
         binding.exercisesButton.setOnClickListener {
             findNavController().navigate(CardsOverviewFragmentDirections.overviewExerciseOverview())
         }
+
+        binding.testTextView.text = Util.getDrillPresets(requireActivity().assets).toString()
 
         return binding.root
     }

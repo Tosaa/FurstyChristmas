@@ -20,7 +20,8 @@
             app:destination="@id/workoutPreview" />
         <action
             android:id="@+id/overview_exercise_overview"
-            app:destination="@id/exerciseOverview" />
+            app:destination="@id/exerciseOverview"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/workoutPreview"
@@ -34,15 +35,20 @@
     <fragment
         android:id="@+id/exerciseOverview"
         android:name="com.example.furstychrismas.screen.exercise.ExerciseOverview"
-        android:label="ExerciseOverview">
+        android:label="ExerciseOverview"
+        tools:layout="@layout/exercise_list_fragment">
+
         <action
             android:id="@+id/exercisePreview"
-            app:destination="@id/exercisePreview" />
+            app:destination="@id/exercisePreview"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/exercisePreview"
         android:name="com.example.furstychrismas.screen.exercise.ExercisePreview"
-        android:label="ExercisePreview">
+        android:label="ExercisePreview"
+        tools:layout="@layout/exercise_preview_fragment">
         <argument
             android:name="exercise"
             app:argType="com.example.furstychrismas.model.Exercise" />
