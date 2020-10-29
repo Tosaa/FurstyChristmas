@@ -25,7 +25,7 @@ class WorkoutAdapter(
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         holder.exerciseBinding.drill = drills[position]
         holder.exerciseBinding.breakTime.visibility =
-            if (drills[position].breakTime.formatedString().startsWith("0")) {
+            if (drills[position].breakTime.formattedString().startsWith("0")) {
                 View.INVISIBLE
             } else {
                 View.VISIBLE

@@ -1,8 +1,8 @@
 package com.example.furstychrismas.model
 
-class Drill(val repetition: Repetition, val exercise: Exercise, val breakTime: Repetition) {
+class Drill(val repetition: Execution, val exercise: Exercise, val breakTime: Execution) {
 
     override fun toString(): String {
-        return "Drill(repetition=${repetition.formatedString()}, exercise=$exercise, breakTime=${breakTime.formatedString()})"
+        return "Drill(repetition=${repetition.formattedString()}, exercise=$exercise, breakTime=${breakTime.formattedString()})"
     }
 }

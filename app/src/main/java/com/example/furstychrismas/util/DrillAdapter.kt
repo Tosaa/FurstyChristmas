@@ -1,12 +1,8 @@
 package com.example.furstychrismas.util
 
-import com.example.furstychrismas.model.Drill
-import com.example.furstychrismas.model.Exercise
-import com.example.furstychrismas.model.Repetition
-import com.example.furstychrismas.model.Seconds
+import com.example.furstychrismas.model.*
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
-import java.lang.StringBuilder
 
 class DrillAdapter {
 
@@ -15,11 +11,11 @@ class DrillAdapter {
     @ToJson
     fun toJson(drill: Drill): String {
         return StringBuilder()
-            .append(drill.repetition.formatedString())
+            .append(drill.repetition.formattedString())
             .append(DELIMITER)
             .append(drill.exercise)
             .append(DELIMITER)
-            .append(drill.breakTime.formatedString()).toString()
+            .append(drill.breakTime.formattedString()).toString()
     }
 
     @FromJson
@@ -32,7 +28,7 @@ class DrillAdapter {
         )
     }
 
-    private fun repetitionFromString(repetition: String): Repetition {
+    private fun repetitionFromString(repetition: String): Execution {
         val amount = repetition.split(' ')[0].toInt()
         return if (repetition.endsWith("reps")) {
             Repetition(amount)
