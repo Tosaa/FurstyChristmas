@@ -1,19 +1,22 @@
 package com.example.furstychrismas.screen.day
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
-import com.example.furstychrismas.model.Muscle
-import com.example.furstychrismas.repository.DayRepository
+import com.example.furstychrismas.repository.CardRepository
+import com.example.furstychrismas.repository.WorkoutRepository
 import kotlinx.coroutines.launch
 
-class WorkoutViewModel(number: Int, private val dayRepository: DayRepository) : ViewModel() {
+class WorkoutViewModel(
+    number: Int,
+    private val cardRepository: CardRepository,
+    private val workoutRepository: WorkoutRepository
+) : ViewModel() {
 
     private val dayInDecember = number + 1
 
-    private val workout = dayRepository.getWorkoutOfDay(dayInDecember)
-    private val cardOfWorkout = dayRepository.getCard(dayInDecember)
+    private val workout = workoutRepository.getWorkoutOfDay(dayInDecember)
+    private val cardOfWorkout = cardRepository.getCard(dayInDecember)
 
     val isDone = cardOfWorkout.map { it.isDone }
     val day = workout.map { "DAY ${it.day}" }
@@ -26,7 +29,7 @@ class WorkoutViewModel(number: Int, private val dayRepository: DayRepository) : 
 
     fun markAsDone() {
         viewModelScope.launch {
-            dayRepository.markDayAsDone(dayInDecember)
+            cardRepository.markDayAsDone(dayInDecember)
         }
     }
 

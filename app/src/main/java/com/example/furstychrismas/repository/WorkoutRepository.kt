@@ -2,29 +2,14 @@ package com.example.furstychrismas.repository
 
 import android.content.res.AssetManager
 import android.util.Log
-import androidx.lifecycle.*
-import com.example.furstychrismas.model.*
-import com.example.furstychrismas.persistence.CardDatabase
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.liveData
+import com.example.furstychrismas.model.Drill
+import com.example.furstychrismas.model.Workout
 import com.example.furstychrismas.util.Util
 import java.util.*
 
-class DayRepository(db: CardDatabase, private val assetManager: AssetManager) {
-
-    private val cardDao = db.cardDao()
-
-    val cardsld = cardDao.getCards()
-
-    suspend fun markDayAsDone(dayInDecember: Int) {
-        val card = cardDao.getCard(dayInDecember)
-        if (card != null) {
-            card.isDone = true
-            cardDao.updateCard(card)
-        }
-    }
-
-    fun getCard(dayInDecember: Int): LiveData<Card> {
-        return cardDao.getCardLD(dayInDecember)
-    }
+class WorkoutRepository(private val assetManager: AssetManager) {
 
 
     fun getWorkoutOfDay(day: Int): LiveData<Workout> {
@@ -67,8 +52,10 @@ class DayRepository(db: CardDatabase, private val assetManager: AssetManager) {
                 drills.addAll(workouts.getOrDefault("all", emptyList()))
             }
         }
-        val workout = Workout(day,drills,sets)
-        Log.i("DayRepository","todays workout:$workout")
+        val workout = Workout(day, drills, sets)
+        Log.i("DayRepository", "todays workout:$workout")
         return liveData { emit(workout) }
     }
+
+
 }

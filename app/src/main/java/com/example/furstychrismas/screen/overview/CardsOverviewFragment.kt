@@ -32,7 +32,7 @@ class CardsOverviewFragment : Fragment() {
         }
 
         binding.slider.addOnChangeListener { slider, value, fromUser ->
-            cardViewModel.date.postValue(
+            cardViewModel.updateDateRepo(
                 value.toInt()
             )
         }

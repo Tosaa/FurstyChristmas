@@ -1,20 +1,19 @@
 package com.example.furstychrismas.screen.overview
 
 import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.map
 import com.example.furstychrismas.model.Card
-import com.example.furstychrismas.repository.DayRepository
-import com.example.furstychrismas.util.Util
+import com.example.furstychrismas.repository.CardRepository
+import com.example.furstychrismas.repository.DateRepository
 import java.time.LocalDate
 
-class CardViewModel(private val dayRepository: DayRepository) : ViewModel() {
-    val date = MutableLiveData(5)
+class CardViewModel(
+    private val cardRepository: CardRepository,
+    private val dateRepository: DateRepository
+) : ViewModel() {
+    val today = dateRepository.today
 
-    val today = date.map { Util.intToDayInDecember(it) }
-
-    private val allcards = dayRepository.cardsld
+    private val allcards = cardRepository.cards
 
     /*
         val cards = allcards.map { cards ->
@@ -44,6 +43,10 @@ class CardViewModel(private val dayRepository: DayRepository) : ViewModel() {
                 card.day.dayOfYear <= date.dayOfYear
             card
         }
+    }
+
+    fun updateDateRepo(day: Int) {
+        dateRepository.updateDay(LocalDate.of(2020, 12, day))
     }
 
 }
