@@ -1,5 +1,6 @@
 package com.example.furstychrismas.koin
 
+import android.content.Context
 import androidx.room.Room
 import com.example.furstychrismas.persistence.CardDatabase
 import com.example.furstychrismas.repository.AchievementRepository
@@ -35,6 +36,13 @@ val dbModule = module {
 val myModule = module {
 
     // factory { DayRepository(get(), androidApplication().assets) }
+
+    single {
+        androidApplication().getSharedPreferences(
+            "com.example.furstychrismas",
+            Context.MODE_PRIVATE
+        )
+    }
 
     factory { AchievementRepository() }
     factory { DateRepository() }

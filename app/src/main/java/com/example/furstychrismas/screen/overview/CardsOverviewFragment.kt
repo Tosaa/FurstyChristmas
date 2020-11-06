@@ -16,6 +16,7 @@ class CardsOverviewFragment : Fragment() {
 
     private lateinit var binding: FragmentCardsOverviewFragmentBinding
     private val cardViewModel: CardViewModel by inject()
+    private lateinit var adapter: CardAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,13 +26,15 @@ class CardsOverviewFragment : Fragment() {
         binding = FragmentCardsOverviewFragmentBinding.inflate(layoutInflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
 
+        adapter = CardAdapter(findNavController(), emptyList())
+        binding.dayCards.adapter = adapter
         binding.dayCards.layoutManager = GridLayoutManager(requireContext(), 4)
 
         cardViewModel.cards.observe(viewLifecycleOwner) {
-            binding.dayCards.adapter = CardAdapter(findNavController(), it)
+            adapter.setItems(it)
         }
 
-        binding.slider.addOnChangeListener { slider, value, fromUser ->
+        binding.slider.addOnChangeListener { _, value, _ ->
             cardViewModel.updateDateRepo(
                 value.toInt()
             )

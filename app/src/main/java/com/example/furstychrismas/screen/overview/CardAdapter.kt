@@ -11,8 +11,9 @@ import com.example.furstychrismas.model.Card
 
 class CardAdapter(
     private val navigationController: NavController,
-    private val cards: List<Card> = emptyList()
+    private var cards: List<Card> = emptyList()
 ) : RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
+
     lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val binding: ChristmasCardBinding =
@@ -41,6 +42,11 @@ class CardAdapter(
                 goToWorkoutPreview(position)
             }
         }
+    }
+
+    fun setItems(cards: List<Card>) {
+        this.cards = cards
+        notifyDataSetChanged()
     }
 
     private fun goToWorkoutPreview(day: Int) {
