@@ -4,4 +4,178 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+    <string name="push_up">
+        Ausgangs-position:\n
+        Auf dem Bauch liegend.
+        \n\n
+        1 Wiederholung:\n
+        Hände auf Brusthöhe ablegen.
+        Köperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
+        Langsam den Oberkörper wieder auf den Boden senken.
+    </string>
+    <string name="push_up_one_sided">
+        Ausgangs-position:\n
+        Auf dem Bauch liegend.
+        \n\n
+        1 Wiederholung:\n
+        Hände auf Brusthöhe ablegen.
+        Eine Hand erhöht z.b. auf Helm ablegen.
+        Köperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
+        Langsam den Oberkörper wieder auf den Boden senken.
+    </string>
+
+    <string name="shoulder_taps">
+    Ausgangs-position:\n
+    Hochgedrückte Liegestütz position.
+    \n\n
+    1 Wiederholung:\n
+    Berühre die linke Schulter mit der rechten Hand.
+    Setze die Hand wieder auf dem Boden ab.
+    Berühre die rechte Schulter mit der linken Hand.
+    Setze die Hand wieder auf dem Boden ab.
+    </string>
+    <string name="pushup_falling">
+    Ausgangs-position:\n
+    Mit aufrechtem Oberkörper hinknien.
+    \n\n
+    1 Wiederholung:\n
+    Oberkörper auf den Boden fallen lassen.
+    Mit den Händen abfangen.
+    Anschließend den Oberkörper vom Boden abstoßen, bis man wieder in Ausgangs-position ist.
+    </string>
+    <string name="pushup_tight">
+    Ausgangs-position:\n
+    Auf dem Bauch liegend.
+    \n\n
+    1 Wiederholung:\n
+    Hände eng beieinander auf Brusthöhe ablegen.
+    Köperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
+    Langsam den Oberkörper wieder auf den Boden senken.
+    </string>
+    <string name="pushup_wide">
+    Ausgangs-position:\n
+    Auf dem Bauch liegend.
+    \n\n
+    1 Wiederholung:\n
+    Hände weit außerhalb der Brust auf Brusthöhe ablegen.
+    Köperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
+    Langsam den Oberkörper wieder auf den Boden senken.
+    </string>
+    <string name="pushup_to_plank">
+    Ausgangs-position:\n
+    Hochgedrückte Liegestütz position.
+    \n\n
+    1 Wiederholung:\n
+    Aus der Ausgangs-position in den Ellenbogenstütz wechseln.
+    Anschließend wieder in die Liegestütz position wechseln.
+    </string>
+    <string name="military">
+    Ausgangs-position:\n
+    Füße und Hände berühren den Boden, während Bauch und Beine einen 90 Grad winkel bilden.
+    \n\n
+    1 Wiederholung:\n
+    Die Arme abwinkeln und dabei den 90 Grad winkel beibehalten.
+    Anschließend die Arme wieder Strecken und den Oberkörper hoch drücken.\n\n
+    Bei dieser Übung solltest du vorher auch Online nach "Halbe Handstandliegestütze"
+    oder "Military press ohne Hantel" suchen.
+    </string>
+
+    //LEGS
+    <string name="squad">
+    Ausgangs-position:\n
+    Aufrechter Stand mit Füßen etwas breiter als Schulterbreit.
+    \n\n
+    1 Wiederholung:\n
+    Mit aufrechtem Oberkörper in die Hocke gehen, bis die Knie fast einen 90 Grad winkel bilden.
+    </string>
+    <string name="lunges_forward">
+    Ausgangs-position:\n
+    Aufrechter Stand.
+    \n\n
+    1 Wiederholung:\n
+    Ausfallschrit nach vorne machen, wobei im Tiefstenpunkt beide Knie einen 90 Grad winkel bilden.
+    Der Oberkörper bleibt dabei durchgehend Aufrecht.
+    Diese Stellung 2-4 Sekunden halten.
+    </string>
+    <string name="lunges_backward">
+    Ausgangs-position:\n
+    Aufrechter Stand.
+    \n\n
+    1 Wiederholung:\n
+    Ausfallschrit nach hinten machen, wobei im Tiefstenpunkt beide Knie einen 90 Grad winkel bilden.
+    Der Oberkörper bleibt dabei durchgehend Aufrecht.
+    Diese Stellung 2-4 Sekunden halten.
+    </string>
+    <string name="lunges_one_leg">
+    Ausgangs-position:\n
+    Aufrechter Stand und ein Bein nach hinten auf einer erhöhten Position ablegen. Beispielsweise auf einem Stuhl.
+    \n\n
+    1 Wiederholung:\n
+    Ähnlich zum Ausfallschritt das vordere Knie abwinkeln.
+    </string>
+
+    //CORE
+    <string name="plank">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
+    <string name="plank_side">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
+    <string name="leg_rises">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
+    <string name="abs_rotation">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
+    <string name="flutter_kicks">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
+    <string name="bicycle">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
+    <string name="sit_up">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
+    <string name="knee_to_elbow">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
+    <string name="leg_rised_circle">
+    Ausgangs-position:\n
+    empty
+    \n\n
+    1 Wiederholung:\n
+    empty
+    </string>
 </resources>

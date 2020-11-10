@@ -11,8 +11,10 @@ import java.util.*
 
 class WorkoutRepository(private val assetManager: AssetManager) {
 
+    private val workouts = Util.getDrillPresets(assetManager)
 
     fun getWorkoutOfDay(day: Int): LiveData<Workout> {
+        Log.i("WorkoutRepository","load day $day")
 
         val date = Calendar.Builder().apply {
             set(Calendar.MONTH, Calendar.DECEMBER)
@@ -22,8 +24,6 @@ class WorkoutRepository(private val assetManager: AssetManager) {
 
         var sets = 3 + date.get(Calendar.WEEK_OF_MONTH)
         val drills = mutableListOf<Drill>()
-
-        val workouts = Util.getDrillPresets(assetManager)
 
         when (date.get(Calendar.DAY_OF_WEEK)) {
             Calendar.MONDAY -> {
@@ -53,7 +53,7 @@ class WorkoutRepository(private val assetManager: AssetManager) {
             }
         }
         val workout = Workout(day, drills, sets)
-        Log.i("DayRepository", "todays workout:$workout")
+        Log.i("WorkoutRepository", "todays workout:$workout")
         return liveData { emit(workout) }
     }
 
