@@ -15,14 +15,6 @@ class CardViewModel(
 
     private val allcards = cardRepository.cards
 
-    /*
-        val cards = allcards.map { cards ->
-            cards.map { card ->
-                card.isAvailable = card.day.isBefore(today.value)
-                card
-            }
-        }
-    */
     val cards = MediatorLiveData<List<Card>>().apply {
         addSource(allcards) {
             val date = today.value
@@ -39,8 +31,8 @@ class CardViewModel(
 
     private fun updateCards(cards: List<Card>, date: LocalDate): List<Card> {
         return cards.map { card ->
-            card.isAvailable =
-                card.day.dayOfYear <= date.dayOfYear
+            // card.isAvailable = card.day.dayOfYear <= date.dayOfYear
+            card.isAvailable = card.day.dayOfMonth <= date.dayOfMonth
             card
         }
     }

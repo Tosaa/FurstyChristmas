@@ -16,6 +16,10 @@
         </item>
     </style>
 
+    <style name="NotificationCard" parent="ExerciseCard">
+        <item name="cardBackgroundColor">#ccc</item>
+    </style>
+
     <style name="ShapeAppearance.ExerciseCard.Wide" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">20%</item>

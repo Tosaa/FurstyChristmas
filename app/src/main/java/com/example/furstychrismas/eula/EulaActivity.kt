@@ -1,7 +1,6 @@
 package com.example.furstychrismas.eula
 
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -12,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.furstychrismas.R
 import com.example.furstychrismas.databinding.ActivityEulaBinding
 import com.google.android.material.snackbar.Snackbar
+import org.koin.android.ext.android.inject
 import java.io.InputStream
 
 
@@ -22,10 +22,11 @@ class EulaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        preferences = applicationContext
-            .getSharedPreferences("com.example.furstychrismas", Context.MODE_PRIVATE)
         binding =
             DataBindingUtil.setContentView(this, R.layout.activity_eula)
+
+        val injectedPreferences: SharedPreferences by inject()
+        preferences = injectedPreferences
 
         initializeUI()
     }

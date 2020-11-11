@@ -20,7 +20,7 @@ class DateRepository {
     }
 
     fun updateDay(newToday: LocalDate) {
-        mutableToday.postValue(newToday)
+        // mutableToday.postValue(newToday)
     }
 
 }
