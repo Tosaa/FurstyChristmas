@@ -117,66 +117,73 @@
     //CORE
     <string name="plank">
     Ausgangs-position:\n
-    empty
+    Hände, Unterarm und Ellenbogen, sowie die Füße berühren den Boden. Der rest des Körpers bildet eine Linie.
     \n\n
     1 Wiederholung:\n
-    empty
+    Halte die Stellung so lange wie angegeben. Achte darauf dass die Hüfte nicht zu weit oben oder unten ist.
     </string>
     <string name="plank_side">
     Ausgangs-position:\n
-    empty
+    Wähle eine Seite auf der du die Übung durchführst. Hand, Unterarm und Ellenbogen, sowie der Fuß liegen auf dem Boden auf. Der Rest des Körpers bildet eine Linie. Die andere Hand kannst du auf der Hüfte ablegen.
     \n\n
     1 Wiederholung:\n
-    empty
+    Halte die Stellung so lange wie angegeben. Achte darauf dass die Schultern nicht zu weit nach vorne geneigt sind, da du sonst das Gleichgewicht leichter verlierst.
     </string>
     <string name="leg_rises">
     Ausgangs-position:\n
-    empty
+    Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.
     \n\n
     1 Wiederholung:\n
-    empty
+    Hebe deine Füße weiter, bis sie ca. in einem 45 Grad winkel zum Boden stehen. Senke sie dann wieder ab, aber nicht ganz bis auf den Boden!
     </string>
     <string name="abs_rotation">
     Ausgangs-position:\n
-    empty
+    Setz dich auf den Boden, bilde einen Graden Rücken, winkle die Beine etwas an und hebe sie in die Luft.
     \n\n
     1 Wiederholung:\n
-    empty
+    Dreh dich nur mit deinem Oberkörper nach links, tippe mit den Fingern kurz auf den Boden neben deiner Hüfte. Drehe dich dann nach rechts und tippe erneut kurz auf den Boden.
     </string>
     <string name="flutter_kicks">
     Ausgangs-position:\n
-    empty
+    Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.
     \n\n
     1 Wiederholung:\n
-    empty
+    Hebe das linke Bein, bis es ca. in einem 45 Grad Winkel zum Boden steht. Senke es dann wieder bis kurz über dem Boden und hebe das rechte Bein.
     </string>
     <string name="bicycle">
     Ausgangs-position:\n
-    empty
+    Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.
     \n\n
     1 Wiederholung:\n
-    empty
+    Ziehe das linke Knie zur Brust und strecke es dann wieder aus. Ziehe dann das rechte Knie zur Brust und strecke es wieder aus. Die Beine bleiben die ganze Zeit in der Luft.
     </string>
     <string name="sit_up">
     Ausgangs-position:\n
-    empty
+    Setz dich auf den Boden, bilde einen Graden Rücken, winkle die Beine etwas an. Die Füße berühren den Boden.
     \n\n
     1 Wiederholung:\n
-    empty
+    Lehne dich mit deinem Oberkörper nach hinten, bis du mit den Schultern den Boden berührst. Dann drückst du deinen Oberkörper wieder in die Ausgangs-position.
+    Achte dabei darauf nicht mit Schwung zu arbeiten, sondern mit der Kraft deiner Bauchmuskeln.
     </string>
     <string name="knee_to_elbow">
     Ausgangs-position:\n
-    empty
+    Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.
     \n\n
     1 Wiederholung:\n
-    empty
+    Ziehe das linke Knie zur Brust und drehe deinen Oberkörper gleichzeitg so, sodass du dein Knie mit deinem rechten Ellenbogen berühren kannst.
+    Strecke das Bein wieder aus und ziehe dann das rechte Knie zur Brust. Auch hier drehst du deinen Oberkörper so, sodass du dein Knie mit dem linken Elenbogen berühren kannst.
+    Die Beine bleiben die ganze Zeit in der Luft.
     </string>
     <string name="leg_rised_circle">
     Ausgangs-position:\n
-    empty
+    Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe sie soweit an, dass sie in einem 45 Grad Winkel zum Boden stehen.
     \n\n
     1 Wiederholung:\n
-    empty
+    Male mit geschlossenen Beinen einen kreis in die Luft.
     </string>
-    <string name="warn_notification">Falls du dich Krank oder Verletzt fühlst ist von der Ausführung des Workouts ab zu raten. Solltest du bei einer Übung an deine Grenzen stoßen, schätze bitte selbst ein, ob es sinnvoll ist die Übung weiter durch zu führen. Du bist selbst für die Ausfühung der Übungen verantwortlich!</string>
+    <string name="warn_notification">
+    Falls du dich Krank oder Verletzt fühlst ist von der Ausführung des Workouts ab zu raten.
+    Solltest du bei einer Übung an deine Grenzen stoßen, schätze bitte selbst ein, ob es sinnvoll ist die Übung weiter durch zu führen.
+    Du bist selbst für die Ausfühung der Übungen verantwortlich!
+    </string>
 </resources>

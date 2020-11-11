@@ -12,10 +12,8 @@ class CardRepository(db: CardDatabase) {
 
     suspend fun markDayAsDone(dayInDecember: Int) {
         val card = cardDao.getCard(dayInDecember)
-        if (card != null) {
-            card.isDone = true
-            cardDao.updateCard(card)
-        }
+        card.isDone = true
+        cardDao.updateCard(card)
     }
 
     fun getCard(dayInDecember: Int): LiveData<Card> {

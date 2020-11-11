@@ -1,8 +1,11 @@
 package com.example.furstychrismas
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.furstychrismas.databinding.ActivityMainBinding
@@ -56,13 +59,24 @@ class MainActivity : AppCompatActivity() {
         stopKoin()
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when (requestCode) {
+            1 -> {
+                if (resultCode != Activity.RESULT_OK) {
+                    finish()
+                }
+            }
+
+        }
+    }
 
     private fun checkEula() {
         val eulaAccepted = preferences.getBoolean("eulaAccepted", false)
         if (!eulaAccepted) {
             val intent = Intent(this, EulaActivity::class.java)
             val bundle = Bundle()
-            val eula = R.raw.eula
+            val eula = R.raw.eula2
             bundle.putInt("eula", eula)
             intent.putExtras(bundle)
             startActivityForResult(intent, 1)

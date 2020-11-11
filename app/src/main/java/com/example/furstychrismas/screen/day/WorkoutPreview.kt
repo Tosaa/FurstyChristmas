@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.furstychrismas.databinding.WorkoutPreviewFragmentBinding
+import kotlinx.android.synthetic.main.warning_dialog.view.*
+import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -33,10 +35,12 @@ class WorkoutPreview : Fragment() {
         binding.exercises.layoutManager = LinearLayoutManager(requireContext())
         binding.muscleGroups.layoutManager = GridLayoutManager(requireContext(), 2)
 
+        binding.warningDialog.cancelButton.setOnClickListener {
+            binding.warningDialog.root.visibility = View.GONE
+        }
         binding.workoutDoneButton.setOnClickListener {
             viewModel.markAsDone()
         }
-
         viewModel.exercises.observe(viewLifecycleOwner) { drills ->
             binding.exercises.adapter = WorkoutAdapter(drills)
         }
