@@ -6,13 +6,13 @@ interface Execution {
 
 class Repetition(private val amount: Int) : Execution {
     override fun formattedString(): String {
-        return "$amount reps"
+        return "$amount Wdh"
     }
 }
 
 class Seconds(private val amount: Int) : Execution {
     override fun formattedString(): String {
-        return "$amount seconds"
+        return "$amount Sek."
     }
 }
 

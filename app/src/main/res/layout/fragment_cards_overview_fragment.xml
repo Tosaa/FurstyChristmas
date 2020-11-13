@@ -21,6 +21,7 @@
             tools:layout_height="80dp"
             tools:listitem="@layout/christmas_card" />
 
+
         <com.google.android.material.slider.Slider
             android:id="@+id/slider"
             android:layout_width="match_parent"
@@ -28,7 +29,9 @@
             android:stepSize="1"
             android:value="1"
             android:valueFrom="1"
-            android:valueTo="24" />
+            android:valueTo="24"
+            android:visibility="gone"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/exercises_button"
@@ -41,8 +44,7 @@
             android:id="@+id/test_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
     </LinearLayout>
 </layout>

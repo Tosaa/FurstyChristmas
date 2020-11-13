@@ -5,28 +5,28 @@
 
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
     <string name="push_up">
-        Ausgangs-position:\n
+        Ausgangsposition:\n
         Auf dem Bauch liegend.
         \n\n
         1 Wiederholung:\n
         Hände auf Brusthöhe ablegen.
-        Köperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
+        Körperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
         Langsam den Oberkörper wieder auf den Boden senken.
     </string>
     <string name="push_up_one_sided">
-        Ausgangs-position:\n
+        Ausgangsposition:\n
         Auf dem Bauch liegend.
         \n\n
         1 Wiederholung:\n
         Hände auf Brusthöhe ablegen.
-        Eine Hand erhöht z.b. auf Helm ablegen.
-        Köperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
+        Eine Hand erhöht z.B. auf Helm ablegen.
+        Körperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
         Langsam den Oberkörper wieder auf den Boden senken.
     </string>
 
     <string name="shoulder_taps">
-    Ausgangs-position:\n
-    Hochgedrückte Liegestütz position.
+    Ausgangsposition:\n
+    Hochgedrückte Liegestütz Position.
     \n\n
     1 Wiederholung:\n
     Berühre die linke Schulter mit der rechten Hand.
@@ -35,79 +35,79 @@
     Setze die Hand wieder auf dem Boden ab.
     </string>
     <string name="pushup_falling">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Mit aufrechtem Oberkörper hinknien.
     \n\n
     1 Wiederholung:\n
     Oberkörper auf den Boden fallen lassen.
     Mit den Händen abfangen.
-    Anschließend den Oberkörper vom Boden abstoßen, bis man wieder in Ausgangs-position ist.
+    Anschließend den Oberkörper vom Boden abstoßen, bis man wieder in Ausgangsposition ist.
     </string>
     <string name="pushup_tight">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Auf dem Bauch liegend.
     \n\n
     1 Wiederholung:\n
     Hände eng beieinander auf Brusthöhe ablegen.
-    Köperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
+    Körperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
     Langsam den Oberkörper wieder auf den Boden senken.
     </string>
     <string name="pushup_wide">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Auf dem Bauch liegend.
     \n\n
     1 Wiederholung:\n
     Hände weit außerhalb der Brust auf Brusthöhe ablegen.
-    Köperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
+    Körperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind.
     Langsam den Oberkörper wieder auf den Boden senken.
     </string>
     <string name="pushup_to_plank">
-    Ausgangs-position:\n
-    Hochgedrückte Liegestütz position.
+    Ausgangsposition:\n
+    Hochgedrückte Liegestütz Position.
     \n\n
     1 Wiederholung:\n
-    Aus der Ausgangs-position in den Ellenbogenstütz wechseln.
-    Anschließend wieder in die Liegestütz position wechseln.
+    Aus der Ausgangsposition in den Ellenbogenstütz wechseln.
+    Anschließend wieder in die Liegestütz Position wechseln.
     </string>
     <string name="military">
-    Ausgangs-position:\n
-    Füße und Hände berühren den Boden, während Bauch und Beine einen 90 Grad winkel bilden.
+    Ausgangsposition:\n
+    Füße und Hände berühren den Boden, während Bauch und Beine einen 90 Grad Winkel  bilden.
     \n\n
     1 Wiederholung:\n
-    Die Arme abwinkeln und dabei den 90 Grad winkel beibehalten.
+    Die Arme abwinkeln und dabei den 90 Grad Winkel  beibehalten.
     Anschließend die Arme wieder Strecken und den Oberkörper hoch drücken.\n\n
-    Bei dieser Übung solltest du vorher auch Online nach "Halbe Handstandliegestütze"
-    oder "Military press ohne Hantel" suchen.
+    Bei dieser Übung solltest du vorher auch online nach \"halbe Handstandliegestütze\"
+    oder \"Military press ohne Hantel\" suchen.
     </string>
 
     //LEGS
     <string name="squad">
-    Ausgangs-position:\n
-    Aufrechter Stand mit Füßen etwas breiter als Schulterbreit.
+    Ausgangsposition:\n
+    Aufrechter Stand mit Füßen etwas breiter als schulterbreit.
     \n\n
     1 Wiederholung:\n
-    Mit aufrechtem Oberkörper in die Hocke gehen, bis die Knie fast einen 90 Grad winkel bilden.
+    Mit aufrechtem Oberkörper in die Hocke gehen, bis die Knie fast einen 90 Grad Winkel  bilden.
     </string>
     <string name="lunges_forward">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Aufrechter Stand.
     \n\n
     1 Wiederholung:\n
-    Ausfallschrit nach vorne machen, wobei im Tiefstenpunkt beide Knie einen 90 Grad winkel bilden.
-    Der Oberkörper bleibt dabei durchgehend Aufrecht.
+    Ausfallschrit nach vorne machen, wobei im tiefsten Punkt beide Knie einen 90 Grad Winkel  bilden.
+    Der Oberkörper bleibt dabei durchgehend aufrecht.
     Diese Stellung 2-4 Sekunden halten.
     </string>
     <string name="lunges_backward">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Aufrechter Stand.
     \n\n
     1 Wiederholung:\n
-    Ausfallschrit nach hinten machen, wobei im Tiefstenpunkt beide Knie einen 90 Grad winkel bilden.
-    Der Oberkörper bleibt dabei durchgehend Aufrecht.
+    Ausfallschrit nach hinten machen, wobei im tiefsten Punkt beide Knie einen 90 Grad Winkel  bilden.
+    Der Oberkörper bleibt dabei durchgehend aufrecht.
     Diese Stellung 2-4 Sekunden halten.
     </string>
     <string name="lunges_one_leg">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Aufrechter Stand und ein Bein nach hinten auf einer erhöhten Position ablegen. Beispielsweise auf einem Stuhl.
     \n\n
     1 Wiederholung:\n
@@ -116,70 +116,70 @@
 
     //CORE
     <string name="plank">
-    Ausgangs-position:\n
-    Hände, Unterarm und Ellenbogen, sowie die Füße berühren den Boden. Der rest des Körpers bildet eine Linie.
+    Ausgangsposition:\n
+    Hände, Unterarm und Ellenbogen, sowie die Füße berühren den Boden. Der Rest des Körpers bildet eine Linie.
     \n\n
     1 Wiederholung:\n
-    Halte die Stellung so lange wie angegeben. Achte darauf dass die Hüfte nicht zu weit oben oder unten ist.
+    Halte die Stellung so lange wie angegeben. Achte darauf, dass die Hüfte nicht zu weit oben oder unten ist.
     </string>
     <string name="plank_side">
-    Ausgangs-position:\n
-    Wähle eine Seite auf der du die Übung durchführst. Hand, Unterarm und Ellenbogen, sowie der Fuß liegen auf dem Boden auf. Der Rest des Körpers bildet eine Linie. Die andere Hand kannst du auf der Hüfte ablegen.
+    Ausgangsposition:\n
+    Wähle eine Seite, auf der du die Übung durchführst. Hand, Unterarm und Ellenbogen, sowie der Fuß liegen auf dem Boden auf. Der Rest des Körpers bildet eine Linie. Die andere Hand kannst du auf der Hüfte ablegen.
     \n\n
     1 Wiederholung:\n
-    Halte die Stellung so lange wie angegeben. Achte darauf dass die Schultern nicht zu weit nach vorne geneigt sind, da du sonst das Gleichgewicht leichter verlierst.
+    Halte die Stellung so lange wie angegeben. Achte darauf, dass die Schultern nicht zu weit nach vorne geneigt sind, da du sonst das Gleichgewicht leichter verlierst.
     </string>
     <string name="leg_rises">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.
     \n\n
     1 Wiederholung:\n
-    Hebe deine Füße weiter, bis sie ca. in einem 45 Grad winkel zum Boden stehen. Senke sie dann wieder ab, aber nicht ganz bis auf den Boden!
+    Hebe deine Füße weiter, bis sie ca. in einem 45 Grad Winkel  zum Boden stehen. Senke sie dann wieder ab, aber nicht ganz bis auf den Boden!
     </string>
     <string name="abs_rotation">
-    Ausgangs-position:\n
-    Setz dich auf den Boden, bilde einen Graden Rücken, winkle die Beine etwas an und hebe sie in die Luft.
+    Ausgangsposition:\n
+    Setz dich auf den Boden, bilde einen graden Rücken, winkle die Beine etwas an und hebe sie in die Luft.
     \n\n
     1 Wiederholung:\n
     Dreh dich nur mit deinem Oberkörper nach links, tippe mit den Fingern kurz auf den Boden neben deiner Hüfte. Drehe dich dann nach rechts und tippe erneut kurz auf den Boden.
     </string>
     <string name="flutter_kicks">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.
     \n\n
     1 Wiederholung:\n
-    Hebe das linke Bein, bis es ca. in einem 45 Grad Winkel zum Boden steht. Senke es dann wieder bis kurz über dem Boden und hebe das rechte Bein.
+    Hebe das linke Bein, bis es ca. in einem 45 Grad Winkel  zum Boden steht. Senke es dann wieder bis kurz über dem Boden und hebe das rechte Bein.
     </string>
     <string name="bicycle">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.
     \n\n
     1 Wiederholung:\n
     Ziehe das linke Knie zur Brust und strecke es dann wieder aus. Ziehe dann das rechte Knie zur Brust und strecke es wieder aus. Die Beine bleiben die ganze Zeit in der Luft.
     </string>
     <string name="sit_up">
-    Ausgangs-position:\n
-    Setz dich auf den Boden, bilde einen Graden Rücken, winkle die Beine etwas an. Die Füße berühren den Boden.
+    Ausgangsposition:\n
+    Setz dich auf den Boden, bilde einen graden Rücken, winkle die Beine etwas an. Die Füße berühren den Boden.
     \n\n
     1 Wiederholung:\n
-    Lehne dich mit deinem Oberkörper nach hinten, bis du mit den Schultern den Boden berührst. Dann drückst du deinen Oberkörper wieder in die Ausgangs-position.
+    Lehne dich mit deinem Oberkörper nach hinten, bis du mit den Schultern den Boden berührst. Dann drückst du deinen Oberkörper wieder in die Ausgangsposition.
     Achte dabei darauf nicht mit Schwung zu arbeiten, sondern mit der Kraft deiner Bauchmuskeln.
     </string>
     <string name="knee_to_elbow">
-    Ausgangs-position:\n
+    Ausgangsposition:\n
     Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.
     \n\n
     1 Wiederholung:\n
-    Ziehe das linke Knie zur Brust und drehe deinen Oberkörper gleichzeitg so, sodass du dein Knie mit deinem rechten Ellenbogen berühren kannst.
-    Strecke das Bein wieder aus und ziehe dann das rechte Knie zur Brust. Auch hier drehst du deinen Oberkörper so, sodass du dein Knie mit dem linken Elenbogen berühren kannst.
+    Ziehe das linke Knie zur Brust und drehe deinen Oberkörper gleichzeitg so, dass du dein Knie mit deinem rechten Ellenbogen berühren kannst.
+    Strecke das Bein wieder aus und ziehe dann das rechte Knie zur Brust. Auch hier drehst du deinen Oberkörper so, dass du dein Knie mit dem linken Ellenbogen berühren kannst.
     Die Beine bleiben die ganze Zeit in der Luft.
     </string>
     <string name="leg_rised_circle">
-    Ausgangs-position:\n
-    Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe sie soweit an, dass sie in einem 45 Grad Winkel zum Boden stehen.
+    Ausgangsposition:\n
+    Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe sie soweit an, dass sie in einem 45 Grad Winkel  zum Boden stehen.
     \n\n
     1 Wiederholung:\n
-    Male mit geschlossenen Beinen einen kreis in die Luft.
+    Male mit geschlossenen Beinen einen Kreis in die Luft.
     </string>
     <string name="warn_notification">
     Falls du dich Krank oder Verletzt fühlst ist von der Ausführung des Workouts ab zu raten.
