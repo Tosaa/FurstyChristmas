@@ -32,8 +32,12 @@ class DrillAdapter {
         val amount = repetition.split(' ')[0].toInt()
         return if (repetition.endsWith("reps")) {
             Repetition(amount)
-        } else {
+        } else if (repetition.endsWith("secs")) {
             Seconds(amount)
+        } else if (repetition.endsWith("reps/s")) {
+            RepetitionPerSide(amount)
+        } else {
+            Repetition(amount)
         }
     }
 

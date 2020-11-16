@@ -93,7 +93,7 @@
     Aufrechter Stand.
     \n\n
     1 Wiederholung:\n
-    Ausfallschrit nach vorne machen, wobei im tiefsten Punkt beide Knie einen 90 Grad Winkel  bilden.
+    Ausfallschritt nach vorne machen, wobei im tiefsten Punkt beide Knie einen 90 Grad Winkel  bilden.
     Der Oberkörper bleibt dabei durchgehend aufrecht.
     Diese Stellung 2-4 Sekunden halten.
     </string>
@@ -102,16 +102,25 @@
     Aufrechter Stand.
     \n\n
     1 Wiederholung:\n
-    Ausfallschrit nach hinten machen, wobei im tiefsten Punkt beide Knie einen 90 Grad Winkel  bilden.
+    Ausfallschritt nach hinten machen, wobei im tiefsten Punkt beide Knie einen 90 Grad Winkel  bilden.
     Der Oberkörper bleibt dabei durchgehend aufrecht.
     Diese Stellung 2-4 Sekunden halten.
     </string>
-    <string name="lunges_one_leg">
+    <string name="squad_one_leg">
     Ausgangsposition:\n
     Aufrechter Stand und ein Bein nach hinten auf einer erhöhten Position ablegen. Beispielsweise auf einem Stuhl.
     \n\n
     1 Wiederholung:\n
     Ähnlich zum Ausfallschritt das vordere Knie abwinkeln.
+    </string>
+    <string name="deadlift_one_leg">
+    Ausgangsposition:\n
+    Aufrechter Stand und das linke Bein leicht vom Boden abheben.
+    \n\n
+    1 Wiederholung:\n
+    Den Oberkörper in eine Horizonale bringen, das Bein dabei gestreckt nach hinten anheben, sodass Bein und Rücken eine Gerade bilden.
+    Mit der rechten Hand den rechten Fuß berühren und anschließend den Körper wieder aufrichten.
+    Diese Übung sollte langsam durchgeführt werden um die Balance und Stabilisation des Knies zu trainieren.
     </string>
 
     //CORE
@@ -186,4 +195,5 @@
     Solltest du bei einer Übung an deine Grenzen stoßen, schätze bitte selbst ein, ob es sinnvoll ist die Übung weiter durch zu führen.
     Du bist selbst für die Ausfühung der Übungen verantwortlich!
     </string>
+    <string name="runden">Runden</string>
 </resources>

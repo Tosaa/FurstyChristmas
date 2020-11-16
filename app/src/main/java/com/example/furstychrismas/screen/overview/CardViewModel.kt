@@ -38,7 +38,7 @@ class CardViewModel(
     }
 
     fun updateDateRepo(day: Int) {
-        dateRepository.updateDay(LocalDate.of(2020, 12, day))
+        dateRepository.updateDay(LocalDate.of(LocalDate.now().year, 12, day))
     }
 
 }

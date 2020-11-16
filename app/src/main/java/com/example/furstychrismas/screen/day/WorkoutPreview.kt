@@ -32,9 +32,6 @@ class WorkoutPreview : Fragment() {
 
         binding.viewmodel = viewModel
 
-        binding.exercises.layoutManager = LinearLayoutManager(requireContext())
-        binding.muscleGroups.layoutManager = GridLayoutManager(requireContext(), 2)
-
         binding.warningDialog.cancelButton.setOnClickListener {
             binding.warningDialog.root.visibility = View.GONE
         }
@@ -46,8 +43,8 @@ class WorkoutPreview : Fragment() {
         }
 
         viewModel.muscleGroups.observe(viewLifecycleOwner) {
-            binding.muscleGroups.adapter =
-                MuscleIconAdapter(it.distinct())
+            binding.workoutHeader.muscleGroups.adapter =
+                MuscleIconAdapter(it.distinct().take(4))
         }
         return binding.root
     }

@@ -21,7 +21,8 @@ enum class Exercise(
     SQUAD("Kniebeuge", listOf(Muscle.LEG),R.string.squad),
     LUNGES_FORWARD("Ausfallschritt vorwärts", listOf(Muscle.LEG),R.string.lunges_forward),
     LUNGES_BACKWARD("Ausfallschritt rückwärts", listOf(Muscle.LEG),R.string.lunges_backward),
-    LUNGES_ONE_LEG("Einbeiniger Ausfallschritt", listOf(Muscle.LEG, Muscle.BACK),R.string.lunges_one_leg),
+    SQUAD_ONE_LEG("Einbeinige Kniebeuge", listOf(Muscle.LEG, Muscle.BACK),R.string.squad_one_leg),
+    DEADLIFT_ONE_LEG("Einbeinige Standwaage", listOf(Muscle.LEG, Muscle.BACK),R.string.deadlift_one_leg),
 
     //CORE
     PLANK("Plank position halten", listOf(Muscle.BACK, Muscle.ABS),R.string.plank),

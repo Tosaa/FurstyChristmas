@@ -1,44 +1,48 @@
 {
-  "chest var1": [
+  "brust var1": [
     "5 reps;PUSHUP;0 secs",
     "5 reps;PUSHUP_TIGHT;0 secs",
     "5 reps;PUSHUP_WIDE;0 secs",
-    "10 reps;PUSHUP_TO_PLANK;45 secs",
+    "10 reps;PUSHUP_TO_PLANK;60 secs",
     "5 reps;MILITARY;0 secs",
     "15 secs;PLANK;0 secs",
     "15 secs;PLANK_SIDE;0 secs",
     "15 secs;PLANK;0 secs",
-    "15 secs;PLANK_SIDE;45 secs"
+    "15 secs;PLANK_SIDE;60 secs"
   ],
-  "chest var2": [
+  "brust var2": [
     "5 reps;PUSHUP;0 secs",
-    "10 reps;PUSHUP_ONE_SIDED;0 secs",
-    "10 reps;PUSHUP_TO_PLANK;0 secs",
-    "5 reps;SHOULDER_TAPS;45 secs",
+    "5 reps/s;PUSHUP_ONE_SIDED;0 secs",
+    "5 reps/s;SHOULDER_TAPS;0 secs",
     "15 secs;PLANK;0 secs",
     "15 secs;PLANK_SIDE;0 secs",
     "15 secs;PLANK;0 secs",
-    "15 secs;PLANK_SIDE;45 secs"
+    "15 secs;PLANK_SIDE;60 secs"
   ],
-  "legs": [
+  "beine": [
     "20 reps;SQUAD;0 secs",
     "20 reps;LUNGES_FORWARD;0 secs",
-    "20 reps;LUNGES_BACKWARD;45 secs"
+    "20 reps;LUNGES_BACKWARD;0 secs",
+    "5 reps/s;SQUAD_ONE_LEG;0 secs",
+    "5 reps/s;DEADLIFT_ONE_LEG;60 secs"
   ],
-  "core": [
-    "20 reps;FLUTTER_KICKS;0 secs",
-    "20 reps;BICYCLE;0 secs",
+  "bauch": [
+    "10 reps/s;FLUTTER_KICKS;0 secs",
+    "10 reps/s;BICYCLE;0 secs",
     "15 reps;LEG_RISES;0 secs",
     "15 reps;SIT_UP;0 secs",
-    "20 reps;KNEE_TO_ELBOW;0 secs",
+    "10 reps/s;KNEE_TO_ELBOW;0 secs",
     "10 reps;ABS_ROTATION;0 secs",
     "10 reps;LEG_RISED_CIRCLE;120 secs"
   ],
-  "all": [
+  "alles": [
     "10 reps;PUSHUP;0 secs",
-    "20 reps;SHOULDER_TAPS;0 secs",
+    "10 reps/s;SHOULDER_TAPS;0 secs",
     "5 reps;MILITARY;0 secs",
     "15 reps;LEG_RISES;0 secs",
     "30 secs;PLANK;60 secs"
+  ],
+  "dehnen": [
+    "0 reps;PUSHUP;0 secs"
   ]
 }

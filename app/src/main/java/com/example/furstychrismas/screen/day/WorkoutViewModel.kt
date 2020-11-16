@@ -6,6 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.example.furstychrismas.repository.CardRepository
 import com.example.furstychrismas.repository.WorkoutRepository
 import kotlinx.coroutines.launch
+import java.time.LocalDate
+import java.time.format.TextStyle
+import java.util.*
 
 class WorkoutViewModel(
     number: Int,
@@ -19,7 +22,9 @@ class WorkoutViewModel(
     private val cardOfWorkout = cardRepository.getCard(dayInDecember)
 
     val isDone = cardOfWorkout.map { it.isDone }
-    val day = workout.map { "DAY ${it.day}" }
+    val cal = LocalDate.of(LocalDate.now().year,12,dayInDecember).dayOfWeek.getDisplayName(TextStyle.FULL_STANDALONE, Locale.GERMANY)
+    val day = workout.map { "${it.day}" }
+    val workoutDuration = workout.map { "30 min" }
 
     val reps = workout.map { it.workoutRepetition.toString() }
 
@@ -27,6 +32,7 @@ class WorkoutViewModel(
 
     val muscleGroups = exercises.map { it.flatMap { it.exercise.muscles }.toSet() }
 
+    val motto = workout.map { it.motto }
     fun markAsDone() {
         viewModelScope.launch {
             cardRepository.markDayAsDone(dayInDecember)

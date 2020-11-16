@@ -1,19 +1,27 @@
 package com.example.furstychrismas.model
 
-interface Execution {
-    fun formattedString(): String
+abstract class Execution(val amount: Int) {
+    fun formattedString(): String {
+        return "$amount${unit()}"
+    }
+
+    fun formattedAmount():String = amount.toString()
+
+    abstract fun unit(): String
 }
 
-class Repetition(private val amount: Int) : Execution {
-    override fun formattedString(): String {
-        return "$amount Wdh"
-    }
+class Repetition(amount: Int) : Execution(amount) {
+    override fun unit(): String = " Wdh"
 }
 
-class Seconds(private val amount: Int) : Execution {
-    override fun formattedString(): String {
-        return "$amount Sek."
-    }
+class RepetitionPerSide(amount: Int) : Execution(amount) {
+
+    override fun unit(): String = " Wdh/Seite"
+}
+
+class Seconds(amount: Int) : Execution(amount) {
+    override fun unit(): String = " sek"
+
 }
 
 

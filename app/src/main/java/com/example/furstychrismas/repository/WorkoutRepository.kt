@@ -14,7 +14,7 @@ class WorkoutRepository(private val assetManager: AssetManager) {
     private val workouts = Util.getDrillPresets(assetManager)
 
     fun getWorkoutOfDay(day: Int): LiveData<Workout> {
-        Log.i("WorkoutRepository","load day $day")
+        Log.i("WorkoutRepository", "load day $day")
 
         val date = Calendar.Builder().apply {
             set(Calendar.MONTH, Calendar.DECEMBER)
@@ -22,37 +22,47 @@ class WorkoutRepository(private val assetManager: AssetManager) {
             set(Calendar.DAY_OF_MONTH, day)
         }.build()
 
-        var sets = 3 + date.get(Calendar.WEEK_OF_MONTH)
+        var sets = 5
         val drills = mutableListOf<Drill>()
 
+        // FLEX
+        // CHEST
+        // CORE
+        // FLEX | ALL
+        // LEGS
+        // FLEX
+        // CORE
+        var motto = "dehnen"
         when (date.get(Calendar.DAY_OF_WEEK)) {
             Calendar.MONDAY -> {
-                if (date.get(Calendar.WEEK_OF_MONTH) % 2 == 0) {
-                    drills.addAll(workouts.getOrDefault("chest var1", emptyList()))
-                } else {
-                    drills.addAll(workouts.getOrDefault("chest var2", emptyList()))
-                }
+                motto = "bauch"
             }
             Calendar.TUESDAY -> {
-                drills.addAll(workouts.getOrDefault("legs", emptyList()))
+                if (date.get(Calendar.WEEK_OF_MONTH) % 2 == 0) {
+                    motto = "brust var1"
+                } else {
+                    motto = "brust var2"
+                }
             }
             Calendar.WEDNESDAY -> {
-                drills.addAll(workouts.getOrDefault("all", emptyList()))
+                motto = "alles"
             }
             Calendar.THURSDAY -> {
-                drills.addAll(workouts.getOrDefault("core", emptyList()))
+                motto = "beine"
             }
+
             Calendar.FRIDAY -> {
-                drills.addAll(workouts.getOrDefault("flex", emptyList()))
+                motto = "dehnen"
             }
             Calendar.SATURDAY -> {
-                drills.addAll(workouts.getOrDefault("core", emptyList()))
+                motto = "bauch"
             }
             Calendar.SUNDAY -> {
-                drills.addAll(workouts.getOrDefault("all", emptyList()))
+                motto = "alles"
             }
         }
-        val workout = Workout(day, drills, sets)
+        drills.addAll(workouts.getOrDefault(motto, emptyList()))
+        val workout = Workout(day, drills, sets,motto.split(" ").first().toUpperCase())
         Log.i("WorkoutRepository", "todays workout:$workout")
         return liveData { emit(workout) }
     }
