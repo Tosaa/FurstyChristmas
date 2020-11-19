@@ -9,7 +9,7 @@
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.furstychrismas.MainActivity"
-        android:label="MainActivity"></activity>
+        android:label="MainActivity" />
     <fragment
         android:id="@+id/cardsOverviewFragment"
         android:name="com.example.furstychrismas.screen.overview.CardsOverviewFragment"
@@ -17,11 +17,19 @@
         tools:layout="@layout/fragment_cards_overview_fragment">
         <action
             android:id="@+id/overview_workout_preview"
-            app:destination="@id/workoutPreview" />
+            app:destination="@id/workoutPreview"
+            app:enterAnim="@anim/fragment_custom_open_enter"
+            app:exitAnim="@anim/fragment_custom_open_exit"
+            app:popEnterAnim="@anim/fragment_custom_open_enter"
+            app:popExitAnim="@anim/fragment_custom_open_exit"
+            />
         <action
             android:id="@+id/overview_exercise_overview"
             app:destination="@id/exerciseOverview"
-            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/fragment_custom_open_enter"
+            app:exitAnim="@anim/fragment_custom_open_exit"
+            app:popEnterAnim="@anim/fragment_custom_open_enter"
+            app:popExitAnim="@anim/fragment_custom_open_exit" />
     </fragment>
     <fragment
         android:id="@+id/workoutPreview"
@@ -31,6 +39,13 @@
         <argument
             android:name="day"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_workoutPreview_to_exercisePreview"
+            app:destination="@id/exercisePreview"
+            app:enterAnim="@anim/fragment_custom_open_enter"
+            app:exitAnim="@anim/fragment_custom_open_exit"
+            app:popEnterAnim="@anim/fragment_custom_open_enter"
+            app:popExitAnim="@anim/fragment_custom_open_exit" />
     </fragment>
     <fragment
         android:id="@+id/exerciseOverview"
@@ -41,8 +56,10 @@
         <action
             android:id="@+id/exercisePreview"
             app:destination="@id/exercisePreview"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:enterAnim="@anim/fragment_custom_open_enter"
+            app:exitAnim="@anim/fragment_custom_open_exit"
+            app:popEnterAnim="@anim/fragment_custom_open_enter"
+            app:popExitAnim="@anim/fragment_custom_open_exit" />
     </fragment>
     <fragment
         android:id="@+id/exercisePreview"

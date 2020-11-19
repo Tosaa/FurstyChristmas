@@ -3,12 +3,14 @@ package com.example.furstychrismas.screen.day
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychrismas.databinding.ExerciseBinding
 import com.example.furstychrismas.model.Drill
 
 class WorkoutAdapter(
-    private val drills: List<Drill>
+    private val drills: List<Drill>,
+    private val navigationController: NavController
 ) : RecyclerView.Adapter<WorkoutAdapter.ExerciseViewHolder>() {
 
 
@@ -30,6 +32,7 @@ class WorkoutAdapter(
             } else {
                 View.VISIBLE
             }
+        holder.exerciseBinding.card.setOnClickListener { navigationController.navigate(WorkoutPreviewDirections.actionWorkoutPreviewToExercisePreview(drills[position].exercise)) }
     }
 
     class ExerciseViewHolder(val exerciseBinding: ExerciseBinding) :
