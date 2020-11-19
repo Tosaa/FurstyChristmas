@@ -15,7 +15,8 @@ class DrillAdapter {
             .append(DELIMITER)
             .append(drill.exercise)
             .append(DELIMITER)
-            .append(drill.breakTime.formattedString()).toString()
+            .append(drill.breakTime.formattedString())
+            .toString()
     }
 
     @FromJson
@@ -36,6 +37,8 @@ class DrillAdapter {
             Seconds(amount)
         } else if (repetition.endsWith("reps/s")) {
             RepetitionPerSide(amount)
+        } else if (repetition.endsWith("secs/s")) {
+            SecondsPerSide(amount)
         } else {
             Repetition(amount)
         }

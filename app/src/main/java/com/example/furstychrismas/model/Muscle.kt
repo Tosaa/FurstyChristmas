@@ -11,7 +11,7 @@ enum class Muscle(val muscle:String,val icon:Int) {
     BACK("back", R.drawable.ic_back),
     STABILITY("stability", R.drawable.ball),
     ALL("all", R.drawable.ball),
-    FLEXIBILITY("flexibility", R.drawable.ball);
+    FLEXIBILITY("flexibility", R.drawable.ic_flex);
 
 
 }

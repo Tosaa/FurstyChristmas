@@ -33,5 +33,13 @@ enum class Exercise(
     BICYCLE("Bicycle",listOf(Muscle.ABS),R.string.bicycle),
     SIT_UP("Sit ups",listOf(Muscle.ABS),R.string.sit_up),
     KNEE_TO_ELBOW("Knee to elbow",listOf(Muscle.ABS),R.string.knee_to_elbow),
-    LEG_RISED_CIRCLE("Beinheben mit kreisender Bewegung",listOf(Muscle.ABS),R.string.leg_rised_circle)
+    LEG_RISED_CIRCLE("Beinheben mit kreisender Bewegung",listOf(Muscle.ABS),R.string.leg_rised_circle),
+
+    //STRETCH
+    LEG_STRETCH("Offene Bein Dehnung", listOf(Muscle.BACK,Muscle.LEG,Muscle.FLEXIBILITY),R.string.leg_stretch),
+    LEG_STRETCH_CLOSED("Geschlossene Bein Dehnung", listOf(Muscle.BACK,Muscle.LEG,Muscle.FLEXIBILITY),R.string.leg_stretch_closed),
+    FEMUR_STRETCH("Oberschenkel Dehnung", listOf(Muscle.LEG,Muscle.FLEXIBILITY),R.string.femur_stretch),
+    BACK_STRETCH("Rücken Dehnung", listOf(Muscle.BACK,Muscle.ARM,Muscle.FLEXIBILITY),R.string.back_stretch),
+    COBRA_STRETCH("Cobra stretch", listOf(Muscle.BACK,Muscle.ARM,Muscle.FLEXIBILITY),R.string.cobra_stretch),
+    ARM_ROTATION("Arm Rotation", listOf(Muscle.ARM,Muscle.FLEXIBILITY),R.string.arm_rotation)
 }

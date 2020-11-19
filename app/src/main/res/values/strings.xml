@@ -196,4 +196,46 @@
     Du bist selbst für die Ausfühung der Übungen verantwortlich!
     </string>
     <string name="runden">Runden</string>
+    <string name="leg_stretch">
+    Ausgangsposition:\n
+    Setz dich auf den Boden, strecke die Beine leicht geöffnet aus und zieh die Zehenspitzen an.
+    \n\n
+    1 Wiederholung:\n
+    Streck dich mit deinen Armen über den Knöchel eines Beines, sodass du deine Knöchel mit deinen Händen berühren kannst. Halte deinen Rücken dabei grade. Führe die Bewegung dynamisch aus.\n
+    Die Übung sollte deine Oberschenkelrückseite dehnen.
+    </string>
+    <string name="leg_stretch_closed">
+    Ausgangsposition:\n
+    Setz dich auf den Boden, strecke die Beine geschlossen aus und zieh die Zehenspitzen an.
+    \n\n
+    1 Wiederholung:\n
+    Streck dich mit deinen Armen zu den Füßen, sodass du Füße mit deinen Händen berühren kannst. Führe die Bewegung dynamisch aus.
+    </string>
+    <string name="femur_stretch">
+    Ausgangsposition:\n
+Lege dich auf den Bauch und winkle ein Bein an, sodass du es mit deinen Händen am Fuß greifen kannst.    \n\n
+    1 Wiederholung:\n
+    Ziehe dein Bein leicht an, sodass die Oberschenkelvorderseite gedehnt wird. Halte die Position für die angegebene Zeit.
+</string>
+    <string name="back_stretch">
+    Ausgangsposition:\n
+    Knie dich auf den Boden, sodass dein Hintern die Versen berührt.
+    \n\n
+    1 Wiederholung:\n
+    Beuge deinen Oberkörper nach vorne und strecke deine Arme weit aus. Ziehe dann deine Hüfte leicht nach hinten, sodass du Spannung in den Armen aufbaust. Halte diese Position für die angegebene Zeit.
+</string>
+    <string name="cobra_stretch">
+    Ausgangsposition:\n
+    Lege dich auf den Bauch und lege deine Hände neben der Brust ab.
+    \n\n
+    1 Wiederholung:\n
+    Drück dich vom Boden weg, lasse dabei aber den Körper ab der Hüfte abwärts am Boden.
+</string>
+    <string name="arm_rotation">
+    Ausgangsposition:\n
+    Stell dich schulterbreit hin und strecke die Arme zu beiden Seiten aus.
+        \n\n
+    1 Wiederholung:\n
+    Male mit beiden Armen Kreise seitlich in die Luft. Erst vorwärts, dann rückwärts.
+</string>
 </resources>

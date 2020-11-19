@@ -43,6 +43,11 @@
     "30 secs;PLANK;60 secs"
   ],
   "dehnen": [
-    "0 reps;PUSHUP;0 secs"
+    "12 reps/s;LEG_STRETCH;0 secs",
+    "12 reps;LEG_STRETCH_CLOSED;0 secs",
+    "15 secs/s;FEMUR_STRETCH;0 secs",
+    "15 secs;BACK_STRETCH;0 secs",
+    "15 secs;COBRA_STRETCH;0 secs",
+    "15 reps/s;ARM_ROTATION;0 secs"
   ]
 }
