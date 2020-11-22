@@ -27,20 +27,90 @@ enum class Exercise(
 
     //CORE
     PLANK("Plank position halten", listOf(Muscle.BACK, Muscle.ABS),R.string.plank_start_position,R.string.plank_repetition),
-    PLANK_SIDE("Seitliche plank position halten", listOf(Muscle.BACK, Muscle.ABS),R.string.plank_side_start_position,R.string.plank_side_repetition),
-    LEG_RISES("Beinheben", listOf(Muscle.LEG, Muscle.ABS),R.string.leg_rises_start_position,R.string.leg_rises_repetition),
-    ABS_ROTATION("Russian twist", listOf(Muscle.ABS, Muscle.BACK),R.string.abs_rotation_start_position,R.string.abs_rotation_repetition),
-    FLUTTER_KICKS("Flutter kicks",listOf(Muscle.ABS),R.string.flutter_kicks_start_position,R.string.flutter_kicks_repetition),
-    BICYCLE("Bicycle",listOf(Muscle.ABS),R.string.bicycle_start_position,R.string.bicycle_repetition),
-    SIT_UP("Sit ups",listOf(Muscle.ABS),R.string.sit_up_start_position,R.string.sit_up_repetition),
-    KNEE_TO_ELBOW("Knee to elbow",listOf(Muscle.ABS),R.string.knee_to_elbow_start_position,R.string.knee_to_elbow_repetition),
-    LEG_RISED_CIRCLE("Beinheben mit kreisender Bewegung",listOf(Muscle.ABS),R.string.leg_rised_circle_start_position,R.string.leg_rised_circle_repetition),
+    PLANK_SIDE(
+        "Seitliche plank position halten",
+        listOf(Muscle.BACK, Muscle.ABS),
+        R.string.plank_side_start_position,
+        R.string.plank_side_repetition
+    ),
+    LEG_RISES(
+        "Beinheben",
+        listOf(Muscle.LEG, Muscle.ABS),
+        R.string.leg_rises_start_position,
+        R.string.leg_rises_repetition
+    ),
+    ABS_ROTATION(
+        "Russian twist",
+        listOf(Muscle.ABS, Muscle.BACK),
+        R.string.abs_rotation_start_position,
+        R.string.abs_rotation_repetition
+    ),
+    FLUTTER_KICKS(
+        "Flutter kicks",
+        listOf(Muscle.ABS),
+        R.string.flutter_kicks_start_position,
+        R.string.flutter_kicks_repetition
+    ),
+    BICYCLE(
+        "Bicycle",
+        listOf(Muscle.ABS),
+        R.string.bicycle_start_position,
+        R.string.bicycle_repetition
+    ),
+    SIT_UP(
+        "Sit ups",
+        listOf(Muscle.ABS),
+        R.string.sit_up_start_position,
+        R.string.sit_up_repetition
+    ),
+    KNEE_TO_ELBOW(
+        "Knee to elbow",
+        listOf(Muscle.ABS),
+        R.string.knee_to_elbow_start_position,
+        R.string.knee_to_elbow_repetition
+    ),
+    LEG_RISED_CIRCLE(
+        "Beinheben mit kreisender Bewegung",
+        listOf(Muscle.ABS),
+        R.string.leg_rised_circle_start_position,
+        R.string.leg_rised_circle_repetition
+    ),
 
     //STRETCH
-    LEG_STRETCH("Offene Bein Dehnung", listOf(Muscle.BACK,Muscle.LEG,Muscle.FLEXIBILITY),R.string.leg_stretch_start_position,R.string.leg_stretch_repetition),
-    LEG_STRETCH_CLOSED("Geschlossene Bein Dehnung", listOf(Muscle.BACK,Muscle.LEG,Muscle.FLEXIBILITY),R.string.leg_stretch_closed_start_position,R.string.leg_stretch_closed_repetition),
-    FEMUR_STRETCH("Oberschenkel Dehnung", listOf(Muscle.LEG,Muscle.FLEXIBILITY),R.string.femur_stretch_start_position,R.string.femur_stretch_repetition),
-    BACK_STRETCH("Rücken Dehnung", listOf(Muscle.BACK,Muscle.ARM,Muscle.FLEXIBILITY),R.string.back_stretch_start_position,R.string.back_stretch_repetition),
-    COBRA_STRETCH("Cobra stretch", listOf(Muscle.BACK,Muscle.ARM,Muscle.FLEXIBILITY),R.string.cobra_stretch_start_position,R.string.cobra_stretch_repetition),
-    ARM_ROTATION("Arm Rotation", listOf(Muscle.ARM,Muscle.FLEXIBILITY),R.string.arm_rotation_start_position,R.string.arm_rotation_repetition)
+    LEG_STRETCH(
+        "Beindehnung offen",
+        listOf(Muscle.BACK, Muscle.LEG, Muscle.FLEXIBILITY),
+        R.string.leg_stretch_start_position,
+        R.string.leg_stretch_repetition
+    ),
+    LEG_STRETCH_CLOSED(
+        "Beindehnung geschlossen",
+        listOf(Muscle.BACK, Muscle.LEG, Muscle.FLEXIBILITY),
+        R.string.leg_stretch_closed_start_position,
+        R.string.leg_stretch_closed_repetition
+    ),
+    FEMUR_STRETCH(
+        "Oberschenkeldehnung",
+        listOf(Muscle.LEG, Muscle.FLEXIBILITY),
+        R.string.femur_stretch_start_position,
+        R.string.femur_stretch_repetition
+    ),
+    BACK_STRETCH(
+        "Rückendehnung",
+        listOf(Muscle.BACK, Muscle.ARM, Muscle.FLEXIBILITY),
+        R.string.back_stretch_start_position,
+        R.string.back_stretch_repetition
+    ),
+    COBRA_STRETCH(
+        "Cobra stretch",
+        listOf(Muscle.BACK, Muscle.ARM, Muscle.FLEXIBILITY),
+        R.string.cobra_stretch_start_position,
+        R.string.cobra_stretch_repetition
+    ),
+    ARM_ROTATION(
+        "Arm Kreisen",
+        listOf(Muscle.ARM, Muscle.FLEXIBILITY),
+        R.string.arm_rotation_start_position,
+        R.string.arm_rotation_repetition
+    )
 }

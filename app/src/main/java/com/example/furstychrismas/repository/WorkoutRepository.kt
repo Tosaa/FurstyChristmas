@@ -22,47 +22,59 @@ class WorkoutRepository(private val assetManager: AssetManager) {
             set(Calendar.DAY_OF_MONTH, day)
         }.build()
 
-        var sets = 5
+        var sets = if (date.get(Calendar.DAY_OF_MONTH) < 14) 5 else 6
         val drills = mutableListOf<Drill>()
 
-        // FLEX
-        // CHEST
-        // CORE
-        // FLEX | ALL
-        // LEGS
-        // FLEX
-        // CORE
+        // MO
+        // BRUST
+        // DI
+        // BAUCH
+        // MI
+        // ALLES
+        // DO
+        // DEHNEN
+        // FR
+        // ALLES
+        // SA
+        // BEINE
+        // SO
+        // DEHNEN
         var motto = "dehnen"
+        var time = 30
         when (date.get(Calendar.DAY_OF_WEEK)) {
             Calendar.MONDAY -> {
-                motto = "bauch"
-            }
-            Calendar.TUESDAY -> {
                 if (date.get(Calendar.WEEK_OF_MONTH) % 2 == 0) {
                     motto = "brust var1"
                 } else {
                     motto = "brust var2"
                 }
             }
-            Calendar.WEDNESDAY -> {
-                motto = "alles"
-            }
-            Calendar.THURSDAY -> {
-                motto = "beine"
-            }
-
-            Calendar.FRIDAY -> {
-                motto = "dehnen"
-            }
-            Calendar.SATURDAY -> {
+            Calendar.TUESDAY -> {
                 motto = "bauch"
             }
+            Calendar.WEDNESDAY -> {
+                motto = "alles var1"
+            }
+            Calendar.THURSDAY -> {
+                motto = "dehnen"
+            }
+            Calendar.FRIDAY -> {
+                motto = "alles var2"
+            }
+            Calendar.SATURDAY -> {
+                motto = "beine"
+            }
             Calendar.SUNDAY -> {
-                motto = "alles"
+                motto = "dehnen"
             }
         }
+
+        if (motto == "dehnen") {
+            sets = 1
+            time = 10
+        }
         drills.addAll(workouts.getOrDefault(motto, emptyList()))
-        val workout = Workout(day, drills, sets,motto.split(" ").first().toUpperCase())
+        val workout = Workout(day, drills, sets, motto.split(" ").first().toUpperCase(), time)
         Log.i("WorkoutRepository", "todays workout:$workout")
         return liveData { emit(workout) }
     }

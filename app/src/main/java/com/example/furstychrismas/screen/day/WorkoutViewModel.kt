@@ -24,7 +24,7 @@ class WorkoutViewModel(
     val isDone = cardOfWorkout.map { it.isDone }
     val cal = LocalDate.of(LocalDate.now().year,12,dayInDecember).dayOfWeek.getDisplayName(TextStyle.FULL_STANDALONE, Locale.GERMANY)
     val day = workout.map { "${it.day}" }
-    val workoutDuration = workout.map { "30 min" }
+    val workoutDuration = workout.map { "${it.time} min" }
 
     val reps = workout.map { it.workoutRepetition.toString() }
 
