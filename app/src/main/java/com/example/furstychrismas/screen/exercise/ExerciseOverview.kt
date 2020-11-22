@@ -27,7 +27,10 @@ class ExerciseOverview : Fragment() {
         binding.exerciseList.apply {
 
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = ExerciseAdapter(Exercise.values().asList(), findNavController())
+            adapter = ExerciseAdapter(
+                Exercise.values().filter { it.exerciseName != "Pause" },
+                findNavController()
+            )
             addItemDecoration(
                 DividerItemDecoration(
                     requireContext(),

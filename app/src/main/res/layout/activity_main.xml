@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:padding="5dp"
+            android:paddingStart="10dp"
             app:navigationIcon="@drawable/ic_back_button"
             app:subtitle="READY FOR 2K21"
             app:subtitleTextColor="@color/white"

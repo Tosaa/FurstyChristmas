@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.furstychrismas.databinding.WorkoutPreviewFragmentBinding
+import com.example.furstychrismas.model.Muscle
 import kotlinx.android.synthetic.main.warning_dialog.view.*
 import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -40,12 +41,12 @@ class WorkoutPreview : Fragment() {
             viewModel.markAsDone()
         }
         viewModel.exercises.observe(viewLifecycleOwner) { drills ->
-            binding.exercises.adapter = WorkoutAdapter(drills,findNavController())
+            binding.exercises.adapter = WorkoutAdapter(drills, findNavController())
         }
 
         viewModel.muscleGroups.observe(viewLifecycleOwner) {
             binding.workoutHeader.muscleGroups.adapter =
-                MuscleIconAdapter(it.distinct().take(4))
+                MuscleIconAdapter(it.distinct().filter { it != Muscle.BREAK }.take(4))
         }
         return binding.root
     }

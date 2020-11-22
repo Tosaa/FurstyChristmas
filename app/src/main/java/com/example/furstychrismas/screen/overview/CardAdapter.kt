@@ -1,11 +1,14 @@
 package com.example.furstychrismas.screen.overview
 
 import android.content.Context
+import android.content.res.loader.ResourcesLoader
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.furstychrismas.R
 import com.example.furstychrismas.databinding.ChristmasCardBinding
 import com.example.furstychrismas.model.Card
 
@@ -31,9 +34,13 @@ class CardAdapter(
         holder.binding.day = card.day.dayOfMonth.toString()
         if (card.isAvailable) {
             if (card.isDone)
-                holder.binding.button.setBackgroundColor(Color.parseColor("#00d000"))
+                holder.binding.button.setBackgroundColor(
+                    ContextCompat.getColor(context, R.color.colorGreen)
+                )
             else
-                holder.binding.button.setBackgroundColor(Color.parseColor("#c00000"))
+                holder.binding.button.setBackgroundColor(
+                    ContextCompat.getColor(context, R.color.colorPrimaryDark)
+                )
         } else {
             holder.binding.button.setBackgroundColor(Color.GRAY)
         }
@@ -52,7 +59,7 @@ class CardAdapter(
         notifyDataSetChanged()
     }
 
-    private fun goToLastDay(){
+    private fun goToLastDay() {
         val action =
             CardsOverviewFragmentDirections.actionCardsOverviewFragmentToLastDay()
         navigationController.navigate(action)

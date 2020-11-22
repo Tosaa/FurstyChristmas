@@ -49,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:backgroundTint="@color/colorPrimaryLight"
                 android:text="Exercises" />
 
             <Space
@@ -65,7 +66,7 @@
                 android:layout_gravity="center"
                 android:background="@color/transparent"
                 android:src="@drawable/ic_baseline_info_24"
-                android:tint="@color/colorPrimary" />
+                android:tint="@color/colorPrimaryLight" />
         </LinearLayout>
 
     </LinearLayout>

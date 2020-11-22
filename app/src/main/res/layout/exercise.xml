@@ -54,7 +54,7 @@
                     tools:text=" Wdh/Seite" />
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="10dp"
@@ -64,16 +64,6 @@
                     android:textStyle="bold"
                     tools:text="Lunges with Arm Rotation" />
 
-                <TextView
-                    android:id="@+id/break_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:ems="6"
-                    android:lines="1"
-                    android:text="@{drill.breakTime.formattedString()}"
-                    android:textColor="@color/black"
-                    tools:text="30 sek" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

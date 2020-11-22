@@ -1,7 +1,6 @@
 package com.example.furstychrismas.screen.day
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +15,7 @@ class WorkoutAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         return ExerciseViewHolder(
-            ExerciseBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            ExerciseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
@@ -26,13 +25,13 @@ class WorkoutAdapter(
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         holder.exerciseBinding.drill = drills[position]
-        holder.exerciseBinding.breakTime.visibility =
-            if (drills[position].breakTime.formattedString().startsWith("0")) {
-                View.INVISIBLE
-            } else {
-                View.VISIBLE
+        if (drills[position].exercise.exerciseName != "Pause") {
+            holder.exerciseBinding.card.setOnClickListener {
+                navigationController.navigate(
+                    WorkoutPreviewDirections.actionWorkoutPreviewToExercisePreview(drills[position].exercise)
+                )
             }
-        holder.exerciseBinding.card.setOnClickListener { navigationController.navigate(WorkoutPreviewDirections.actionWorkoutPreviewToExercisePreview(drills[position].exercise)) }
+        }
     }
 
     class ExerciseViewHolder(val exerciseBinding: ExerciseBinding) :

@@ -6,27 +6,97 @@ enum class Exercise(
     val exerciseName: String,
     val muscles: List<Muscle>,
     val startPositionId: Int = R.string.lorem_ipsum,
-    val repetitionId : Int = R.string.lorem_ipsum
+    val repetitionId: Int = R.string.lorem_ipsum
 ) {
     //CHEST
-    PUSHUP("Liegestütz", listOf(Muscle.ARM, Muscle.CHEST), R.string.push_up_start_position,R.string.push_up_repetition),
-    PUSHUP_ONE_SIDED("Liegestütz mit erhöhter Hand", listOf(Muscle.ARM, Muscle.CHEST),R.string.push_up_one_sided_start_position,R.string.push_up_one_sided_repetition),
-    SHOULDER_TAPS("Shoulder taps", listOf(Muscle.ARM, Muscle.CHEST, Muscle.BACK, Muscle.ABS),R.string.shoulder_taps_start_position,R.string.shoulder_taps_repetition),
-    PUSHUP_FALLING("Fallender Liegestütz", listOf(Muscle.ARM, Muscle.CHEST),R.string.pushup_falling_start_position,R.string.pushup_falling_repetition),
-    PUSHUP_TIGHT("Liegestütz mit engen Händen", listOf(Muscle.ARM, Muscle.CHEST),R.string.pushup_tight_start_position,R.string.pushup_tight_repetition),
-    PUSHUP_WIDE("Liegestütz mit weiten Händen", listOf(Muscle.ARM, Muscle.CHEST),R.string.pushup_wide_start_position,R.string.pushup_wide_repetition),
-    PUSHUP_TO_PLANK("Liegestütz zu Plank", listOf(Muscle.ARM, Muscle.BACK, Muscle.ABS, Muscle.CHEST),R.string.pushup_to_plank_start_position,R.string.pushup_to_plank_repetition),
-    MILITARY("Military press", listOf(Muscle.ARM, Muscle.CHEST),R.string.military_start_position,R.string.military_repetition),
+    PUSHUP(
+        "Liegestütz",
+        listOf(Muscle.ARM, Muscle.CHEST),
+        R.string.push_up_start_position,
+        R.string.push_up_repetition
+    ),
+    PUSHUP_ONE_SIDED(
+        "Liegestütz mit erhöhter Hand",
+        listOf(Muscle.ARM, Muscle.CHEST),
+        R.string.push_up_one_sided_start_position,
+        R.string.push_up_one_sided_repetition
+    ),
+    SHOULDER_TAPS(
+        "Shoulder taps",
+        listOf(Muscle.ARM, Muscle.CHEST, Muscle.BACK, Muscle.ABS),
+        R.string.shoulder_taps_start_position,
+        R.string.shoulder_taps_repetition
+    ),
+    PUSHUP_FALLING(
+        "Fallender Liegestütz",
+        listOf(Muscle.ARM, Muscle.CHEST),
+        R.string.pushup_falling_start_position,
+        R.string.pushup_falling_repetition
+    ),
+    PUSHUP_TIGHT(
+        "Liegestütz mit engen Händen",
+        listOf(Muscle.ARM, Muscle.CHEST),
+        R.string.pushup_tight_start_position,
+        R.string.pushup_tight_repetition
+    ),
+    PUSHUP_WIDE(
+        "Liegestütz mit weiten Händen",
+        listOf(Muscle.ARM, Muscle.CHEST),
+        R.string.pushup_wide_start_position,
+        R.string.pushup_wide_repetition
+    ),
+    PUSHUP_TO_PLANK(
+        "Liegestütz zu Plank",
+        listOf(Muscle.ARM, Muscle.BACK, Muscle.ABS, Muscle.CHEST),
+        R.string.pushup_to_plank_start_position,
+        R.string.pushup_to_plank_repetition
+    ),
+    MILITARY(
+        "Military press",
+        listOf(Muscle.ARM, Muscle.CHEST),
+        R.string.military_start_position,
+        R.string.military_repetition
+    ),
 
     //LEGS
-    SQUAD("Kniebeuge", listOf(Muscle.LEG),R.string.squad_start_position,R.string.squad_repetition),
-    LUNGES_FORWARD("Ausfallschritt vorwärts", listOf(Muscle.LEG),R.string.lunges_forward_start_position,R.string.lunges_forward_repetition),
-    LUNGES_BACKWARD("Ausfallschritt rückwärts", listOf(Muscle.LEG),R.string.lunges_backward_start_position,R.string.lunges_backward_repetition),
-    SQUAD_ONE_LEG("Einbeinige Kniebeuge", listOf(Muscle.LEG, Muscle.BACK),R.string.squad_one_leg_start_position,R.string.squad_one_leg_repetition),
-    DEADLIFT_ONE_LEG("Einbeinige Standwaage", listOf(Muscle.LEG, Muscle.BACK),R.string.deadlift_one_leg_start_position,R.string.deadlift_one_leg_repetition),
+    SQUAD(
+        "Kniebeuge",
+        listOf(Muscle.LEG),
+        R.string.squad_start_position,
+        R.string.squad_repetition
+    ),
+    LUNGES_FORWARD(
+        "Ausfallschritt vorwärts",
+        listOf(Muscle.LEG),
+        R.string.lunges_forward_start_position,
+        R.string.lunges_forward_repetition
+    ),
+    LUNGES_BACKWARD(
+        "Ausfallschritt rückwärts",
+        listOf(Muscle.LEG),
+        R.string.lunges_backward_start_position,
+        R.string.lunges_backward_repetition
+    ),
+    SQUAD_ONE_LEG(
+        "Einbeinige Kniebeuge",
+        listOf(Muscle.LEG, Muscle.BACK),
+        R.string.squad_one_leg_start_position,
+        R.string.squad_one_leg_repetition
+    ),
+    DEADLIFT_ONE_LEG(
+        "Einbeinige Standwaage",
+        listOf(Muscle.LEG, Muscle.BACK),
+        R.string.deadlift_one_leg_start_position,
+        R.string.deadlift_one_leg_repetition
+    ),
 
     //CORE
-    PLANK("Plank position halten", listOf(Muscle.BACK, Muscle.ABS),R.string.plank_start_position,R.string.plank_repetition),
+    PLANK(
+        "Plank position halten",
+        listOf(Muscle.BACK, Muscle.ABS),
+        R.string.plank_start_position,
+        R.string.plank_repetition
+    ),
     PLANK_SIDE(
         "Seitliche Plank position halten",
         listOf(Muscle.BACK, Muscle.ABS),
@@ -112,5 +182,6 @@ enum class Exercise(
         listOf(Muscle.ARM, Muscle.FLEXIBILITY),
         R.string.arm_rotation_start_position,
         R.string.arm_rotation_repetition
-    )
+    ),
+    BREAK("Pause", listOf(Muscle.BREAK))
 }
