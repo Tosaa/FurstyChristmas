@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Spanned
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
 import androidx.databinding.DataBindingUtil
@@ -32,9 +33,13 @@ class EulaActivity : AppCompatActivity() {
     }
 
     private fun initializeUI() {
-        binding.eulaCancel.setOnClickListener { cancelEULA() }
-        binding.eulaConfirm.setOnClickListener {
-            confirmEULA()
+        if (!preferences.getBoolean("eulaAccepted", false)) {
+            binding.eulaCancel.setOnClickListener { cancelEULA() }
+            binding.eulaConfirm.setOnClickListener {
+                confirmEULA()
+            }
+        } else {
+            binding.header.visibility = View.GONE
         }
         setEula()
     }

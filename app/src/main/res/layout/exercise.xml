@@ -33,7 +33,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
-                    app:tint="#000" />
+                    app:tint="@color/black" />
 
                 <View
                     android:id="@+id/divider"
@@ -43,15 +43,15 @@
                     android:background="?android:attr/listDivider" />
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="6"
-                        android:lines="1"
-                        android:text="@{drill.repetition.formattedString()}"
-                        tools:text=" Wdh/Seite"
-                        android:layout_gravity="center_vertical"
-                        />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:ems="6"
+                    android:lines="1"
+                    android:text="@{drill.repetition.formattedString()}"
+                    android:textColor="@color/black"
+                    tools:text=" Wdh/Seite" />
 
                 <TextView
                     android:layout_width="100dp"
@@ -60,6 +60,7 @@
                     android:layout_marginHorizontal="10dp"
                     android:maxLines="2"
                     android:text="@{drill.exercise.exerciseName}"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     tools:text="Lunges with Arm Rotation" />
 
@@ -71,6 +72,7 @@
                     android:ems="6"
                     android:lines="1"
                     android:text="@{drill.breakTime.formattedString()}"
+                    android:textColor="@color/black"
                     tools:text="30 sek" />
 
             </LinearLayout>

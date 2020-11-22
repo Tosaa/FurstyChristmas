@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.furstychrismas.databinding.ActivityMainBinding
 import com.example.furstychrismas.eula.EulaActivity
 import com.example.furstychrismas.koin.dbModule
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.toolbar.setNavigationOnClickListener {
+            binding.navHostFragment.findNavController().navigateUp()
+        }
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(applicationContext)
@@ -50,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
         checkEula()
     }
 

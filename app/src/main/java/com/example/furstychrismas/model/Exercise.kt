@@ -28,7 +28,7 @@ enum class Exercise(
     //CORE
     PLANK("Plank position halten", listOf(Muscle.BACK, Muscle.ABS),R.string.plank_start_position,R.string.plank_repetition),
     PLANK_SIDE(
-        "Seitliche plank position halten",
+        "Seitliche Plank position halten",
         listOf(Muscle.BACK, Muscle.ABS),
         R.string.plank_side_start_position,
         R.string.plank_side_repetition

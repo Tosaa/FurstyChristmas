@@ -2,6 +2,6 @@
 <resources>
     <dimen name="main_margin">10dp</dimen>
     <dimen name="header">30dp</dimen>
-    <dimen name="info">12dp</dimen>
-    <dimen name="item">20dp</dimen>
+    <dimen name="info">14dp</dimen>
+    <dimen name="item">18dp</dimen>
 </resources>
