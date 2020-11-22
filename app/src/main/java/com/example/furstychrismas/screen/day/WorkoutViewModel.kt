@@ -1,8 +1,10 @@
 package com.example.furstychrismas.screen.day
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
+import com.example.furstychrismas.model.Workout
 import com.example.furstychrismas.repository.CardRepository
 import com.example.furstychrismas.repository.WorkoutRepository
 import kotlinx.coroutines.launch
@@ -18,7 +20,7 @@ class WorkoutViewModel(
 
     private val dayInDecember = number + 1
 
-    private val workout = workoutRepository.getWorkoutOfDay(dayInDecember)
+    private val workout = liveData<Workout> { emit(workoutRepository.getWorkoutOfDay(dayInDecember)) }
     private val cardOfWorkout = cardRepository.getCard(dayInDecember)
 
     val isDone = cardOfWorkout.map { it.isDone }

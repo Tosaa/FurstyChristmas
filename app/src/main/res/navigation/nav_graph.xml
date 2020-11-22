@@ -30,6 +30,13 @@
             app:exitAnim="@anim/fragment_custom_open_exit"
             app:popEnterAnim="@anim/fragment_custom_open_enter"
             app:popExitAnim="@anim/fragment_custom_open_exit" />
+        <action
+            android:id="@+id/action_cardsOverviewFragment_to_lastDay"
+            app:destination="@id/lastDay"
+            app:enterAnim="@anim/fragment_custom_open_enter"
+            app:exitAnim="@anim/fragment_custom_open_exit"
+            app:popEnterAnim="@anim/fragment_custom_open_enter"
+            app:popExitAnim="@anim/fragment_custom_open_exit" />
     </fragment>
     <fragment
         android:id="@+id/workoutPreview"
@@ -70,4 +77,8 @@
             android:name="exercise"
             app:argType="com.example.furstychrismas.model.Exercise" />
     </fragment>
+    <fragment
+        android:id="@+id/lastDay"
+        android:name="com.example.furstychrismas.screen.christmas.LastDay"
+        android:label="LastDay" />
 </navigation>

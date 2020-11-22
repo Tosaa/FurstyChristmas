@@ -39,7 +39,10 @@ class CardAdapter(
         }
         if (card.isAvailable) {
             holder.binding.button.setOnClickListener {
-                goToWorkoutPreview(position)
+                if (card.day.dayOfMonth != 24) {
+                    goToWorkoutPreview(position)
+                } else
+                    goToLastDay()
             }
         }
     }
@@ -47,6 +50,12 @@ class CardAdapter(
     fun setItems(cards: List<Card>) {
         this.cards = cards
         notifyDataSetChanged()
+    }
+
+    private fun goToLastDay(){
+        val action =
+            CardsOverviewFragmentDirections.actionCardsOverviewFragmentToLastDay()
+        navigationController.navigate(action)
     }
 
     private fun goToWorkoutPreview(day: Int) {

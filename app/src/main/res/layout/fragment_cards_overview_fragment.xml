@@ -30,7 +30,7 @@
             android:value="1"
             android:valueFrom="1"
             android:valueTo="24"
-            android:visibility="gone"
+            android:visibility="visible"
             />
 
         <com.google.android.material.button.MaterialButton

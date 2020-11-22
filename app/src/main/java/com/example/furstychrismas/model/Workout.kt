@@ -7,4 +7,18 @@ data class Workout(
     val motto: String = "",
     val time: Int
 ) {
+
+    fun getExecutionPerDrill(): Map<Drill, Execution> {
+        return drills.map {
+            val reps = it.repetition.amount * workoutRepetition
+            val repetition = when {
+                it.repetition is Repetition -> Repetition(reps)
+                it.repetition is RepetitionPerSide -> RepetitionPerSide(reps)
+                it.repetition is Seconds -> Seconds(reps)
+                it.repetition is SecondsPerSide -> SecondsPerSide(reps)
+                else -> Repetition(reps)
+            }
+            Pair(it, repetition)
+        }.toMap()
+    }
 }
