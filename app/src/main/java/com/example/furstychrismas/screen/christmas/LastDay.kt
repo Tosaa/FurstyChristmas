@@ -43,7 +43,7 @@ class LastDay : Fragment() {
         cardRepository.cards.observe(viewLifecycleOwner) {
             val completedDrills = mutableMapOf<String, Execution>()
 
-            val days = it.filter { it.isDone }.map { it.day.dayOfMonth }
+            val days = it.filter { it.isDone && it.day.dayOfMonth < 24 }.map { it.day.dayOfMonth }
             val map = days.flatMap {
                 val workout = repository.getWorkoutOfDay(it)
                 workout.getExecutionPerDrill().toList()

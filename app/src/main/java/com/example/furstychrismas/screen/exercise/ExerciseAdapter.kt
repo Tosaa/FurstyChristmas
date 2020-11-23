@@ -28,6 +28,9 @@ class ExerciseAdapter(
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
+        if (position >= exercises.size) {
+            return
+        }
         holder.binding.exerciseName.text = exercises[position].exerciseName
         holder.binding.muscleIcons.layoutManager = GridLayoutManager(context, 2)
         holder.binding.muscleIcons.adapter = MuscleIconAdapter(exercises[position].muscles)

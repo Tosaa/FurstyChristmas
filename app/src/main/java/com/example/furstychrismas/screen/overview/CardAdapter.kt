@@ -30,6 +30,9 @@ class CardAdapter(
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
+        if (position >= cards.size) {
+            return
+        }
         val card = cards[position]
         holder.binding.day = card.day.dayOfMonth.toString()
         if (card.isAvailable) {

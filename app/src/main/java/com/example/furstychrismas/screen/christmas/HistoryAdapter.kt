@@ -36,6 +36,9 @@ class HistoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
+        if (position >= drills.size) {
+            return
+        }
         holder.binding.drill = drills.elementAt(position)
         holder.binding.amount = amounts.elementAt(position)
 

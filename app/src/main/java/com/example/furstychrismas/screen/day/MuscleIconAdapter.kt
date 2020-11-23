@@ -7,7 +7,7 @@ import com.example.furstychrismas.databinding.MuscleIconBinding
 import com.example.furstychrismas.model.Muscle
 
 class MuscleIconAdapter(
-    private val muscles: List<Muscle>
+    private val muscles: List<Muscle> = emptyList()
 ) : RecyclerView.Adapter<MuscleIconAdapter.MuscleIconViewHolder>() {
 
 
@@ -22,11 +22,13 @@ class MuscleIconAdapter(
     }
 
     override fun onBindViewHolder(holder: MuscleIconViewHolder, position: Int) {
-        holder.muscleIconBinding.muscleIconId = muscles[position].icon
+        if (position >= muscles.size) {
+            return
+        }
+            holder.muscleIconBinding.muscleIconId = muscles[position].icon
+
     }
 
     class MuscleIconViewHolder(val muscleIconBinding: MuscleIconBinding) :
-        RecyclerView.ViewHolder(muscleIconBinding.root) {
-
-    }
+        RecyclerView.ViewHolder(muscleIconBinding.root)
 }

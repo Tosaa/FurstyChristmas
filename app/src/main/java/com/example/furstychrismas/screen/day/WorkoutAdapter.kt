@@ -24,6 +24,9 @@ class WorkoutAdapter(
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
+        if (position >= drills.size) {
+            return
+        }
         holder.exerciseBinding.drill = drills[position]
         if (drills[position].exercise.exerciseName != "Pause") {
             holder.exerciseBinding.card.setOnClickListener {
