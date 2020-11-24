@@ -1,6 +1,8 @@
 package com.example.furstychrismas
 
 import android.app.Activity
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -14,6 +16,7 @@ import com.example.furstychrismas.eula.EulaActivity
 import com.example.furstychrismas.koin.dbModule
 import com.example.furstychrismas.koin.myModule
 import com.example.furstychrismas.persistence.CardDatabase
+import com.example.furstychrismas.receiver.DailyNotificationReceiver
 import com.example.furstychrismas.util.Util
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,6 +29,13 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.core.logger.Level
+import java.time.LocalDate
+import java.time.Month
+import java.time.ZoneId
+import java.time.ZoneOffset
+import java.util.*
+import kotlin.time.milliseconds
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var preferences: SharedPreferences
@@ -55,6 +65,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
         checkEula()
+        val testing = true
+        if (LocalDate.now().dayOfMonth <= 24 && LocalDate.now().month == Month.DECEMBER) {
+            setRecurringAlarm(applicationContext)
+        } else {
+            if (testing) {
+                setRecurringAlarm(applicationContext)
+            }
+        }
+
     }
 
     override fun onDestroy() {
@@ -70,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                     finish()
                 }
             }
-
+            2 -> Log.i("MainActivity", "Start from Notification")
         }
     }
 
@@ -84,5 +103,29 @@ class MainActivity : AppCompatActivity() {
             intent.putExtras(bundle)
             startActivityForResult(intent, 1)
         }
+    }
+
+    private fun setRecurringAlarm(context: Context) {
+
+        var updateTime = LocalDate.now().atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
+        if (System.currentTimeMillis() > updateTime) {
+            updateTime = LocalDate.now().plusDays(1).atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
+        }
+        val repeatedNotificationIntent = Intent(context, DailyNotificationReceiver::class.java)
+        val pendingNotificationIntent = PendingIntent.getBroadcast(
+            context,
+            0, repeatedNotificationIntent, PendingIntent.FLAG_CANCEL_CURRENT
+        )
+        val alarms = this.getSystemService(
+            Context.ALARM_SERVICE
+        ) as AlarmManager
+        alarms.setRepeating(
+            AlarmManager.RTC_WAKEUP,
+            updateTime,
+            AlarmManager.INTERVAL_DAY,
+            pendingNotificationIntent
+        )
+        Log.i("MainActivity", "set Wakeup Alarm for ${updateTime}")
+
     }
 }

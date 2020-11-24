@@ -57,7 +57,7 @@ class EulaActivity : AppCompatActivity() {
     private fun cancelEULA() {
         Snackbar.make(
             binding.eulaContent,
-            "You must accept the EULA to continue",
+            "Du musst die End Nutzer Vereinbarung akzeptieren um die App nutzen zu können.",
             Snackbar.LENGTH_LONG
         ).show()
     }
