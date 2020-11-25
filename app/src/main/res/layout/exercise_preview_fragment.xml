@@ -7,7 +7,7 @@
 
         <variable
             name="exercise"
-            type="com.example.furstychrismas.model.Exercise" />
+            type="com.example.furstychristmas.model.Exercise" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

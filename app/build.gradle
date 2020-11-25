@@ -8,14 +8,13 @@ apply plugin: "androidx.navigation.safeargs"
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
-
+    archivesBaseName ="furstychristmas"
     defaultConfig {
-        applicationId "com.example.furstychrismas"
+        applicationId "com.example.furstychristmas"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

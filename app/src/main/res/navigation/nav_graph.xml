@@ -8,11 +8,11 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.furstychrismas.MainActivity"
+        android:name="com.example.furstychristmas.MainActivity"
         android:label="MainActivity" />
     <fragment
         android:id="@+id/cardsOverviewFragment"
-        android:name="com.example.furstychrismas.screen.overview.CardsOverviewFragment"
+        android:name="com.example.furstychristmas.screen.overview.CardsOverviewFragment"
         android:label="fragment_cards_overview"
         tools:layout="@layout/fragment_cards_overview_fragment">
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/workoutPreview"
-        android:name="com.example.furstychrismas.screen.day.WorkoutPreview"
+        android:name="com.example.furstychristmas.screen.day.WorkoutPreview"
         android:label="workout_preview_fragment"
         tools:layout="@layout/workout_preview_fragment">
         <argument
@@ -56,7 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/exerciseOverview"
-        android:name="com.example.furstychrismas.screen.exercise.ExerciseOverview"
+        android:name="com.example.furstychristmas.screen.exercise.ExerciseOverview"
         android:label="ExerciseOverview"
         tools:layout="@layout/exercise_list_fragment">
 
@@ -70,15 +70,15 @@
     </fragment>
     <fragment
         android:id="@+id/exercisePreview"
-        android:name="com.example.furstychrismas.screen.exercise.ExercisePreview"
+        android:name="com.example.furstychristmas.screen.exercise.ExercisePreview"
         android:label="ExercisePreview"
         tools:layout="@layout/exercise_preview_fragment">
         <argument
             android:name="exercise"
-            app:argType="com.example.furstychrismas.model.Exercise" />
+            app:argType="com.example.furstychristmas.model.Exercise" />
     </fragment>
     <fragment
         android:id="@+id/lastDay"
-        android:name="com.example.furstychrismas.screen.christmas.LastDay"
+        android:name="com.example.furstychristmas.screen.christmas.LastDay"
         android:label="LastDay" />
 </navigation>

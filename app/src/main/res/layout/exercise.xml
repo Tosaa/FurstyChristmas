@@ -7,7 +7,7 @@
 
         <variable
             name="drill"
-            type="com.example.furstychrismas.model.Drill" />
+            type="com.example.furstychristmas.model.Drill" />
     </data>
 
     <LinearLayout

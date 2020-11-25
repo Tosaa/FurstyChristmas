@@ -9,7 +9,7 @@
 
         <variable
             name="viewmodel"
-            type="com.example.furstychrismas.screen.day.WorkoutViewModel" />
+            type="com.example.furstychristmas.screen.day.WorkoutViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
