@@ -3,6 +3,7 @@ package com.example.furstychrismas.screen.overview
 import android.content.Intent
 import android.icu.util.LocaleData
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -25,7 +26,6 @@ class CardsOverviewFragment : Fragment() {
     private lateinit var binding: FragmentCardsOverviewFragmentBinding
     private val cardViewModel: CardViewModel by inject()
     private lateinit var adapter: CardAdapter
-    private val dateRepository: DateRepository by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +36,6 @@ class CardsOverviewFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         setupCards()
-        setupSlider()
         setupButton()
 
         return binding.root
@@ -64,17 +63,5 @@ class CardsOverviewFragment : Fragment() {
             intent.putExtras(bundle)
             startActivity(intent)
         }
-    }
-
-    private fun setupSlider() {
-        binding.slider.addOnChangeListener { _, value, fromUser ->
-            if (fromUser) {
-                cardViewModel.updateDateRepo(
-                    value.toInt()
-                )
-            }
-        }
-        binding.slider.value = dateRepository.today.value?.dayOfMonth?.toFloat()
-            ?: LocalDate.now().dayOfMonth.toFloat()
     }
 }

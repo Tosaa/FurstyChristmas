@@ -44,10 +44,10 @@ val myModule = module {
         )
     }
 
-    factory { AchievementRepository() }
-    factory { DateRepository() }
-    factory { WorkoutRepository(androidApplication().assets) }
-    factory { CardRepository(get()) }
+    single { AchievementRepository() }
+    single { DateRepository() }
+    single { WorkoutRepository(androidApplication().assets) }
+    single { CardRepository(get()) }
 
 
     viewModel { (day: Int) ->

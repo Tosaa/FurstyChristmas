@@ -62,8 +62,7 @@ class LastDay : Fragment() {
                 }
             }
 
-            adapter.updateItems(
-                completedDrills.toSortedMap().mapValues { "${it.value.amount} ${it.value.unit()}" })
+            adapter.updateItems(completedDrills.toSortedMap().mapValues { "${it.value.amount} ${it.value.unit()}" }.filter { it.key != "Pause" })
         }
     }
 

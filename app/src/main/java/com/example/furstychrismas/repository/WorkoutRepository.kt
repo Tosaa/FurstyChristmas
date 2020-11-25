@@ -14,7 +14,6 @@ class WorkoutRepository(private val assetManager: AssetManager) {
     private val workouts = Util.getDrillPresets(assetManager)
 
     fun getWorkoutOfDay(day: Int): Workout {
-        Log.i("WorkoutRepository", "load day $day")
 
         val date = Calendar.Builder().apply {
             set(Calendar.MONTH, Calendar.DECEMBER)
@@ -75,7 +74,6 @@ class WorkoutRepository(private val assetManager: AssetManager) {
         }
         drills.addAll(workouts.getOrDefault(motto, emptyList()))
         val workout = Workout(day, drills, sets, motto.split(" ").first().toUpperCase(), time)
-        Log.i("WorkoutRepository", "todays workout:$workout")
         return workout
     }
 

@@ -17,6 +17,7 @@ import com.example.furstychrismas.koin.dbModule
 import com.example.furstychrismas.koin.myModule
 import com.example.furstychrismas.persistence.CardDatabase
 import com.example.furstychrismas.receiver.DailyNotificationReceiver
+import com.example.furstychrismas.repository.DateRepository
 import com.example.furstychrismas.util.Util
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -65,15 +66,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
         checkEula()
-        val testing = true
-        if (LocalDate.now().dayOfMonth <= 24 && LocalDate.now().month == Month.DECEMBER) {
-            setRecurringAlarm(applicationContext)
-        } else {
-            if (testing) {
-                setRecurringAlarm(applicationContext)
-            }
+        val dayRepository: DateRepository by inject()
+        val today = dayRepository.todayMapped()
+        if ((today.dayOfMonth in 1..24) && today.month == Month.DECEMBER) {
+            Log.i("MainActivity", "set alarm for $today")
+            setRecurringAlarm(applicationContext, today)
         }
+    }
 
+    override fun onResumeFragments() {
+        super.onResumeFragments()
+        val dateRepository: DateRepository by inject()
+        dateRepository.updateTime()
     }
 
     override fun onDestroy() {
@@ -89,7 +93,6 @@ class MainActivity : AppCompatActivity() {
                     finish()
                 }
             }
-            2 -> Log.i("MainActivity", "Start from Notification")
         }
     }
 
@@ -105,11 +108,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setRecurringAlarm(context: Context) {
+    private fun setRecurringAlarm(context: Context, dayForAlarm: LocalDate) {
 
-        var updateTime = LocalDate.now().atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
-        if (System.currentTimeMillis() > updateTime) {
-            updateTime = LocalDate.now().plusDays(1).atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
+        var updateTime = dayForAlarm.atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
+        val now = System.currentTimeMillis()
+        if (now> updateTime) {
+            Log.i("MainActivity","change Day to tommorow:$now - $updateTime")
+            updateTime = dayForAlarm.plusDays(1).atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
         }
         val repeatedNotificationIntent = Intent(context, DailyNotificationReceiver::class.java)
         val pendingNotificationIntent = PendingIntent.getBroadcast(

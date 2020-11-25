@@ -1,15 +1,17 @@
 package com.example.furstychrismas.screen.overview
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.example.furstychrismas.model.Card
 import com.example.furstychrismas.repository.CardRepository
 import com.example.furstychrismas.repository.DateRepository
 import java.time.LocalDate
 
 class CardViewModel(
-    private val cardRepository: CardRepository,
-    private val dateRepository: DateRepository
+    cardRepository: CardRepository,
+    dateRepository: DateRepository
 ) : ViewModel() {
     val today = dateRepository.today
 
@@ -35,10 +37,6 @@ class CardViewModel(
             card.isAvailable = card.day.dayOfMonth <= date.dayOfMonth
             card
         }
-    }
-
-    fun updateDateRepo(day: Int) {
-        dateRepository.updateDay(LocalDate.of(LocalDate.now().year, 12, day))
     }
 
 }
