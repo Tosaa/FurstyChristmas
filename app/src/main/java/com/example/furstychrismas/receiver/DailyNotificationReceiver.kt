@@ -16,7 +16,6 @@ import java.time.LocalDate
 
 class DailyNotificationReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        Log.i("DailyNotificationReceiver", "Create Workout Reminder at ${System.currentTimeMillis()}")
         context?.let {
             val notificationManager = it.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(

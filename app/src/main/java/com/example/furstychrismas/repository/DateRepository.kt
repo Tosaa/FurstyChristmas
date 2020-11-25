@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
+import timber.log.Timber
 import java.time.LocalDate
 import java.time.Month
 
@@ -35,7 +36,7 @@ class DateRepository {
     }
 
     fun updateTime() {
-        Log.i("DateRepository", "update time")
+        Timber.d("update time")
         mutableToday.postValue(todayMapped())
     }
 

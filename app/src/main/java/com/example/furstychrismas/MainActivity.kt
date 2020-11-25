@@ -29,13 +29,11 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
-import org.koin.core.logger.Level
+import timber.log.Timber
+import timber.log.Timber.DebugTree
 import java.time.LocalDate
 import java.time.Month
-import java.time.ZoneId
 import java.time.ZoneOffset
-import java.util.*
-import kotlin.time.milliseconds
 
 
 class MainActivity : AppCompatActivity() {
@@ -43,13 +41,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (BuildConfig.DEBUG) {
+            Timber.plant(DebugTree())
+        }
         val binding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.toolbar.setNavigationOnClickListener {
             binding.navHostFragment.findNavController().navigateUp()
         }
         startKoin {
-            androidLogger(Level.DEBUG)
+            androidLogger()
             androidContext(applicationContext)
             modules(dbModule, myModule)
         }
@@ -69,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         val dayRepository: DateRepository by inject()
         val today = dayRepository.todayMapped()
         if ((today.dayOfMonth in 1..24) && today.month == Month.DECEMBER) {
-            Log.i("MainActivity", "set alarm for $today")
+            Timber.d("set alarm for $today")
             setRecurringAlarm(applicationContext, today)
         }
     }
@@ -112,8 +113,8 @@ class MainActivity : AppCompatActivity() {
 
         var updateTime = dayForAlarm.atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
         val now = System.currentTimeMillis()
-        if (now> updateTime) {
-            Log.i("MainActivity","change Day to tommorow:$now - $updateTime")
+        if (now > updateTime) {
+            Timber.d("change Day to tommorow:$now - $updateTime")
             updateTime = dayForAlarm.plusDays(1).atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
         }
         val repeatedNotificationIntent = Intent(context, DailyNotificationReceiver::class.java)
@@ -130,7 +131,7 @@ class MainActivity : AppCompatActivity() {
             AlarmManager.INTERVAL_DAY,
             pendingNotificationIntent
         )
-        Log.i("MainActivity", "set Wakeup Alarm for ${updateTime}")
+        Timber.d("set Wakeup Alarm for ${updateTime}")
 
     }
 }
