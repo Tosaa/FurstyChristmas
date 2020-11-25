@@ -13,19 +13,37 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:padding="5dp"
-            android:paddingStart="10dp"
-            app:navigationIcon="@drawable/ic_back_button"
-            app:subtitle="READY FOR 2K21"
-            app:subtitleTextColor="@color/white"
-            app:title="Fursty Christmas"
-            app:titleTextColor="@color/white" />
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:paddingStart="10dp"
+                app:navigationIcon="@drawable/ic_back_button"
+                app:subtitle="READY FOR 2K21"
+                app:subtitleTextColor="@color/white"
+                app:title="Fursty Christmas"
+                app:titleTextColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="0dp"
+                android:src="@drawable/logo_razorbacks"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/toolbar"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar"
+                android:layout_margin="5dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
             android:layout_width="match_parent"

@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ball"
+        android:icon="@drawable/logo_razorbacks"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ball"
+        android:roundIcon="@drawable/logo_razorbacks"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

@@ -18,7 +18,7 @@ class DailyNotificationReceiver : BroadcastReceiver() {
                 NotificationChannel(CHANNEL, "Fursty Christmas Notification Channel", NotificationManager.IMPORTANCE_HIGH)
             )
             val notification = Notification.Builder(it, CHANNEL)
-                .setSmallIcon(R.drawable.ball)
+                .setSmallIcon(R.drawable.logo_razorbacks)
                 .setContentTitle("Fursty Christmas")
                 .setContentText("Workout heute schon gemacht?")
                 .setAutoCancel(true)

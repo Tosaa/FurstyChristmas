@@ -149,37 +149,37 @@ enum class Exercise(
     //STRETCH
     LEG_STRETCH(
         "Beindehnung offen",
-        listOf(Muscle.BACK, Muscle.LEG, Muscle.FLEXIBILITY),
+        listOf(Muscle.BACK, Muscle.LEG),
         R.string.leg_stretch_start_position,
         R.string.leg_stretch_repetition
     ),
     LEG_STRETCH_CLOSED(
         "Beindehnung geschlossen",
-        listOf(Muscle.BACK, Muscle.LEG, Muscle.FLEXIBILITY),
+        listOf(Muscle.BACK, Muscle.LEG),
         R.string.leg_stretch_closed_start_position,
         R.string.leg_stretch_closed_repetition
     ),
     FEMUR_STRETCH(
         "Oberschenkeldehnung",
-        listOf(Muscle.LEG, Muscle.FLEXIBILITY),
+        listOf(Muscle.LEG),
         R.string.femur_stretch_start_position,
         R.string.femur_stretch_repetition
     ),
     BACK_STRETCH(
         "Rückendehnung",
-        listOf(Muscle.BACK, Muscle.ARM, Muscle.FLEXIBILITY),
+        listOf(Muscle.BACK, Muscle.ARM),
         R.string.back_stretch_start_position,
         R.string.back_stretch_repetition
     ),
     COBRA_STRETCH(
         "Cobra stretch",
-        listOf(Muscle.BACK, Muscle.ARM, Muscle.FLEXIBILITY),
+        listOf(Muscle.BACK, Muscle.ARM),
         R.string.cobra_stretch_start_position,
         R.string.cobra_stretch_repetition
     ),
     ARM_ROTATION(
         "Arm Kreisen",
-        listOf(Muscle.ARM, Muscle.FLEXIBILITY),
+        listOf(Muscle.ARM),
         R.string.arm_rotation_start_position,
         R.string.arm_rotation_repetition
     ),
