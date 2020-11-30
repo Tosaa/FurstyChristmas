@@ -8,9 +8,11 @@ import com.example.furstychristmas.model.Workout
 import com.example.furstychristmas.repository.CardRepository
 import com.example.furstychristmas.repository.WorkoutRepository
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import java.time.LocalDate
 import java.time.format.TextStyle
 import java.util.*
+import java.util.logging.Logger
 
 class WorkoutViewModel(
     number: Int,
@@ -24,7 +26,7 @@ class WorkoutViewModel(
     private val cardOfWorkout = cardRepository.getCard(dayInDecember)
 
     val isDone = cardOfWorkout.map { it.isDone }
-    val cal = LocalDate.of(LocalDate.now().year,12,dayInDecember).dayOfWeek.getDisplayName(TextStyle.FULL_STANDALONE, Locale.GERMANY)
+    val cal = LocalDate.of(LocalDate.now().year, 12, dayInDecember).dayOfWeek.getDisplayName(TextStyle.FULL_STANDALONE, Locale.GERMANY)
     val day = workout.map { "${it.day}" }
     val workoutDuration = workout.map { "${it.time} min" }
 
@@ -40,5 +42,7 @@ class WorkoutViewModel(
             cardRepository.markDayAsDone(dayInDecember)
         }
     }
+
+    val isCheer = workout.map { it.motto.contains("tabata", true) || it.motto.contains("jump training", true) || it.motto.contains("frei", true) }
 
 }

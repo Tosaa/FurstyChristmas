@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+<import type="android.view.View"/>
         <variable
             name="viewmodel"
             type="com.example.furstychristmas.screen.day.WorkoutViewModel" />
@@ -89,7 +89,9 @@
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:itemCount="4"
-                tools:listitem="@layout/muscle_icon" />
+                tools:listitem="@layout/muscle_icon"
+                android:visibility="@{viewmodel.isCheer() ? View.GONE : View.VISIBLE}"
+                />
         </LinearLayout>
 
         <View

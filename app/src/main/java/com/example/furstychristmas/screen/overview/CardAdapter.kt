@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.R
 import com.example.furstychristmas.databinding.ChristmasCardBinding
 import com.example.furstychristmas.model.Card
+import com.example.furstychristmas.util.Constants
 
 class CardAdapter(
     private val navigationController: NavController,
@@ -51,7 +52,11 @@ class CardAdapter(
                 if (card.day.dayOfMonth != 24) {
                     goToWorkoutPreview(position)
                 } else
-                    goToLastDay()
+                    if (!Constants.IS_CHEER_APP) {
+                        goToLastDay()
+                    } else {
+                        goToWorkoutPreview(position)
+                    }
             }
         }
     }

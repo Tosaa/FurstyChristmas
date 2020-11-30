@@ -5,6 +5,7 @@
 
     <data>
 
+        <import type="android.view.View" />
         <variable
             name="drill"
             type="com.example.furstychristmas.model.Drill" />
@@ -33,6 +34,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
+                    android:visibility="@{drill.repetition.amount > 0 ? View.VISIBLE : View.GONE}"
                     app:tint="@color/black" />
 
                 <View
@@ -40,7 +42,8 @@
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="2dp"
-                    android:background="?android:attr/listDivider" />
+                    android:background="?android:attr/listDivider"
+                    android:visibility="@{drill.repetition.amount > 0 ? View.VISIBLE : View.GONE}" />
 
 
                 <TextView
@@ -51,6 +54,7 @@
                     android:lines="1"
                     android:text="@{drill.repetition.formattedString()}"
                     android:textColor="@color/black"
+                    android:visibility="@{drill.repetition.amount > 0 ? View.VISIBLE : View.GONE}"
                     tools:text=" Wdh/Seite" />
 
                 <TextView
@@ -62,7 +66,8 @@
                     android:text="@{drill.exercise.exerciseName}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    tools:text="Lunges with Arm Rotation" />
+                    tools:text="Lunges with Arm Rotation"
+                    />
 
 
             </LinearLayout>

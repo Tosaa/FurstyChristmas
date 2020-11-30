@@ -37,13 +37,13 @@ object Util {
         })
     }
 
-    fun getDrillPresets(assetManager: AssetManager): Map<String, List<Drill>> {
+    fun getDrillPresets(assetManager: AssetManager,fileName:String): Map<String, List<Drill>> {
         var drillPresets = emptyMap<String, List<Drill>>()
 
         try {
             val json = BufferedReader(
                 InputStreamReader(
-                    assetManager.open("excersises.json"),
+                    assetManager.open(fileName),
                     "UTF-8"
                 )
             ).readText()

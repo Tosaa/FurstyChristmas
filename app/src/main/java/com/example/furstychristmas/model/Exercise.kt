@@ -5,8 +5,8 @@ import com.example.furstychristmas.R
 enum class Exercise(
     val exerciseName: String,
     val muscles: List<Muscle>,
-    val startPositionId: Int = R.string.lorem_ipsum,
-    val repetitionId: Int = R.string.lorem_ipsum
+    val startPositionId: Int = R.string.empty_string,
+    val repetitionId: Int = R.string.empty_string
 ) {
     //CHEST
     PUSHUP(
@@ -183,5 +183,19 @@ enum class Exercise(
         R.string.arm_rotation_start_position,
         R.string.arm_rotation_repetition
     ),
-    BREAK("Pause", listOf(Muscle.BREAK))
+    BREAK("Pause", listOf(Muscle.BREAK)),
+    BURPEES("Burpees", listOf(Muscle.ALL), R.string.cheer, R.string.cheer),
+    HANDS_OPEN_CLOSE("Hände auf und zu", listOf(Muscle.ALL), R.string.cheer, R.string.cheer),
+    CRUNCH("Crunch", listOf(Muscle.ALL), R.string.cheer, R.string.cheer),
+    MOUNTAIN_CLIMBER("Mountain climber", listOf(Muscle.ALL), R.string.cheer, R.string.cheer),
+    PLANK_JUMPING_JACK("Plank jumping jack", listOf(Muscle.ALL), R.string.cheer, R.string.cheer),
+    TOE_TOUCH_CROSSED("Toe touch über Kreuz", listOf(Muscle.ALL), R.string.cheer, R.string.cheer),
+    HIP_EXTENSION("Hip Extension einbeinig", listOf(Muscle.ALL), R.string.cheer, R.string.cheer),
+    STRETCH("Dehnen", listOf(Muscle.ALL), R.string.cheer, R.string.cheer),
+    STRADDLE_1("Gerkrätscht sitzen", listOf(Muscle.ALL), R.string.straddle_1_start_position, R.string.straddle_1_repetition),
+    HOLLOW_1("Hollowposition bis 4", listOf(Muscle.ALL), R.string.hollow_1_start_position, R.string.hollow_1_repetition),
+    HOLLOW_2("Hollowposition bis zur zweiten 4", listOf(Muscle.ALL), R.string.hollow_2_start_position, R.string.hollow_2_repetition),
+    HURDLE_SEAT("Hürdensitz", listOf(Muscle.ALL), R.string.hurdle_seat_start_position, R.string.hurdle_seat_repetition),
+    STRADLE_2("Gerkrätscht sitzen", listOf(Muscle.ALL), R.string.straddle_2_start_position, R.string.straddle_2_repetition),
+    STRETCH_AFTER_STRADDLE("Dehnen nach Spagat", listOf(Muscle.ALL), R.string.empty_string, R.string.stretch_after_straddle)
 }

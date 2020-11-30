@@ -204,6 +204,51 @@
     <string name="arm_rotation_start_position">
     Stell dich schulterbreit hin und strecke die Arme zu beiden Seiten aus.
         </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cheer">
+        Wie im Cheerleeder Training besprochen.
+    </string>
+    <string name="stretch">
+        Stretch wie im Cheerleeder Training besprochen.
+    </string>
+
+    <string name="straddle_1_start_position">
+    Gekrätscht sitzen, eine Hand zwischen den Beinen, die andere hinter dem Rücken.
+    </string>
+    <string name="straddle_1_repetition">
+    Auf 1 das Bein hochziehen, bis 4 halten, 5 bis 8 langsam absetzen, je 4x
+    </string>
+    <string name="straddle_2_start_position">
+    Gerätscht sitzen
+    </string>
+    <string name="straddle_2_repetition">
+    Gerkätscht sitzen, jedes Bein 30 mal hochziehen, dann 30 mal beide Beine gleichzeitig
+    </string>
+    <string name="hollow_1_start_position">
+    Rückenlage
+    </string>
+    <string name="hollow_1_repetition">
+    auf 1 in Hollowposition bis 4 halten, 5 bis 8 langsam absetzen, 3x
+    </string>
+    <string name="hollow_2_start_position">
+    Rückenlage
+    </string>
+    <string name="hollow_2_repetition">
+    auf 1 in Hollowposition bis zum zweiten 4 halten, 5 bis 8 langsam absetzen, 3x
+    </string>
+    <string name="hurdle_seat_start_position">
+    Hürdensitz
+    </string>
+    <string name="hurdle_seat_repetition">
+    Auf 1 das Bein Hochziehen, bis 4 halten, 5 bis 8 langsam absetzen, je 4x
+    </string>
+    <string name="stretch_after_straddle">
+    Zusätzlich nach dem Spagat: Rückenlage rechtes Bein mit Tuch/Band gestreckt Richtung Schulter ziehen bis es nicht mehr geht. Dann 10 sekunden versuchen das Bein Richtung Boden ziehen.
+    Dann nochmal nachziehen und Bein wechseln. \n
+    Das instgesammt 3x, wobei das Bein beim 2. Mal zur Schulteraußenseinte ziehen. Beim 3. Mal zur gegenüberliegenden Schulter ziehen, darauf achten, dass der Po möglichst auf dem Boden bleibt.\n
+
+    Hürdensitz rechts, dabei Rücken auf den Boden und mind. 30 Sekunden halten, dann linke Seite.\n
+
+    Dann nochmal in den Spagat gehen. Ihr werdet sehen, dass es besser geht.
+    </string>
+
 </resources>

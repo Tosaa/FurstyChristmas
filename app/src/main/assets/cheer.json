@@ -1,0 +1,41 @@
+{
+  "tabata 1": [
+    "0 secs;BURPEES;0 secs",
+    "0 secs;SQUAD;0 secs",
+    "0 secs;PUSHUP;0 secs",
+    "0 secs;HANDS_OPEN_CLOSE;0 secs",
+    "0 secs;STRETCH;0 secs"
+  ],
+  "tabata 2": [
+    "0 secs;SQUAD;0 secs",
+    "0 secs;BURPEES;0 secs",
+    "0 secs;LUNGES_BACKWARD;0 secs",
+    "0 secs;CRUNCH;0 secs",
+    "0 secs;STRETCH;0 secs"
+  ],
+  "tabata 3": [
+    "0 secs;PUSHUP_TO_PLANK;0 secs",
+    "0 secs;MOUNTAIN_CLIMBER;0 secs",
+    "0 secs;BICYCLE;0 secs",
+    "0 secs;PLANK_JUMPING_JACK;0 secs",
+    "0 secs;STRETCH;0 secs"
+  ],
+  "tabata 4": [
+    "0 secs;TOE_TOUCH_CROSSED;0 secs",
+    "0 secs;HIP_EXTENSION;0 secs",
+    "0 secs;BICYCLE;0 secs",
+    "0 secs;HIP_EXTENSION;0 secs",
+    "0 secs;STRETCH;0 secs"
+  ],
+  "jump training": [
+    "0 secs;STRADDLE_1;0 secs",
+    "0 secs;HOLLOW_1;0 secs",
+    "0 secs;HOLLOW_2;0 secs",
+    "0 secs;HURDLE_SEAT;0 secs",
+    "0 secs;STRADLE_2;0 secs",
+    "0 secs;STRETCH_AFTER_STRADDLE;0 secs"
+  ],
+  "frei": [
+    "0 secs;BREAK;0 secs"
+  ]
+}
