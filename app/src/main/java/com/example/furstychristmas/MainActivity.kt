@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
         if (BuildConfig.DEBUG) {
             Timber.plant(DebugTree())
         }
-        val binding: ActivityMainBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        // todo: move code to function
         binding.toolbar.setNavigationOnClickListener {
             binding.navHostFragment.findNavController().navigateUp()
         }
@@ -54,8 +54,10 @@ class MainActivity : AppCompatActivity() {
             modules(dbModule, myModule)
         }
 
+        //todo: move from method to class
         val prefs: SharedPreferences by inject()
         preferences = prefs
+        //todo check how to init DB on first launch of db
         if (preferences.getBoolean("first app start", true)) {
             val scope = CoroutineScope(Job() + Dispatchers.IO)
             scope.launch {
@@ -66,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         checkEula()
+        //todo: move from method to class
         val dayRepository: DateRepository by inject()
         val today = dayRepository.todayMapped()
         if ((today.dayOfMonth in 1..24) && today.month == Month.DECEMBER) {
@@ -76,6 +79,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResumeFragments() {
         super.onResumeFragments()
+        //todo: move from method to class
         val dateRepository: DateRepository by inject()
         dateRepository.updateTime()
     }
