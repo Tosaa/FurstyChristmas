@@ -5,7 +5,6 @@ import androidx.room.Room
 import com.example.furstychristmas.persistence.CardDatabase
 import com.example.furstychristmas.repository.AchievementRepository
 import com.example.furstychristmas.repository.CardRepository
-import com.example.furstychristmas.repository.DateRepository
 import com.example.furstychristmas.repository.WorkoutRepository
 import com.example.furstychristmas.screen.day.WorkoutViewModel
 import com.example.furstychristmas.screen.overview.CardViewModel
@@ -45,7 +44,6 @@ val myModule = module {
     }
 
     single { AchievementRepository() }
-    single { DateRepository() }
     single { WorkoutRepository(androidApplication().assets) }
     single { CardRepository(get()) }
 
@@ -56,5 +54,5 @@ val myModule = module {
         )
     }
 
-    viewModel { CardViewModel(get(), get()) }
+    viewModel { CardViewModel(get()) }
 }

@@ -16,14 +16,9 @@ package com.example.furstychristmas
 * Rename Card to WorkoutAtDay
 * Create WorkoutAtDayUseCase (t.b.d)
 * Read WorkoutAtDayUseCase (Needed)
+* --> Workouts should be selected by Year. (input: localdate (today); output: list of workouts; extra: on January the workouts of last year should be given)
 * Update WorkoutAtDayUseCase (Needed)
 * Delete WorkoutAtDayUsecase (t.b.d.)
-*
-*
-* DateRepository
-* Can be repaced by DateUtil class.
-* Create a LiveData Class which emits the actual time (1 sek/ 1 min/ 1 hour accurate)
-*
 *
 * WorkoutRepository
 * CreateWorkoutUseCase (Not needed, in app no workouts can be added)

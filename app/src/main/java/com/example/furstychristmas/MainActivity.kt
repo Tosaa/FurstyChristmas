@@ -16,7 +16,7 @@ import com.example.furstychristmas.koin.dbModule
 import com.example.furstychristmas.koin.myModule
 import com.example.furstychristmas.persistence.CardDatabase
 import com.example.furstychristmas.receiver.DailyNotificationReceiver
-import com.example.furstychristmas.repository.DateRepository
+import com.example.furstychristmas.util.DateUtil
 import com.example.furstychristmas.util.Util
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -31,13 +31,11 @@ import org.koin.core.context.stopKoin
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 import java.time.LocalDate
-import java.time.Month
 import java.time.ZoneOffset
 
 
 class MainActivity : AppCompatActivity() {
     private val preferences: SharedPreferences by inject()
-    private val dateRepository: DateRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,8 +52,8 @@ class MainActivity : AppCompatActivity() {
 
         setupDatabaseOnFirstLaunch()
         checkEula()
-        val today = dateRepository.todayMapped()
-        if ((today.dayOfMonth in 1..24) && today.month == Month.DECEMBER) {
+        val today = DateUtil.today()
+        if (DateUtil.isDateInRange(today, DateUtil.firstDayForAlarm, DateUtil.lastDayForAlarm)) {
             Timber.d("set alarm for $today")
             setRecurringAlarm(applicationContext, today)
         }
@@ -78,11 +76,6 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener {
             binding.navHostFragment.findNavController().navigateUp()
         }
-    }
-
-    override fun onResumeFragments() {
-        super.onResumeFragments()
-        dateRepository.updateTime()
     }
 
     override fun onDestroy() {
