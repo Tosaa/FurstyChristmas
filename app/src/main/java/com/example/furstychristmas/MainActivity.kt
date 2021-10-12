@@ -36,7 +36,8 @@ import java.time.ZoneOffset
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var preferences: SharedPreferences
+    private val preferences: SharedPreferences by inject()
+    private val dateRepository: DateRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,19 +45,23 @@ class MainActivity : AppCompatActivity() {
             Timber.plant(DebugTree())
         }
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        // todo: move code to function
-        binding.toolbar.setNavigationOnClickListener {
-            binding.navHostFragment.findNavController().navigateUp()
-        }
+        setupToolbar(binding)
         startKoin {
             androidLogger()
             androidContext(applicationContext)
             modules(dbModule, myModule)
         }
 
-        //todo: move from method to class
-        val prefs: SharedPreferences by inject()
-        preferences = prefs
+        setupDatabaseOnFirstLaunch()
+        checkEula()
+        val today = dateRepository.todayMapped()
+        if ((today.dayOfMonth in 1..24) && today.month == Month.DECEMBER) {
+            Timber.d("set alarm for $today")
+            setRecurringAlarm(applicationContext, today)
+        }
+    }
+
+    private fun setupDatabaseOnFirstLaunch() {
         //todo check how to init DB on first launch of db
         if (preferences.getBoolean("first app start", true)) {
             val scope = CoroutineScope(Job() + Dispatchers.IO)
@@ -67,20 +72,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        checkEula()
-        //todo: move from method to class
-        val dayRepository: DateRepository by inject()
-        val today = dayRepository.todayMapped()
-        if ((today.dayOfMonth in 1..24) && today.month == Month.DECEMBER) {
-            Timber.d("set alarm for $today")
-            setRecurringAlarm(applicationContext, today)
+    }
+
+    private fun setupToolbar(binding: ActivityMainBinding) {
+        binding.toolbar.setNavigationOnClickListener {
+            binding.navHostFragment.findNavController().navigateUp()
         }
     }
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-        //todo: move from method to class
-        val dateRepository: DateRepository by inject()
         dateRepository.updateTime()
     }
 
