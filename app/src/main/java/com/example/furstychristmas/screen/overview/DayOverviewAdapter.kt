@@ -9,12 +9,15 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.R
 import com.example.furstychristmas.databinding.ChristmasCardBinding
-import com.example.furstychristmas.model.Card
+import com.example.furstychristmas.model.DayCompleted
+import com.example.furstychristmas.util.DateUtil
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
-class CardAdapter(
+class DayOverviewAdapter(
     private val navigationController: NavController,
-    private var cards: List<Card> = emptyList()
-) : RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
+    private var days: List<DayCompleted> = emptyList()
+) : RecyclerView.Adapter<DayOverviewAdapter.CardViewHolder>() {
 
     lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
@@ -25,53 +28,48 @@ class CardAdapter(
     }
 
     override fun getItemCount(): Int {
-        return cards.size
+        return days.size
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        if (position >= cards.size) {
+        if (position >= days.size) {
             return
         }
-        val card = cards[position]
-        holder.binding.day = card.day.dayOfMonth.toString()
-        if (card.isAvailable) {
-            if (card.isDone)
-                holder.binding.button.setBackgroundColor(
-                    ContextCompat.getColor(context, R.color.colorGreen)
-                )
+        val completableDay = days[position]
+        holder.binding.day = completableDay.day.dayOfMonth.toString()
+        val dayIsEnabled = completableDay.day.isBefore(DateUtil.today())
+        val buttonColor = if (dayIsEnabled) {
+            if (completableDay.isDone)
+                ContextCompat.getColor(context, R.color.colorGreen)
             else
-                holder.binding.button.setBackgroundColor(
-                    ContextCompat.getColor(context, R.color.colorPrimaryDark)
-                )
+                ContextCompat.getColor(context, R.color.colorPrimaryDark)
         } else {
-            holder.binding.button.setBackgroundColor(Color.GRAY)
+            Color.GRAY
         }
-        if (card.isAvailable) {
+        holder.binding.button.setBackgroundColor(buttonColor)
+
+        if (dayIsEnabled) {
             holder.binding.button.setOnClickListener {
-                if (card.day.dayOfMonth != 24) {
-                    goToWorkoutPreview(position)
+                if (completableDay.day.dayOfMonth != 24) {
+                    goToWorkoutPreview(completableDay.day)
                 } else
                     goToLastDay()
             }
         }
     }
 
-    fun setItems(cards: List<Card>) {
-        this.cards = cards
+    fun setItems(dayCompleteds: List<DayCompleted>) {
+        this.days = dayCompleteds
         notifyDataSetChanged()
     }
 
     private fun goToLastDay() {
-        val action =
-            CardsOverviewFragmentDirections.actionCardsOverviewFragmentToLastDay()
+        val action = CardsOverviewFragmentDirections.actionCardsOverviewFragmentToLastDay()
         navigationController.navigate(action)
     }
 
-    private fun goToWorkoutPreview(day: Int) {
-        val action =
-            CardsOverviewFragmentDirections.overviewWorkoutPreview(
-                day
-            )
+    private fun goToWorkoutPreview(date: LocalDate) {
+        val action = CardsOverviewFragmentDirections.overviewWorkoutPreview(date.format(DateTimeFormatter.ISO_LOCAL_DATE))
         navigationController.navigate(action)
     }
 

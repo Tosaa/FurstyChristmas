@@ -18,7 +18,7 @@ class CardsOverviewFragment : Fragment() {
 
     private lateinit var binding: FragmentCardsOverviewFragmentBinding
     private val cardViewModel: CardViewModel by inject()
-    private lateinit var adapter: CardAdapter
+    private lateinit var adapter: DayOverviewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +35,7 @@ class CardsOverviewFragment : Fragment() {
     }
 
     private fun setupCards() {
-        adapter = CardAdapter(findNavController(), emptyList())
+        adapter = DayOverviewAdapter(findNavController(), emptyList())
         binding.dayCards.adapter = adapter
         binding.dayCards.layoutManager = GridLayoutManager(requireContext(), 4)
 

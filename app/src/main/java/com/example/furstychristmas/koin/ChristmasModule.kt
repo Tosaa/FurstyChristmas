@@ -2,23 +2,28 @@ package com.example.furstychristmas.koin
 
 import android.content.Context
 import androidx.room.Room
-import com.example.furstychristmas.persistence.CardDatabase
+import com.example.furstychristmas.persistence.DayDatabase
 import com.example.furstychristmas.repository.AchievementRepository
-import com.example.furstychristmas.repository.CardRepository
-import com.example.furstychristmas.repository.WorkoutRepository
+import com.example.furstychristmas.repository.content.ContentUseCase
+import com.example.furstychristmas.repository.content.InfoRepository
+import com.example.furstychristmas.repository.content.WorkoutRepository
+import com.example.furstychristmas.repository.day.AddDayCompletionUseCase
+import com.example.furstychristmas.repository.day.DayCompletionRepository
+import com.example.furstychristmas.repository.day.DayCompletionStatusUseCase
 import com.example.furstychristmas.screen.day.WorkoutViewModel
 import com.example.furstychristmas.screen.overview.CardViewModel
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import java.time.LocalDate
 
 val dbModule = module {
     single {
         Room.databaseBuilder(
             get(),
-            CardDatabase::class.java,
+            DayDatabase::class.java,
             "database"
-        )
+        ).fallbackToDestructiveMigration()
             /*
         .addCallback(object : RoomDatabase.Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
@@ -45,12 +50,17 @@ val myModule = module {
 
     single { AchievementRepository() }
     single { WorkoutRepository(androidApplication().assets) }
-    single { CardRepository(get()) }
+    single { InfoRepository() }
+    single { DayCompletionRepository(get()) }
+
+    single { ContentUseCase(get(), get()) }
+    single { DayCompletionStatusUseCase(get()) }
+    single { AddDayCompletionUseCase(get()) }
 
 
-    viewModel { (day: Int) ->
+    viewModel { (date: LocalDate) ->
         WorkoutViewModel(
-            day, get(), get()
+            date, get(), get()
         )
     }
 

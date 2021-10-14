@@ -14,15 +14,14 @@ import com.example.furstychristmas.databinding.ActivityMainBinding
 import com.example.furstychristmas.eula.EulaActivity
 import com.example.furstychristmas.koin.dbModule
 import com.example.furstychristmas.koin.myModule
-import com.example.furstychristmas.persistence.CardDatabase
 import com.example.furstychristmas.receiver.DailyNotificationReceiver
+import com.example.furstychristmas.repository.day.AddDayCompletionUseCase
+import com.example.furstychristmas.repository.day.DayCompletionStatusUseCase
 import com.example.furstychristmas.util.DateUtil
-import com.example.furstychristmas.util.Util
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -31,11 +30,14 @@ import org.koin.core.context.stopKoin
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 import java.time.LocalDate
+import java.time.Month
 import java.time.ZoneOffset
 
 
 class MainActivity : AppCompatActivity() {
     private val preferences: SharedPreferences by inject()
+    private val dayCompletionStatusUseCase: DayCompletionStatusUseCase by inject()
+    private val addDayCompletionUseCase: AddDayCompletionUseCase by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             modules(dbModule, myModule)
         }
 
-        setupDatabaseOnFirstLaunch()
+        setupDatabaseIfNeccessary()
         checkEula()
         val today = DateUtil.today()
         if (DateUtil.isDateInRange(today, DateUtil.firstDayForAlarm, DateUtil.lastDayForAlarm)) {
@@ -59,15 +61,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupDatabaseOnFirstLaunch() {
-        //todo check how to init DB on first launch of db
-        if (preferences.getBoolean("first app start", true)) {
-            val scope = CoroutineScope(Job() + Dispatchers.IO)
-            scope.launch {
-                if (get<CardDatabase>().cardDao().tableSize() == 0) {
-                    Util.createDaysInDB(get())
-                    preferences.edit().putBoolean("first app start", false).apply()
-                }
+    private fun setupDatabaseIfNeccessary() {
+        val scope = CoroutineScope(Job() + Dispatchers.IO)
+        scope.launch {
+            if (!dayCompletionStatusUseCase.isDatabaseSetup) {
+                Timber.d("Add Entries to Database for this year")
+                val days = IntRange(1, 24).map { day -> LocalDate.of(DateUtil.today().year, Month.DECEMBER, day) }.toList()
+                addDayCompletionUseCase.addDefaultEntriesForDates(days)
             }
         }
     }

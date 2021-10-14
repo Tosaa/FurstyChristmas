@@ -44,8 +44,8 @@
         android:label="workout_preview_fragment"
         tools:layout="@layout/workout_preview_fragment">
         <argument
-            android:name="day"
-            app:argType="integer" />
+            android:name="date"
+            app:argType="string" />
         <action
             android:id="@+id/action_workoutPreview_to_exercisePreview"
             app:destination="@id/exercisePreview"

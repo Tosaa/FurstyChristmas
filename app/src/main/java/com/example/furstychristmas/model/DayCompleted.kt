@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import java.time.LocalDate
 
 @Entity
-data class Card(
+data class DayCompleted(
     @PrimaryKey
     val day: LocalDate,
     var isDone: Boolean

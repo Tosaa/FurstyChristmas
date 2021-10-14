@@ -2,14 +2,12 @@ package com.example.furstychristmas.util
 
 import android.content.res.AssetManager
 import android.util.Log
-import com.example.furstychristmas.model.*
-import com.example.furstychristmas.persistence.CardDatabase
+import com.example.furstychristmas.model.Drill
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.lang.Exception
 import java.time.LocalDate
 
 object Util {
@@ -29,12 +27,6 @@ object Util {
 
     fun intToDayInDecember(day: Int): LocalDate {
         return LocalDate.of(2020, 12, day)
-    }
-
-    suspend fun createDaysInDB(cardDatabase: CardDatabase) {
-        cardDatabase.cardDao().insertCards(IntRange(1, 24).map {
-            Card(intToDayInDecember(it), false)
-        })
     }
 
     fun getDrillPresets(assetManager: AssetManager): Map<String, List<Drill>> {
