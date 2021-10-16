@@ -1,0 +1,285 @@
+[
+  {
+    "id": "PUSHUP",
+    "name": "Liegestütz",
+    "start_position": "Auf dem Bauch liegend.",
+    "execution": "Hände auf Brusthöhe ablegen. Körperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind. Langsam den Oberkörper wieder auf den Boden senken.",
+    "muscles": [
+      "arms",
+      "chest"
+    ]
+  },
+  {
+    "id": "PUSHUP_ONE_SIDED",
+    "name": "Liegestütz mit erhöhter Hand",
+    "start_position": "Auf dem Bauch liegend.",
+    "execution": "Hände auf Brusthöhe ablegen. Eine Hand erhöht z.B. auf Helm ablegen. Körperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind. Langsam den Oberkörper wieder auf den Boden senken.",
+    "muscles": [
+      "arms",
+      "chest"
+    ]
+  },
+  {
+    "id": "SHOULDER_TAPS",
+    "name": "Shoulder taps",
+    "start_position": "Hochgedrückte Liegestütz Position.",
+    "execution": "Berühre die linke Schulter mit der rechten Hand. Setze die Hand wieder auf dem Boden ab. Berühre die rechte Schulter mit der linken Hand. Setze die Hand wieder auf dem Boden ab.",
+    "muscles": [
+      "arms",
+      "chest",
+      "back",
+      "abs"
+    ]
+  },
+  {
+    "id": "PUSHUP_FALLING",
+    "name": "Fallender Liegestütz",
+    "start_position": "Mit aufrechtem Oberkörper hinknien.",
+    "execution": "Oberkörper auf den Boden fallen lassen. Mit den Händen abfangen. Anschließend den Oberkörper vom Boden abstoßen, bis man wieder in Ausgangsposition ist.",
+    "muscles": [
+      "arms",
+      "chest"
+    ]
+  },
+  {
+    "id": "PUSHUP_TIGHT",
+    "name": "Liegestütz mit engen Händen",
+    "start_position": "Auf dem Bauch liegend.",
+    "execution": "Hände eng beieinander auf Brusthöhe ablegen. Körperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind. Langsam den Oberkörper wieder auf den Boden senken.",
+    "muscles": [
+      "arms",
+      "chest"
+    ]
+  },
+  {
+    "id": "PUSHUP_WIDE",
+    "name": "Liegestütz mit weiten Händen",
+    "start_position": "Auf dem Bauch liegend.",
+    "execution": "Hände weit außerhalb der Brust auf Brusthöhe ablegen. Körperspannung aufbauen und Körper vom Boden drücken, bis die Arme fast ganz gestreckt sind. Langsam den Oberkörper wieder auf den Boden senken.",
+    "muscles": [
+      "arms",
+      "chest"
+    ]
+  },
+  {
+    "id": "PUSHUP_TO_PLANK",
+    "name": "Liegestütz zu Plank",
+    "start_position": "Hochgedrückte Liegestütz Position.",
+    "execution": "Aus der Ausgangsposition in den Ellenbogenstütz wechseln. Anschließend wieder in die Liegestütz Position wechseln.",
+    "muscles": [
+      "arms",
+      "back",
+      "abs",
+      "chest"
+    ]
+  },
+  {
+    "id": "MILITARY",
+    "name": "Military press",
+    "start_position": "Füße und Hände berühren den Boden, während Bauch und Beine einen 90 Grad Winkel bilden.",
+    "execution": "Die Arme abwinkeln und dabei den 90 Grad Winkel beibehalten. Anschließend die Arme wieder Strecken und den Oberkörper hoch drücken. Bei dieser Übung solltest du vorher auch online nach \"halbe Handstandliegestütze\" oder \"Military press ohne Hantel\" suchen.",
+    "muscles": [
+      "arms",
+      "chest"
+    ]
+  },
+  {
+    "id": "SQUAD",
+    "name": "Kniebeuge",
+    "start_position": "Aufrechter Stand mit Füßen etwas breiter als schulterbreit.",
+    "execution": "Mit aufrechtem Oberkörper in die Hocke gehen, bis die Knie fast einen 90 Grad Winkel bilden.",
+    "muscles": [
+      "legs"
+    ]
+  },
+  {
+    "id": "LUNGES_FORWARD",
+    "name": "Ausfallschritt vorwärts",
+    "start_position": "Aufrechter Stand.",
+    "execution": "Ausfallschritt nach vorne machen, wobei im tiefsten Punkt beide Knie einen 90 Grad Winkel bilden. Der Oberkörper bleibt dabei durchgehend aufrecht. Diese Stellung 2-4 Sekunden halten.",
+    "muscles": [
+      "legs"
+    ]
+  },
+  {
+    "id": "LUNGES_BACKWARD",
+    "name": "Ausfallschritt rückwärts",
+    "start_position": "Aufrechter Stand.",
+    "execution": "Ausfallschritt nach hinten machen, wobei im tiefsten Punkt beide Knie einen 90 Grad Winkel bilden. Der Oberkörper bleibt dabei durchgehend aufrecht. Diese Stellung 2-4 Sekunden halten.",
+    "muscles": [
+      "legs"
+    ]
+  },
+  {
+    "id": "SQUAD_ONE_LEG",
+    "name": "Einbeinige Kniebeuge",
+    "start_position": "Aufrechter Stand und ein Bein nach hinten auf einer erhöhten Position ablegen. Beispielsweise auf einem Stuhl.",
+    "execution": "Ähnlich zum Ausfallschritt das vordere Knie abwinkeln.",
+    "muscles": [
+      "legs",
+      "back"
+    ]
+  },
+  {
+    "id": "DEADLIFT_ONE_LEG",
+    "name": "Einbeinige Standwaage",
+    "start_position": "Aufrechter Stand und das linke Bein leicht vom Boden abheben.",
+    "execution": "Den Oberkörper in eine Horizonale bringen, das Bein dabei gestreckt nach hinten anheben, sodass Bein und Rücken eine Gerade bilden. Mit der rechten Hand den rechten Fuß berühren und anschließend den Körper wieder aufrichten. Diese Übung sollte langsam durchgeführt werden um die Balance und Stabilisation des Knies zu trainieren.",
+    "muscles": [
+      "legs",
+      "back"
+    ]
+  },
+  {
+    "id": "PLANK",
+    "name": "Plank position halten",
+    "start_position": "Hände, Unterarm und Ellenbogen, sowie die Füße berühren den Boden. Der Rest des Körpers bildet eine Linie.",
+    "execution": "Halte die Stellung so lange wie angegeben. Achte darauf, dass die Hüfte nicht zu weit oben oder unten ist.",
+    "muscles": [
+      "back",
+      "abs"
+    ]
+  },
+  {
+    "id": "PLANK_SIDE",
+    "name": "Seitliche Plank position halten",
+    "start_position": "Wähle eine Seite, auf der du die Übung durchführst. Hand, Unterarm und Ellenbogen, sowie der Fuß liegen auf dem Boden auf. Der Rest des Körpers bildet eine Linie. Die andere Hand kannst du auf der Hüfte ablegen.",
+    "execution": "Halte die Stellung so lange wie angegeben. Achte darauf, dass die Schultern nicht zu weit nach vorne geneigt sind, da du sonst das Gleichgewicht leichter verlierst.",
+    "muscles": [
+      "back",
+      "abs"
+    ]
+  },
+  {
+    "id": "LEG_RISES",
+    "name": "Beinheben",
+    "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.",
+    "execution": "Hebe deine Füße weiter, bis sie ca. in einem 45 Grad Winkel zum Boden stehen. Senke sie dann wieder ab, aber nicht ganz bis auf den Boden!",
+    "muscles": [
+      "legs",
+      "abs"
+    ]
+  },
+  {
+    "id": "ABS_ROTATION",
+    "name": "Russian twist",
+    "start_position": "Setz dich auf den Boden, bilde einen graden Rücken, winkle die Beine etwas an und hebe sie in die Luft.",
+    "execution": "Dreh dich nur mit deinem Oberkörper nach links, tippe mit den Fingern kurz auf den Boden neben deiner Hüfte. Drehe dich dann nach rechts und tippe erneut kurz auf den Boden.",
+    "muscles": [
+      "abs",
+      "back"
+    ]
+  },
+  {
+    "id": "FLUTTER_KICKS",
+    "name": "Flutter kicks",
+    "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.",
+    "execution": "Hebe das linke Bein, bis es ca. in einem 45 Grad Winkel zum Boden steht. Senke es dann wieder bis kurz über dem Boden und hebe das rechte Bein.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
+    "id": "BICYCLE",
+    "name": "Bicycle",
+    "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.",
+    "execution": "Ziehe das linke Knie zur Brust und strecke es dann wieder aus. Ziehe dann das rechte Knie zur Brust und strecke es wieder aus. Die Beine bleiben die ganze Zeit in der Luft.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
+    "id": "SIT_UP",
+    "name": "Sit ups",
+    "start_position": "Setz dich auf den Boden, bilde einen graden Rücken, winkle die Beine etwas an. Die Füße berühren den Boden.",
+    "execution": "Lehne dich mit deinem Oberkörper nach hinten, bis du mit den Schultern den Boden berührst. Dann drückst du deinen Oberkörper wieder in die Ausgangsposition. Achte dabei darauf nicht mit Schwung zu arbeiten, sondern mit der Kraft deiner Bauchmuskeln.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
+    "id": "KNEE_TO_ELBOW",
+    "name": "Knee to elbow",
+    "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.",
+    "execution": "Ziehe das linke Knie zur Brust und drehe deinen Oberkörper gleichzeitg so, dass du dein Knie mit deinem rechten Ellenbogen berühren kannst. Strecke das Bein wieder aus und ziehe dann das rechte Knie zur Brust. Auch hier drehst du deinen Oberkörper so, dass du dein Knie mit dem linken Ellenbogen berühren kannst. Die Beine bleiben die ganze Zeit in der Luft.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
+    "id": "LEG_RISED_CIRCLE",
+    "name": "Beinheben mit kreisender Bewegung",
+    "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe sie soweit an, dass sie in einem 45 Grad Winkel zum Boden stehen.",
+    "execution": "Male mit geschlossenen Beinen einen Kreis in die Luft.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
+    "id": "LEG_STRETCH",
+    "name": "Beindehnung offen",
+    "start_position": "Setz dich auf den Boden, strecke die Beine leicht geöffnet aus und zieh die Zehenspitzen an.",
+    "execution": "Streck dich mit deinen Armen über den Knöchel eines Beines, sodass du deine Knöchel mit deinen Händen berühren kannst. Halte deinen Rücken dabei grade. Führe die Bewegung dynamisch aus. Die Übung sollte deine Oberschenkelrückseite dehnen.",
+    "muscles": [
+      "back",
+      "legs"
+    ]
+  },
+  {
+    "id": "LEG_STRETCH_CLOSED",
+    "name": "Beindehnung geschlossen",
+    "start_position": "Setz dich auf den Boden, strecke die Beine geschlossen aus und zieh die Zehenspitzen an.",
+    "execution": "Streck dich mit deinen Armen zu den Füßen, sodass du deine Füße mit deinen Händen berühren kannst. Führe die Bewegung dynamisch aus.",
+    "muscles": [
+      "back",
+      "legs"
+    ]
+  },
+  {
+    "id": "FEMUR_STRETCH",
+    "name": "Oberschenkeldehnung",
+    "start_position": "Lege dich auf den Bauch und winkle ein Bein an, sodass du es mit deinen Händen am Fuß greifen kannst.",
+    "execution": "Ziehe dein Bein leicht an, sodass die Oberschenkelvorderseite gedehnt wird. Halte die Position für die angegebene Zeit.",
+    "muscles": [
+      "legs"
+    ]
+  },
+  {
+    "id": "BACK_STRETCH",
+    "name": "Rückendehnung",
+    "start_position": "Knie dich auf den Boden, sodass dein Hintern die Fersen berührt.",
+    "execution": "Beuge deinen Oberkörper nach vorne und strecke deine Arme weit aus. Ziehe dann deine Hüfte leicht nach hinten, sodass du Spannung in den Armen aufbaust. Halte diese Position für die angegebene Zeit.",
+    "muscles": [
+      "back",
+      "arms"
+    ]
+  },
+  {
+    "id": "COBRA_STRETCH",
+    "name": "Cobra stretch",
+    "start_position": "Lege dich auf den Bauch und lege deine Hände neben der Brust ab.",
+    "execution": "Drück dich vom Boden weg, lasse dabei aber den Körper ab der Hüfte abwärts am Boden.",
+    "muscles": [
+      "back",
+      "arms"
+    ]
+  },
+  {
+    "id": "ARM_ROTATION",
+    "name": "Arm Kreisen",
+    "start_position": "Stell dich schulterbreit hin und strecke die Arme zu beiden Seiten aus.",
+    "execution": "Male mit beiden Armen Kreise seitlich in die Luft. Erst vorwärts, dann rückwärts.",
+    "muscles": [
+      "arms"
+    ]
+  },
+  {
+    "id": "BREAK",
+    "name": "Pause",
+    "start_position": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    "execution": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    "muscles": [
+      "break"
+    ]
+  }
+]

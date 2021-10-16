@@ -9,14 +9,14 @@
 
         <variable
             name="viewmodel"
-            type="com.example.furstychristmas.screen.day.WorkoutViewModel" />
+            type="com.example.furstychristmas.screen.day.workout.WorkoutViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".screen.day.WorkoutPreview">
+        tools:context=".screen.day.workout.WorkoutPreviewFragment">
 
         <include
             android:id="@+id/workout_header"
@@ -49,22 +49,15 @@
                     android:layout_height="wrap_content"
                     android:text="@{viewmodel.workoutstring}" />
 
-                <com.google.android.material.textview.MaterialTextView
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/exercises"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{viewmodel.infoString}" />
+                    android:layout_margin="@dimen/main_margin"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/exercise" />
 
-                <!--
-
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:id="@+id/exercises"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/main_margin"
-                                    android:orientation="vertical"
-                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                                    tools:listitem="@layout/exercise" />
-                -->
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/workout_done_button"

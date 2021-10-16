@@ -9,7 +9,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.databinding.ExercisePreviewFragmentBinding
-import com.example.furstychristmas.screen.day.MuscleIconAdapter
+import com.example.furstychristmas.screen.day.workout.MuscleIconAdapter
 
 
 class ExercisePreview : Fragment() {

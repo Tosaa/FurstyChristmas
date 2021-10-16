@@ -16,7 +16,7 @@ object DateUtil {
         return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE)
     }
 
-    fun today() = LocalDate.now()
+    fun today() = LocalDate.of(2021, Month.DECEMBER, 15)//LocalDate.now()
 
     /**
      * Returns the validPeriod for the Calendar.

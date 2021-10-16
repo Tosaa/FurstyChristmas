@@ -7,7 +7,7 @@
 
         <variable
             name="drill"
-            type="com.example.furstychristmas.model.Drill" />
+            type="com.example.furstychristmas.workout.domain.model.Drill" />
     </data>
 
     <LinearLayout

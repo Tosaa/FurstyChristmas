@@ -7,17 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.furstychristmas.R
 import com.example.furstychristmas.databinding.FragmentCardsOverviewFragmentBinding
 import com.example.furstychristmas.eula.EulaActivity
+import com.example.furstychristmas.info.domain.usecase.LoadInfoUseCase
+import com.example.furstychristmas.util.NavigationHelper
+import com.example.furstychristmas.workout.domain.usecase.LoadWorkoutUseCase
 import org.koin.android.ext.android.inject
 
 class CardsOverviewFragment : Fragment() {
 
     private lateinit var binding: FragmentCardsOverviewFragmentBinding
     private val cardViewModel: CardViewModel by inject()
+    private val loadInfoUseCase: LoadInfoUseCase by inject()
+    private val loadWorkoutUseCase: LoadWorkoutUseCase by inject()
     private lateinit var adapter: DayOverviewAdapter
 
     override fun onCreateView(
@@ -35,7 +41,7 @@ class CardsOverviewFragment : Fragment() {
     }
 
     private fun setupCards() {
-        adapter = DayOverviewAdapter(findNavController(), emptyList())
+        adapter = DayOverviewAdapter(NavigationHelper(findNavController(), loadInfoUseCase, loadWorkoutUseCase, cardViewModel.viewModelScope), emptyList())
         binding.dayCards.adapter = adapter
         binding.dayCards.layoutManager = GridLayoutManager(requireContext(), 4)
 

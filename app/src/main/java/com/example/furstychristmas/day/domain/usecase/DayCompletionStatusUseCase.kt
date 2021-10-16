@@ -1,6 +1,7 @@
-package com.example.furstychristmas.repository.day
+package com.example.furstychristmas.day.domain.usecase
 
-import com.example.furstychristmas.model.DayCompleted
+import com.example.furstychristmas.day.domain.model.DayCompleted
+import com.example.furstychristmas.day.domain.repository.DayCompletionRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.time.LocalDate

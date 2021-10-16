@@ -2,7 +2,7 @@ package com.example.furstychristmas.util
 
 import android.content.res.AssetManager
 import android.util.Log
-import com.example.furstychristmas.model.Drill
+import com.example.furstychristmas.workout.domain.model.Drill
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -35,7 +35,7 @@ object Util {
         try {
             val json = BufferedReader(
                 InputStreamReader(
-                    assetManager.open("excersises.json"),
+                    assetManager.open("excersises_2020.json"),
                     "UTF-8"
                 )
             ).readText()

@@ -2,7 +2,7 @@ package com.example.furstychristmas.persistence
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.furstychristmas.model.DayCompleted
+import com.example.furstychristmas.day.domain.model.DayCompleted
 import com.example.furstychristmas.util.Util
 import java.time.LocalDate
 

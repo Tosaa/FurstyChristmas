@@ -1,20 +1,20 @@
-package com.example.furstychristmas.repository.content
+package com.example.furstychristmas.workout.domain.repository
 
 import android.content.res.AssetManager
-import com.example.furstychristmas.model.Drill
 import com.example.furstychristmas.model.Workout
-import com.example.furstychristmas.model.content.DayContent
 import com.example.furstychristmas.util.Util
+import com.example.furstychristmas.workout.domain.model.Drill
+import com.example.furstychristmas.workout.domain.model.WorkoutContent
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
 
 class WorkoutRepository(private val assetManager: AssetManager) {
 
-    fun getContent(): List<DayContent> = listOf(
-        DayContent.Workout(
+    fun getContent(): List<WorkoutContent> = listOf(
+        WorkoutContent(
             date = LocalDate.parse("2021-12-02", DateTimeFormatter.ISO_LOCAL_DATE),
-            drills = listOf(),
+            drills = workouts.getOrDefault("beine", emptyList()),
             rounds = 2,
             bodyparts = listOf("test", "list"),
             motto = "test-motto",

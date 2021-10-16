@@ -1,4 +1,4 @@
-package com.example.furstychristmas.screen.day
+package com.example.furstychristmas.screen.day.workout
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

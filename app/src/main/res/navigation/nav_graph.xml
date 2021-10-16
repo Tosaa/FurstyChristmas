@@ -37,10 +37,13 @@
             app:exitAnim="@anim/fragment_custom_open_exit"
             app:popEnterAnim="@anim/fragment_custom_open_enter"
             app:popExitAnim="@anim/fragment_custom_open_exit" />
+        <action
+            android:id="@+id/overview_info_preview"
+            app:destination="@id/infoPreviewFragment" />
     </fragment>
     <fragment
         android:id="@+id/workoutPreview"
-        android:name="com.example.furstychristmas.screen.day.WorkoutPreview"
+        android:name="com.example.furstychristmas.screen.day.workout.WorkoutPreviewFragment"
         android:label="workout_preview_fragment"
         tools:layout="@layout/workout_preview_fragment">
         <argument
@@ -81,4 +84,13 @@
         android:id="@+id/lastDay"
         android:name="com.example.furstychristmas.screen.christmas.LastDay"
         android:label="LastDay" />
+    <fragment
+        android:id="@+id/infoPreviewFragment"
+        android:name="com.example.furstychristmas.screen.day.info.InfoPreviewFragment"
+        android:label="InfoPreviewFragment"
+        tools:layout="@layout/info_fragment">
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
 </navigation>

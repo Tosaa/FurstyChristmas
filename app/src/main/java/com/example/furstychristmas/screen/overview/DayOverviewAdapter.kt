@@ -5,17 +5,15 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.R
 import com.example.furstychristmas.databinding.ChristmasCardBinding
-import com.example.furstychristmas.model.DayCompleted
+import com.example.furstychristmas.day.domain.model.DayCompleted
 import com.example.furstychristmas.util.DateUtil
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import com.example.furstychristmas.util.NavigationHelper
 
 class DayOverviewAdapter(
-    private val navigationController: NavController,
+    private val navigationHelper: NavigationHelper,
     private var days: List<DayCompleted> = emptyList()
 ) : RecyclerView.Adapter<DayOverviewAdapter.CardViewHolder>() {
 
@@ -50,10 +48,7 @@ class DayOverviewAdapter(
 
         if (dayIsEnabled) {
             holder.binding.button.setOnClickListener {
-                if (completableDay.day.dayOfMonth != 24) {
-                    goToWorkoutPreview(completableDay.day)
-                } else
-                    goToLastDay()
+                navigationHelper.navigateToDay(completableDay.day)
             }
         }
     }
@@ -61,16 +56,6 @@ class DayOverviewAdapter(
     fun setItems(dayCompleteds: List<DayCompleted>) {
         this.days = dayCompleteds
         notifyDataSetChanged()
-    }
-
-    private fun goToLastDay() {
-        val action = CardsOverviewFragmentDirections.actionCardsOverviewFragmentToLastDay()
-        navigationController.navigate(action)
-    }
-
-    private fun goToWorkoutPreview(date: LocalDate) {
-        val action = CardsOverviewFragmentDirections.overviewWorkoutPreview(date.format(DateTimeFormatter.ISO_LOCAL_DATE))
-        navigationController.navigate(action)
     }
 
     inner class CardViewHolder(val binding: ChristmasCardBinding) :

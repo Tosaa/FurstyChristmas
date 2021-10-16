@@ -11,12 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.furstychristmas.databinding.ActivityMainBinding
+import com.example.furstychristmas.day.domain.usecase.AddDayCompletionUseCase
+import com.example.furstychristmas.day.domain.usecase.DayCompletionStatusUseCase
 import com.example.furstychristmas.eula.EulaActivity
 import com.example.furstychristmas.koin.dbModule
 import com.example.furstychristmas.koin.myModule
 import com.example.furstychristmas.receiver.DailyNotificationReceiver
-import com.example.furstychristmas.repository.day.AddDayCompletionUseCase
-import com.example.furstychristmas.repository.day.DayCompletionStatusUseCase
 import com.example.furstychristmas.util.DateUtil
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -59,6 +59,9 @@ class MainActivity : AppCompatActivity() {
             Timber.d("set alarm for $today")
             setRecurringAlarm(applicationContext, today)
         }
+
+        // val exerciseJson = Exercise.values().joinToString(prefix = "[", postfix = "]", separator = ",") { ConvertExercisesUtil(resources).formatExercise(it) }
+        // Timber.d(exerciseJson)
     }
 
     private fun setupDatabaseIfNeccessary() {

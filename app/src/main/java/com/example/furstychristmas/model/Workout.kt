@@ -1,5 +1,7 @@
 package com.example.furstychristmas.model
 
+import com.example.furstychristmas.workout.domain.model.Drill
+
 data class Workout(
     val day: Int,
     val drills: List<Drill>,

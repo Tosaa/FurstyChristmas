@@ -1,4 +1,7 @@
-package com.example.furstychristmas.model
+package com.example.furstychristmas.workout.domain.model
+
+import com.example.furstychristmas.model.Execution
+import com.example.furstychristmas.model.Exercise
 
 class Drill(val repetition: Execution, val exercise: Exercise, val breakTime: Execution) {
 

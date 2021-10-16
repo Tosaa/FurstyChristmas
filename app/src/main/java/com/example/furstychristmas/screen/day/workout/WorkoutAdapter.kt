@@ -1,11 +1,11 @@
-package com.example.furstychristmas.screen.day
+package com.example.furstychristmas.screen.day.workout
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.databinding.ExerciseBinding
-import com.example.furstychristmas.model.Drill
+import com.example.furstychristmas.workout.domain.model.Drill
 
 class WorkoutAdapter(
     private val drills: List<Drill>,
@@ -31,7 +31,7 @@ class WorkoutAdapter(
         if (drills[position].exercise.exerciseName != "Pause") {
             holder.exerciseBinding.card.setOnClickListener {
                 navigationController.navigate(
-                    WorkoutPreviewDirections.actionWorkoutPreviewToExercisePreview(drills[position].exercise)
+                    WorkoutPreviewFragmentDirections.actionWorkoutPreviewToExercisePreview(drills[position].exercise)
                 )
             }
         }

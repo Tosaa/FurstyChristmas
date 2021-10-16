@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.databinding.ExerciseOverviewItemBinding
 import com.example.furstychristmas.model.Exercise
-import com.example.furstychristmas.screen.day.MuscleIconAdapter
+import com.example.furstychristmas.screen.day.workout.MuscleIconAdapter
 
 class ExerciseAdapter(
     private val exercises: List<Exercise>,
