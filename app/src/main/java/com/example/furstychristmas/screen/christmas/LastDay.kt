@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.furstychristmas.databinding.FragmentLastDayBinding
-import com.example.furstychristmas.day.domain.usecase.DayCompletionStatusUseCase
+import com.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
+import com.example.furstychristmas.domain.workout.repository.WorkoutRepository
 import com.example.furstychristmas.util.DateUtil
-import com.example.furstychristmas.workout.domain.repository.WorkoutRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

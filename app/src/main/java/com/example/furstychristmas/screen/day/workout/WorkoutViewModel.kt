@@ -4,9 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
-import com.example.furstychristmas.day.domain.usecase.DayCompletionStatusUseCase
-import com.example.furstychristmas.workout.domain.model.WorkoutContent
-import com.example.furstychristmas.workout.domain.usecase.LoadWorkoutUseCase
+import com.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
+import com.example.furstychristmas.domain.workout.model.WorkoutContent
+import com.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.TextStyle

@@ -1,7 +1,7 @@
 package com.example.furstychristmas.util
 
+import com.example.furstychristmas.domain.workout.model.Drill
 import com.example.furstychristmas.model.*
-import com.example.furstychristmas.workout.domain.model.Drill
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
 

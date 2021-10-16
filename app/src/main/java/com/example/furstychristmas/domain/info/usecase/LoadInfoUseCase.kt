@@ -1,6 +1,6 @@
-package com.example.furstychristmas.info.domain.usecase
+package com.example.furstychristmas.domain.info.usecase
 
-import com.example.furstychristmas.info.domain.repository.InfoRepository
+import com.example.furstychristmas.domain.info.repository.InfoRepository
 import java.time.LocalDate
 
 class LoadInfoUseCase(private val infoRepository: InfoRepository) {

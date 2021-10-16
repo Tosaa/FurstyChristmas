@@ -1,4 +1,4 @@
-package com.example.furstychristmas.day.domain.model
+package com.example.furstychristmas.domain.day.model
 
 import androidx.room.Entity
 import androidx.room.Ignore

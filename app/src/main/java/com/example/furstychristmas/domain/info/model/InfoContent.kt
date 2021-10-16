@@ -1,4 +1,4 @@
-package com.example.furstychristmas.info.domain.model
+package com.example.furstychristmas.domain.info.model
 
 import java.time.LocalDate
 

@@ -1,7 +1,7 @@
-package com.example.furstychristmas.info.domain.repository
+package com.example.furstychristmas.domain.info.repository
 
-import com.example.furstychristmas.info.domain.model.InfoContent
-import com.example.furstychristmas.info.domain.model.InfoPageContent
+import com.example.furstychristmas.domain.info.model.InfoContent
+import com.example.furstychristmas.domain.info.model.InfoPageContent
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

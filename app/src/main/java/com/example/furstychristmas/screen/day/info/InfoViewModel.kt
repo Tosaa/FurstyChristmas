@@ -3,9 +3,9 @@ package com.example.furstychristmas.screen.day.info
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.furstychristmas.day.domain.usecase.DayCompletionStatusUseCase
-import com.example.furstychristmas.info.domain.model.InfoContent
-import com.example.furstychristmas.info.domain.usecase.LoadInfoUseCase
+import com.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
+import com.example.furstychristmas.domain.info.model.InfoContent
+import com.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 

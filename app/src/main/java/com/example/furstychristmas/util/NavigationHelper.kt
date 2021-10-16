@@ -1,9 +1,9 @@
 package com.example.furstychristmas.util
 
 import androidx.navigation.NavController
-import com.example.furstychristmas.info.domain.usecase.LoadInfoUseCase
+import com.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
+import com.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
 import com.example.furstychristmas.screen.overview.CardsOverviewFragmentDirections
-import com.example.furstychristmas.workout.domain.usecase.LoadWorkoutUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

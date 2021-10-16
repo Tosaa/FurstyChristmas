@@ -12,10 +12,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.furstychristmas.R
 import com.example.furstychristmas.databinding.FragmentCardsOverviewFragmentBinding
+import com.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
+import com.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
 import com.example.furstychristmas.eula.EulaActivity
-import com.example.furstychristmas.info.domain.usecase.LoadInfoUseCase
 import com.example.furstychristmas.util.NavigationHelper
-import com.example.furstychristmas.workout.domain.usecase.LoadWorkoutUseCase
 import org.koin.android.ext.android.inject
 
 class CardsOverviewFragment : Fragment() {

@@ -1,7 +1,7 @@
-package com.example.furstychristmas.day.domain.repository
+package com.example.furstychristmas.domain.day.repository
 
 import androidx.lifecycle.map
-import com.example.furstychristmas.day.domain.model.DayCompleted
+import com.example.furstychristmas.domain.day.model.DayCompleted
 import com.example.furstychristmas.persistence.DayDatabase
 import com.example.furstychristmas.util.DateUtil
 import timber.log.Timber

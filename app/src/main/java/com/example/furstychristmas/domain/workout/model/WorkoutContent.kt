@@ -1,4 +1,4 @@
-package com.example.furstychristmas.workout.domain.model
+package com.example.furstychristmas.domain.workout.model
 
 import java.time.LocalDate
 

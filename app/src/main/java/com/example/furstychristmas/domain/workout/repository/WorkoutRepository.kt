@@ -1,10 +1,10 @@
-package com.example.furstychristmas.workout.domain.repository
+package com.example.furstychristmas.domain.workout.repository
 
 import android.content.res.AssetManager
+import com.example.furstychristmas.domain.workout.model.Drill
+import com.example.furstychristmas.domain.workout.model.WorkoutContent
 import com.example.furstychristmas.model.Workout
 import com.example.furstychristmas.util.Util
-import com.example.furstychristmas.workout.domain.model.Drill
-import com.example.furstychristmas.workout.domain.model.WorkoutContent
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*

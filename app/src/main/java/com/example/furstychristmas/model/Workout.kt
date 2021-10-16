@@ -1,6 +1,6 @@
 package com.example.furstychristmas.model
 
-import com.example.furstychristmas.workout.domain.model.Drill
+import com.example.furstychristmas.domain.workout.model.Drill
 
 data class Workout(
     val day: Int,

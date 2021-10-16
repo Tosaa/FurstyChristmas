@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.databinding.ExerciseBinding
-import com.example.furstychristmas.workout.domain.model.Drill
+import com.example.furstychristmas.domain.workout.model.Drill
 
 class WorkoutAdapter(
     private val drills: List<Drill>,

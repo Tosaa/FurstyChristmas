@@ -1,7 +1,7 @@
 package com.example.furstychristmas.screen.overview
 
 import androidx.lifecycle.ViewModel
-import com.example.furstychristmas.day.domain.usecase.DayCompletionStatusUseCase
+import com.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 
 class CardViewModel(
     completionStatusUseCase: DayCompletionStatusUseCase

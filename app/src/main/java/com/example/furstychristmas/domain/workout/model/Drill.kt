@@ -1,4 +1,4 @@
-package com.example.furstychristmas.workout.domain.model
+package com.example.furstychristmas.domain.workout.model
 
 import com.example.furstychristmas.model.Execution
 import com.example.furstychristmas.model.Exercise

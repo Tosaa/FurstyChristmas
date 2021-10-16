@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.furstychristmas.databinding.ActivityMainBinding
-import com.example.furstychristmas.day.domain.usecase.AddDayCompletionUseCase
-import com.example.furstychristmas.day.domain.usecase.DayCompletionStatusUseCase
+import com.example.furstychristmas.domain.day.usecase.AddDayCompletionUseCase
+import com.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import com.example.furstychristmas.eula.EulaActivity
 import com.example.furstychristmas.koin.dbModule
 import com.example.furstychristmas.koin.myModule
