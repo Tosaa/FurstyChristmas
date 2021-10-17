@@ -12,11 +12,17 @@ import java.time.format.DateTimeFormatter
 
 object DateUtil {
 
+    private var dev_day: LocalDate? = null
+
+    fun setDevDay(date: LocalDate) {
+        dev_day = date
+    }
+
     fun dayAsIsoDate(localDate: LocalDate): String {
         return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE)
     }
 
-    fun today() = LocalDate.of(2021, Month.DECEMBER, 15)//LocalDate.now()
+    fun today() = dev_day ?: LocalDate.now()
 
     /**
      * Returns the validPeriod for the Calendar.

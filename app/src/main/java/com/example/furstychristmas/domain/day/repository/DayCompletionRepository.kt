@@ -1,6 +1,6 @@
 package com.example.furstychristmas.domain.day.repository
 
-import androidx.lifecycle.map
+import androidx.lifecycle.MediatorLiveData
 import com.example.furstychristmas.domain.day.model.DayCompleted
 import com.example.furstychristmas.persistence.DayDatabase
 import com.example.furstychristmas.util.DateUtil
@@ -12,11 +12,22 @@ class DayCompletionRepository(db: DayDatabase) {
 
     private val dayCompletedDao = db.dayCompletedDao()
 
-    val allDaysToComplete = dayCompletedDao.getDaysLD().map { it.filter { isDateActive(it.day) } }
+    // val allDaysToComplete = dayCompletedDao.getDaysLD().map { days -> days.filter { isDateActive(it.day) } }
 
-    val getCompletedDays = dayCompletedDao.getDaysLD().map { it.filter { it.isDone } }
+    val allDaysToComplete = MediatorLiveData<List<DayCompleted>>().apply {
+        var latestToday = DateUtil.today()
+        var latestDays = emptyList<DayCompleted>()
+        addSource(DateUtil.todayAsLiveData) {
+            latestToday = it
+            value = latestDays.filter { isDateActive(it.day, latestToday) }
+        }
+        addSource(dayCompletedDao.getDaysLD()) {
+            latestDays = it
+            value = latestDays.filter { isDateActive(it.day, latestToday) }
+        }
+    }
 
-    val isDatabaseSetupForThisYear: Boolean = dayCompletedDao.getDays().any { isDateActive(it.day) }
+    val isDatabaseSetupForThisYear: Boolean = dayCompletedDao.getDays().any { isDateActive(it.day, DateUtil.today()) }
 
     suspend fun getDay(date: LocalDate): DayCompleted? {
         return dayCompletedDao.getDays().firstOrNull { it.day == date }
@@ -36,11 +47,12 @@ class DayCompletionRepository(db: DayDatabase) {
     }
 
     /**
-     * todo: doc
+     * The active days are the days where the content for `this year` is visible. This should be from February 1st until last day of January.
+     * Background for this idea is that the Calendar is still visible in Januar, if the new years workouts needs to be done. ;)
      */
-    private fun isDateActive(date: LocalDate): Boolean {
-        val isJanuar = DateUtil.today().month == Month.JANUARY
-        var thisYear = DateUtil.today().year
+    private fun isDateActive(date: LocalDate, today: LocalDate): Boolean {
+        val isJanuar = today.month == Month.JANUARY
+        var thisYear = today.year
         if (isJanuar) thisYear = -1
         return date.year == thisYear
     }

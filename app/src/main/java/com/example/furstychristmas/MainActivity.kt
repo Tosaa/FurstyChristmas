@@ -32,6 +32,7 @@ import timber.log.Timber.DebugTree
 import java.time.LocalDate
 import java.time.Month
 import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 
 
 class MainActivity : AppCompatActivity() {
@@ -59,6 +60,12 @@ class MainActivity : AppCompatActivity() {
             Timber.d("set alarm for $today")
             setRecurringAlarm(applicationContext, today)
         }
+
+        preferences.getString("developer_date", null)?.let {
+            val date = LocalDate.parse(it, DateTimeFormatter.ISO_LOCAL_DATE)
+            DateUtil.setDevDay(date)
+        }
+
 
         // val exerciseJson = Exercise.values().joinToString(prefix = "[", postfix = "]", separator = ",") { ConvertExercisesUtil(resources).formatExercise(it) }
         // Timber.d(exerciseJson)

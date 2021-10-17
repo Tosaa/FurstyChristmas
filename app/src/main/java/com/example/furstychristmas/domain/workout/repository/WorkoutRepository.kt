@@ -6,12 +6,13 @@ import com.example.furstychristmas.domain.workout.model.WorkoutContent
 import com.example.furstychristmas.model.Workout
 import com.example.furstychristmas.util.Util
 import java.time.LocalDate
+import java.time.Month
 import java.time.format.DateTimeFormatter
 import java.util.*
 
 class WorkoutRepository(private val assetManager: AssetManager) {
 
-    fun getContent(): List<WorkoutContent> = listOf(
+    fun getContent(): List<WorkoutContent> = getContentOf2020().plus(
         WorkoutContent(
             date = LocalDate.parse("2021-12-02", DateTimeFormatter.ISO_LOCAL_DATE),
             drills = workouts.getOrDefault("beine", emptyList()),
@@ -21,6 +22,19 @@ class WorkoutRepository(private val assetManager: AssetManager) {
             durationInMinutes = 5
         )
     )
+
+    private fun getContentOf2020(): List<WorkoutContent> {
+        return IntRange(1, 24).map { getWorkoutOfDay(it) }.map { workout ->
+            WorkoutContent(
+                date = LocalDate.of(2020, Month.DECEMBER, workout.day),
+                drills = workout.drills,
+                rounds = workout.workoutRepetition,
+                bodyparts = workout.drills.flatMap { drill -> drill.exercise.muscles.map { it.muscle } },
+                motto = workout.motto,
+                durationInMinutes = workout.time
+            )
+        }
+    }
 
     private val workouts = Util.getDrillPresets(assetManager)
 

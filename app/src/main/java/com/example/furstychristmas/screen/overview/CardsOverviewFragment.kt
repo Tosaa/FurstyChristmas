@@ -62,5 +62,8 @@ class CardsOverviewFragment : Fragment() {
             intent.putExtras(bundle)
             startActivity(intent)
         }
+        binding.developerButton.setOnClickListener {
+            findNavController().navigate(CardsOverviewFragmentDirections.overviewDeveloper())
+        }
     }
 }

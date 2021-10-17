@@ -40,6 +40,9 @@
         <action
             android:id="@+id/overview_info_preview"
             app:destination="@id/infoPreviewFragment" />
+        <action
+            android:id="@+id/overview_developer"
+            app:destination="@id/developerFragment" />
     </fragment>
     <fragment
         android:id="@+id/workoutPreview"
@@ -93,4 +96,8 @@
             android:name="date"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/developerFragment"
+        android:name="com.example.furstychristmas.screen.developer.DeveloperFragment"
+        android:label="DeveloperFragment" />
 </navigation>
