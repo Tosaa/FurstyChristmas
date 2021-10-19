@@ -78,11 +78,7 @@
         android:id="@+id/exercisePreview"
         android:name="com.example.furstychristmas.screen.exercise.ExercisePreview"
         android:label="ExercisePreview"
-        tools:layout="@layout/exercise_preview_fragment">
-        <argument
-            android:name="exercise"
-            app:argType="com.example.furstychristmas.model.Exercise" />
-    </fragment>
+        tools:layout="@layout/exercise_preview_fragment" />
     <fragment
         android:id="@+id/lastDay"
         android:name="com.example.furstychristmas.screen.christmas.LastDay"

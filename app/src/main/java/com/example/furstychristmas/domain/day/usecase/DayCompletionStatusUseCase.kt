@@ -1,6 +1,6 @@
 package com.example.furstychristmas.domain.day.usecase
 
-import com.example.furstychristmas.domain.day.model.DayCompleted
+import com.example.furstychristmas.domain.day.model.Day
 import com.example.furstychristmas.domain.day.repository.DayCompletionRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -20,7 +20,7 @@ class DayCompletionStatusUseCase(private val dayCompletionRepository: DayComplet
     }
 
     suspend fun markDayAsDone(date: LocalDate) = withContext(Dispatchers.IO) {
-        dayCompletionRepository.updateDay(DayCompleted(date, true))
+        dayCompletionRepository.updateDay(Day(date, true))
     }
 
 }

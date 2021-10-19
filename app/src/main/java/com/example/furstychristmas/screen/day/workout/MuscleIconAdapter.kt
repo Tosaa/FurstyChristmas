@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.databinding.MuscleIconBinding
-import com.example.furstychristmas.model.Muscle
+import com.example.furstychristmas.domain.workout.model.Muscle
 
 class MuscleIconAdapter(
     private val muscles: List<Muscle> = emptyList()

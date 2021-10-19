@@ -1,7 +1,7 @@
 package com.example.furstychristmas.domain.day.repository
 
 import androidx.lifecycle.MediatorLiveData
-import com.example.furstychristmas.domain.day.model.DayCompleted
+import com.example.furstychristmas.domain.day.model.Day
 import com.example.furstychristmas.persistence.DayDatabase
 import com.example.furstychristmas.util.DateUtil
 import timber.log.Timber
@@ -14,9 +14,9 @@ class DayCompletionRepository(db: DayDatabase) {
 
     // val allDaysToComplete = dayCompletedDao.getDaysLD().map { days -> days.filter { isDateActive(it.day) } }
 
-    val allDaysToComplete = MediatorLiveData<List<DayCompleted>>().apply {
+    val allDaysToComplete = MediatorLiveData<List<Day>>().apply {
         var latestToday = DateUtil.today()
-        var latestDays = emptyList<DayCompleted>()
+        var latestDays = emptyList<Day>()
         addSource(DateUtil.todayAsLiveData) {
             latestToday = it
             value = latestDays.filter { isDateActive(it.day, latestToday) }
@@ -29,19 +29,19 @@ class DayCompletionRepository(db: DayDatabase) {
 
     val isDatabaseSetupForThisYear: Boolean = dayCompletedDao.getDays().any { isDateActive(it.day, DateUtil.today()) }
 
-    suspend fun getDay(date: LocalDate): DayCompleted? {
+    suspend fun getDay(date: LocalDate): Day? {
         return dayCompletedDao.getDays().firstOrNull { it.day == date }
     }
 
-    suspend fun updateDay(completed: DayCompleted) {
+    suspend fun updateDay(completed: Day) {
         dayCompletedDao.updateCard(completed)
     }
 
-    suspend fun deleteDay(completed: DayCompleted) {
+    suspend fun deleteDay(completed: Day) {
 
     }
 
-    suspend fun createDays(days: List<DayCompleted>) {
+    suspend fun createDays(days: List<Day>) {
         Timber.d("Add days: $days")
         dayCompletedDao.insertDays(days)
     }

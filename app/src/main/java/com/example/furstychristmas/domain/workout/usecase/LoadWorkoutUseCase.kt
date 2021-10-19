@@ -7,7 +7,7 @@ import java.time.LocalDate
 
 class LoadWorkoutUseCase(private val workoutRepository: WorkoutRepository) {
 
-    fun getWorkoutAtDay(localDate: LocalDate): WorkoutContent? {
+    suspend fun getWorkoutAtDay(localDate: LocalDate): WorkoutContent? {
         val workout = workoutRepository.getContent().firstOrNull { it.date == localDate }
         Timber.i("getWorkoutAtDate: $localDate = $workout")
         return workout

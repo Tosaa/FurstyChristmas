@@ -31,7 +31,7 @@ class WorkoutAdapter(
         if (drills[position].exercise.exerciseName != "Pause") {
             holder.exerciseBinding.card.setOnClickListener {
                 navigationController.navigate(
-                    WorkoutPreviewFragmentDirections.actionWorkoutPreviewToExercisePreview(drills[position].exercise)
+                    WorkoutPreviewFragmentDirections.actionWorkoutPreviewToExercisePreview()
                 )
             }
         }

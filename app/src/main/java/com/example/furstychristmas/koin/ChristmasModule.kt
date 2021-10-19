@@ -9,6 +9,9 @@ import com.example.furstychristmas.domain.info.repository.InfoRepository
 import com.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
 import com.example.furstychristmas.domain.workout.repository.WorkoutRepository
 import com.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
+import com.example.furstychristmas.domain.workout.util.Exercise2020JsonParser
+import com.example.furstychristmas.domain.workout.util.ExerciseJsonParser
+import com.example.furstychristmas.domain.workout.util.WorkoutJsonParser
 import com.example.furstychristmas.persistence.DayDatabase
 import com.example.furstychristmas.screen.day.info.InfoViewModel
 import com.example.furstychristmas.screen.day.workout.WorkoutViewModel
@@ -49,7 +52,11 @@ val myModule = module {
         )
     }
 
-    single { WorkoutRepository(androidApplication().assets) }
+    single { Exercise2020JsonParser(androidApplication().assets) }
+    single { ExerciseJsonParser(androidApplication().assets) }
+    single { WorkoutJsonParser(androidApplication().assets) }
+
+    single { WorkoutRepository(get(), get(), get()) }
     single { InfoRepository() }
     single { DayCompletionRepository(get()) }
 

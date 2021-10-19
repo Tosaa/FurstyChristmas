@@ -1,8 +1,8 @@
-package com.example.furstychristmas.model
+package com.example.furstychristmas.domain.workout.model
 
 import com.example.furstychristmas.R
 
-enum class Muscle(val muscle:String,val icon:Int) {
+enum class Muscle(val muscle: String, val icon: Int) {
     LEG("legs", R.drawable.ic_legs),
     ARM("arms", R.drawable.ic_arm),
     CHEST("chest", R.drawable.ic_chest),
@@ -12,5 +12,9 @@ enum class Muscle(val muscle:String,val icon:Int) {
     STABILITY("stability", R.drawable.ball),
     ALL("all", R.drawable.ball),
     FLEXIBILITY("flexibility", R.drawable.ic_flex),
-    BREAK("break",R.drawable.ic_timer);
+    BREAK("break", R.drawable.ic_timer);
+
+    companion object {
+        fun byName(name: String): Muscle = values().associateBy { it.muscle }.getOrDefault(name, BREAK)
+    }
 }

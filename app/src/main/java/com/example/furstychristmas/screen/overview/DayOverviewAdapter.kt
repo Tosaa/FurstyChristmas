@@ -8,13 +8,13 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.R
 import com.example.furstychristmas.databinding.ChristmasCardBinding
-import com.example.furstychristmas.domain.day.model.DayCompleted
+import com.example.furstychristmas.domain.day.model.Day
 import com.example.furstychristmas.util.DateUtil
 import com.example.furstychristmas.util.NavigationHelper
 
 class DayOverviewAdapter(
     private val navigationHelper: NavigationHelper,
-    private var days: List<DayCompleted> = emptyList()
+    private var days: List<Day> = emptyList()
 ) : RecyclerView.Adapter<DayOverviewAdapter.CardViewHolder>() {
 
     lateinit var context: Context
@@ -53,8 +53,8 @@ class DayOverviewAdapter(
         }
     }
 
-    fun setItems(dayCompleteds: List<DayCompleted>) {
-        this.days = dayCompleteds
+    fun setItems(days: List<Day>) {
+        this.days = days
         notifyDataSetChanged()
     }
 

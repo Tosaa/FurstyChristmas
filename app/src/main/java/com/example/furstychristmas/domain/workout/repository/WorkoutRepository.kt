@@ -1,105 +1,36 @@
 package com.example.furstychristmas.domain.workout.repository
 
-import android.content.res.AssetManager
 import com.example.furstychristmas.domain.workout.model.Drill
+import com.example.furstychristmas.domain.workout.model.Exercise
 import com.example.furstychristmas.domain.workout.model.WorkoutContent
-import com.example.furstychristmas.model.Workout
-import com.example.furstychristmas.util.Util
+import com.example.furstychristmas.domain.workout.util.Exercise2020JsonParser
+import com.example.furstychristmas.domain.workout.util.ExerciseJsonParser
+import com.example.furstychristmas.domain.workout.util.WorkoutJsonParser
+import com.example.furstychristmas.model.Repetition
 import java.time.LocalDate
-import java.time.Month
 import java.time.format.DateTimeFormatter
-import java.util.*
 
-class WorkoutRepository(private val assetManager: AssetManager) {
+class WorkoutRepository(private val parser2020: Exercise2020JsonParser, private val exerciseParser: ExerciseJsonParser, private val workoutJsonParser: WorkoutJsonParser) {
 
-    fun getContent(): List<WorkoutContent> = getContentOf2020().plus(
-        WorkoutContent(
-            date = LocalDate.parse("2021-12-02", DateTimeFormatter.ISO_LOCAL_DATE),
-            drills = workouts.getOrDefault("beine", emptyList()),
-            rounds = 2,
-            bodyparts = listOf("test", "list"),
-            motto = "test-motto",
-            durationInMinutes = 5
-        )
+    private fun getDummyWorkout() = WorkoutContent(
+        date = LocalDate.parse("2021-12-02", DateTimeFormatter.ISO_LOCAL_DATE),
+        drills = listOf(Drill(Repetition(42), Exercise("DUMMY", "dummy", listOf(), "start", "end"))),
+        rounds = 2,
+        bodyparts = listOf("test", "list"),
+        motto = "test-motto",
+        durationInMinutes = 5
     )
 
-    private fun getContentOf2020(): List<WorkoutContent> {
-        return IntRange(1, 24).map { getWorkoutOfDay(it) }.map { workout ->
-            WorkoutContent(
-                date = LocalDate.of(2020, Month.DECEMBER, workout.day),
-                drills = workout.drills,
-                rounds = workout.workoutRepetition,
-                bodyparts = workout.drills.flatMap { drill -> drill.exercise.muscles.map { it.muscle } },
-                motto = workout.motto,
-                durationInMinutes = workout.time
-            )
-        }
+    suspend fun getContent(): List<WorkoutContent> = getContentOf2020()
+        .plus(getContentOf2021())
+
+    private suspend fun getContentOf2021(): List<WorkoutContent> {
+        val exercises = exerciseParser.loadAllExercises()
+        return workoutJsonParser.loadWorkoutOf("2021", exercises = exercises)
     }
 
-    private val workouts = Util.getDrillPresets(assetManager)
-
-    fun getWorkoutOfDay(day: Int): Workout {
-
-        val date = Calendar.Builder().apply {
-            set(Calendar.MONTH, Calendar.DECEMBER)
-            set(Calendar.YEAR, Calendar.getInstance().get(Calendar.YEAR))
-            set(Calendar.DAY_OF_MONTH, day)
-        }.build()
-
-        var sets = if (date.get(Calendar.DAY_OF_MONTH) < 14) 5 else 6
-        val drills = mutableListOf<Drill>()
-
-        // MO
-        // BRUST
-        // DI
-        // BAUCH
-        // MI
-        // ALLES
-        // DO
-        // DEHNEN
-        // FR
-        // ALLES
-        // SA
-        // BEINE
-        // SO
-        // DEHNEN
-        var motto = "dehnen"
-        var time = 30
-        when (date.get(Calendar.DAY_OF_WEEK)) {
-            Calendar.MONDAY -> {
-                if (date.get(Calendar.WEEK_OF_MONTH) % 2 == 0) {
-                    motto = "brust var1"
-                } else {
-                    motto = "brust var2"
-                }
-            }
-            Calendar.TUESDAY -> {
-                motto = "bauch"
-            }
-            Calendar.WEDNESDAY -> {
-                motto = "alles var1"
-            }
-            Calendar.THURSDAY -> {
-                motto = "dehnen"
-            }
-            Calendar.FRIDAY -> {
-                motto = "alles var2"
-            }
-            Calendar.SATURDAY -> {
-                motto = "beine"
-            }
-            Calendar.SUNDAY -> {
-                motto = "dehnen"
-            }
-        }
-
-        if (motto == "dehnen") {
-            sets = 1
-            time = 10
-        }
-        drills.addAll(workouts.getOrDefault(motto, emptyList()))
-        val workout = Workout(day, drills, sets, motto.split(" ").first().toUpperCase(), time)
-        return workout
+    private suspend fun getContentOf2020(): List<WorkoutContent> {
+        return parser2020.getContentOf("2020")
     }
 
 

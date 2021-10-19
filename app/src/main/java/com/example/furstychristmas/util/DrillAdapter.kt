@@ -15,8 +15,6 @@ class DrillAdapter {
             .append(drill.repetition.formattedString())
             .append(DELIMITER)
             .append(drill.exercise)
-            .append(DELIMITER)
-            .append(drill.breakTime.formattedString())
             .toString()
     }
 
@@ -25,8 +23,7 @@ class DrillAdapter {
         val items = string.split(DELIMITER)
         return Drill(
             repetitionFromString(items[0]),
-            Exercise.valueOf(items[1]),
-            repetitionFromString(items[2])
+            ExerciseOLD.valueOf(items[1]).toExercise()
         )
     }
 
@@ -44,6 +41,5 @@ class DrillAdapter {
             Repetition(amount)
         }
     }
-
 
 }

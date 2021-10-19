@@ -22,8 +22,10 @@ class WorkoutViewModel(
     var isDone = MutableLiveData(false)
 
     init {
-        viewModelScope.launch { workout.postValue(workoutUseCase.getWorkoutAtDay(date)) }
-        viewModelScope.launch { isDone.postValue(dayCompletionStatusUseCase.isDayDone(date)) }
+        viewModelScope.launch {
+            workout.postValue(workoutUseCase.getWorkoutAtDay(date))
+            isDone.postValue(dayCompletionStatusUseCase.isDayDone(date))
+        }
     }
 
     val workoutstring = workout.map { it?.toString() }
@@ -40,8 +42,6 @@ class WorkoutViewModel(
     val muscleGroups = exercises.map { it?.flatMap { it.exercise.muscles }?.toSet() }
 
     val motto = workout.map { it?.motto ?: "" }
-
-    // workout end
 
     fun markAsDone() {
         viewModelScope.launch {

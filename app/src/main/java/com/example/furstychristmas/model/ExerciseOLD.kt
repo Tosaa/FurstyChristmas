@@ -1,8 +1,10 @@
 package com.example.furstychristmas.model
 
 import com.example.furstychristmas.R
+import com.example.furstychristmas.domain.workout.model.Exercise
+import com.example.furstychristmas.domain.workout.model.Muscle
 
-enum class Exercise(
+enum class ExerciseOLD(
     val exerciseName: String,
     val muscles: List<Muscle>,
     val startPositionId: Int = R.string.lorem_ipsum,
@@ -183,5 +185,9 @@ enum class Exercise(
         R.string.arm_rotation_start_position,
         R.string.arm_rotation_repetition
     ),
-    BREAK("Pause", listOf(Muscle.BREAK))
+    BREAK("Pause", listOf(Muscle.BREAK));
+
+    fun toExercise(): Exercise {
+        return Exercise(name, exerciseName, muscles, "start-position", "end-position")
+    }
 }

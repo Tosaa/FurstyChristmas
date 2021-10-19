@@ -7,11 +7,11 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.furstychristmas.databinding.ExerciseOverviewItemBinding
-import com.example.furstychristmas.model.Exercise
+import com.example.furstychristmas.model.ExerciseOLD
 import com.example.furstychristmas.screen.day.workout.MuscleIconAdapter
 
 class ExerciseAdapter(
-    private val exercises: List<Exercise>,
+    private val exerciseOLDS: List<ExerciseOLD>,
     private val navigationController: NavController
 ) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
     private lateinit var context: Context
@@ -24,18 +24,18 @@ class ExerciseAdapter(
     }
 
     override fun getItemCount(): Int {
-        return exercises.size
+        return exerciseOLDS.size
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
-        if (position >= exercises.size) {
+        if (position >= exerciseOLDS.size) {
             return
         }
-        holder.binding.exerciseName.text = exercises[position].exerciseName
+        holder.binding.exerciseName.text = exerciseOLDS[position].exerciseName
         holder.binding.muscleIcons.layoutManager = GridLayoutManager(context, 2)
-        holder.binding.muscleIcons.adapter = MuscleIconAdapter(exercises[position].muscles)
+        holder.binding.muscleIcons.adapter = MuscleIconAdapter(exerciseOLDS[position].muscles)
         holder.binding.item.setOnClickListener {
-            navigationController.navigate(ExerciseOverviewDirections.exercisePreview(exercises[position]))
+            navigationController.navigate(ExerciseOverviewDirections.exercisePreview())
         }
     }
 

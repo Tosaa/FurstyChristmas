@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.furstychristmas.databinding.ExerciseListFragmentBinding
-import com.example.furstychristmas.model.Exercise
+import com.example.furstychristmas.model.ExerciseOLD
 
 class ExerciseOverview : Fragment() {
 
@@ -25,7 +25,7 @@ class ExerciseOverview : Fragment() {
 
             layoutManager = LinearLayoutManager(requireContext())
             adapter = ExerciseAdapter(
-                Exercise.values().filter { it.exerciseName != "Pause" },
+                ExerciseOLD.values().filter { it.exerciseName != "Pause" },
                 findNavController()
             )
             addItemDecoration(
