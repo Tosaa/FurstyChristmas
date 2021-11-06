@@ -2,7 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
         <variable
             name="imageSrc"
             type="String" />
@@ -23,8 +22,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textview.MaterialTextView
-            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
-            android:textSize="20dp"
+            style="@style/AppTheme.Custom.Main2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{subtitle}" />
@@ -34,10 +32,10 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:srcname="@{imageSrc}"
-            />
+            android:srcname="@{imageSrc}" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/AppTheme.Custom.Body"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@{infoText}" />

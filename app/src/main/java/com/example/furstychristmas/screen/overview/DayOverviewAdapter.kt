@@ -1,7 +1,6 @@
 package com.example.furstychristmas.screen.overview
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -36,16 +35,19 @@ class DayOverviewAdapter(
         val completableDay = days[position]
         holder.binding.day = completableDay.day.dayOfMonth.toString()
         val dayIsEnabled = completableDay.day.isBefore(DateUtil.today())
-        val buttonColor = if (dayIsEnabled) {
+        var buttonColor = ContextCompat.getColor(context, R.color.colorLocked)
+        var buttonTextColor = ContextCompat.getColor(context, R.color.colorTextLight)
+        if (dayIsEnabled) {
             if (completableDay.isDone)
-                ContextCompat.getColor(context, R.color.colorGreen)
+                buttonColor = ContextCompat.getColor(context, R.color.colorCompleted)
             else
-                ContextCompat.getColor(context, R.color.colorPrimaryDark)
+                buttonColor = ContextCompat.getColor(context, R.color.colorNotCompleted)
+            buttonTextColor = ContextCompat.getColor(context, R.color.colorText)
         } else {
-            Color.GRAY
+            ContextCompat.getColor(context, R.color.colorLocked)
         }
         holder.binding.button.setBackgroundColor(buttonColor)
-
+        holder.binding.button.setTextColor(buttonTextColor)
         if (dayIsEnabled) {
             holder.binding.button.setOnClickListener {
                 navigationHelper.navigateToDay(completableDay.day)

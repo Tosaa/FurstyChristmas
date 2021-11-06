@@ -3,25 +3,51 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryVariant">@color/colorSecondary</item>
+        <item name="colorOnPrimary">@color/background</item>
+
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorText</item>
+
+        <!-- do not set because they are okay -->
+        <!--
+        <item name="background">@color/background</item>
+        <item name="colorOnBackground">@color/black</item>
+        -->
     </style>
 
-    <style name="ExerciseCard" parent="CardView.Light">
+    <style name="ExerciseCard" parent="CardView">
         <item name="cardCornerRadius">5dp</item>
         <item name="cardElevation">1dp</item>
-        <item name="cardBackgroundColor">@color/colorPrimaryLight</item>
         <item name="shapeAppearance">
             @style/ShapeAppearance.ExerciseCard.Wide
         </item>
     </style>
 
     <style name="NotificationCard" parent="ExerciseCard">
-        <item name="cardBackgroundColor">#ccc</item>
+        <item name="cardBackgroundColor">@color/colorSecondary</item>
     </style>
 
     <style name="ShapeAppearance.ExerciseCard.Wide" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">20%</item>
     </style>
+
+    <style name="AppTheme.Custom.Main" parent="TextAppearance.MaterialComponents.Headline4"></style>
+
+    <style name="AppTheme.Custom.Main2" parent="TextAppearance.MaterialComponents.Headline6"></style>
+
+    <style name="AppTheme.Custom.Body" parent="TextAppearance.MaterialComponents.Body2"></style>
+
+    <style name="AppTheme.Custom.Card.Exercise" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:maxLines">2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.Custom.Card.Repetition" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:ems">5</item>
+        <item name="android:lines">1</item>
+    </style>
+
+
 </resources>

@@ -17,7 +17,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -49,7 +48,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@{viewmodel.day.toString()}"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/header"
                     android:textStyle="bold"
                     android:visibility="visible"
@@ -59,10 +57,8 @@
                     android:id="@+id/day_of_week"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
                     android:gravity="center_horizontal"
                     android:text="@{viewmodel.cal.toString()}"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/info"
                     android:visibility="visible"
                     tools:text="Monday" />
@@ -71,10 +67,8 @@
                     android:id="@+id/motto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
                     android:gravity="center_horizontal"
                     android:text="@{viewmodel.motto}"
-                    android:textColor="@color/white"
                     android:textSize="@dimen/info"
                     android:visibility="visible"
                     tools:text="Legs" />
@@ -96,6 +90,6 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/colorPrimaryDark" />
+            android:background="@color/colorTextLight" />
     </LinearLayout>
 </layout>

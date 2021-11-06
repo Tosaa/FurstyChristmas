@@ -44,11 +44,6 @@
                 android:scrollbarStyle="insideOverlay"
                 android:scrollbars="vertical">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{viewmodel.workoutstring}" />
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/exercises"
                     android:layout_width="match_parent"

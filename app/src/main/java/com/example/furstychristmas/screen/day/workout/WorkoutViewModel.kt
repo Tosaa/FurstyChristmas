@@ -28,8 +28,6 @@ class WorkoutViewModel(
         }
     }
 
-    val workoutstring = workout.map { it?.toString() }
-
     val cal = date.dayOfWeek.getDisplayName(TextStyle.FULL_STANDALONE, Locale.GERMANY)
 
     val day = workout.map { it?.date?.dayOfMonth.toString() }

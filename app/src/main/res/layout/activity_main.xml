@@ -22,14 +22,11 @@
                 style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
                 android:padding="5dp"
                 android:paddingStart="10dp"
                 app:navigationIcon="@drawable/ic_back_button"
                 app:subtitle="@string/motto"
-                app:subtitleTextColor="@color/white"
                 app:title="Fursty Christmas"
-                app:titleTextColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 />
@@ -44,11 +41,6 @@
                 android:layout_margin="5dp"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/colorPrimaryDark" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
