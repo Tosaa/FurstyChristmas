@@ -8,6 +8,7 @@ import com.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import com.example.furstychristmas.domain.info.repository.InfoRepository
 import com.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
 import com.example.furstychristmas.domain.info.util.InfoJsonParser
+import com.example.furstychristmas.domain.workout.repository.ExerciseRepository
 import com.example.furstychristmas.domain.workout.repository.WorkoutRepository
 import com.example.furstychristmas.domain.workout.usecase.LoadExerciseUseCase
 import com.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase

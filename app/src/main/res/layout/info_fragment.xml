@@ -4,8 +4,16 @@
     <data>
 
         <variable
-            name="viewmodel"
-            type="com.example.furstychristmas.screen.day.info.InfoViewModel" />
+            name="imageSrc"
+            type="String" />
+
+        <variable
+            name="infoText"
+            type="android.text.Spanned" />
+
+        <variable
+            name="subtitle"
+            type="String" />
     </data>
 
     <LinearLayout
@@ -14,34 +22,25 @@
         android:layout_marginHorizontal="@dimen/main_margin"
         android:orientation="vertical">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
-
         <com.google.android.material.textview.MaterialTextView
             style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
-            android:id="@+id/info_title"
             android:textSize="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewmodel.title}" />
+            android:text="@{subtitle}" />
 
         <ImageView
-            android:id="@+id/info_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:srcname="@{viewmodel.image}"
+            android:srcname="@{imageSrc}"
             />
 
         <TextView
-            android:id="@+id/info_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{viewmodel.text}" />
+            android:text="@{infoText}" />
 
     </LinearLayout>
 </layout>

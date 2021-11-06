@@ -3,12 +3,22 @@
     "type": "INFO",
     "info": {
       "date": "2021-12-01",
-      "title": "Solid Formation",
+      "title": "Formations",
       "pages": [
         {
           "subtitle": "Page 1",
           "imageid": "solid_formation",
           "htmltext": "Mit der Solid Formation, werden zusätzliche Blocker eingesetzt. Dadurch lassen sich aus dieser Formation besonders gut Laufspielzüge spielen und ein Passspielzug ist sehr unwahrscheinlich."
+        },
+        {
+          "subtitle": "Page 2",
+          "imageid": "solid_formation",
+          "htmltext": "<B>Page 2 Zeug </B>"
+        },
+        {
+          "subtitle": "Page 3",
+          "imageid": "",
+          "htmltext": "<B>Page 3 Zeug </B>"
         }
       ]
     }

@@ -1,6 +1,5 @@
 package com.example.furstychristmas.screen.day.info
 
-import android.text.Html
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
@@ -20,8 +19,7 @@ class InfoViewModel(
     private var info = MutableLiveData<InfoContent>()
     var isDone = MutableLiveData(false)
     var title = info.map { it.title }
-    var image = info.map { it.pages[0] }.map { it.imageid }
-    var text = info.map { it.pages[0] }.map { Html.fromHtml(it.text,Html.FROM_HTML_MODE_COMPACT) }
+    var pages = info.map { it.pages }
 
     init {
         viewModelScope.launch { info.postValue(infoUseCase.getInfoAtDay(date)) }
