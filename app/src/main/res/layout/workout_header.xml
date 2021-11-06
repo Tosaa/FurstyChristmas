@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -80,7 +79,8 @@
                     android:visibility="visible"
                     tools:text="Legs" />
             </LinearLayout>
-
+            <!-- do not show muscles (06.11.2021)-->
+            <!--
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/muscle_groups"
                 android:layout_width="wrap_content"
@@ -90,6 +90,7 @@
                 app:spanCount="2"
                 tools:itemCount="4"
                 tools:listitem="@layout/muscle_icon" />
+        -->
         </LinearLayout>
 
         <View

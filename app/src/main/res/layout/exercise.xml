@@ -27,14 +27,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingVertical="3dp">
-
+                <!-- do not show muscles (06.11.2021)-->
+                <!--
                 <ImageView
                     icon="@{drill.exercise.muscles.iterator().next().icon}"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     app:tint="@color/black" />
-
+                -->
                 <View
                     android:id="@+id/divider"
                     android:layout_width="1dp"
@@ -51,7 +52,7 @@
                     android:lines="1"
                     android:text="@{drill.repetition.formattedString()}"
                     android:textColor="@color/black"
-                    tools:text=" Wdh/Seite" />
+                    tools:text="50 Wdh/Seite" />
 
                 <TextView
                     android:layout_width="match_parent"

@@ -36,5 +36,43 @@
       "motto": "Beine",
       "duration": 20
     }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-04",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 5,
+      "drills": [
+        {
+          "exercise": "SQUAD",
+          "reps": 20
+        },
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 20
+        },
+        {
+          "exercise": "LUNGES_BACKWARD",
+          "reps": 20
+        },
+        {
+          "exercise": "SQUAD_ONE_LEG",
+          "reps": 5
+        },
+        {
+          "exercise": "DEADLIFT_ONE_LEG",
+          "reps": 5
+        },
+        {
+          "exercise": "BREAK",
+          "reps": 60
+        }
+      ],
+      "motto": "Beine",
+      "duration": 20
+    }
   }
 ]

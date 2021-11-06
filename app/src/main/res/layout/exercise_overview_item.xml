@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -20,6 +19,8 @@
             android:clickable="true"
             android:orientation="horizontal">
 
+            <!-- do not show muscle icons for now (06.11.2021)-->
+            <!--
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/muscle_icons"
                 android:layout_width="wrap_content"
@@ -27,8 +28,8 @@
                 tools:itemCount="4"
                 tools:listitem="@layout/muscle_icon"
                 />
-
-            <TextView
+            -->
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/exercise_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

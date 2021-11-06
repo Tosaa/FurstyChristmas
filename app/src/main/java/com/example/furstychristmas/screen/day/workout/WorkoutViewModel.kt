@@ -46,6 +46,7 @@ class WorkoutViewModel(
     fun markAsDone() {
         viewModelScope.launch {
             dayCompletionStatusUseCase.markDayAsDone(date)
+            isDone.postValue(true)
         }
     }
 
