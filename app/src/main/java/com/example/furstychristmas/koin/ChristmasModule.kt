@@ -7,6 +7,7 @@ import com.example.furstychristmas.domain.day.usecase.AddDayCompletionUseCase
 import com.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import com.example.furstychristmas.domain.info.repository.InfoRepository
 import com.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
+import com.example.furstychristmas.domain.info.util.InfoJsonParser
 import com.example.furstychristmas.domain.workout.repository.WorkoutRepository
 import com.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
 import com.example.furstychristmas.domain.workout.util.Exercise2020JsonParser
@@ -55,9 +56,10 @@ val myModule = module {
     single { Exercise2020JsonParser(androidApplication().assets) }
     single { ExerciseJsonParser(androidApplication().assets) }
     single { WorkoutJsonParser(androidApplication().assets) }
+    single { InfoJsonParser(androidApplication().assets, resources = androidApplication().resources) }
 
     single { WorkoutRepository(get(), get(), get()) }
-    single { InfoRepository() }
+    single { InfoRepository(get()) }
     single { DayCompletionRepository(get()) }
 
     single { LoadWorkoutUseCase(get()) }

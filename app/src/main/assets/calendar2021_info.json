@@ -1,15 +1,30 @@
-{
-  "2": {
+[
+  {
     "type": "INFO",
     "info": {
+      "date": "2021-12-01",
       "title": "Solid Formation",
       "pages": [
         {
-          "subtitle": "",
-          "imageid": "SOLID_PLAYCHART",
-          "htmltext": "<h1>Solid play</h1>"
+          "subtitle": "Page 1",
+          "imageid": "solid_formation",
+          "htmltext": "Mit der Solid Formation, werden zusätzliche Blocker eingesetzt. Dadurch lassen sich aus dieser Formation besonders gut Laufspielzüge spielen und ein Passspielzug ist sehr unwahrscheinlich."
+        }
+      ]
+    }
+  },
+  {
+    "type": "INFO",
+    "info": {
+      "date": "2021-12-03",
+      "title": "Shotgun",
+      "pages": [
+        {
+          "subtitle": "Page 1",
+          "imageid": "solid_formation",
+          "htmltext": "Wenn der Quaterback nicht direkt hinter dem Center steht, sondern einige Meter weiter hinten nennt sich das eine <b>Shotgun Formation</b>. Der Center hat dann die Aufgabe den Ball zum Quaterback nach hinten zu \"werfen\". <br> Dabei ist es besonders wichtig, dass der Snap nicht zu hoch zum Quaterback gesnappt wird. <br><br> Durch den vergrößerten Abstand zur Line Of Scrimmage hat der Quaterback mehr Zeit die Passrouten Seiner Receiver zu lesen und bekommt weniger Druck der Defense-Line.<br> Ein besonderer Spielzug aus dieser Formation ist der QB-Draw, bei dem der Quaterback einen Pass antäuscht, worauf die Linebacker mit den Receivern das Feld tief nach hinten laufen sollen. Nach Zwei Sekunden behälter der Quaberback aber den Ball und rennt selbst durch die Mitte. Falls die Linebacker auf den Pass anbeißen hat der Quaterback viel Platz und schafft vermutlich ein neues First-Down. Die Offense-Line sollte dabei versuchen die Defense-Liner stark nach Außen zu blocken, sodass diese dem Quaterback nicht zu nahe kommen können."
         }
       ]
     }
   }
-}
+]
