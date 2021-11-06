@@ -14,9 +14,34 @@
         android:layout_marginHorizontal="@dimen/main_margin"
         android:orientation="vertical">
 
-        <com.google.android.material.textview.MaterialTextView
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{viewmodel.isDone().toString()}" />
+            android:visibility="gone" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+            android:id="@+id/info_title"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.title}" />
+
+        <ImageView
+            android:id="@+id/info_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:srcname="@{viewmodel.image}"
+            />
+
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{viewmodel.text}" />
+
     </LinearLayout>
 </layout>

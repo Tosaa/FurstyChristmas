@@ -2,11 +2,17 @@ package com.example.furstychristmas.domain.info.repository
 
 import com.example.furstychristmas.domain.info.model.InfoContent
 import com.example.furstychristmas.domain.info.model.InfoPageContent
+import com.example.furstychristmas.domain.info.util.InfoJsonParser
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class InfoRepository {
-    fun getContent(): List<InfoContent> = listOf(
+class InfoRepository(private val infoParser: InfoJsonParser) {
+    suspend fun getContent(): List<InfoContent> = getContentOf2021()
+
+    private suspend fun getContentOf2021(): List<InfoContent> = infoParser.loadInfoOf("2021")
+
+
+    private val dummyContent = listOf(
         InfoContent(
             date = LocalDate.parse("2021-12-01", DateTimeFormatter.ISO_LOCAL_DATE),
             title = "test-title",
