@@ -53,12 +53,13 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/exercise" />
 
-
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/workout_done_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
                     android:text="done"
                     android:visibility="@{viewmodel.isDone ? View.INVISIBLE : View.VISIBLE}" />
             </LinearLayout>

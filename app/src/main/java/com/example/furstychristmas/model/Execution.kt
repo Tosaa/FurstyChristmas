@@ -37,7 +37,7 @@ class Seconds(amount: Int) : Execution(amount) {
         return Seconds(execution.amount + amount)
     }
 
-    override fun unit(): String = " sek"
+    override fun unit(): String = " Sek"
 }
 
 class SecondsPerSide(amount: Int) : Execution(amount) {
@@ -45,7 +45,7 @@ class SecondsPerSide(amount: Int) : Execution(amount) {
         return SecondsPerSide(execution.amount + amount)
     }
 
-    override fun unit(): String = " sek/Seite"
+    override fun unit(): String = " Sek/Seite"
 }
 
 

@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="imageSrc"
             type="String" />
@@ -16,31 +18,36 @@
             type="String" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/main_margin"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/AppTheme.Custom.Main2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{subtitle}"
-            android:visibility="@{subtitle.length()==0?View.GONE:View.VISIBLE}" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:srcname="@{imageSrc}" />
-
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/AppTheme.Custom.Body"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{infoText}" />
+            android:layout_marginHorizontal="@dimen/main_margin"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/AppTheme.Custom.Main2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{subtitle}"
+                android:visibility="@{subtitle.length()==0?View.GONE:View.VISIBLE}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:srcname="@{imageSrc}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/AppTheme.Custom.Body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{infoText}" />
+        </LinearLayout>
+    </ScrollView>
 </layout>

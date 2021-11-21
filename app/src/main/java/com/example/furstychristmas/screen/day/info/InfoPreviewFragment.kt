@@ -41,6 +41,11 @@ class InfoPreviewFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.markAsDone()
+        super.onViewCreated(view, savedInstanceState)
+    }
+
     inner class InfoPageAdapter(activity: FragmentActivity, private val pages: List<InfoPageContent>) : FragmentStateAdapter(activity) {
         override fun getItemCount(): Int = pages.size
 

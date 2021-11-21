@@ -53,9 +53,9 @@
           "subtitle": "Eligible:"
         },
         {
-          "htmltext": "Diese Begriffe sind immer an die Ballposition angelegt. <b>Außen</b> heißt vom Ball aus Richtung Sideline, <b>innen</b> heißt von der Sideline aus Richtung Ball, parallel zur Line-Of-Scrimmage.<br/>Sagt beispielsweise einer der Coaches “Stell dich weiter außen auf”, dann musst du mehr in Richtung deiner Sideline.<br/><b>Tief/Hinten</b> heißt von der Line-Of-Scrimmage aus Richtung unserer Endzone, <b>kurz/vorne</b> heißt Richtung Line-Of-Scrimmage, parallel zur Sideline.<br/>Sagt beispielsweise einer der Coaches “Du stehst zu tief”, dann musst du näher zur Line-Of-Scrimmage.<br/>Klingt etwas kompliziert, ist aber eigentlich ziemlich easy wenn man auf dem Feld steht.",
+          "htmltext": "Diese Begriffe sind immer an die Ballposition angelegt. <b>Außen</b> heißt vom Ball aus Richtung Sideline, <b>innen</b> heißt von der Sideline aus Richtung Ball, parallel zur Line-Of-Scrimmage.<br/>Sagt beispielsweise einer der Coaches “Stell dich weiter außen auf”, dann musst du mehr in Richtung deiner Sideline.<br/><b>Tief/Hinten</b> heißt von der Line-Of-Scrimmage aus Richtung unserer Endzone, <b>kurz/vorne</b> heißt Richtung Line-Of-Scrimmage, parallel zur Sideline.<br/>Sagt beispielsweise einer der Coaches “Du stehst zu tief”, dann musst du näher zur Line-Of-Scrimmage.<br/>Klingt etwas kompliziert, ist aber eigentlich",
           "imageid": "defensebasics",
-          "subtitle": "Was heißt tief,"
+          "subtitle": "Was heißt tief, kurz, außen, innen:"
         },
         {
           "htmltext": "Zwischen 2 Offense Spielern oder zwischen einem Offense Spieler und der Sideline ist eine Lücke, durch welche ein Ballträger durchlaufen kann, ein sogenanntes <b>Gap</b>. Die <b> Gap Responsibility</b> bezeichnet die Aufgabe dieses Gap zu schließen, sodass kein Ballträger durchlaufen kann.",
@@ -82,8 +82,8 @@
           "subtitle": ""
         },
         {
-          "htmltext": "Um in der Offense klar zu kommunizieren, wo wir mit dem Ball entlang laufen verwenden wir Ziffern. Diese geben die Lücke (englisch: Gap) an, wo wir durch laufen.<br/><br/>Dafür zählen wir vom Center aus die Lücken nach außen. Direkt <b>links</b> vom Center befindet sich die 1. Die nächste Lücke ist die 3 und die darauf folgende die 5. Außerdem werden Spielzüge über weit außen über die 9 gespielt. Die 7 gibt es nicht.<br/><br/>Auf der rechten Seite vom Center befinden sich die Lücken 2, 4, 6 und 8.<br/><br/>Auf der inken Seite sind also nur ungerade Zahlen und auf der <b>rechten</b> Seite nur gerade Zahlen.<br/><br/>Die zweite Zahl in einem Spielzug gibt bei uns das Gap an, durch das wir laufen.<br/><br/>Enthält ein Spielzug also 04 (“zero-four”) oder 24 (“twenty-four”) im Namen, dann wissen wir, dass wir durch das Gap zwischen Guard und Tight-End auf der <b><u>rechten</u></b> Seite laufen.",
-          "imageid": "",
+          "htmltext": "Um in der Offense klar zu kommunizieren, wo wir mit dem Ball entlang laufen verwenden wir Ziffern. Diese geben die Lücke (englisch: Gap) an, wo wir durch laufen.<br/><br/>Dafür zählen wir vom Center aus die Lücken nach außen. Direkt <b>links</b> vom Center befindet sich die 1. Die nächste Lücke ist die 3 und die darauf folgende die 5. Außerdem werden Spielzüge über weit außen über die 9 gespielt. Die 7 gibt es nicht.<br/><br/>Auf der rechten Seite vom Center befinden sich die Lücken 2, 4, 6 und 8.<br/><br/>Auf der inken Seite sind also nur ungerade Zahlen und auf der <b>rechten</b> Seite nur gerade Zahlen.<br/><br/>Die zweite Zahl in einem Spielzug gibt bei uns das Gap an, durch das wir laufen.<br/><br/>Enthält ein Spielzug also 04 (“zero-four”) oder 24 (“twenty-four”) im Namen, dann wissen wir, dass wir durch das Gap zwischen Guard und Tight-End auf der <b><u>rechten</u></b> S",
+          "imageid": "gaps",
           "subtitle": "Gaps"
         },
         {
@@ -280,8 +280,8 @@
           "subtitle": ""
         },
         {
-          "htmltext": "Jedes Footballspiel beginnt mit einem Kickoff. <br/>Hierbei wird der Ball von einer Mannschaft zur anderen Mannschaft gekickt. Der Kickoff erfolgt von der 35 yard Linie des kickenden Teams. 5 yards hinter dem Ball stehen zu jeder Seite 4 Spieler, welche nach erfolgtem Kick das Feld in vorab festgelegten Laufwegen herunterlaufen und den gegnerischen Ballträger so früh wie möglich stoppen wollen.<br/>Sobald der Ball nach dem Kick eine Distanz von 10 Yards erreicht hat, ist dieser für beide Mannschaften ‘frei’. Das bedeutet, das Team, welches den Ball als erstes sichern kann, erhält das Angriffsrecht. <br/><br/>Sollte der Ball aus dem Spielfeld gekickt werden, so zieht das eine Strafe mit sich, woraufhin der Kick entweder 5 yards weiter hinten (eigene 30 Yard Linie) wiederholt wird oder das Angriffsrecht der returnenden Mannschaft startet dort, wo der Ball ins Aus ging.<br/><br/>Auf dem Bild seht ihr, wie wir uns beim Kickoff aufstellen. Wir nummerieren unsere Spieler auf beiden Seiten von außen nach innen. Auch die Platzierung auf dem Feld, welcher Spieler Wo auf dem Feld steht entspricht unserem Kickoff Team",
-          "imageid": "",
+          "htmltext": "Jedes Footballspiel beginnt mit einem Kickoff. <br/>Hierbei wird der Ball von einer Mannschaft zur anderen Mannschaft gekickt. Der Kickoff erfolgt von der 35 yard Linie des kickenden Teams. 5 yards hinter dem Ball stehen zu jeder Seite 4 Spieler, welche nach erfolgtem Kick das Feld in vorab festgelegten Laufwegen herunterlaufen und den gegnerischen Ballträger so früh wie möglich stoppen wollen.<br/>Sobald der Ball nach dem Kick eine Distanz von 10 Yards erreicht hat, ist dieser für beide Mannschaften ‘frei’. Das bedeutet, das Team, welches den Ball als erstes sichern kann, erhält das Angriffsrecht. <br/><br/>Sollte der Ball aus dem Spielfeld gekickt werden, so zieht das eine Strafe mit sich, woraufhin der Kick entweder 5 yards weiter hinten (eigene 30 Yard Linie) wiederholt wird oder das Angriffsrecht der returnenden Mannschaft startet dort, wo der Ball ins Aus ging.<br/><br/>Auf dem Bild seht ihr, wie wir uns beim Kickoff aufstellen. Wir nummerieren unsere Spieler auf beiden Seiten von außen nach innen. Auch die Platzierung auf dem Feld, welcher Spieler Wo auf dem Feld steht entspricht unserem Kickoff Team.",
+          "imageid": "kickoff",
           "subtitle": ""
         },
         {
@@ -373,6 +373,20 @@
         }
       ],
       "title": "Den Gegner blocken"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-23",
+      "pages": [
+        {
+          "htmltext": "--",
+          "imageid": "",
+          "subtitle": "No Content"
+        }
+      ],
+      "title": "No Content"
     },
     "type": "INFO"
   }

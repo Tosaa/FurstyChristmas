@@ -26,7 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingVertical="3dp">
+                android:paddingVertical="3dp"
+                android:paddingHorizontal="5dp">
                 <!-- do not show muscles (06.11.2021)-->
                 <!--
                 <ImageView
@@ -36,13 +37,14 @@
                     android:layout_gravity="center"
                     app:tint="@color/black" />
                 -->
+                <!--
                 <View
                     android:id="@+id/divider"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="2dp"
                     android:background="?android:attr/listDivider" />
-
+-->
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/AppTheme.Custom.Card.Repetition"
@@ -60,7 +62,6 @@
                     android:layout_marginHorizontal="10dp"
                     android:text="@{drill.exercise.exerciseName}"
                     tools:text="Lunges with Arm Rotation" />
-
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
