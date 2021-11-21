@@ -1,40 +1,379 @@
 [
   {
-    "type": "INFO",
     "info": {
-      "date": "2021-12-01",
-      "title": "Formations",
+      "date": "2021-12-02",
       "pages": [
         {
-          "subtitle": "Page 1",
-          "imageid": "solid_formation",
-          "htmltext": "Mit der Solid Formation, werden zusätzliche Blocker eingesetzt. Dadurch lassen sich aus dieser Formation besonders gut Laufspielzüge spielen und ein Passspielzug ist sehr unwahrscheinlich."
+          "htmltext": "Im Groben werden die Positionen in der Offense in vier Gruppen unterteilt. <br/>Offense-Line, Quarterback, Runningback und Wide Receiver.<br/>Die einzelnen Positionen werden intern erneut unterteilt. Zur besseren Verständlichkeit zeigt das Bild <b><u>KEINE</u></b> tatsächliche Formation sondern zeigt lediglich jede Position mit Ihrem Namen.",
+          "imageid": "offensepositions",
+          "subtitle": ""
         },
         {
-          "subtitle": "Page 2",
-          "imageid": "solid_formation",
-          "htmltext": "<B>Page 2 Zeug </B>"
-        },
-        {
-          "subtitle": "Page 3",
+          "htmltext": "Die Offense-Line besteht aus einem Center, zwei Guards und keinem, einem oder zwei Tight-Ends.<br/>Der Center hat die Aufgabe den Ball zum Quarterback zu snappen. Anschließend muss er blocken.<br/>Die Guards sind für die Lücke zwischen ihnen und dem Center oder zwischen ihnen und dem Tight-End verantwortlich.<br/><br/>Die Tight-Ends können entweder blocken oder auf Passroute gehen.",
           "imageid": "",
-          "htmltext": "<B>Page 3 Zeug </B>"
+          "subtitle": "Offense-Line:"
+        },
+        {
+          "htmltext": "Die Runningbacks stehen je nach Formation entweder neben oder hinter dem Quarterback. <br/>Die Runningbacks können unterschieden werden in Fullbacks und Halfbacks. <br/>Bei Laufspielzügen erhält ein Runningback (Halfback) den Ball, ggf. blockt ein zweiter (Fullback) den Weg frei. Bei Passpielzügen blocken die Runningbacks entweder um dem Quarterback mehr Zeit zu verschaffen oder Sie gehen auf eine Passroute um eine Anspielstation für den Quarterback darzustellen.",
+          "imageid": "",
+          "subtitle": "Runningback:"
+        },
+        {
+          "htmltext": "Sind die äußersten Spieler auf dem Feld. Sie werden unterteilt in Wide-Out und Slot-Receiver. Der Wide-Out stellt sich auf Höhe der Nummern auf, während der Slot-Receiver die Distanz zwischen dem Wide-Out und dem letzten Spieler an der Line (Tight-End/Guard) halbiert. Je nach Spielzug, kann auch ein Running Back mit einer Motion auf die Slot-Receiver Position rutschen. <br/>Bei Laufspielzügen ist die Hauptaufgabe eines Receivers seinen Gegenspieler zu blocken.<br/>Bei Passspielzügen laufen die Receiver sich mit unterschiedlichen Passrouten-Konzepten frei und versuchen den geworfenen Ball des Quarterbacks zu fangen.",
+          "imageid": "",
+          "subtitle": "Wide Receiver:"
+        },
+        {
+          "htmltext": "Der Quarterback ist das Herzstück der Offense. Vor jedem Spielzug erhält er vom Coach an der Seitenlinie den neuen Spielzug und teilt diesen dann der restlichen Offense im Huddle mit. Er erhält den Snap vom Center und übergibt den Ball entweder an die Runningbacks oder wirft den Ball zu einem der Receiver.",
+          "imageid": "",
+          "subtitle": "Quarterback:"
         }
-      ]
-    }
+      ],
+      "title": "Offense Positionen"
+    },
+    "type": "INFO"
   },
   {
-    "type": "INFO",
     "info": {
-      "date": "2021-12-03",
-      "title": "Shotgun",
+      "date": "2021-12-04",
       "pages": [
         {
-          "subtitle": "Page 1",
-          "imageid": "solid_formation",
-          "htmltext": "Wenn der Quaterback nicht direkt hinter dem Center steht, sondern einige Meter weiter hinten nennt sich das eine <b>Shotgun Formation</b>. Der Center hat dann die Aufgabe den Ball zum Quaterback nach hinten zu \"werfen\". <br> Dabei ist es besonders wichtig, dass der Snap nicht zu hoch zum Quaterback gesnappt wird. <br><br> Durch den vergrößerten Abstand zur Line Of Scrimmage hat der Quaterback mehr Zeit die Passrouten Seiner Receiver zu lesen und bekommt weniger Druck der Defense-Line.<br> Ein besonderer Spielzug aus dieser Formation ist der QB-Draw, bei dem der Quaterback einen Pass antäuscht, worauf die Linebacker mit den Receivern das Feld tief nach hinten laufen sollen. Nach Zwei Sekunden behälter der Quaberback aber den Ball und rennt selbst durch die Mitte. Falls die Linebacker auf den Pass anbeißen hat der Quaterback viel Platz und schafft vermutlich ein neues First-Down. Die Offense-Line sollte dabei versuchen die Defense-Liner stark nach Außen zu blocken, sodass diese dem Quaterback nicht zu nahe kommen können."
+          "htmltext": "Hier werden Begriffe erklärt, welche für die Defense (unsere und allgemein) wichtig sind. Einige dieser Begriffe werden im weiteren Verlauf dieses Kalenders benutzt.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "<b>Outside Contain</b> bedeutet den Ballträger unter allen Umständen immer <b>innerhalb von dir</b> zu halten. Dadurch zwingen wir den Ballträger zurück nach innen zu unseren Mitspielern.<br/>",
+          "imageid": "",
+          "subtitle": "Outside Contain:"
+        },
+        {
+          "htmltext": "Wenn ein Offense Spieler <b>eligible</b> ist, bedeutet das, dass er beim Pass einen Ball fangen darf.<br/>Jeder Offense Spieler hinter der Line-Of-Scrimmage (offline) ist <b>eligible</b>. Außerdem ist immer der äußerste Spieler auf der Line-Of-Scrimmage (online) <b>eligible</b>.<br/>",
+          "imageid": "",
+          "subtitle": "Eligible:"
+        },
+        {
+          "htmltext": "Diese Begriffe sind immer an die Ballposition angelegt. <b>Außen</b> heißt vom Ball aus Richtung Sideline, <b>innen</b> heißt von der Sideline aus Richtung Ball, parallel zur Line-Of-Scrimmage.<br/>Sagt beispielsweise einer der Coaches “Stell dich weiter außen auf”, dann musst du mehr in Richtung deiner Sideline.<br/><b>Tief/Hinten</b> heißt von der Line-Of-Scrimmage aus Richtung unserer Endzone, <b>kurz/vorne</b> heißt Richtung Line-Of-Scrimmage, parallel zur Sideline.<br/>Sagt beispielsweise einer der Coaches “Du stehst zu tief”, dann musst du näher zur Line-Of-Scrimmage.<br/>Klingt etwas kompliziert, ist aber eigentlich ziemlich easy wenn man auf dem Feld steht.",
+          "imageid": "defensebasics",
+          "subtitle": "Was heißt tief,"
+        },
+        {
+          "htmltext": "Zwischen 2 Offense Spielern oder zwischen einem Offense Spieler und der Sideline ist eine Lücke, durch welche ein Ballträger durchlaufen kann, ein sogenanntes <b>Gap</b>. Die <b> Gap Responsibility</b> bezeichnet die Aufgabe dieses Gap zu schließen, sodass kein Ballträger durchlaufen kann.",
+          "imageid": "",
+          "subtitle": "Gap Responsibility:"
+        },
+        {
+          "htmltext": "Wir zählen an beiden Sidelines von außen nach innen. Somit ist der äußerste Receiver Nr 1, der nächste Receiver Nr 2 und so weiter. Runningbacks und Tight Ends werden mitgezählt.",
+          "imageid": "",
+          "subtitle": "Wie zählen wir Receiver in der Defense: "
         }
-      ]
-    }
+      ],
+      "title": "Begriffe - Defense"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-05",
+      "pages": [
+        {
+          "htmltext": "Folgende Begriffe sollten für euch in der Offense jederzeit klar sein.<br/>Gaps, Split, Man-/Zone-Coverage<br/><br/>Außerdem stellen wir euch an einem anderen Tag verschiedene Passrouten, Formationen und Motions vor.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Um in der Offense klar zu kommunizieren, wo wir mit dem Ball entlang laufen verwenden wir Ziffern. Diese geben die Lücke (englisch: Gap) an, wo wir durch laufen.<br/><br/>Dafür zählen wir vom Center aus die Lücken nach außen. Direkt <b>links</b> vom Center befindet sich die 1. Die nächste Lücke ist die 3 und die darauf folgende die 5. Außerdem werden Spielzüge über weit außen über die 9 gespielt. Die 7 gibt es nicht.<br/><br/>Auf der rechten Seite vom Center befinden sich die Lücken 2, 4, 6 und 8.<br/><br/>Auf der inken Seite sind also nur ungerade Zahlen und auf der <b>rechten</b> Seite nur gerade Zahlen.<br/><br/>Die zweite Zahl in einem Spielzug gibt bei uns das Gap an, durch das wir laufen.<br/><br/>Enthält ein Spielzug also 04 (“zero-four”) oder 24 (“twenty-four”) im Namen, dann wissen wir, dass wir durch das Gap zwischen Guard und Tight-End auf der <b><u>rechten</u></b> Seite laufen.",
+          "imageid": "",
+          "subtitle": "Gaps"
+        },
+        {
+          "htmltext": "Ein Split (englisch: Abstand) gibt an wie viel Abstand zwischen zwei Spielern sein muss.<br/><br/>Zwischen dem Center und dem Guard sollten im normalfall 1,5 Fußlängen Abstand sein. <br/>Zwischen Guard und Tightend 2 Fußlängen. <br/><br/>",
+          "imageid": "",
+          "subtitle": "Splits"
+        },
+        {
+          "htmltext": "Die Defense versucht die Offense durch zwei verschiedene Arten von Passverteidigungen zu stoppen.<br/><br/>Wenn die Defense eine Man-Coverage spielt, dann versucht immer mindestens ein Verteidiger einen Receiver zu decken. Dafür konzentriert er sich nur auf diesen einen Receiver und auf keinen anderen Spieler.<br/><br/>Bei einer Zone-Coverage hat jeder Verteidiger eine Zone, die es zu verteidigen gilt. Wenn ein Receiver diese Zone betritt, achtet der Verteidiger nur auf diesen Receiver.",
+          "imageid": "",
+          "subtitle": "Man-/Zone-Coverage"
+        },
+        {
+          "htmltext": "Wann immer ein Spieler den Ball in der Hand hat und ihn verliert oder ihm dieser aus der Hand geschlagen wird, ist der Ball frei. Das Fallenlassen des Balls nennt sich Fumble. Wenn sich ein Spieler auf den Ball wirft oder ihn aufhebt bekommt sein Team danach das Angriffsrecht. <b>Also drauf werfen wenn Ihr seht der Ball liegt am Boden! (Auch wenn Ihr euch nicht sicher seid ob es ein Fumble ist oder nicht!)</b>",
+          "imageid": "",
+          "subtitle": "Fumble:"
+        }
+      ],
+      "title": "Offense Basic Begriffe"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-07",
+      "pages": [
+        {
+          "htmltext": "Natürlich lassen sich aus allen Formationen Lauf- und Passspielzüge durchführen.<br/>Unabhängig ob es eine Lauf- oder Passformation ist, lassen sich alle Formationen auf die andere Seite spiegeln. So können wir beispielsweise neben Trey Right auch Trey Left spielen. <br/><br/>Aus den folgenden drei Formationen sind Passspielzüge aber wesentlich wahrscheinlicher als Laufspielzüge. <br/><br/>Online = Der Spieler steht an der Line of Scrimmage (Auf Höhe des Balls)<br/><br/>Offline = Der Spieler steht deutlich hinter der Line of Scrimmage. <br/><br/>Wichtig ist, dass bei jeder Formation immer 4 Spieler Offline stehen. Sollten nur 3 oder sogar 5 Spieler Offline stehen wird das mit einer Strafe von 5 Yards bestraft (Illegale Formation).",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "In einer Empty Formation haben wir keinen Runningback im Backfield, weshalb der Quarterback der einzige Spieler ist, der mit dem Ball laufen kann.<br/>Nachdem ihm auch keine Vorblocker zur Verfügung stehen, wäre ein Laufspielzug eher riskant. Also kann man als Defense-Spieler davon ausgehen, dass die Offense einen Passspielzug ausführen wird. <br/>Für die Offense ist hierbei wichtig, dass der Tight-End auf der angesagten Seite offline stehen muss! Neben dem Tight-End sind auch der Receiver auf der linken Seite, sowie der Slot Receiver auf der rec",
+          "imageid": "emptyright",
+          "subtitle": "Empty Right"
+        },
+        {
+          "htmltext": "In der Trey Formation sowie in der Ace Formation gibt es nur einen Runningback im Backfield. Dieser kann natürlich als Ballträger eingesetzt werden, hat aber keinen weiteren Vorblocker. Deshalb ist es wesentlich wahrscheinlicher den Runningback aus dem Backfield als zusätzlichen Blocker zu verwenden um den Quarterback mehr Zeit zum Werfen zu verschaffen.<br/><br/>Bei Trey ist es wichtig, dass der Tight-End auf der angesagten Seite offline stehen muss. Der Quarterback steht bei der Trey Formation in der Shotgun und der Runningback steht 1 yard zur Seite und 1 yard nach vorne versetzt vom Quarterback weg.<br/><br/>Bei Ace stehen beide Tight-Ends online, dafür stehen die beiden Receiver Offline. Der Quarterback ist under Center und der Runningback steht mit 4 yards Abstand",
+          "imageid": "acerighttreyright",
+          "subtitle": "Ace Right & Trey Right"
+        }
+      ],
+      "title": "Formationen 1"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-09",
+      "pages": [
+        {
+          "htmltext": "In der Defense unterscheiden wir grob zwischen 3 Positionsarten: Defensive-Lineman, Linebacker, Defensive-Backs.<br/>Was diese tun und wie sie benannt werden wird im Folgenden erklärt:",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Die DL sind die direkten Gegenspieler der Offensive-Line und sind bei Run dafür verantwortlich, dass keiner durch die Lücke rennt, in welcher sie stehen. Bei Pass müssen sie vor allem Druck auf den Quarterback ausüben, ihn nicht frei laufen lassen und im Optimalfall zu Boden bringen. Sie haben keine Verantwortung in der Coverage, aber dazu mehr unter Coverages.<br/><br/>Die mittleren DL heißen <b>Defensive Tackle</b>. In unserer Defense heißen die DT auf der Strong Side <b>Tackle</b> und auf der Weak Side <b>Nose</b>. Wenn nur 3 DL auf dem Spielfeld sind (was bei uns meistens der Fall sein wird), fällt der Nose weg.<br/><br/>Die äußeren DL heißen <b>Defensive Ends</b>. Sie haben normalerweise zusätzlich noch die Aufgabe des <b>Outside Contains</b>. In unserer Defense heißen die DE auf der Strong Side <b>Strike</b>",
+          "imageid": "dline",
+          "subtitle": "Defensive-Lineman (DL)"
+        },
+        {
+          "htmltext": "Die Linebacker sind die Reihe hinter der DL und hauptsächlich für den Run verantwortlich. Beim Pass verteidigen sie kürzere Zonen oder Receiver die eher kurze Routen nehmen. Mehr dazu unter Coverages.<br/><br/>Der innere Linebacker heißt <b>Middle Linebacker</b> und hat, wie der Name schon sagt, die Mitte. Er arbeitet stark mit dem <b>Tackle</b> zusammen. In unserer Defense heißt der MLB <b>Mike</b>. <br/><br/>Die äußeren Linebacker heißen <b>Outside Linebacker</b> und stehen außerhalb vom Nr. 2 Receiver oder vom <b>Tight End</b> und haben zudem <b>Outside Contain</b>. In unserer Defense heißen die OLB auf der Strong Side <b>Bandit</b> und auf der",
+          "imageid": "linebacker",
+          "subtitle": "Linebacker (LB)"
+        },
+        {
+          "htmltext": "Die DBs sind die tieferen Spieler und vor allem für tiefe Pässe verantwortlich. Bei Run haben sie eher eine unterstützende, aber auf keinen Fall vernachlässigbare, Rolle.<br/><br/>Der tiefste und mittlere DB heißt <b>Safety</b> und ist für die tiefe Mitte zuständig und heißt in unserer Defense auch einfach <b>Safety</b>.<br/><br/>Die äußeren DBs heißen <b>Cornerbacks</b> und sind für die tiefen Zonen außen zuständig. Sie haben bei einem Run auf ihre Seite <b>Outside Contain</b>. In unserer Defense heißt der CB auf der Strong Side <b>Hit</b> und auf",
+          "imageid": "defensebacks",
+          "subtitle": "Defensive-Backs (DB)"
+        }
+      ],
+      "title": "Defense-Positionen"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-11",
+      "pages": [
+        {
+          "htmltext": "Natürlich lassen sich aus allen Formationen Lauf- und Passspielzüge durchführen.<br/>Aus den folgenden drei Formationen sind Laufspielzüge aber wesentlich wahrscheinlicher als Passspielzüge. <br/><br/>Redzone = 20 Yards vor der gegnerischen Endzone.<br/><br/>Wichtig ist auch hier, dass bei <u>jeder</u> Formation <u>immer</u> 4 Spieler Offline stehen. Sollten nur 3 oder sogar 5 Spieler Offline stehen wird das mit einer Strafe von 5 Yards bestraft (Illegale Formation).",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "In einer Split Formation haben wir 2 Receiver, 2 Running backs einen Blocking Tight-End und einen Receiving Tight-End. Das gibt uns großen Spielraum, Pass- oder Laufspielzüge auszuführen. Hierbei sind wir auf der angesagten Seite deutlich im Vorteil, weil wir auf dieser Seite mit dem Receiving Tight-End einen potentiellen zusätzlichen Blocker haben.<br/>Durch die zwei Runningbacks können wir einen davon als Vorblocker verwenden und haben somit 5 blockende Spieler. <br/><br/>Außerdem können wir durch die zwei Runningbacks auch die Ballübergabe an einen davon antäuschen, um die Defense auf eine Seite zu locken um dann auf die andere Seite mit dem Ballträger zu laufen. <br/><br/>Des Weiteren haben wir die Option einen der Runningbacks mit einer Motion als Receiver aufzustellen und damit in einer starken Passfo",
+          "imageid": "splitleft",
+          "subtitle": "Split Left"
+        },
+        {
+          "htmltext": "In der Solid Formation sind wir mit 2 Blocking-Tight-Ends und 2 Runningbacks sehr laufstark aufgestellt. Besonders in der Redzone ist diese Formation sehr beliebt, weil man um jeden Preis in die Endzone kommen möchte. Dafür braucht man so viele starke Blocker wie möglich.<br/>Ein Passspielzug ist sehr unwahrscheinlich und während des Spielzuges geht es nur darum, welche Mannschaft es mehr will.<br/><br/>Ein Lauf durch die Mitte ist der kürzeste Weg nach vorne zu kommen und somit auch sehr wahrscheinlich.<br/><br/>Als Offense-Spieler ist klar, wenn du hier niemanden blocks oder den Ball in der Hand hast, machst du was falsch.<br/><br/>Als Defense-Spieler gilt es hier den Handoff des Quarterbacks im Auge zu haben und so den Lauf so nah wie möglich an der Line of Sc",
+          "imageid": "solidright",
+          "subtitle": "Solid Right"
+        }
+      ],
+      "title": "Formationen 2"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-12",
+      "pages": [
+        {
+          "htmltext": "Eine Motion ist, wenn sich ein Offense-Spieler vor dem Spielzug von seiner ursprünglichen Position auf eine andere bewegt. Dadurch verändert sich die Formation der Offense und die Defense muss sich schnell auf die neue Situation einstellen. <br/><br/>Welcher Spieler in Motion geht, wird durch verschiedene Städtenamen gekennzeichnet und im Huddle mitgeteilt.",
+          "imageid": "motions",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Die Runningbacks sind betitelt als Fulda und Munich. <br/><br/>Der Runningback links vom Quarterback ist Fulda (da Fulda westlich von Fürstenfeldbruck liegt). <br/>Der Runningback rechts vom Quarterback ist Munich (da München östlich von Fürstenfeldbruck liegt)<br/><br/>Sollten wir beispielsweise in einer Solid Formation stehen ist der vordere Runningback (Fullback) Fulda und der Halfback ist Munich.",
+          "imageid": "",
+          "subtitle": "Motions für Runningbacks:"
+        },
+        {
+          "htmltext": "Auch die Bezeichnungen der Receiver sind geographisch begründet. <br/><br/>Der Receiver, welcher der äußerste Spieler auf der <b><u>linken</u></b> Seite der Offense-Line ist, trägt den Namen Frisco (kurz für San Francisco). <br/><br/>Der Slot-Receiver auf der <b><u>linken</u></b> Seite trägt den Namen Denver. <br/><br/>Sollten wir auf der <b><u>linken</u></b> Seite einen Tight end haben (egal ob Receiving Tight end oder Blocking Tight end) trägt dieser den Namen Paris.",
+          "imageid": "",
+          "subtitle": "Motions für Receiver:"
+        },
+        {
+          "htmltext": "Der Receiver, welcher der äußerste Spieler auf der <b><u>rechten</u></b> Seite der Offense-Line ist, trägt den Namen Tokio. <br/><br/>Der Slot-Receiver auf der <b><u>rechten</u></b> Seite heißt Moskau. <br/><br/>Sollten wir auf der <b><u>rechten</u></b> Seite einen Tight end haben (egal ob Receiving Tight end oder Blocking Tight end) trägt dieser den Namen Prag.",
+          "imageid": "",
+          "subtitle": ""
+        }
+      ],
+      "title": "Motion"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-14",
+      "pages": [
+        {
+          "htmltext": "Neben dem Laufspiel, gibt es noch zwei weitere Arten wie man im Football aus dem Spiel heraus Punkte erzielen kann. Eine davon sind Passspielzüge. Dazu werden Passrouten in verschiedenen Passrouten-Konzepten benutzt. Meistens in Kombination aus einer kurzen und einer tiefen Passroute.<br/>Sollte ein Passrouten-Konzept im Namen aus mehreren Passrouten bestehen, so sagen wir stets die Routen von außen nach innen an (Slant Arrow: Wideout läuft den Slant, Slot den Arrow).",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Dieses Konzept besteht aus einer Hitch-Route die der Wide-Out Receiver läuft und einer Corner-Route vom Slot Receiver. Beim Hitch sprinten wir 7 Yards tief und wollen dem Verteidiger eine Tiefe Route verkaufen machen einen Cut und kommen 2 Yards zurück zum Quarterback.<br/>Beim Corner geht es erst 10 Yards geradeaus und danach peilen wir die hintere Ecke der gegnerischen Endzone an (deswege",
+          "imageid": "smash",
+          "subtitle": "Smash"
+        },
+        {
+          "htmltext": "Ein Flood (engl. Flut) Konzept besteht aus 3 Routen. Ziel ist es, eine Seite des Feldes zu “überfluten”. Außen hat der Wide-Out einen tiefen Fade. Der Slot läuft einen tiefen 10 Yard Out. Die 10 Yards werden allerdings nicht gerade nach vorne gelaufen sondern so, dass wir auf einer Tiefe von 10 Yards etwa 3 Yards weiter in der Feldmitte sind als wir vor dem Snap waren. Der Tight End läuft kurzen Speed-Out auf maximal 5 Yards Tiefe. Der Tight End muss darauf achten, dass er nicht tiefer als 5 Yards läuft, da er sonst in die Route des Slot Re",
+          "imageid": "flood",
+          "subtitle": "Flood"
+        },
+        {
+          "htmltext": "Auch das Dagger Konzept besteht aus drei Passrouten. Der Tight-End bleibt bei seinem 5 Yard Out, während der Wide-Out Receiver nun einen In auf ca. 10 bis 12 Yards Tiefe läuft. Der Slot-Receiver hat einen den Clear in der Mitte. Für den Slot Receiver ist es wichtig, dass dieser schnell den Vert",
+          "imageid": "dagger",
+          "subtitle": "Dagger"
+        }
+      ],
+      "title": "Passruten & Passkonzepte"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-16",
+      "pages": [
+        {
+          "htmltext": "So viele Coverages, wie es im American Football gibt, könnten wir euch nicht mal eben in 24 Türchen vorstellen (wer Interesse hat, der Larry freut sich sicher euch mehr Defenses beizubringen). Im Allgemeinen unterscheidet man zwischen 2 grundsätzlich verschiedenen Coverages: Zone- und Man-Coverage. Im Folgenden zeigen wir euch 3 der für uns wichtigsten Defensive-Coverages:<br/>Die Offense (Blau) steht in einer normalen Doubles Formation zur Veranschaulichung.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Cover 3, DIE Fursty Defense, ist eine Zone-Coverage. Das bedeutet, die Defense Spieler verteidigen bei Pass Zonen, welche das gesamte Spielfeld abdecken. Hierbei wird das tiefe Feld in 3 Zonen unterteilt. Jeder der 3 DBs übernimmt eine der 3 tiefen Zonen. Das kürzere Feld wird in die übrigen Spieler unterteilt (mit Ausnahme der DL natürlich), hier sind es auch 3.<br/><br/>Für fortgeschrittenere Spieler: <br/>Eine Cover 3 ist eine Gap-Sound-Defense, also sind in der Box immer genug Spieler vorhanden,",
+          "imageid": "cover3man",
+          "subtitle": "Cover 3"
+        },
+        {
+          "htmltext": "Cover 2, vor allem bei anderen Teams zu sehen, ist wie Cover 3 eine Zone-Coverage. Bei dieser Coverage wird das tiefe Feld in 2 Zonen geteilt, welche von 2 Safetys verteidigt werden. Das kurze Feld wird wieder unter den übrigen Spielern unterteilt, hier sind es 4.<br/><br/>Für fortgeschrittene Spieler: <br/>Eine Cover 2 ist keine Gap-Sound-Defense, heißt die LBs müssen mehr als ein Gap übernehmen, bzw. sich als",
+          "imageid": "cover2man",
+          "subtitle": "Cover 2"
+        },
+        {
+          "htmltext": "Cover 1 Man ist, wie der Name schon sagt, eine Man-Coverage. Das bedeutet, die Defense Spieler verteidigen jeweils einen Gegenspieler. Bei Cover 1 Man ist der Safety frei. Das bedeutet er hat keinen Gegenspieler und kann seinen Mitspielern beim Verteidigen aushelfen. Dies können bei Man-Coverage generell auch 2 oder kein Safety übernehmen. Außerdem stehen bei dieser Coverage mehr DL auf dem Feld.<br/><br/>Für fortgeschrittenere Spieler: <br/>Man wird vor allem gespielt, wenn man Druck auf den Quarterback ausüben möchte,",
+          "imageid": "cover1man",
+          "subtitle": "Cover 1 Man"
+        }
+      ],
+      "title": "Defensive-Coverages"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-18",
+      "pages": [
+        {
+          "htmltext": "Neben der Offense und der Defense besteht ein Football Team auch aus einem dritten Teil: den Special Teams.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Jedes Footballspiel beginnt mit einem Kickoff. <br/>Hierbei wird der Ball von einer Mannschaft zur anderen Mannschaft gekickt. Der Kickoff erfolgt von der 35 yard Linie des kickenden Teams. 5 yards hinter dem Ball stehen zu jeder Seite 4 Spieler, welche nach erfolgtem Kick das Feld in vorab festgelegten Laufwegen herunterlaufen und den gegnerischen Ballträger so früh wie möglich stoppen wollen.<br/>Sobald der Ball nach dem Kick eine Distanz von 10 Yards erreicht hat, ist dieser für beide Mannschaften ‘frei’. Das bedeutet, das Team, welches den Ball als erstes sichern kann, erhält das Angriffsrecht. <br/><br/>Sollte der Ball aus dem Spielfeld gekickt werden, so zieht das eine Strafe mit sich, woraufhin der Kick entweder 5 yards weiter hinten (eigene 30 Yard Linie) wiederholt wird oder das Angriffsrecht der returnenden Mannschaft startet dort, wo der Ball ins Aus ging.<br/><br/>Auf dem Bild seht ihr, wie wir uns beim Kickoff aufstellen. Wir nummerieren unsere Spieler auf beiden Seiten von außen nach innen. Auch die Platzierung auf dem Feld, welcher Spieler Wo auf dem Feld steht entspricht unserem Kickoff Team",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Das Gegenstück zum Kickoff ist der Kickoff-return. <br/>Das retunierende Team will mit seinen Returnern den Ball so früh wie möglich aufnehmen und in Richtung der gegnerischen Endzone zurücktragen. Die Spieler, welche nicht den Ball tragen, blocken den Weg für den Ballträger frei. <br/><br/>Sollte der Returner, bevor er den Ball fängt, seine Hand in die Luft heben und winken ist dies ein sogenanntes “Fair-Catch-Signal”. Dies bedeutet, dass der Spielzug in dem Moment endet, in welchem der Returner den Ball fängt. Er darf also nicht mehr mit dem Ball in Richtung gegnerischer Endzone laufen, sondern seine Offense startet an dem Punkt des Catches mit ihrem ersten Spielzug. <br/>Wichtig zu beachten ist, dass der Spieler, welcher ein Fair-Catch-Signal gegeben hat und den Ball gefangen hat im Anschluss nicht getackelt werden darf! <br/>Nicht vergessen: Der Ball ist nach 10 Yards frei. Sollte der Kickoff also nur kurz erfolgen muss der Spieler, welcher am nähesten am Ball ist, diesen sichern.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Falls die Offense nach 3 Versuchen kein neues First-Down erzielen konnte, kann sie sich entscheiden einen 4. Versuch zu spielen oder den Ball zum Gegner zu kicken. Das nennt sich Punt.<br/><br/>Die Offense gibt das Angriffsrecht ab. Der Ball wird möglichst weit in die gegnerische Hälfte gekickt.<br/><br/>Wenn der Gegner den Ball berührt, beispielsweise beim Versuch ihn zu fangen, ihn aber nicht sicher fängt, ist der Ball frei. Deshalb sollte man sich immer auf den Ball werfen, wenn der Gegner ihn berührt hat, ihn aber nicht sicher in seinen Besitz gebracht hat!",
+          "imageid": "",
+          "subtitle": ""
+        }
+      ],
+      "title": "Was ist Kickoff/Kickoff Return / Punt"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-19",
+      "pages": [
+        {
+          "htmltext": "Eine Cover 3 kann man daran erkennen, dass nur ein Safety auf dem Feld steht und 2 tiefe CBs außen stehen. Außerdem stehen die äußeren Spieler außerhalb von ihrem Receiver und schauen nach innen Richtung Quarterback.",
+          "imageid": "cover3man",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Eine Cover 2 kann man sehr leicht an den 2 tiefen Safetys erkennen. Außerdem stehen die äußeren Spieler außerhalb von ihrem Receiver und schauen nach innen Richtung Quarterback.",
+          "imageid": "cover2man",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Eine Cover 1 Man, bzw eine Man-Coverage generell kann man am besten daran erkennen, dass die äußeren Verteidiger innerhalb von ihren Receivern stehen und nach außen auf ihre Gegenspieler schauen.",
+          "imageid": "cover1man",
+          "subtitle": ""
+        }
+      ],
+      "title": "Wie erkennt man Coverages"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-21",
+      "pages": [
+        {
+          "htmltext": "In bestimmten Situationen ist es wichtig die restliche Spielzeit im Blick zu haben. <br/><br/>Wenn dein Team in Führung ist und der Gegner den Ball hat, ist es sehr wichtig, dass die Uhr so viel wie möglich runter läuft.<br/><br/>Wenn dein Team in Ballbesitz ist und hinten liegt, ist es sehr wichtig, die Uhr so oft wie möglich an zu halten.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Die Uhr hält immer dann an, wenn ein Spieler out of bounds (ins Seitenaus) läuft oder ein Pass nicht gefangen wird.<br/><br/>Deshalb ist es bei wenig verbleibender Spielzeit wichtig den Gegner in Bounds zu tacklen, wenn wir zurückliegen.<br/><br/>In der Offense wiederum ist es wichtig bei bei einem Rückstand mit wenig Zeit auf der Uhr Out of Bounds zu laufen. <br/><br/>Bei einer Führung ist das natürlich umgekehrt. Hier wollen wir den Gegner in Bounds tackeln und uns als Ballträger nicht ins Seitenaus tackeln lassen.<br/><br/>Zudem hat jede Mannschaft pro Halbzeit 2 Timeouts, welche ausschließlich von den Coaches genommen werden.",
+          "imageid": "",
+          "subtitle": "Uhr Anhalten"
+        },
+        {
+          "htmltext": "Die Uhr startet immer sobald der WhiteHead den Spielzug anpfeift.<br/><br/>Ausnahme hierbei ist, wenn der Spieler zuvor out of bounds war, der Ball gedroppt wurde oder ein Timeout genommen wurde. <br/>Dann startet der Spielzug mit dem Snap.",
+          "imageid": "",
+          "subtitle": "Uhr Start"
+        }
+      ],
+      "title": "Clock Management"
+    },
+    "type": "INFO"
+  },
+  {
+    "info": {
+      "date": "2021-12-22",
+      "pages": [
+        {
+          "htmltext": "Das Blocken des Gegners ist beim Football eine der wichtigsten Aufgaben.<br/><br/>Das gilt nicht nur für die Offense-Line, sondern auch für Tight-Ends, Receiver, Runningbacks und Spieler in den Special Teams.<br/><br/>Ein Foul beim Blocken kann das eigene Team einige Yards kosten.<br/>Festhalten (Holding) kostet 5 Yards.<br/>Ein Griff ins Gesichtsgitter (Facemask) kostet 15 Yards. Bei einem illegalen Block in den Rücken (Block in the back) gehen 10 Yards dafür drauf.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Die wichtigste Regel beim Blocken lautet: “Nimm den Kopf aus dem Block!”<br/><br/>Dein Kopf ist sehr wichtig und du brauchst ihn auch noch für viele andere Dinge als Football. Deshalb ist es sehr vernünftig nicht mit dem Helm zu blocken. Außerdem solltest du deinen Kopf immer in den Nacken nehmen, sodass du nach vorne schauen kannst. <br/><br/>Das ist besonders wichtig, weil Schläge/ein Aufprall auf den Helm sonst zu schweren Wirbelverletzungen führen kann. <br/><br/>Schütze dich und nimm den Kopf in den Nacken!",
+          "imageid": "",
+          "subtitle": "Kopf in den Nacken!"
+        },
+        {
+          "htmltext": "Oft blocken Spieler mit der Schulter. Vermutlich weil sie Angst vor dem Kontakt haben und dann den Kontakt nicht mehr sehen, weil der Kopf ja nicht mehr am Block beteiligt ist.<br/><br/>Das ist aber ebenfalls sehr gefährlich und auch sehr nutzlos. Dadurch hat man keine Kontrolle über den Block und gewinnt diesen damit auch nicht.<br/><br/>Eine Faustregel lautet: Die Daumen zeigen nach oben. <br/><br/>Die Handflächen liegen auf Brusthöhe des Gegners auf seinem Shoulderpad. Die Fingerspitzen zeigen nach außen und die Daumen nach oben. Dadurch hat man volle Kontrolle über den Gegner.<br/><br/>Sollten die Hände weiter außen am Shoulderpad sein, wird dein Gegner seine Hände bei dir innen platzieren und den Block gewinnen.",
+          "imageid": "",
+          "subtitle": "Verwende die Hände"
+        },
+        {
+          "htmltext": "Oft heißt es “Low Man wins”. Das bedeutet so viel, wie der tiefere Spieler gewinnt. Das liegt daran, dass der Spieler mit dem tieferen Körper, den anderen besser aufstellen kann und dadurch vor sich her schieben kann. <br/><br/>Der Grund hierfür liegt darin, dass der tiefere Spieler seine Beinmuskulatur besser einsetzen kann. Er blockt also nicht nur mit den Armen, sondern nimmt alle Muskeln, was dafür sorgt, das er deutlich stärker ist. <br/><br/>Sobald ein Gegner aufgestellt ist, wird er seine Beinmuskulatur nicht mehr so gut nutzen können und wird den Zweikampf verlieren.",
+          "imageid": "",
+          "subtitle": "Tiefer Körper"
+        }
+      ],
+      "title": "Den Gegner blocken"
+    },
+    "type": "INFO"
   }
 ]

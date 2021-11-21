@@ -131,6 +131,15 @@
     ]
   },
   {
+    "id": "STEP_UPS",
+    "name": "Step ups",
+    "start_position": "Aufrechter Stand vor einem Stuhl, einer hohen Kante oder einer hohen Treppe.",
+    "execution": "Setze deinen ersten Fuß auf den Stuhl. Anschließend drückst du dich mit dem anderen Fuß ab und steigst mit diesem auf den Stuhl. Mit dem gleichen Fuß steigst du wieder vom Fuß ab. Dann ziehst du den ersten Fuß nach und stehst wieder vor dem Stuhl.",
+    "muscles": [
+      "legs"
+    ]
+  },
+  {
     "id": "PLANK",
     "name": "Plank position halten",
     "start_position": "Hände, Unterarm und Ellenbogen, sowie die Füße berühren den Boden. Der Rest des Körpers bildet eine Linie.",
@@ -175,6 +184,15 @@
     "name": "Flutter kicks",
     "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.",
     "execution": "Hebe das linke Bein, bis es ca. in einem 45 Grad Winkel zum Boden steht. Senke es dann wieder bis kurz über dem Boden und hebe das rechte Bein.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
+    "id": "V-UPS",
+    "name": "V-Ups",
+    "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden. Hebe deine Schultern vom Boden ab und strecke deine Arme zur Seite.",
+    "execution": "Ziehe deine Beine an und mache mit deinem Oberkörper einen Situp. Fasse mit deinen Händen an deine Füße. Anschließend streckst du deinen Körper wieder. Berühre mit deinen Füßen und deiner Schulter nicht den Boden!",
     "muscles": [
       "abs"
     ]

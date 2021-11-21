@@ -2,7 +2,6 @@ package com.example.furstychristmas.domain.workout.util
 
 import android.content.res.AssetManager
 import com.example.furstychristmas.domain.workout.model.Exercise
-import com.example.furstychristmas.domain.workout.model.Muscle
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -43,7 +42,7 @@ class ExerciseJsonParser(private val assetManager: AssetManager) {
                         Exercise(
                             exerciseId = plain.id,
                             exerciseName = plain.name,
-                            muscles = plain.muscles.map { Muscle.byName(it) },
+                            muscles = emptyList(), // plain.muscles.map { Muscle.byName(it) },
                             startPosition = plain.start_position,
                             execution = plain.execution
                         )

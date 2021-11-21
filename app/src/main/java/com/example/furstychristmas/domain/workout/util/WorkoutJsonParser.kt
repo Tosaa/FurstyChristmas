@@ -5,6 +5,7 @@ import com.example.furstychristmas.domain.workout.model.Drill
 import com.example.furstychristmas.domain.workout.model.Exercise
 import com.example.furstychristmas.domain.workout.model.WorkoutContent
 import com.example.furstychristmas.model.Repetition
+import com.example.furstychristmas.model.Seconds
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -20,11 +21,16 @@ class WorkoutJsonParser(private val assetManager: AssetManager) {
 
     private data class DrillPlain(
         val exercise: String,
-        val reps: Int
+        val reps: Int = 0,
+        val duration: Int = 0
     ) {
         fun toDrill(exercises: List<Exercise>): Drill {
             val exercise = exercises.first { it.exerciseId.equals(exercise, true) }
-            return Drill(Repetition(reps), exercise)
+            return when {
+                duration != 0 -> Drill(Seconds(duration), exercise)
+                reps != 0 -> Drill(Repetition(reps), exercise)
+                else -> Drill(Repetition(reps), exercise)
+            }
         }
     }
 
@@ -59,8 +65,9 @@ class WorkoutJsonParser(private val assetManager: AssetManager) {
                 return@withContext contentPlain.map { plainWorkout ->
                     try {
                         val drills = plainWorkout.drills.map { it.toDrill(exercises) }
+                        val date = LocalDate.parse(plainWorkout.date, DateTimeFormatter.ISO_LOCAL_DATE)
                         WorkoutContent(
-                            date = LocalDate.parse(plainWorkout.date, DateTimeFormatter.ISO_LOCAL_DATE),
+                            date = date,
                             drills = drills,
                             rounds = plainWorkout.rounds,
                             bodyparts = drills.flatMap { it.exercise.muscles.map { it.muscle } },

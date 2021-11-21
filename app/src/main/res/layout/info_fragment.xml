@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <import type="android.view.View" />
         <variable
             name="imageSrc"
             type="String" />
@@ -25,7 +26,8 @@
             style="@style/AppTheme.Custom.Main2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{subtitle}" />
+            android:text="@{subtitle}"
+            android:visibility="@{subtitle.length()==0?View.GONE:View.VISIBLE}" />
 
         <ImageView
             android:layout_width="match_parent"
