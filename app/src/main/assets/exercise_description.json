@@ -180,6 +180,26 @@
     ]
   },
   {
+    "id": "SIDE_PLANK_WITH_ARM_ROTATION",
+    "name": "Seitliche Plank mit Arm Rotation",
+    "start_position": "Starte in der Side-Plank Position.",
+    "execution": "Strecke deinen oberen Arm gerade nach oben. Drehe dann deinen Oberkörper mit einer großen Armbewegung ein und berühre mit der Hand deinen seitlichen Brustkorb. Hierbei solltest du deine Bauchmuskeln stark anspannen. Drehe dich anschließend wieder auf.",
+    "muscles": [
+      "abs",
+      "back"
+    ]
+  },
+  {
+    "id": "BACKROLLS",
+    "name": "Backrolls",
+    "start_position": "Lege dich mit dem Rücken auf den Boden. Hebe deine Beine gerade in die Luft und knicke sie in einem 90 Grad Winkel ab. Lege die Hände ausgestreckt neben dich oder unter deinen Po.",
+    "execution": "Rolle dich jetzt mit dem Gesäß nach oben und ziehe die Oberschenkel zu dir. Spanne die Bauchmuskulatur an und stell dir vor du würdest die unteren Bauchmuskeln zur Brust ziehen. Der Winkel in den Beinen verändert sich dabei nicht. Anschließend rollst du dich in die Ausgangsposition ab. Strecke die Beine dann nicht wieder aus. Die Übung ist besonders Anstrengend wenn deine Bauchmuskeln sich zwischen den Wiederholungen nicht strecken.",
+    "muscles": [
+      "abs",
+      "back"
+    ]
+  },
+  {
     "id": "FLUTTER_KICKS",
     "name": "Flutter kicks",
     "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden.",

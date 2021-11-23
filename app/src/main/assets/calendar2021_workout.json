@@ -85,35 +85,39 @@
       "date": "2021-12-06",
       "bodyparts": [
       ],
-      "rounds": 5,
+      "rounds": 6,
       "drills": [
         {
           "exercise": "FLUTTER_KICKS",
-          "reps": 10
+          "reps": 15
         },
         {
-          "exercise": "BICYCLE",
-          "reps": 10
+          "exercise": "V-UPS",
+          "reps": 15
         },
         {
           "exercise": "LEG_RISES",
           "reps": 15
         },
         {
-          "exercise": "KNEE_TO_ELBOW",
-          "reps": 10
+          "exercise": "BACKROLLS",
+          "reps": 15
         },
         {
           "exercise": "ABS_ROTATION",
-          "reps": 10
+          "reps": 15
         },
         {
-          "exercise": "LEG_RISED_CIRCLE",
-          "reps": 10
+          "exercise": "SIDE_PLANK_WITH_ARM_ROTATION",
+          "reps": 5
+        },
+        {
+          "exercise": "SIDE_PLANK_WITH_ARM_ROTATION",
+          "reps": 5
         },
         {
           "exercise": "BREAK",
-          "duration": 120
+          "duration": 60
         }
       ],
       "motto": "Bauch",
