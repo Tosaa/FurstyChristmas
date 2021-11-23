@@ -34,7 +34,7 @@ class DayOverviewAdapter(
         }
         val completableDay = days[position]
         holder.binding.day = completableDay.day.dayOfMonth.toString()
-        val dayIsEnabled = completableDay.day.isBefore(DateUtil.today())
+        val dayIsEnabled = completableDay.day.let { it.isBefore(DateUtil.today()) || it.isEqual(DateUtil.today()) }
         var buttonColor = ContextCompat.getColor(context, R.color.colorLocked)
         var buttonTextColor = ContextCompat.getColor(context, R.color.colorTextLight)
         if (dayIsEnabled) {

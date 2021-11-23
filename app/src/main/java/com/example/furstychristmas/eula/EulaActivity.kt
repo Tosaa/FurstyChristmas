@@ -23,8 +23,7 @@ class EulaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding =
-            DataBindingUtil.setContentView(this, R.layout.activity_eula)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_eula)
 
         val injectedPreferences: SharedPreferences by inject()
         preferences = injectedPreferences

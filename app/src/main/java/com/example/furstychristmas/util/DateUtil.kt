@@ -22,7 +22,7 @@ object DateUtil {
         return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE)
     }
 
-    fun today() = dev_day ?: LocalDate.now()
+    fun today() = LocalDate.now()
 
     /**
      * Returns the validPeriod for the Calendar.

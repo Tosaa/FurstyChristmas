@@ -105,11 +105,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkEula() {
-        val eulaAccepted = preferences.getBoolean("eulaAccepted", false)
-        if (!eulaAccepted) {
+        val isEulaAccepted = preferences.getBoolean("eulaAccepted", false)
+        if (!isEulaAccepted) {
             val intent = Intent(this, EulaActivity::class.java)
             val bundle = Bundle()
-            val eula = R.raw.eula2
+            val eula = R.raw.eula2021
             bundle.putInt("eula", eula)
             intent.putExtras(bundle)
             startActivityForResult(intent, 1)
