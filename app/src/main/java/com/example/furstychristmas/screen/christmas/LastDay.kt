@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.furstychristmas.databinding.FragmentLastDayBinding
 import com.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
-import com.example.furstychristmas.domain.workout.repository.WorkoutRepository
-import com.example.furstychristmas.util.DateUtil
+import com.example.furstychristmas.domain.workout.model.Exercise
+import com.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
+import com.example.furstychristmas.model.Execution
+import com.example.furstychristmas.util.DateUtil.today
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -19,7 +21,7 @@ import java.time.Month
 
 class LastDay : Fragment() {
     val dayCompletionStatusUseCase: DayCompletionStatusUseCase by inject()
-    val repository: WorkoutRepository by inject()
+    val loadWorkoutUseCase: LoadWorkoutUseCase by inject()
     var adapter: HistoryAdapter = HistoryAdapter(emptyMap())
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,11 +31,31 @@ class LastDay : Fragment() {
         val binding = FragmentLastDayBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         observeCompletedDays()
-        CoroutineScope(Dispatchers.Main + Job()).launch {
-            dayCompletionStatusUseCase.markDayAsDone(LocalDate.of(DateUtil.today().year, Month.DECEMBER, 24))
-        }
         binding.workoutHistory.adapter = adapter
+        CoroutineScope(Dispatchers.Main + Job()).launch {
+            dayCompletionStatusUseCase.markDayAsDone(LocalDate.of(today().year, Month.DECEMBER, 24))
+            val completedDays = IntRange(1, 24).map { LocalDate.of(today().year, Month.DECEMBER, it) }.filter { dayCompletionStatusUseCase.isDayDone(it) }
+            updateAdapter(completedDays)
+        }
         return binding.root
+    }
+
+    suspend private fun updateAdapter(completedDays: List<LocalDate>) {
+        completedDays.map { loadWorkoutUseCase.getWorkoutAtDay(it) }
+            .let { workouts ->
+                val mutableExerciseMap = mutableMapOf<Exercise, MutableList<Execution>>()
+                workouts.forEach { workout ->
+                    workout?.drills?.forEach { drill ->
+                        mutableExerciseMap.putIfAbsent(drill.exercise, mutableListOf())
+                        repeat(workout?.rounds) { mutableExerciseMap.get(drill.exercise)?.add(drill.repetition) }
+                    }
+                }
+                mutableExerciseMap
+                    .mapKeys { it.key.exerciseName }
+                    .filterKeys { !it.equals("Pause", true) }
+                    .mapValues { it.value.sumBy { it.amount }.toString() + it.value[0].unit() }
+                    .let { adapter.updateItems(it) }
+            }
     }
 
     private fun observeCompletedDays() {
