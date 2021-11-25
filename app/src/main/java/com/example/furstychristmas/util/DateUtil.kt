@@ -3,6 +3,7 @@ package com.example.furstychristmas.util
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.LiveData
+import com.example.furstychristmas.BuildConfig
 import timber.log.Timber
 import java.time.Duration
 import java.time.LocalDate
@@ -22,7 +23,12 @@ object DateUtil {
         return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE)
     }
 
-    fun today() = LocalDate.now()
+    fun today(): LocalDate =
+        if (BuildConfig.DEBUG)
+            dev_day ?: LocalDate.now()
+        else
+            LocalDate.now()
+
 
     /**
      * Returns the validPeriod for the Calendar.

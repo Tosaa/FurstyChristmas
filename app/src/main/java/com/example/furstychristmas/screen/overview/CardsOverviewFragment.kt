@@ -10,6 +10,7 @@ import androidx.lifecycle.observe
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.furstychristmas.BuildConfig
 import com.example.furstychristmas.R
 import com.example.furstychristmas.databinding.FragmentCardsOverviewFragmentBinding
 import com.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
@@ -57,13 +58,17 @@ class CardsOverviewFragment : Fragment() {
         binding.infoButton.setOnClickListener {
             val intent = Intent(requireContext(), EulaActivity::class.java)
             val bundle = Bundle()
-            val eula = R.raw.eula2
+            val eula = R.raw.eula2021
             bundle.putInt("eula", eula)
             intent.putExtras(bundle)
             startActivity(intent)
         }
-        binding.developerButton.setOnClickListener {
-            findNavController().navigate(CardsOverviewFragmentDirections.overviewDeveloper())
+        if (BuildConfig.DEBUG) {
+            binding.developerButton.visibility = View.VISIBLE
+            binding.developerSpace.visibility = View.VISIBLE
+            binding.developerButton.setOnClickListener {
+                findNavController().navigate(CardsOverviewFragmentDirections.overviewDeveloper())
+            }
         }
     }
 }
