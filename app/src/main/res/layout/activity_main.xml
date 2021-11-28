@@ -34,7 +34,7 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="0dp"
-                android:src="@drawable/logo_razorbacks"
+                android:src="@drawable/custom_logo_rounded"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/toolbar"
                 app:layout_constraintBottom_toBottomOf="@id/toolbar"
