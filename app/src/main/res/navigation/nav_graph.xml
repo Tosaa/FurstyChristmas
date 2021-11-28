@@ -8,11 +8,11 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.furstychristmas.MainActivity"
+        android:name="redtoss.example.furstychristmas.MainActivity"
         android:label="MainActivity" />
     <fragment
         android:id="@+id/cardsOverviewFragment"
-        android:name="com.example.furstychristmas.screen.overview.CardsOverviewFragment"
+        android:name="redtoss.example.furstychristmas.screen.overview.CardsOverviewFragment"
         android:label="fragment_cards_overview"
         tools:layout="@layout/fragment_cards_overview_fragment">
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/workoutPreview"
-        android:name="com.example.furstychristmas.screen.day.workout.WorkoutPreviewFragment"
+        android:name="redtoss.example.furstychristmas.screen.day.workout.WorkoutPreviewFragment"
         android:label="workout_preview_fragment"
         tools:layout="@layout/workout_preview_fragment">
         <argument
@@ -62,7 +62,7 @@
     </fragment>
     <fragment
         android:id="@+id/exerciseOverview"
-        android:name="com.example.furstychristmas.screen.exercise.ExerciseOverview"
+        android:name="redtoss.example.furstychristmas.screen.exercise.ExerciseOverview"
         android:label="ExerciseOverview"
         tools:layout="@layout/exercise_list_fragment">
 
@@ -76,7 +76,7 @@
     </fragment>
     <fragment
         android:id="@+id/exercisePreview"
-        android:name="com.example.furstychristmas.screen.exercise.ExercisePreview"
+        android:name="redtoss.example.furstychristmas.screen.exercise.ExercisePreview"
         android:label="ExercisePreview"
         tools:layout="@layout/exercise_preview_fragment">
         <argument
@@ -85,11 +85,11 @@
     </fragment>
     <fragment
         android:id="@+id/lastDay"
-        android:name="com.example.furstychristmas.screen.christmas.LastDay"
+        android:name="redtoss.example.furstychristmas.screen.christmas.LastDay"
         android:label="LastDay" />
     <fragment
         android:id="@+id/infoPreviewFragment"
-        android:name="com.example.furstychristmas.screen.day.info.InfoPreviewFragment"
+        android:name="redtoss.example.furstychristmas.screen.day.info.InfoPreviewFragment"
         android:label="InfoPreviewFragment"
         tools:layout="@layout/info_fragment">
         <argument
@@ -98,6 +98,6 @@
     </fragment>
     <fragment
         android:id="@+id/developerFragment"
-        android:name="com.example.furstychristmas.screen.developer.DeveloperFragment"
+        android:name="redtoss.example.furstychristmas.screen.developer.DeveloperFragment"
         android:label="DeveloperFragment" />
 </navigation>
