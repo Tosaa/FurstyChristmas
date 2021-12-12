@@ -20,12 +20,11 @@ allprojects {
         maven(url = "https://maven.google.com")
     }
 }
-/*
-task.register("clean"){
-    println("delete rootProject.buildDir")
+
+tasks.register("clean"){
+    println("delete rootProject.buildDir:${rootProject.buildDir}")
     delete(rootProject.buildDir)
 }
- */
 /*
 task clean(type: Delete) {
     delete rootProject.buildDir
