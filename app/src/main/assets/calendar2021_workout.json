@@ -1,0 +1,393 @@
+[
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-01",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 5,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        },
+        {
+          "exercise": "LUNGES_BACKWARD",
+          "reps": 15
+        },
+        {
+          "exercise": "SQUAD",
+          "reps": 30
+        },
+        {
+          "exercise": "SQUAD_ONE_LEG",
+          "reps": 5
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 90
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-03",
+      "bodyparts": [
+        "CHEST"
+      ],
+      "rounds": 5,
+      "drills": [
+        {
+          "exercise": "PUSHUP",
+          "reps": 5
+        },
+        {
+          "exercise": "PUSHUP_TIGHT",
+          "reps": 5
+        },
+        {
+          "exercise": "PUSHUP_WIDE",
+          "reps": 5
+        },
+        {
+          "exercise": "MILITARY",
+          "reps": 5
+        },
+        {
+          "exercise": "PLANK",
+          "duration": 20
+        },
+        {
+          "exercise": "PLANK_SIDE",
+          "duration": 20
+        },
+        {
+          "exercise": "PLANK_SIDE",
+          "duration": 20
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 30
+        }
+      ],
+      "motto": "Brust",
+      "duration": 20
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-06",
+      "bodyparts": [
+      ],
+      "rounds": 6,
+      "drills": [
+        {
+          "exercise": "FLUTTER_KICKS",
+          "reps": 15
+        },
+        {
+          "exercise": "V-UPS",
+          "reps": 15
+        },
+        {
+          "exercise": "LEG_RISES",
+          "reps": 15
+        },
+        {
+          "exercise": "BACKROLLS",
+          "reps": 15
+        },
+        {
+          "exercise": "ABS_ROTATION",
+          "reps": 15
+        },
+        {
+          "exercise": "SIDE_PLANK_WITH_ARM_ROTATION",
+          "reps": 5
+        },
+        {
+          "exercise": "SIDE_PLANK_WITH_ARM_ROTATION",
+          "reps": 5
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 60
+        }
+      ],
+      "motto": "Bauch",
+      "duration": 20
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-08",
+      "bodyparts": [
+        "CHEST"
+      ],
+      "rounds": 5,
+      "drills": [
+        {
+          "exercise": "PUSHUP",
+          "reps": 5
+        },
+        {
+          "exercise": "PUSHUP_TIGHT",
+          "reps": 5
+        },
+        {
+          "exercise": "PUSHUP_WIDE",
+          "reps": 5
+        },
+        {
+          "exercise": "MILITARY",
+          "reps": 5
+        },
+        {
+          "exercise": "PLANK",
+          "duration": 20
+        },
+        {
+          "exercise": "PLANK_SIDE",
+          "duration": 20
+        },
+        {
+          "exercise": "PLANK_SIDE",
+          "duration": 20
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 30
+        }
+      ],
+      "motto": "Brust",
+      "duration": 20
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-10",
+      "bodyparts": [
+      ],
+      "rounds": 4,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        },
+        {
+          "exercise": "SQUAD",
+          "reps": 15
+        },
+        {
+          "exercise": "LUNGES_BACKWARD",
+          "reps": 15
+        },
+        {
+          "exercise": "STEP_UPS",
+          "reps": 15
+        },
+        {
+          "exercise": "FLUTTER_KICKS",
+          "reps": 15
+        },
+        {
+          "exercise": "LEG_RISES",
+          "reps": 15
+        },
+        {
+          "exercise": "V-UPS",
+          "reps": 15
+        },
+        {
+          "exercise": "SIT_UP",
+          "reps": 15
+        },
+        {
+          "exercise": "ABS_ROTATION",
+          "reps": 15
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 60
+        }
+      ],
+      "motto": "Beine Bauch",
+      "duration": 20
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-13",
+      "bodyparts": [
+      ],
+      "rounds": 5,
+      "drills": [
+        {
+          "exercise": "PUSHUP_WIDE",
+          "reps": 5
+        },
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 10
+        },
+        {
+          "exercise": "ABS_ROTATION",
+          "reps": 10
+        },
+        {
+          "exercise": "PUSHUP_TIGHT",
+          "reps": 5
+        },
+        {
+          "exercise": "SQUAD",
+          "reps": 10
+        },
+        {
+          "exercise": "PLANK",
+          "duration": 30
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 30
+        }
+      ],
+      "motto": "Alles",
+      "duration": 20
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-15",
+      "bodyparts": [
+        "CHEST"
+      ],
+      "rounds": 5,
+      "drills": [
+        {
+          "exercise": "PUSHUP",
+          "reps": 5
+        },
+        {
+          "exercise": "PUSHUP_TIGHT",
+          "reps": 5
+        },
+        {
+          "exercise": "PUSHUP_WIDE",
+          "reps": 5
+        },
+        {
+          "exercise": "MILITARY",
+          "reps": 5
+        },
+        {
+          "exercise": "PLANK",
+          "duration": 20
+        },
+        {
+          "exercise": "PLANK_SIDE",
+          "duration": 20
+        },
+        {
+          "exercise": "PLANK_SIDE",
+          "duration": 20
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 30
+        }
+      ],
+      "motto": "Brust",
+      "duration": 20
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-17",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 5,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        },
+        {
+          "exercise": "LUNGES_BACKWARD",
+          "reps": 15
+        },
+        {
+          "exercise": "SQUAD",
+          "reps": 30
+        },
+        {
+          "exercise": "SQUAD_ONE_LEG",
+          "reps": 5
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 90
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2021-12-20",
+      "bodyparts": [
+        "CHEST"
+      ],
+      "rounds": 5,
+      "drills": [
+        {
+          "exercise": "PUSHUP",
+          "reps": 5
+        },
+        {
+          "exercise": "PUSHUP_TIGHT",
+          "reps": 5
+        },
+        {
+          "exercise": "PUSHUP_WIDE",
+          "reps": 5
+        },
+        {
+          "exercise": "MILITARY",
+          "reps": 5
+        },
+        {
+          "exercise": "PLANK",
+          "duration": 20
+        },
+        {
+          "exercise": "PLANK_SIDE",
+          "duration": 20
+        },
+        {
+          "exercise": "PLANK_SIDE",
+          "duration": 20
+        },
+        {
+          "exercise": "BREAK",
+          "duration": 30
+        }
+      ],
+      "motto": "Brust",
+      "duration": 20
+    }
+  }
+]

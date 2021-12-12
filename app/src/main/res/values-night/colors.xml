@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Version 1 -->
+    <!--
+    <color name="colorPrimary">#42b49b</color>
+    <color name="colorSecondary">#f14e3f</color>
+    <color name="colorThird">#d9b159</color>
+    <color name="transparent">#00ffffff</color>
+
+    <color name="colorText">#e3e3e5</color>
+    <color name="colorTextLight">#939395</color>
+    <color name="background">#4e4e4c</color>
+-->
+    <!--
+    <color name="colorPrimary">#7b424d</color>
+    <color name="colorSecondary">#b25869</color>
+    <color name="colorThird">#e77883</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="colorText">#dbdbdb</color>
+    <color name="colorTextLight">#dbdbdb</color>
+    <color name="background">#442a30</color>
+-->
+
+    <color name="colorPrimary">#5c5470</color>
+    <color name="colorSecondary">#352f44</color>
+    <color name="colorThird">#dbd8e3</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="colorText">#dbd8e3</color>
+    <color name="colorTextLight">#dbd8e3</color>
+    <color name="background">#2a2438</color>
+
+    <color name="colorCompleted">#42b49b</color>
+    <color name="colorNotCompleted">#f14e3f</color>
+    <color name="colorLocked">@color/transparent</color>
+</resources>

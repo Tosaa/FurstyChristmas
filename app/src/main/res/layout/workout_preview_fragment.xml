@@ -9,14 +9,14 @@
 
         <variable
             name="viewmodel"
-            type="com.example.furstychristmas.screen.day.WorkoutViewModel" />
+            type="redtoss.example.furstychristmas.screen.day.workout.WorkoutViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".screen.day.WorkoutPreview">
+        tools:context=".screen.day.workout.WorkoutPreviewFragment">
 
         <include
             android:id="@+id/workout_header"
@@ -40,10 +40,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:scrollbarStyle="insideOverlay"
-                android:scrollbars="vertical"
                 android:paddingBottom="10dp"
-                >
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/exercises"
@@ -59,8 +58,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
                     android:text="done"
-                    android:visibility="@{viewmodel.isDone() ? View.INVISIBLE : View.VISIBLE}" />
+                    android:visibility="@{viewmodel.isDone ? View.INVISIBLE : View.VISIBLE}" />
             </LinearLayout>
         </ScrollView>
 
@@ -70,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/info"
-            android:visibility="@{viewmodel.isDone() ? View.INVISIBLE : View.VISIBLE}"
+            android:visibility="@{viewmodel.isDone? View.INVISIBLE : View.VISIBLE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

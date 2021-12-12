@@ -1,0 +1,69 @@
+[
+  {
+    "type": "INFO",
+    "info": {
+      "date": "2021-12-01",
+      "title": "Formations",
+      "pages": [
+        {
+          "subtitle": "Page 1",
+          "imageid": "solid_formation",
+          "htmltext": "Mit der Solid Formation, werden zusätzliche Blocker eingesetzt. Dadurch lassen sich aus dieser Formation besonders gut Laufspielzüge spielen und ein Passspielzug ist sehr unwahrscheinlich."
+        },
+        {
+          "subtitle": "Page 2",
+          "imageid": "solid_formation",
+          "htmltext": "<B>Page 2 Zeug </B>"
+        },
+        {
+          "subtitle": "Page 3",
+          "imageid": "",
+          "htmltext": "<B>Page 3 Zeug </B>"
+        }
+      ]
+    }
+  },
+  {
+    "type": "INFO",
+    "info": {
+      "date": "2021-12-03",
+      "title": "Shotgun",
+      "pages": [
+        {
+          "subtitle": "Page 1",
+          "imageid": "solid_formation",
+          "htmltext": "Wenn der Quaterback nicht direkt hinter dem Center steht, sondern einige Meter weiter hinten nennt sich das eine <b>Shotgun Formation</b>. Der Center hat dann die Aufgabe den Ball zum Quaterback nach hinten zu \"werfen\". <br> Dabei ist es besonders wichtig, dass der Snap nicht zu hoch zum Quaterback gesnappt wird. <br><br> Durch den vergrößerten Abstand zur Line Of Scrimmage hat der Quaterback mehr Zeit die Passrouten Seiner Receiver zu lesen und bekommt weniger Druck der Defense-Line.<br> Ein besonderer Spielzug aus dieser Formation ist der QB-Draw, bei dem der Quaterback einen Pass antäuscht, worauf die Linebacker mit den Receivern das Feld tief nach hinten laufen sollen. Nach Zwei Sekunden behälter der Quaberback aber den Ball und rennt selbst durch die Mitte. Falls die Linebacker auf den Pass anbeißen hat der Quaterback viel Platz und schafft vermutlich ein neues First-Down. Die Offense-Line sollte dabei versuchen die Defense-Liner stark nach Außen zu blocken, sodass diese dem Quaterback nicht zu nahe kommen können."
+        }
+      ]
+    }
+  },
+  {
+    "type": "INFO",
+    "info": {
+      "date": "2021-12-04",
+      "title": "Pass-Formationen",
+      "pages": [
+        {
+          "subtitle": "",
+          "imageid": "",
+          "htmltext": "Natürlich lassen sich aus allen Formationen Lauf und Passspielzüge durchführen.          Aus den folgenden drei Formationen sind Passspielzüge aber wesentlich wahrscheinlicher als Laufspielzüge. <br><br>          Online = Der Spieler steht an der Line of Scrimmage <br>          Offline = Der Spieler steht deutlich hinter der Line of Scrimmage"
+        },
+        {
+          "subtitle": "Empty Right",
+          "imageid": "emptyright",
+          "htmltext": "In einer Empty Formation haben wir keinen Runningback, weshalb der Quarterback der einzige Spieler ist der mit dem Ball laufen kann. <br>          Nachdem ihm auch keine Vorblocker zur verfügung stehen, wäre ein Laufspielzug eher riskant. Also kann man als Defense-Spieler davon ausgehen, dass die Offense einen Passspielzug ausführen wird. <br>          Für die Offense ist hierbei wichtig, dass der Tight-End auf der angesagten Seite offline stehen muss!"
+        },
+        {
+          "subtitle": "Trey Right & Ace Right",
+          "imageid": "treyright",
+          "htmltext": "In der Trey Formation sowie in der Ace Formation gibt es nur einen Runningback im Backfield. Dieser kann natürlich als Ballträger eingesetzt werden, hat aber keinen weiteren Vorblocker. Deshalb ist es wesentlich wahrscheinlicher den Runningback aus dem Backfield als zusätzlichen Blocker zu verwenden um den Quarterback mehr Zeit zum Werfen zu verschaffen.<br>          Bei Trey ist es wichtig, dass der Tight-End auf der angesagten Seite offline stehen muss.<br>          Bei Ace stehen beide Tight-Ends online, dafür stehen die beiden Receiver Offline."
+        },
+        {
+          "subtitle": "Trey Right & Ace Right",
+          "imageid": "treyright",
+          "htmltext": "In der Trey Formation sowie in der Ace Formation gibt es nur einen Runningback im Backfield. Dieser kann natürlich als Ballträger eingesetzt werden, hat aber keinen weiteren Vorblocker. Deshalb ist es wesentlich wahrscheinlicher den Runningback aus dem Backfield als zusätzlichen Blocker zu verwenden um den Quarterback mehr Zeit zum Werfen zu verschaffen.\n\nBei Trey ist es wichtig, dass der Tight-End auf der angesagten Seite offline stehen muss.\n\nBei Ace stehen beide Tight-Ends online, dafür stehen die beiden Receiver Offline.\n"
+        }
+      ]
+    }
+  }
+]

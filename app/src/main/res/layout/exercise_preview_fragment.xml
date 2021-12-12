@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
             name="exercise"
-            type="com.example.furstychristmas.model.Exercise" />
+            type="redtoss.example.furstychristmas.domain.workout.model.Exercise" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,16 +25,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/muscle_icons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/exercise_name"
-            tools:listitem="@layout/muscle_icon" />
-
+        <!--
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/muscle_icons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/exercise_name"
+                    tools:listitem="@layout/muscle_icon" />
+        -->
         <TextView
             android:id="@+id/exercise_start_position_title"
             android:layout_width="match_parent"
@@ -45,14 +44,14 @@
             android:textSize="@dimen/item"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/muscle_icons" />
+            app:layout_constraintTop_toBottomOf="@id/exercise_name" />
 
         <TextView
             android:id="@+id/exercise_start_position"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="@{exercise.startPositionId}"
+            android:text="@{exercise.startPosition}"
             android:textSize="@dimen/info"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/exercise_start_position_title" />
@@ -73,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="@{exercise.repetitionId}"
+            android:text="@{exercise.execution}"
             android:textSize="@dimen/info"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/exercise_repetition_title" />

@@ -7,7 +7,7 @@
 
         <variable
             name="drill"
-            type="com.example.furstychristmas.model.Drill" />
+            type="redtoss.example.furstychristmas.domain.workout.model.Drill" />
     </data>
 
     <LinearLayout
@@ -26,44 +26,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingVertical="3dp">
-
+                android:paddingVertical="3dp"
+                android:paddingHorizontal="5dp">
+                <!-- do not show muscles (06.11.2021)-->
+                <!--
                 <ImageView
                     icon="@{drill.exercise.muscles.iterator().next().icon}"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     app:tint="@color/black" />
-
+                -->
+                <!--
                 <View
                     android:id="@+id/divider"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="2dp"
                     android:background="?android:attr/listDivider" />
+-->
 
-
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/AppTheme.Custom.Card.Repetition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:ems="6"
-                    android:lines="1"
                     android:text="@{drill.repetition.formattedString()}"
-                    android:textColor="@color/black"
-                    tools:text=" Wdh/Seite" />
+                    tools:text="50 Wdh/Seite" />
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/AppTheme.Custom.Card.Exercise"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="10dp"
-                    android:maxLines="2"
                     android:text="@{drill.exercise.exerciseName}"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
                     tools:text="Lunges with Arm Rotation" />
-
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

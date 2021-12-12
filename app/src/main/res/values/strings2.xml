@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">FurstyChristmas</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
-    <string name="warn_notification">
+
+    <string name="warn_notification_old">
     Falls du dich Krank oder Verletzt fühlst ist von der Ausführung des Workouts ab zu raten.
     Solltest du bei einer Übung an deine Grenzen stoßen, schätze bitte selbst ein, ob es sinnvoll ist die Übung weiter durch zu führen.
     Du bist selbst für die Ausfühung der Übungen verantwortlich!
     </string>
+    <string name="warn_notification">Führe die Übungen nur aus wenn du dich Fit dafür fühlst!</string>
     <string name="runden">Runden</string>
-
+    <string name="motto">READY FOR 2K22</string>
 </resources>

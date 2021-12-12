@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="imageSrc"
+            type="String" />
+
+        <variable
+            name="infoText"
+            type="android.text.Spanned" />
+
+        <variable
+            name="subtitle"
+            type="String" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/main_margin"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/AppTheme.Custom.Main2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{subtitle}"
+                android:visibility="@{subtitle.length()==0?View.GONE:View.VISIBLE}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:srcname="@{imageSrc}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/AppTheme.Custom.Body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{infoText}" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

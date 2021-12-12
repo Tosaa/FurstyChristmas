@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.furstychristmas">
+    package="redtoss.example.furstychristmas">
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo_razorbacks"
+        android:icon="@drawable/custom_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_razorbacks"
+        android:roundIcon="@drawable/custom_logo_rounded"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.furstychristmas.MainActivity"
-            android:launchMode="singleTop">
+            android:name="redtoss.example.furstychristmas.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.furstychristmas.eula.EulaActivity"
+            android:name="redtoss.example.furstychristmas.eula.EulaActivity"
             android:label="eula" />
 
-        <receiver android:name="com.example.furstychristmas.receiver.DailyNotificationReceiver" />
+        <receiver android:name="redtoss.example.furstychristmas.receiver.DailyNotificationReceiver" />
     </application>
 
 </manifest>

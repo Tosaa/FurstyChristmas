@@ -30,33 +30,49 @@
             <Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/developer_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="developer" />
+
+            <Space
+                android:id="@+id/developer_space"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                />
+                android:visibility="gone" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/exercises_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/colorPrimaryLight"
                 android:text="Exercises" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/info_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
                 android:layout_gravity="center"
                 android:background="@color/transparent"
-                android:src="@drawable/ic_baseline_info_24"
-                android:tint="@color/colorPrimaryLight" />
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_info_24" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
         </LinearLayout>
+
 
     </LinearLayout>
 </layout>

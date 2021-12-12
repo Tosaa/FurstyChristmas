@@ -8,11 +8,11 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.furstychristmas.MainActivity"
+        android:name="redtoss.example.furstychristmas.MainActivity"
         android:label="MainActivity" />
     <fragment
         android:id="@+id/cardsOverviewFragment"
-        android:name="com.example.furstychristmas.screen.overview.CardsOverviewFragment"
+        android:name="redtoss.example.furstychristmas.screen.overview.CardsOverviewFragment"
         android:label="fragment_cards_overview"
         tools:layout="@layout/fragment_cards_overview_fragment">
         <action
@@ -37,15 +37,21 @@
             app:exitAnim="@anim/fragment_custom_open_exit"
             app:popEnterAnim="@anim/fragment_custom_open_enter"
             app:popExitAnim="@anim/fragment_custom_open_exit" />
+        <action
+            android:id="@+id/overview_info_preview"
+            app:destination="@id/infoPreviewFragment" />
+        <action
+            android:id="@+id/overview_developer"
+            app:destination="@id/developerFragment" />
     </fragment>
     <fragment
         android:id="@+id/workoutPreview"
-        android:name="com.example.furstychristmas.screen.day.WorkoutPreview"
+        android:name="redtoss.example.furstychristmas.screen.day.workout.WorkoutPreviewFragment"
         android:label="workout_preview_fragment"
         tools:layout="@layout/workout_preview_fragment">
         <argument
-            android:name="day"
-            app:argType="integer" />
+            android:name="date"
+            app:argType="string" />
         <action
             android:id="@+id/action_workoutPreview_to_exercisePreview"
             app:destination="@id/exercisePreview"
@@ -56,7 +62,7 @@
     </fragment>
     <fragment
         android:id="@+id/exerciseOverview"
-        android:name="com.example.furstychristmas.screen.exercise.ExerciseOverview"
+        android:name="redtoss.example.furstychristmas.screen.exercise.ExerciseOverview"
         android:label="ExerciseOverview"
         tools:layout="@layout/exercise_list_fragment">
 
@@ -70,15 +76,28 @@
     </fragment>
     <fragment
         android:id="@+id/exercisePreview"
-        android:name="com.example.furstychristmas.screen.exercise.ExercisePreview"
+        android:name="redtoss.example.furstychristmas.screen.exercise.ExercisePreview"
         android:label="ExercisePreview"
         tools:layout="@layout/exercise_preview_fragment">
         <argument
-            android:name="exercise"
-            app:argType="com.example.furstychristmas.model.Exercise" />
+            android:name="exerciseID"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/lastDay"
-        android:name="com.example.furstychristmas.screen.christmas.LastDay"
+        android:name="redtoss.example.furstychristmas.screen.christmas.LastDay"
         android:label="LastDay" />
+    <fragment
+        android:id="@+id/infoPreviewFragment"
+        android:name="redtoss.example.furstychristmas.screen.day.info.InfoPreviewFragment"
+        android:label="InfoPreviewFragment"
+        tools:layout="@layout/info_fragment">
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/developerFragment"
+        android:name="redtoss.example.furstychristmas.screen.developer.DeveloperFragment"
+        android:label="DeveloperFragment" />
 </navigation>
