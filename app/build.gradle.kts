@@ -35,46 +35,46 @@ android {
 
 
 dependencies {
-    implementation("${Libs.LEGACY_SUPPORT}:${Libs.LEGACY_SUPPORT_VERSION}")
-    implementation("${Libs.LIFECYCLE_EXTENSIONS}:${Libs.LIFECYCLE_EXTENSIONS_VERSION}")
-    implementation("${Libs.LIFECYCLE_VIEWMODEL}:${Libs.LIFECYCLE_VIEWMODEL_VERSION}")
+    implementation("${Libs.Name.LEGACY_SUPPORT}:${Libs.Version.LEGACY_SUPPORT}")
+    implementation("${Libs.Name.LIFECYCLE_EXTENSIONS}:${Libs.Version.LIFECYCLE_EXTENSIONS}")
+    implementation("${Libs.Name.LIFECYCLE_VIEWMODEL}:${Libs.Version.LIFECYCLE_VIEWMODEL}")
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("${Libs.KOTLIN_STDLIB}:${Libs.KOTLIN_STDLIB_VERSION}")
-    implementation("${Libs.CORE_KTX}:${Libs.CORE_KTX_VERSION}")
-    implementation("${Libs.APP_COMPAT}:${Libs.APP_COMPAT_VERSION}")
-    implementation("${Libs.CONSTRAINT_LAYOUT}:${Libs.CONSTRAINT_LAYOUT_VERSION}")
-    testImplementation("${Libs.JUNIT}:${Libs.JUNIT_VERSION}")
-    androidTestImplementation("${Libs.JUNIT_EXT}:${Libs.JUNIT_EXT_VERSION}")
-    androidTestImplementation("${Libs.ESPRESSO_CORE}:${Libs.ESPRESSO_CORE_VERSION}")
-    implementation("${Libs.RECYCLERVIEW}:${Libs.RECYCLERVIEW_VERSION}")
+    implementation("${Libs.Name.KOTLIN_STDLIB}:${Libs.Version.KOTLIN_STDLIB}")
+    implementation("${Libs.Name.CORE_KTX}:${Libs.Version.CORE_KTX}")
+    implementation("${Libs.Name.APP_COMPAT}:${Libs.Version.APP_COMPAT}")
+    implementation("${Libs.Name.CONSTRAINT_LAYOUT}:${Libs.Version.CONSTRAINT_LAYOUT}")
+    testImplementation("${Libs.Name.JUNIT}:${Libs.Version.JUNIT}")
+    androidTestImplementation("${Libs.Name.JUNIT_EXT}:${Libs.Version.JUNIT_EXT}")
+    androidTestImplementation("${Libs.Name.ESPRESSO_CORE}:${Libs.Version.ESPRESSO_CORE}")
+    implementation("${Libs.Name.RECYCLERVIEW}:${Libs.Version.RECYCLERVIEW}")
 
     //Navigation
-    implementation("${Libs.NAVIGATION_FRAGMENT}:${Libs.NAVIGATION_FRAGMENT_VERSION}")
-    implementation("${Libs.NAVIGATION_FRAGMENT_KTX}:${Libs.NAVIGATION_FRAGMENT_KTX_VERSION}")
-    implementation("${Libs.NAVIGATION_UI}:${Libs.NAVIGATION_UI_VERSION}")
-    implementation("${Libs.NAVIGATION_UI_KTX}:${Libs.NAVIGATION_UI_KTX_VERSION}")
-    implementation("${Libs.NAVIGATION_DYNAMICS_FEATURES_FRAGMENT}:${Libs.NAVIGATION_DYNAMICS_FEATURES_FRAGMENT_VERSION}")
+    implementation("${Libs.Name.NAVIGATION_FRAGMENT}:${Libs.Version.NAVIGATION_FRAGMENT}")
+    implementation("${Libs.Name.NAVIGATION_FRAGMENT_KTX}:${Libs.Version.NAVIGATION_FRAGMENT_KTX}")
+    implementation("${Libs.Name.NAVIGATION_UI}:${Libs.Version.NAVIGATION_UI}")
+    implementation("${Libs.Name.NAVIGATION_UI_KTX}:${Libs.Version.NAVIGATION_UI_KTX}")
+    implementation("${Libs.Name.NAVIGATION_DYNAMICS_FEATURES_FRAGMENT}:${Libs.Version.NAVIGATION_DYNAMICS_FEATURES_FRAGMENT}")
 
-    implementation("${Libs.FRAGMENT_KTX}:${Libs.FRAGMENT_KTX_VERSION}")
+    implementation("${Libs.Name.FRAGMENT_KTX}:${Libs.Version.FRAGMENT_KTX}")
     // Koin DI
-    implementation("${Libs.KOIN_CORE}:${Libs.KOIN_CORE_VERSION}")
-    implementation("${Libs.KOIN_ANDROIDX_SCOPE}:${Libs.KOIN_ANDROIDX_SCOPE_VERSION}")
-    implementation("${Libs.KOIN_ANDROIDX_VIEWMODEL}:${Libs.KOIN_ANDROIDX_VIEWMODEL_VERSION}")
-    implementation("${Libs.KOIN_ANDROIDX_FRAGMENT}:${Libs.KOIN_ANDROIDX_FRAGMENT_VERSION}")
-    implementation("${Libs.KOIN_ANDROIDX_WORKMANAGER}:${Libs.KOIN_ANDROIDX_WORKMANAGER_VERSION}")
+    implementation("${Libs.Name.KOIN_CORE}:${Libs.Version.KOIN_CORE}")
+    implementation("${Libs.Name.KOIN_ANDROIDX_SCOPE}:${Libs.Version.KOIN_ANDROIDX_SCOPE}")
+    implementation("${Libs.Name.KOIN_ANDROIDX_VIEWMODEL}:${Libs.Version.KOIN_ANDROIDX_VIEWMODEL}")
+    implementation("${Libs.Name.KOIN_ANDROIDX_FRAGMENT}:${Libs.Version.KOIN_ANDROIDX_FRAGMENT}")
+    implementation("${Libs.Name.KOIN_ANDROIDX_WORKMANAGER}:${Libs.Version.KOIN_ANDROIDX_WORKMANAGER}")
 
-    implementation("${Libs.GOOGLE_MATERIAL}:${Libs.GOOGLE_MATERIAL_VERSION}")
+    implementation("${Libs.Name.GOOGLE_MATERIAL}:${Libs.Version.GOOGLE_MATERIAL}")
     // Room DB
-    implementation("${Libs.ROOM_RUNTIME}:${Libs.ROOM_RUNTIME_VERSION}")
-    implementation("${Libs.ROOM_KTX}:${Libs.ROOM_KTX_VERSION}")
-    kapt("${Libs.ROOM_COMPILER}:${Libs.ROOM_COMPILER_VERSION}")
+    implementation("${Libs.Name.ROOM_RUNTIME}:${Libs.Version.ROOM_RUNTIME}")
+    implementation("${Libs.Name.ROOM_KTX}:${Libs.Version.ROOM_KTX}")
+    kapt("${Libs.Name.ROOM_COMPILER}:${Libs.Version.ROOM_COMPILER}")
 
-    implementation("${Libs.LIFECYCLE_LIVEDATA}:${Libs.LIFECYCLE_LIVEDATA_VERSION}")
+    implementation("${Libs.Name.LIFECYCLE_LIVEDATA}:${Libs.Version.LIFECYCLE_LIVEDATA}")
     // moshi for json reading
-    implementation("${Libs.MOSHI}:${Libs.MOSHI_VERSION}")
-    implementation("${Libs.MOSHI_KOTLIN}:${Libs.MOSHI_KOTLIN_VERSION}")
-    kapt("${Libs.MOSHI_KOTLIN_CODEGEN}:${Libs.MOSHI_KOTLIN_CODEGEN_VERSION}")
+    implementation("${Libs.Name.MOSHI}:${Libs.Version.MOSHI}")
+    implementation("${Libs.Name.MOSHI_KOTLIN}:${Libs.Version.MOSHI_KOTLIN}")
+    kapt("${Libs.Name.MOSHI_KOTLIN_CODEGEN}:${Libs.Version.MOSHI_KOTLIN_CODEGEN}")
     //Timber
-    implementation("${Libs.TIMBER}:${Libs.TIMBER_VERSION}")
+    implementation("${Libs.Name.TIMBER}:${Libs.Version.TIMBER}")
 }
