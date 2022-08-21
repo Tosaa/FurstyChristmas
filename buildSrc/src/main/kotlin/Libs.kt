@@ -1,5 +1,22 @@
 object Libs {
     object Name {
+        // Integration with activities
+        const val COMPOSE_ACTIVITY = "androidx.activity:activity-compose"
+
+        // Compose Material Design
+        const val COMPOSE_MATERIAL = "androidx.compose.material:material"
+
+        // Animations
+        const val COMPOSE_ANIMATION = "androidx.compose.animation:animation"
+
+        // Tooling support (Previews, etc.)
+        const val COMPOSE_TOOLING = "androidx.compose.ui:ui-tooling"
+
+        // Integration with ViewModels
+        const val COMPOSE_VIEWMODEL_LIFECYCLE = "androidx.lifecycle:lifecycle-viewmodel-compose"
+
+        // UI Tests
+        const val COMPOSE_JUNIT = "androidx.compose.ui:ui-test-junit4"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout"
         const val APP_COMPAT = "androidx.appcompat:appcompat"
         const val LEGACY_SUPPORT = "androidx.legacy:legacy-support-v4"
@@ -17,11 +34,30 @@ object Libs {
         const val NAVIGATION_UI_KTX = "androidx.navigation:navigation-ui-ktx"
         const val NAVIGATION_DYNAMICS_FEATURES_FRAGMENT = "androidx.navigation:navigation-dynamic-features-fragment"
         const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx"
-        const val KOIN_CORE = "org.koin:koin-core"
-        const val KOIN_ANDROIDX_SCOPE = "org.koin:koin-androidx-scope"
-        const val KOIN_ANDROIDX_VIEWMODEL = "org.koin:koin-androidx-viewmodel"
-        const val KOIN_ANDROIDX_FRAGMENT = "org.koin:koin-androidx-fragment"
-        const val KOIN_ANDROIDX_WORKMANAGER = "org.koin:koin-androidx-workmanager"
+
+        // Koin Core features
+        const val KOIN_CORE = "io.insert-koin:koin-core"
+
+        // Koin Test features
+        const val KOIN_TEST = "io.insert-koin:koin-test"
+
+        // Koin main features for Android
+        const val KOIN_ANDROID = "io.insert-koin:koin-android"
+// No more koin-android-viewmodel, koin-android-scope, koin-android-fragment
+
+        // Java Compatibility
+        const val KOIN_ANDROID_COMPAT = "io.insert-koin:koin-android-compat"
+
+        // Jetpack WorkManager
+        const val KOIN_WORKMANAGER = "io.insert-koin:koin-androidx-workmanager"
+
+        // Navigation Graph
+        const val KOIN_NAVIGATION = "io.insert-koin:koin-androidx-navigation"
+
+        // Jetpack Compose
+        const val KOIN_COMPOSE = "io.insert-koin:koin-androidx-compose"
+
+
         const val GOOGLE_MATERIAL = "com.google.android.material:material"
         const val ROOM_RUNTIME = "androidx.room:room-runtime"
         const val ROOM_KTX = "androidx.room:room-ktx"
@@ -35,11 +71,18 @@ object Libs {
 
     object Version {
         private const val nav_version = "2.3.0"
-        private const val kotlin_version = "1.3.72"
-        private const val koin_version = "2.2.0-rc-2"
-        private const val room_version = "2.2.5"
+        private const val kotlin_version = "1.7.10"
+        private const val koin_version = "3.2.0"
+        private const val room_version = "2.4.3"
         private const val moshi_version = "1.11.0"
         private const val lifecycle_version = "2.2.0"
+        const val COMPOSE_COMPILER = "1.3.0"
+        const val COMPOSE_ACTIVITY = "1.5.1"
+        const val COMPOSE_MATERIAL = "1.2.1"
+        const val COMPOSE_ANIMATION = "1.2.1"
+        const val COMPOSE_TOOLING = "1.2.1"
+        const val COMPOSE_VIEWMODEL_LIFECYCLE = "2.5.1"
+        const val COMPOSE_JUNIT = "1.2.1"
         const val CONSTRAINT_LAYOUT = "2.0.1"
         const val APP_COMPAT = "1.2.0"
         const val LEGACY_SUPPORT = "1.0.0"

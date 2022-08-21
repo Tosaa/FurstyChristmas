@@ -21,7 +21,7 @@
     <color name="colorTextLight">#dbdbdb</color>
     <color name="background">#442a30</color>
 -->
-
+<!--
     <color name="colorPrimary">#5c5470</color>
     <color name="colorSecondary">#352f44</color>
     <color name="colorThird">#dbd8e3</color>
@@ -34,4 +34,5 @@
     <color name="colorCompleted">#42b49b</color>
     <color name="colorNotCompleted">#f14e3f</color>
     <color name="colorLocked">@color/transparent</color>
+    -->
 </resources>
