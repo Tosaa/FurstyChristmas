@@ -1,7 +1,3 @@
-object PluginVersions{
-    const val test = "0.0.1"
-}
-
 object Dependencies{
     object Versions{
         const val gradle = "7.2.2"
