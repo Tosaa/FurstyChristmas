@@ -19,9 +19,10 @@ import redtoss.example.furstychristmas.domain.workout.util.Exercise2020JsonParse
 import redtoss.example.furstychristmas.domain.workout.util.ExerciseJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutJsonParser
 import redtoss.example.furstychristmas.persistence.DayDatabase
-import redtoss.example.furstychristmas.screen.day.info.InfoViewModel
 import redtoss.example.furstychristmas.screen.day.workout.WorkoutViewModel
 import redtoss.example.furstychristmas.screen.overview.CardViewModel
+import redtoss.example.furstychristmas.ui.viewmodel.ExerciseViewModel
+import redtoss.example.furstychristmas.ui.viewmodel.OverviewViewModel
 import java.time.LocalDate
 
 val dbModule = module {
@@ -78,10 +79,14 @@ val myModule = module {
         )
     }
     viewModel { (date: LocalDate) ->
-        InfoViewModel(
+        redtoss.example.furstychristmas.screen.day.info.InfoViewModel(
             date, get(), get()
         )
     }
 
     viewModel { CardViewModel(get()) }
+    viewModel { OverviewViewModel(get()) }
+    viewModel { redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel(get()) }
+    viewModel { redtoss.example.furstychristmas.ui.viewmodel.WorkoutViewModel(get()) }
+    viewModel { ExerciseViewModel() }
 }

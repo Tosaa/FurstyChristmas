@@ -13,10 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -32,6 +29,7 @@ import redtoss.example.furstychristmas.eula.EulaActivity
 import redtoss.example.furstychristmas.koin.dbModule
 import redtoss.example.furstychristmas.koin.myModule
 import redtoss.example.furstychristmas.receiver.DailyNotificationReceiver
+import redtoss.example.furstychristmas.ui.MyAppNavHost
 import redtoss.example.furstychristmas.ui.theme.FurstyChrismasTheme
 import redtoss.example.furstychristmas.util.DateUtil
 import timber.log.Timber
@@ -73,7 +71,7 @@ class MainActivityCompose : ComponentActivity() {
             FurstyChrismasTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    MyAppNavHost()
                 }
             }
         }
@@ -107,8 +105,8 @@ class MainActivityCompose : ComponentActivity() {
 
             val eulaResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 if (it.resultCode == Activity.RESULT_OK) {
-                Timber.d("onEulaResult: $it")
-                // finish()
+                    Timber.d("onEulaResult: $it")
+                    // finish()
                 }
             }
             val intent = Intent(this, EulaActivity::class.java)
@@ -143,19 +141,5 @@ class MainActivityCompose : ComponentActivity() {
             pendingNotificationIntent
         )
         Timber.d("set Wakeup Alarm for $updateTime")
-    }
-
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    FurstyChrismasTheme {
-        Greeting("Android")
     }
 }

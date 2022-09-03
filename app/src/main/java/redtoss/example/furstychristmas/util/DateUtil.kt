@@ -16,6 +16,7 @@ object DateUtil {
     private var dev_day: LocalDate? = null
 
     fun setDevDay(date: LocalDate) {
+        Timber.d("Set DevDate to $date")
         dev_day = date
     }
 

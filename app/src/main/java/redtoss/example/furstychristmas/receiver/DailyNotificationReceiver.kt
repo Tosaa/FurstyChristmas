@@ -7,7 +7,7 @@ import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import redtoss.example.furstychristmas.MainActivity
+import redtoss.example.furstychristmas.MainActivityCompose
 import redtoss.example.furstychristmas.R
 
 class DailyNotificationReceiver : BroadcastReceiver() {
@@ -23,10 +23,12 @@ class DailyNotificationReceiver : BroadcastReceiver() {
                 .setContentText("Workout heute schon gemacht?")
                 .setAutoCancel(true)
                 .setContentIntent(
-                    PendingIntent.getActivities(it,
+                    PendingIntent.getActivities(
+                        it,
                         2,
-                        arrayOf(Intent(it, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)),
-                        0)
+                        arrayOf(Intent(it, MainActivityCompose::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)),
+                        0
+                    )
                 )
             notificationManager.notify(
                 NOTIFICATION_ID,

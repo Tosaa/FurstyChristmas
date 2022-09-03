@@ -1,5 +1,3 @@
-import org.gradle.internal.impldep.org.junit.experimental.categories.Categories.CategoryFilter.exclude
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -55,23 +53,26 @@ android {
 
 dependencies{
     // COMPOSE
-    implementation("androidx.activity","activity-compose", "1.5.1")
-    implementation("androidx.compose.material","material", "1.2.1")
-    implementation("androidx.compose.animation","animation","1.2.1")
-    implementation("androidx.compose.ui","ui-tooling","1.2.1")
-    implementation("androidx.compose.ui","ui-tooling-preview","1.2.1")
-    debugImplementation("androidx.compose.ui","ui-test-manifest","1.2.1")
-    implementation("androidx.lifecycle","lifecycle-viewmodel-compose","2.5.1")
-    testImplementation("androidx.compose.ui","ui-test-junit4","1.2.1")
+    implementation("androidx.activity", "activity-compose", "1.5.1")
+    implementation("androidx.compose.material", "material", "1.2.1")
+    implementation("androidx.compose.animation", "animation", "1.2.1")
+    implementation("androidx.compose.ui", "ui-tooling", "1.2.1")
+    implementation("androidx.compose.ui", "ui-tooling-preview", "1.2.1")
+    debugImplementation("androidx.compose.ui", "ui-test-manifest", "1.2.1")
+    implementation("androidx.lifecycle", "lifecycle-viewmodel-compose", "2.5.1")
+    testImplementation("androidx.compose.ui", "ui-test-junit4", "1.2.1")
+    implementation("androidx.navigation", "navigation-compose", "2.5.1")
+    // inofficial, experimental ViewPager
+    implementation("com.google.accompanist:accompanist-pager:0.22.0-rc")
 
     // LIFECYCLE
-    implementation("androidx.lifecycle","lifecycle-extensions","2.2.0") // LIFECYCLE_EXTENSIONS
-    implementation("androidx.lifecycle","lifecycle-viewmodel-ktx","2.2.0") // LIFECYCLE_VIEWMODEL
-    implementation("androidx.lifecycle","lifecycle-livedata-ktx","2.2.0") // LIFECYCLE_LIVEDATA
+    implementation("androidx.lifecycle", "lifecycle-extensions", "2.2.0") // LIFECYCLE_EXTENSIONS
+    implementation("androidx.lifecycle", "lifecycle-viewmodel-ktx", "2.2.0") // LIFECYCLE_VIEWMODEL
+    implementation("androidx.lifecycle", "lifecycle-livedata-ktx", "2.2.0") // LIFECYCLE_LIVEDATA
 
-    implementation("androidx.core","core-ktx","1.3.2") // CORE_KTX
-    testImplementation("junit","junit","4.13") // JUNIT
-    androidTestImplementation("androidx.test.ext","junit","1.1.2") // JUNIT_EXT
+    implementation("androidx.core", "core-ktx", "1.3.2") // CORE_KTX
+    testImplementation("junit", "junit", "4.13") // JUNIT
+    androidTestImplementation("androidx.test.ext", "junit", "1.1.2") // JUNIT_EXT
 
     //KOIN
     implementation("io.insert-koin","koin-core","3.2.0") // KOIN_CORE
