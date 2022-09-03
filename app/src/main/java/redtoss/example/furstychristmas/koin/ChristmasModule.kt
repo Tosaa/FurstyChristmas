@@ -87,6 +87,6 @@ val myModule = module {
     viewModel { CardViewModel(get()) }
     viewModel { OverviewViewModel(get()) }
     viewModel { redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel(get()) }
-    viewModel { redtoss.example.furstychristmas.ui.viewmodel.WorkoutViewModel(get()) }
+    viewModel { redtoss.example.furstychristmas.ui.viewmodel.WorkoutViewModel(get(), get()) }
     viewModel { ExerciseViewModel() }
 }

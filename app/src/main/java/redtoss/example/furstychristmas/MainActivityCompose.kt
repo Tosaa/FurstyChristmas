@@ -56,14 +56,11 @@ class MainActivityCompose : ComponentActivity() {
 
         setupDatabaseIfNecessary()
         checkEula()
-        val today = DateUtil.today()
-        if (DateUtil.isDateInRange(today, DateUtil.firstDayForAlarm, DateUtil.lastDayForAlarm)) {
-            Timber.d("set alarm for $today")
-            setRecurringAlarm(applicationContext, today)
-        }
+        activateDayIfNecessary()
 
         preferences.getString("developer_date", null)?.let {
             val date = LocalDate.parse(it, DateTimeFormatter.ISO_LOCAL_DATE)
+            Timber.d("Initialise App with developer_date: $date")
             DateUtil.setDevDay(date)
         }
 
@@ -74,6 +71,14 @@ class MainActivityCompose : ComponentActivity() {
                     MyAppNavHost()
                 }
             }
+        }
+    }
+
+    private fun activateDayIfNecessary() {
+        val today = DateUtil.today()
+        if (DateUtil.isDateInRange(today, DateUtil.firstDayForAlarm, DateUtil.lastDayForAlarm)) {
+            Timber.d("set alarm for $today")
+            setRecurringAlarm(applicationContext, today)
         }
     }
 

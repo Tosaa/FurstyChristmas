@@ -11,14 +11,12 @@ import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.koin.androidx.compose.get
-import redtoss.example.furstychristmas.BuildConfig
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.theme.DayLocked
 import redtoss.example.furstychristmas.ui.theme.DayNotCompleted
@@ -32,7 +30,6 @@ fun OverviewScreen(
     overviewViewModel: OverviewViewModel = get(),
     calendarViewModel: InfoViewModel = get(),
     onNavigateToCard: (LocalDate) -> Unit,
-    onNavigateToDebug: () -> Unit = {},
 ) {
     val days = overviewViewModel.allCalendarCards.collectAsState(initial = emptyList())
     val today = DateUtil.today()
@@ -47,13 +44,11 @@ fun OverviewScreen(
                 Card(
                     modifier = Modifier.fillMaxSize(),
                 ) {
-                    val daysColor = remember {
-                        when {
-                            item.day.isAfter(today) -> DayLocked
-                            item.isDone -> DayCompleted
-                            !item.isDone -> DayNotCompleted
-                            else -> DayLocked
-                        }
+                    val daysColor = when {
+                        item.day.isAfter(today) -> DayLocked
+                        item.isDone -> DayCompleted
+                        !item.isDone -> DayNotCompleted
+                        else -> DayLocked
                     }
                     Button(
                         onClick = {
@@ -80,11 +75,6 @@ fun OverviewScreen(
                         }
                     }
                 }
-            }
-        }
-        if (BuildConfig.DEBUG) {
-            Button(onClick = { onNavigateToDebug() }) {
-                Text("DEBUG")
             }
         }
     }

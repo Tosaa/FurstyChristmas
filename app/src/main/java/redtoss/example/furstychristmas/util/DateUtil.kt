@@ -18,6 +18,7 @@ object DateUtil {
     fun setDevDay(date: LocalDate) {
         Timber.d("Set DevDate to $date")
         dev_day = date
+        (todayAsLiveData as TodayLiveData).updateDate(date)
     }
 
     fun dayAsIsoDate(localDate: LocalDate): String {
@@ -66,6 +67,10 @@ object DateUtil {
             super.onActive()
 
             handler.post { postAndRefreshTimer() }
+        }
+
+        fun updateDate(date: LocalDate) {
+            value = date
         }
 
         private fun postAndRefreshTimer() {

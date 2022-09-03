@@ -20,7 +20,13 @@ class DayCompletionStatusUseCase(private val dayCompletionRepository: DayComplet
     }
 
     suspend fun markDayAsDone(date: LocalDate) = withContext(Dispatchers.IO) {
+        Timber.d("DayCompletionStatusUseCase markDayAsDone(): date = $date")
         dayCompletionRepository.updateDay(Day(date, true))
+    }
+
+    suspend fun markDayAsNotDone(date: LocalDate) = withContext(Dispatchers.IO) {
+        Timber.d("DayCompletionStatusUseCase markDayAsNotDone(): date = $date")
+        dayCompletionRepository.updateDay(Day(date, false))
     }
 
 }

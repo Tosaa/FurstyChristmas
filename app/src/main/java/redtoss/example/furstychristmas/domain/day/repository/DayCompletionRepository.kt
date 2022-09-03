@@ -11,15 +11,17 @@ import java.time.Month
 class DayCompletionRepository(db: DayDatabase) {
 
     private val dayCompletedDao = db.dayCompletedDao()
-    
+
     val allDaysToComplete = MediatorLiveData<List<Day>>().apply {
         var latestToday = DateUtil.today()
         var latestDays = emptyList<Day>()
         addSource(DateUtil.todayAsLiveData) {
+            Timber.d("DayCompletionRepository allDaysToComplete 'addSource' date: $it")
             latestToday = it
             value = latestDays.filter { isDateActive(it.day, latestToday) }
         }
         addSource(dayCompletedDao.getDaysLD()) {
+            Timber.d("DayCompletionRepository allDaysToComplete 'addSource' days: $it")
             latestDays = it
             value = latestDays.filter { isDateActive(it.day, latestToday) }
         }

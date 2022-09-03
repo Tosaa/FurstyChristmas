@@ -36,6 +36,7 @@ fun CalendarWorkoutDay(
     viewmodel.date = day
     val motto = viewmodel.motto.collectAsState(initial = "")
     val exercises = viewmodel.exercises.collectAsState(initial = emptyList())
+    val isDayCompleted = viewmodel.isDone.collectAsState(initial = false)
     Card(modifier = Modifier.padding(16.dp)) {
         Column {
             Text(
@@ -74,8 +75,13 @@ fun CalendarWorkoutDay(
                 Button(onClick = { onClose() }) {
                     Text(text = "Back")
                 }
-                Button(onClick = { onDayCompletedClicked(viewmodel.date) }) {
-                    Text(text = "Done")
+                if (!isDayCompleted.value) {
+                    Button(onClick = {
+                        viewmodel.completeDay()
+                        onDayCompletedClicked(viewmodel.date)
+                    }) {
+                        Text(text = "Done")
+                    }
                 }
             }
         }
