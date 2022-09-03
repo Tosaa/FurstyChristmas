@@ -10,13 +10,15 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.Button
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -57,14 +59,15 @@ fun DebugScreen(
             Text(text = debugDate.value.toString())
         }
         val debugScope = rememberCoroutineScope()
-        LazyColumn(
-            Modifier
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+            modifier = Modifier
                 .scrollable(rememberScrollState(), Orientation.Vertical)
                 .fillMaxWidth()
         ) {
             days.value.forEach {
                 item {
-                    Row {
+                    Row(verticalAlignment = CenterVertically) {
                         Text(it.day.toString())
                         Switch(checked = it.isDone, onCheckedChange = { isDone ->
                             debugScope.launch {

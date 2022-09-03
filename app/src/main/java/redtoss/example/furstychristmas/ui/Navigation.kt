@@ -124,7 +124,7 @@ fun MyAppNavHost(
                         Timber.d("Navigation::onClose")
                         Timber.d("Navigation::popBackStack: from ${navController.currentBackStackEntry?.id}")
                         navController.popBackStack()
-                    })
+                    }, selectedExercise = it)
                 }
             }
             composable(

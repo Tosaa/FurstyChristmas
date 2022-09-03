@@ -24,4 +24,5 @@ class WorkoutViewModel(val workoutUseCase: LoadWorkoutUseCase, val dayCompletion
     val day = workout.map { it?.date?.dayOfMonth.toString() }
     val exercises = workout.map { it?.drills ?: emptyList() }
     val motto = workout.map { it?.motto ?: "" }
+    val rounds = workout.map { it?.rounds ?: 0 }
 }

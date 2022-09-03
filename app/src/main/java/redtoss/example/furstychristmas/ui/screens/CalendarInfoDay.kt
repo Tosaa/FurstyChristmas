@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalPagerApi::class)
+@file:OptIn(ExperimentalPagerApi::class, ExperimentalPagerApi::class)
 
 package redtoss.example.furstychristmas.ui.screens
 
@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,6 +22,7 @@ import androidx.compose.ui.unit.sp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import org.koin.androidx.compose.get
+import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
 import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
 import timber.log.Timber
 import java.time.LocalDate
@@ -34,36 +36,47 @@ fun CalendarInfoDay(
     viewmodel.date = day
     val title = viewmodel.title.collectAsState(initial = "")
     val pages = viewmodel.pages.collectAsState(initial = emptyList())
-
+    viewmodel.setDateAsDone(day)
     Column {
-        Text(
-            text = title.value,
-            modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Center,
-            textDecoration = TextDecoration.Underline,
-            fontSize = 26.sp
-        )
-        HorizontalPager(
-            count = pages.value?.size ?: 0,
-            verticalAlignment = Alignment.Top,
-            modifier = Modifier
-                .padding(8.dp)
-                .fillMaxHeight()
-        ) { page ->
-            val pageContent = pages.value?.get(page)
-            Timber.d("Show Page: $pageContent")
-            DailyContent(
-                title = pageContent?.title ?: "",
-                content = pageContent?.text ?: "",
-                imageID = pageContent?.image ?: 0,
-                modifier = Modifier.padding(8.dp)
-            )
-        }
+        CalendarHeader(date = viewmodel.date, viewmodel.isDone)
+        ContentTitle(title = title)
+        ContentPager(pages)
     }
 }
 
 @Composable
-fun DailyContent(modifier: Modifier = Modifier, title: String = "", content: String = "", imageID: Int = 0) {
+private fun ContentPager(pages: State<List<InfoPageContent>>) {
+    HorizontalPager(
+        count = pages.value.size,
+        verticalAlignment = Alignment.Top,
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxHeight()
+    ) { page ->
+        val pageContent = pages.value.get(page)
+        Timber.d("Show Page: $pageContent")
+        DailyContent(
+            title = pageContent.title,
+            content = pageContent.text,
+            imageID = pageContent.image ?: 0,
+            modifier = Modifier.padding(8.dp)
+        )
+    }
+}
+
+@Composable
+private fun ContentTitle(title: State<String>) {
+    Text(
+        text = title.value,
+        modifier = Modifier.fillMaxWidth(),
+        textAlign = TextAlign.Center,
+        textDecoration = TextDecoration.Underline,
+        fontSize = 26.sp
+    )
+}
+
+@Composable
+private fun DailyContent(modifier: Modifier = Modifier, title: String = "", content: String = "", imageID: Int = 0) {
     Card(
         modifier = modifier
             .fillMaxWidth()
