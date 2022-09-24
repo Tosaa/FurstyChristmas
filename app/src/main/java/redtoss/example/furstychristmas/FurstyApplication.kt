@@ -47,13 +47,13 @@ class FurstyApplication : Application() {
             modules(dbModule, myModule)
         }
         backgroundScope.launch {
-            setupDatabaseIfNecessary()
-            activateDayIfNecessary()
             preferences.getString("developer_date", null)?.let {
                 val date = LocalDate.parse(it, DateTimeFormatter.ISO_LOCAL_DATE)
                 Timber.d("Initialise App with developer_date: $date")
                 DateUtil.setDevDay(date)
             }
+            setupDatabaseIfNecessary()
+            activateDayIfNecessary()
         }
     }
 
@@ -69,11 +69,13 @@ class FurstyApplication : Application() {
 
     private suspend fun setupDatabaseIfNecessary() {
         Timber.d("setupDatabaseIfNecessary()")
+        val today = DateUtil.today()
         if (!dayCompletionStatusUseCase.isDatabaseSetup) {
-            val today = DateUtil.today()
             Timber.d("setupDatabaseIfNecessary(): Add Entries to Database for this year (${today.year})")
             val days = IntRange(1, 24).map { day -> LocalDate.of(today.year, Month.DECEMBER, day) }.toList()
             addDayCompletionUseCase.addDefaultEntriesForDates(days)
+        } else {
+            Timber.d("setupDatabaseIfNecessary(): Entries for year ${today.year} exist already")
         }
     }
 
