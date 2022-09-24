@@ -3,6 +3,9 @@ package redtoss.example.furstychristmas.util
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.LiveData
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import redtoss.example.furstychristmas.BuildConfig
 import timber.log.Timber
 import java.time.Duration
@@ -18,7 +21,9 @@ object DateUtil {
     fun setDevDay(date: LocalDate) {
         Timber.d("Set DevDate to $date")
         dev_day = date
-        (todayAsLiveData as TodayLiveData).updateDate(date)
+        CoroutineScope(Dispatchers.Main).launch {
+            (todayAsLiveData as TodayLiveData).updateDate(date)
+        }
     }
 
     fun dayAsIsoDate(localDate: LocalDate): String {

@@ -7,35 +7,37 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = FurstyBlack,
+    onPrimary = FurstyWhite,
+    secondary = FurstySecondaryDark,
+    onSecondary = FurstyWhite,
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = FurstyWhite,
+    onPrimary = FurstyBlack,
+    secondary = FurstySecondary,
+    onSecondary = FurstyBlack
     /*
-    transparent">#00ffffff</color>
-    <color name="colorText">#dbd8e3</color>
-    <color name="colorTextLight">#dbd8e3</color>
-    <color name="background">#2a2438</color>
+transparent">#00ffffff</color>
+<color name="colorText">#dbd8e3</color>
+<color name="colorTextLight">#dbd8e3</color>
+<color name="background">#2a2438</color>
 
-    <color name="colorCompleted">#42b49b</color>
-    <color name="colorNotCompleted">#f14e3f</color>
-    <color name="colorLocked">@color/transparent</color>
-    */
+<color name="colorCompleted">#42b49b</color>
+<color name="colorNotCompleted">#f14e3f</color>
+<color name="colorLocked">@color/transparent</color>
+*/
 
 
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
+/* Other default colors to override
+background = Color.White,
+surface = Color.White,
+onPrimary = Color.White,
+onSecondary = Color.Black,
+onBackground = Color.Black,
+onSurface = Color.Black,
+*/
 )
 
 @Composable

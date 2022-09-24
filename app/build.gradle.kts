@@ -75,23 +75,23 @@ dependencies{
     androidTestImplementation("androidx.test.ext", "junit", "1.1.2") // JUNIT_EXT
 
     //KOIN
-    implementation("io.insert-koin","koin-core","3.2.0") // KOIN_CORE
-    testImplementation("io.insert-koin","koin-test","3.2.0") // KOIN_TEST
-    implementation("io.insert-koin","koin-android","3.2.0") // KOIN_ANDROID
-    implementation("io.insert-koin","koin-android-compat","3.2.0") // KOIN_ANDROID_COMPAT
-    implementation("io.insert-koin","koin-androidx-workmanager","3.2.0") // KOIN_WORKMANAGER
-    implementation("io.insert-koin","koin-androidx-navigation","3.2.0") // KOIN_NAVIGATION
-    implementation("io.insert-koin","koin-androidx-compose","3.2.0") // KOIN_COMPOSE
+    implementation("io.insert-koin", "koin-core", "3.2.2") // KOIN_CORE
+    testImplementation("io.insert-koin", "koin-test", "3.2.2") // KOIN_TEST
+    implementation("io.insert-koin", "koin-android", "3.2.2") // KOIN_ANDROID
+    implementation("io.insert-koin", "koin-android-compat", "3.2.2") // KOIN_ANDROID_COMPAT
+    implementation("io.insert-koin", "koin-androidx-workmanager", "3.2.2") // KOIN_WORKMANAGER
+    implementation("io.insert-koin", "koin-androidx-navigation", "3.2.2") // KOIN_NAVIGATION
+    implementation("io.insert-koin", "koin-androidx-compose", "3.2.1") // KOIN_COMPOSE
 
-    implementation("com.google.android.material","material","1.2.1") // GOOGLE_MATERIAL
+    implementation("com.google.android.material", "material", "1.2.1") // GOOGLE_MATERIAL
     // ROOM
-    implementation("androidx.room","room-runtime","2.4.3") // ROOM_RUNTIME
-    implementation("androidx.room","room-ktx","2.4.3") // ROOM_KTX
+    implementation("androidx.room", "room-runtime", "2.4.3") // ROOM_RUNTIME
+    implementation("androidx.room", "room-ktx", "2.4.3") // ROOM_KTX
     // annotationProcessor("androidx.room","room-compiler","2.4.3") // ROOM_COMPILER
-    kapt("androidx.room","room-compiler","2.4.3") // ROOM_COMPILER
+    kapt("androidx.room", "room-compiler", "2.4.3") // ROOM_COMPILER
 
     // MOSHI
-    kapt("com.squareup.moshi","moshi-kotlin-codegen","1.11.0") // MOSHI_KOTLIN_CODEGEN
+    kapt("com.squareup.moshi", "moshi-kotlin-codegen", "1.11.0") // MOSHI_KOTLIN_CODEGEN
     implementation("com.squareup.moshi","moshi-kotlin","1.11.0") // MOSHI_KOTLIN
     implementation("com.squareup.moshi","moshi","1.11.0") // MOSHI
     // TIMBER

@@ -39,10 +39,10 @@ import java.time.LocalDate
 fun MyAppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = "overview"
+    startDestination: String = "overview",
+    infoUseCase: LoadInfoUseCase = get(),
+    workoutUseCase: LoadWorkoutUseCase = get(),
 ) {
-    val infoUseCase: LoadInfoUseCase = get()
-    val workoutUseCase: LoadWorkoutUseCase = get()
     Column {
         MyAppBar(onBackIconClicked = { navController.popBackStack() },
             onEditClicked = {
