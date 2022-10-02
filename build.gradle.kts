@@ -22,7 +22,7 @@ allprojects {
     }
 }
 
-tasks.register("clean"){
+tasks.register("clean") {
     println("delete rootProject.buildDir:${rootProject.buildDir}")
     delete(rootProject.buildDir)
 }

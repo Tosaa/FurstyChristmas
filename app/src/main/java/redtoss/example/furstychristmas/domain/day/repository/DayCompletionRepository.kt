@@ -1,6 +1,7 @@
 package redtoss.example.furstychristmas.domain.day.repository
 
 import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.distinctUntilChanged
 import redtoss.example.furstychristmas.domain.day.model.Day
 import redtoss.example.furstychristmas.persistence.DayDatabase
 import redtoss.example.furstychristmas.util.DateUtil
@@ -11,15 +12,17 @@ import java.time.Month
 class DayCompletionRepository(db: DayDatabase) {
 
     private val dayCompletedDao = db.dayCompletedDao()
-    
+
     val allDaysToComplete = MediatorLiveData<List<Day>>().apply {
         var latestToday = DateUtil.today()
         var latestDays = emptyList<Day>()
-        addSource(DateUtil.todayAsLiveData) {
+        addSource(DateUtil.todayAsLiveData.distinctUntilChanged()) {
+            Timber.d("date value updated: $it")
             latestToday = it
             value = latestDays.filter { isDateActive(it.day, latestToday) }
         }
-        addSource(dayCompletedDao.getDaysLD()) {
+        addSource(dayCompletedDao.getDaysLD().distinctUntilChanged()) {
+            Timber.d("day completion information updated: $it")
             latestDays = it
             value = latestDays.filter { isDateActive(it.day, latestToday) }
         }

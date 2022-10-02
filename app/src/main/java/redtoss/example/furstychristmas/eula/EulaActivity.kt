@@ -22,25 +22,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
 import kotlinx.coroutines.launch
-import org.koin.androidx.compose.inject
+import org.koin.android.ext.android.get
 import redtoss.example.furstychristmas.ui.theme.FurstyChrismasTheme
 import timber.log.Timber
 import java.io.InputStream
 
 
 class EulaActivity : ComponentActivity() {
+    val injectedPreferences: SharedPreferences = get()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Timber.d("onCreate()")
         setContent {
-            val injectedPreferences: SharedPreferences by inject()
             FurstyChrismasTheme {
                 val coroutineScope = rememberCoroutineScope()
                 val snackbarHostState = remember { SnackbarHostState() }
                 Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
                     Eula()
-                    SnackbarHost(hostState = snackbarHostState,Modifier.padding(5.dp))
+                    SnackbarHost(hostState = snackbarHostState, Modifier.padding(5.dp))
                     if (!injectedPreferences.getBoolean("eulaAccepted", false)) {
                         Row(Modifier.fillMaxWidth()) {
                             Button(
