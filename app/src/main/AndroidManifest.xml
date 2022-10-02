@@ -3,23 +3,25 @@
     package="redtoss.example.furstychristmas">
 
 
-<application
-    android:name=".FurstyApplication"
-    android:icon="@drawable/custom_logo"
-android:label="@string/app_name"
-android:theme="@style/AppThemeCompose">
-<activity
-    android:name=".MainActivityCompose"
-    android:exported="true">
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
-</activity>
+    <application
+        android:name=".FurstyApplication"
+        android:icon="@drawable/custom_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppThemeCompose">
+
+        <activity
+            android:name=".MainActivityCompose"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".eula.EulaActivity"
-            android:label="eula" />
+            android:label="eula"
+            android:exported="false" />
 
         <receiver android:name=".receiver.DailyNotificationReceiver" />
     </application>
