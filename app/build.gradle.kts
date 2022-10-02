@@ -51,7 +51,7 @@ android {
 }
 
 
-dependencies{
+dependencies {
     // COMPOSE
     implementation("androidx.activity", "activity-compose", "1.5.1")
     implementation("androidx.compose.material", "material", "1.2.1")
@@ -92,8 +92,8 @@ dependencies{
 
     // MOSHI
     kapt("com.squareup.moshi", "moshi-kotlin-codegen", "1.11.0") // MOSHI_KOTLIN_CODEGEN
-    implementation("com.squareup.moshi","moshi-kotlin","1.11.0") // MOSHI_KOTLIN
-    implementation("com.squareup.moshi","moshi","1.11.0") // MOSHI
+    implementation("com.squareup.moshi", "moshi-kotlin", "1.11.0") // MOSHI_KOTLIN
+    implementation("com.squareup.moshi", "moshi", "1.11.0") // MOSHI
     // TIMBER
-    implementation("com.jakewharton.timber","timber","4.7.1") // TIMBER
+    implementation("com.jakewharton.timber", "timber", "4.7.1") // TIMBER
 }

@@ -40,7 +40,7 @@ class EulaActivity : ComponentActivity() {
                 val snackbarHostState = remember { SnackbarHostState() }
                 Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
                     Eula()
-                    SnackbarHost(hostState = snackbarHostState,Modifier.padding(5.dp))
+                    SnackbarHost(hostState = snackbarHostState, Modifier.padding(5.dp))
                     if (!injectedPreferences.getBoolean("eulaAccepted", false)) {
                         Row(Modifier.fillMaxWidth()) {
                             Button(

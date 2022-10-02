@@ -20,8 +20,8 @@
 
         <activity
             android:name=".eula.EulaActivity"
-            android:label="eula"
-            android:exported="false" />
+            android:exported="false"
+            android:label="eula" />
 
         <receiver android:name=".receiver.DailyNotificationReceiver" />
     </application>

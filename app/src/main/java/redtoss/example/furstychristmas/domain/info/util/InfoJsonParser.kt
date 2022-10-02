@@ -15,7 +15,7 @@ import java.io.InputStreamReader
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class InfoJsonParser(private val assetManager: AssetManager,private val resources: Resources) {
+class InfoJsonParser(private val assetManager: AssetManager, private val resources: Resources) {
     private data class Page(val subtitle: String, val imageid: String, val htmltext: String)
     private data class Info(
         val date: String,

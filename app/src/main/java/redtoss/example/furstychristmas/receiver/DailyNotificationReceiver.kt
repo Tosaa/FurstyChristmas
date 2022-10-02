@@ -37,7 +37,7 @@ class DailyNotificationReceiver : BroadcastReceiver() {
         }
     }
 
-    companion object{
+    companion object {
         private val CHANNEL = "default"
         private val NOTIFICATION_ID = 123456
     }
