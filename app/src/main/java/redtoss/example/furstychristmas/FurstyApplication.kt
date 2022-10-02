@@ -90,7 +90,7 @@ class FurstyApplication : Application() {
         val repeatedNotificationIntent = Intent(context, DailyNotificationReceiver::class.java)
         val pendingNotificationIntent = PendingIntent.getBroadcast(
             context,
-            0, repeatedNotificationIntent, PendingIntent.FLAG_CANCEL_CURRENT
+            0, repeatedNotificationIntent, PendingIntent.FLAG_CANCEL_CURRENT + PendingIntent.FLAG_IMMUTABLE
         )
         val alarms = this.getSystemService(
             Context.ALARM_SERVICE
