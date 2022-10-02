@@ -2,13 +2,14 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath(Dependencies.ClassPaths.gradle)
         classpath(Dependencies.ClassPaths.kotlin)
-        classpath(Dependencies.ClassPaths.koin)
+        // classpath(Dependencies.ClassPaths.koin)
         classpath(Dependencies.ClassPaths.navigationSafeArgs)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31")
     }
 }
 
@@ -16,7 +17,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven(url = "https://maven.google.com")
     }
 }

@@ -1,41 +1,10 @@
 package redtoss.example.furstychristmas
 
-import android.app.Activity
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.Context
-import android.content.Intent
-import android.content.SharedPreferences
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
-import org.koin.android.ext.android.inject
-import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
-import org.koin.core.context.startKoin
-import org.koin.core.context.stopKoin
-import redtoss.example.furstychristmas.databinding.ActivityMainBinding
-import redtoss.example.furstychristmas.domain.day.usecase.AddDayCompletionUseCase
-import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
-import redtoss.example.furstychristmas.eula.EulaActivity
-import redtoss.example.furstychristmas.koin.dbModule
-import redtoss.example.furstychristmas.koin.myModule
-import redtoss.example.furstychristmas.receiver.DailyNotificationReceiver
-import redtoss.example.furstychristmas.util.DateUtil
-import timber.log.Timber
-import timber.log.Timber.DebugTree
-import java.time.LocalDate
-import java.time.Month
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
 
 
 class MainActivity : AppCompatActivity() {
+    /*
     private val preferences: SharedPreferences by inject()
     private val dayCompletionStatusUseCase: DayCompletionStatusUseCase by inject()
     private val addDayCompletionUseCase: AddDayCompletionUseCase by inject()
@@ -141,4 +110,5 @@ class MainActivity : AppCompatActivity() {
         Timber.d("set Wakeup Alarm for ${updateTime}")
 
     }
+     */
 }
