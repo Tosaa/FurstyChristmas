@@ -18,6 +18,7 @@ import redtoss.example.furstychristmas.domain.day.model.isAvailableOn
 import redtoss.example.furstychristmas.domain.day.usecase.AddDayCompletionUseCase
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import redtoss.example.furstychristmas.util.DateUtil
+import timber.log.Timber
 import java.time.LocalDate
 import java.time.Month
 import java.util.concurrent.CountDownLatch
@@ -44,8 +45,8 @@ class SetupTest {
                     println("Add Entries for year: $year")
                     val days = IntRange(1, 24).map { day -> LocalDate.of(year, Month.DECEMBER, day) }.toList()
                     addDayCompletionUseCase.addDefaultEntriesForDates(days)
-                    delay(5_000)
                 }
+                delay(5_000)
                 databaseSetupLatch.countDown()
             }
             databaseSetupLatch.await(11, TimeUnit.SECONDS)
@@ -59,13 +60,18 @@ class SetupTest {
         DateUtil.setDevDay(LocalDate.of(2022, Month.JANUARY, 1))
 
         val observer = Observer<List<Day>> { daysToComplete ->
-            assertTrue("DaysToComplete should be size of 24, but it is ${daysToComplete.size}", daysToComplete.size == 24 || daysToComplete.isEmpty())
-            assertTrue("The days to complete should be from last year (2021) but the provided days are from ${daysToComplete.map { day -> day.day.year }}", daysToComplete.all { day -> day.day.year == 2021 })
-            latch.countDown()
+            if (daysToComplete.isNotEmpty()) {
+                assert24DaysAreProvided(daysToComplete)
+                assertDaysAreFromYear(daysToComplete, 2021)
+                assertAvailableDays(daysToComplete, 24)
+                latch.countDown()
+            } else {
+                Timber.d("Observed days, but they are empty")
+            }
         }
 
         val dayCompletionStatusUseCase = koin.get<DayCompletionStatusUseCase>()
-        assertTrue("Database is not setup", dayCompletionStatusUseCase.isDatabaseSetup)
+        assertDatabaseIsSetup(dayCompletionStatusUseCase)
         handler.post {
             dayCompletionStatusUseCase.getDaysToComplete.observeForever(observer)
         }
@@ -79,13 +85,17 @@ class SetupTest {
         DateUtil.setDevDay(LocalDate.of(2022, Month.AUGUST, 25))
 
         val observer = Observer<List<Day>> {
-            assertTrue("DaysToComplete should be size of 24, but it is ${it.size}", it.size == 24 || it.isEmpty())
-            assertTrue("None of the days should be available, but ${it.any { day -> day.isAvailableOn(DateUtil.today()) }} is available.", it.count { day -> day.isAvailableOn(DateUtil.today()) } == 0)
-            latch.countDown()
+            if (it.isNotEmpty()) {
+                assert24DaysAreProvided(it)
+                assertAvailableDays(it, 0)
+                latch.countDown()
+            } else {
+                Timber.d("Observed days, but they are empty")
+            }
         }
 
         val dayCompletionStatusUseCase = koin.get<DayCompletionStatusUseCase>()
-        assertTrue("Database is not setup", dayCompletionStatusUseCase.isDatabaseSetup)
+        assertDatabaseIsSetup(dayCompletionStatusUseCase)
         handler.post {
             dayCompletionStatusUseCase.getDaysToComplete.observeForever(observer)
         }
@@ -99,10 +109,13 @@ class SetupTest {
         DateUtil.setDevDay(LocalDate.of(2022, Month.DECEMBER, 1))
 
         val observer = Observer<List<Day>> {
-            assertTrue("DaysToComplete should be size of 24, but it is ${it.size}", it.size == 24 || it.isEmpty())
-            assertTrue("Only one of the Days should be available", it.count { day -> day.isAvailableOn(DateUtil.today()) } == 1)
-            assertTrue("By default none of the exercises should be completed, but ${it.find { it.isDone }} is completed.", it.none { it.isDone })
-            latch.countDown()
+            if (it.isNotEmpty()) {
+                assert24DaysAreProvided(it)
+                assertCompletedDays(it, 0)
+                latch.countDown()
+            } else {
+                Timber.d("Observed days, but they are empty")
+            }
         }
 
         val dayCompletionStatusUseCase = koin.get<DayCompletionStatusUseCase>()
@@ -120,12 +133,17 @@ class SetupTest {
         DateUtil.setDevDay(LocalDate.of(2022, Month.DECEMBER, 6))
 
         val observer = Observer<List<Day>> {
-            assertTrue("DaysToComplete should be size of 24, but it is ${it.size}", it.size == 24 || it.isEmpty())
-            latch.countDown()
+            if (it.isNotEmpty()) {
+                assert24DaysAreProvided(it)
+                assertAvailableDays(it, 6)
+                latch.countDown()
+            } else {
+                Timber.d("Observed days, but they are empty")
+            }
         }
 
         val dayCompletionStatusUseCase = koin.get<DayCompletionStatusUseCase>()
-        assertTrue("Database is not setup", dayCompletionStatusUseCase.isDatabaseSetup)
+        assertDatabaseIsSetup(dayCompletionStatusUseCase)
         handler.post {
             dayCompletionStatusUseCase.getDaysToComplete.observeForever(observer)
         }
@@ -139,12 +157,19 @@ class SetupTest {
         DateUtil.setDevDay(LocalDate.of(2022, Month.DECEMBER, 24))
 
         val observer = Observer<List<Day>> {
-            assertTrue("DaysToComplete should be size of 24, but it is ${it.size}", it.size == 24 || it.isEmpty())
-            latch.countDown()
+            if (it.isNotEmpty()) {
+                assert24DaysAreProvided(it)
+                assertAvailableDays(it, 24)
+                assertCompletedDays(it, 0)
+                assertDaysAreFromYear(it, 2022)
+                latch.countDown()
+            } else {
+                Timber.d("Observed days, but they are empty")
+            }
         }
 
         val dayCompletionStatusUseCase = koin.get<DayCompletionStatusUseCase>()
-        assertTrue("Database is not setup", dayCompletionStatusUseCase.isDatabaseSetup)
+        assertDatabaseIsSetup(dayCompletionStatusUseCase)
         handler.post {
             dayCompletionStatusUseCase.getDaysToComplete.observeForever(observer)
         }
@@ -152,4 +177,26 @@ class SetupTest {
         handler.post { dayCompletionStatusUseCase.getDaysToComplete.removeObserver(observer) }
     }
 
+    fun assertDatabaseIsSetup(dayCompletionStatusUseCase: DayCompletionStatusUseCase) {
+        assertTrue("Database should be setup", dayCompletionStatusUseCase.isDatabaseSetup)
+    }
+
+    fun assertAvailableDays(days: List<Day>, amount: Int) {
+        val availableDays = days.filter { day -> day.isAvailableOn(DateUtil.today()) }
+        assertTrue("Only $amount of the Days should be available, but ${availableDays.size} are", availableDays.size == amount)
+    }
+
+    fun assertCompletedDays(days: List<Day>, amount: Int) {
+        val completedDays = days.filter { day -> day.isDone }
+        assertTrue("Only $amount of the Days should be done, but ${completedDays.size} are", completedDays.size == amount)
+    }
+
+    fun assert24DaysAreProvided(days: List<Day>) {
+        assertTrue("At any time 24 days should be availabe to be displayed, but ${days.size} are", days.size == 24)
+    }
+
+    fun assertDaysAreFromYear(days: List<Day>, year: Int) {
+        val wrongDays = days.filter { it.day.year != year }
+        assertTrue("All days should be from year: $year, but $wrongDays contain wrong dates: ${wrongDays.map { it.day.year }.toSet()}", wrongDays.isEmpty())
+    }
 }

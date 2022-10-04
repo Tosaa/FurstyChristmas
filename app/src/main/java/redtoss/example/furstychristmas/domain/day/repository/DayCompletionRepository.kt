@@ -20,11 +20,13 @@ class DayCompletionRepository(db: DayDatabase) {
             Timber.d("date value updated: $it")
             latestToday = it
             value = latestDays.filter { isDateActive(it.day, latestToday) }
+            Timber.d("allDaysToComplete value: $value")
         }
         addSource(dayCompletedDao.getDaysLD().distinctUntilChanged()) {
             Timber.d("day completion information updated: $it")
             latestDays = it
             value = latestDays.filter { isDateActive(it.day, latestToday) }
+            Timber.d("allDaysToComplete value: $value")
         }
     }
 
