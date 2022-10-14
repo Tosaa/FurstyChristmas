@@ -32,7 +32,6 @@ interface DayCompletedDao {
         return getCardLD(Util.intToDayInDecember(dayInDecember))
     }
 
-
     @Insert
     suspend fun insertDays(days: List<Day>)
 
