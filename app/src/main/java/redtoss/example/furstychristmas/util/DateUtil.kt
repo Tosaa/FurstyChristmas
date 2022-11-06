@@ -26,6 +26,10 @@ object DateUtil {
         }
     }
 
+    fun LocalDate.sameDayAs(other: LocalDate): Boolean {
+        return other.year == this.year && other.dayOfYear == this.dayOfYear
+    }
+
     fun dayAsIsoDate(localDate: LocalDate): String {
         return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE)
     }

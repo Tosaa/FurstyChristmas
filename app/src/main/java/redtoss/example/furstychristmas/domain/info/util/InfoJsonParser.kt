@@ -9,13 +9,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import redtoss.example.furstychristmas.domain.info.model.InfoContent
 import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
+import redtoss.example.furstychristmas.domain.jsonparser.JsonParserInterface
 import timber.log.Timber
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class InfoJsonParser(private val assetManager: AssetManager, private val resources: Resources) {
+class InfoJsonParser(private val assetManager: AssetManager, private val resources: Resources) : JsonParserInterface {
     private data class Page(val subtitle: String, val imageid: String, val htmltext: String)
     private data class Info(
         val date: String,
@@ -32,24 +33,23 @@ class InfoJsonParser(private val assetManager: AssetManager, private val resourc
         val info: Info
     )
 
-    val type = Types.newParameterizedType(List::class.java, Content::class.java)
+    private val type = Types.newParameterizedType(List::class.java, Content::class.java)
     private val adapter = moshi.adapter<List<Content>>(type)
 
     private var loadInfoContent = emptyList<InfoContent>()
 
     suspend fun loadInfoOf(year: String): List<InfoContent> {
-        if (loadInfoContent.isEmpty()) {
-            loadInfoContent = withContext(Dispatchers.IO) {
-                val contentPlain = loadContent(year, assetManager)
-                Timber.i("load plain infos: ${contentPlain.size}")
-                return@withContext contentPlain.mapNotNull { plainInfo ->
-                    try {
-                        InfoContent(
-                            date = LocalDate.parse(
-                                plainInfo.date,
-                                DateTimeFormatter.ISO_LOCAL_DATE
-                            ),
-                            title = plainInfo.title,
+        return withContext(Dispatchers.IO) {
+            val contentPlain = loadContent(year, assetManager)
+            Timber.v("load plain infos: ${contentPlain.size}")
+            return@withContext contentPlain.mapNotNull { plainInfo ->
+                try {
+                    InfoContent(
+                        date = LocalDate.parse(
+                            plainInfo.date,
+                            DateTimeFormatter.ISO_LOCAL_DATE
+                        ),
+                        title = plainInfo.title,
                             pages = plainInfo.pages.map {
                                 InfoPageContent(
                                     it.subtitle,
@@ -64,8 +64,6 @@ class InfoJsonParser(private val assetManager: AssetManager, private val resourc
                     }
                 }
             }
-        }
-        return loadInfoContent
     }
 
     private suspend fun loadContent(year: String, assetManager: AssetManager): List<Info> {
@@ -85,5 +83,20 @@ class InfoJsonParser(private val assetManager: AssetManager, private val resourc
                 return@withContext emptyList<Info>()
             }
         } ?: emptyList()
+    }
+
+    private suspend fun fetchContent(): List<InfoContent> {
+        val loadedContent = loadInfoOf("2021")
+            .plus(loadInfoOf("2022"))
+        loadInfoContent = loadedContent
+        return loadedContent
+    }
+
+    override suspend fun getContent(): List<AppContent> {
+        return if (loadInfoContent.isEmpty()) {
+            fetchContent()
+        } else {
+            loadInfoContent
+        }
     }
 }

@@ -38,6 +38,7 @@ class Content2021Test {
 
     @Test
     fun testAllDaysWithWorkouts() {
+        println("testAllDaysWithWorkouts")
         val workoutUseCase = koin.get<LoadWorkoutUseCase>()
         runBlocking {
             backgroundScope.launch {
@@ -50,6 +51,7 @@ class Content2021Test {
 
     @Test
     fun testAllDaysWithInfos() {
+        println("testAllDaysWithInfos")
         val infoUseCase = koin.get<LoadInfoUseCase>()
         runBlocking {
             backgroundScope.launch {

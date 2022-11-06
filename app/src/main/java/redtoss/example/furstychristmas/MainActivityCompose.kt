@@ -27,7 +27,7 @@ class MainActivityCompose : ComponentActivity() {
     override fun onResume() {
         super.onResume()
         Timber.d("onResume")
-        checkEula()
+        // checkEula()
         setContent {
             FurstyChrismasTheme {
                 // A surface container using the 'background' color from the theme

@@ -6,6 +6,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import redtoss.example.furstychristmas.domain.workout.model.Drill
+import redtoss.example.furstychristmas.model.Workout
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.time.LocalDate
@@ -41,7 +42,7 @@ object Util {
             ).readText()
             drillPresets = drillAdapter.failOnUnknown().fromJson(json) ?: emptyMap()
         } catch (exception: Exception) {
-            Log.w("Util", "can't read excersises from json: $exception")
+            Log.w("Util", "can't read exercises from json: $exception")
         }
         return drillPresets
     }

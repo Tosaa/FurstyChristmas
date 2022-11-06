@@ -4,6 +4,6 @@ import redtoss.example.furstychristmas.domain.workout.util.ExerciseJsonParser
 
 class ExerciseRepository(private val exerciseParser: ExerciseJsonParser) {
 
-    suspend fun getExercise(exerciseId: String) = exerciseParser.loadAllExercises().find { it.exerciseId == exerciseId }
-    suspend fun getAllExercises() = exerciseParser.loadAllExercises()
+    suspend fun getExercise(exerciseId: String) = exerciseParser.getContent().find { it.exerciseId == exerciseId }
+    suspend fun getAllExercises() = exerciseParser.getContent()
 }

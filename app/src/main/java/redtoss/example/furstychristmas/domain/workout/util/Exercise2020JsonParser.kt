@@ -91,7 +91,7 @@ class Exercise2020JsonParser(private val assetManager: AssetManager) {
             time = 10
         }
         drills.addAll(workouts.getOrDefault(motto, emptyList()))
-        val workout = Workout(day, drills, sets, motto.split(" ").first().toUpperCase(), time)
+        val workout = Workout(day, drills, sets, motto.split(" ").first().uppercase(Locale.getDefault()), time)
         return workout
     }
 

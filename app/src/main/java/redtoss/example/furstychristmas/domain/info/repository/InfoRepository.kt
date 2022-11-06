@@ -7,9 +7,10 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 class InfoRepository(private val infoParser: InfoJsonParser) {
-    suspend fun getContent(): List<InfoContent> = getContentOf2021()
+    suspend fun getContent(): List<InfoContent> = getContentOf2021().plus(getContentOf2022())
 
     private suspend fun getContentOf2021(): List<InfoContent> = infoParser.loadInfoOf("2021")
+    private suspend fun getContentOf2022(): List<InfoContent> = infoParser.loadInfoOf("2022")
 
 
     private val dummyContent = listOf(

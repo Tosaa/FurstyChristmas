@@ -6,11 +6,19 @@ import redtoss.example.furstychristmas.domain.workout.model.WorkoutContent
 import redtoss.example.furstychristmas.domain.workout.util.Exercise2020JsonParser
 import redtoss.example.furstychristmas.domain.workout.util.ExerciseJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutJsonParser
+import redtoss.example.furstychristmas.domain.workout.util.WorkoutPlain
 import redtoss.example.furstychristmas.model.Repetition
+import redtoss.example.furstychristmas.model.Workout
+import redtoss.example.furstychristmas.util.Util
+import timber.log.Timber
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class WorkoutRepository(private val parser2020: Exercise2020JsonParser, private val exerciseParser: ExerciseJsonParser, private val workoutJsonParser: WorkoutJsonParser) {
+class WorkoutRepository(
+    private val parser2020: Exercise2020JsonParser,
+    private val exerciseJsonParser: ExerciseJsonParser,
+    private val workoutJsonParser: WorkoutJsonParser
+) {
 
     private fun getDummyWorkout() = WorkoutContent(
         date = LocalDate.parse("2021-12-02", DateTimeFormatter.ISO_LOCAL_DATE),
@@ -21,17 +29,25 @@ class WorkoutRepository(private val parser2020: Exercise2020JsonParser, private 
         durationInMinutes = 5
     )
 
-    suspend fun getContent(): List<WorkoutContent> = getContentOf2020()
-        .plus(getContentOf2021())
-
-    private suspend fun getContentOf2021(): List<WorkoutContent> {
-        val exercises = exerciseParser.loadAllExercises()
-        return workoutJsonParser.loadWorkoutOf("2021", exercises = exercises)
+    private suspend fun createContent(workouts: List<WorkoutPlain>, exercises: List<Exercise>): List<WorkoutContent> {
+        Timber.v("createContent(): ${workouts.size} workouts and ${exercises.size} exercises")
+        return workouts.map { it.toWorkoutContent(exercises) }
     }
 
-    private suspend fun getContentOf2020(): List<WorkoutContent> {
-        return parser2020.getContentOf("2020")
+    suspend fun getContent(): List<WorkoutContent> {
+        val workouts = workoutJsonParser.getContent()
+        val exercises = exerciseJsonParser.getContent()
+        return createContent(workouts, exercises)
     }
 
-
+    private fun WorkoutPlain.toWorkoutContent(exercises: List<Exercise>): WorkoutContent {
+        return WorkoutContent(
+            date = LocalDate.parse(this.date),
+            drills = this.drills.map { it.toDrill(exercises) },
+            rounds = this.rounds,
+            bodyparts = this.bodyparts,
+            motto = this.motto,
+            durationInMinutes = this.durationInMinutes,
+        )
+    }
 }

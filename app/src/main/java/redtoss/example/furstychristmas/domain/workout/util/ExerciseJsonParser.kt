@@ -6,12 +6,13 @@ import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import redtoss.example.furstychristmas.domain.jsonparser.JsonParserInterface
 import redtoss.example.furstychristmas.domain.workout.model.Exercise
 import timber.log.Timber
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class ExerciseJsonParser(private val assetManager: AssetManager) {
+class ExerciseJsonParser(private val assetManager: AssetManager) : JsonParserInterface {
 
     private data class PlainExercise(
         val id: String,
@@ -32,7 +33,7 @@ class ExerciseJsonParser(private val assetManager: AssetManager) {
 
     private var loadedExercises = emptyList<Exercise>()
 
-    suspend fun loadAllExercises(): List<Exercise> {
+    override suspend fun getContent(): List<Exercise> {
         if (loadedExercises.isEmpty()) {
             loadedExercises = withContext(Dispatchers.IO) {
                 val exercisesPlain = loadEx(assetManager)

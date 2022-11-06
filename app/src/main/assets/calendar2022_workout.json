@@ -1,0 +1,236 @@
+[
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-01",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-03",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-05",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-07",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-08",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-10",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-12",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-14",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-15",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-17",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-19",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-21",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  },
+  {
+    "type": "WORKOUT",
+    "workout": {
+      "date": "2022-12-22",
+      "bodyparts": [
+        "LEGS"
+      ],
+      "rounds": 1,
+      "drills": [
+        {
+          "exercise": "LUNGES_FORWARD",
+          "reps": 15
+        }
+      ],
+      "motto": "Beine",
+      "duration": 30
+    }
+  }
+]
