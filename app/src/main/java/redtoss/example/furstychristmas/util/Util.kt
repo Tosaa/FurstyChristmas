@@ -5,8 +5,9 @@ import android.util.Log
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import redtoss.example.furstychristmas.domain.workout.model.Drill
-import redtoss.example.furstychristmas.model.Workout
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.time.LocalDate
@@ -45,5 +46,16 @@ object Util {
             Log.w("Util", "can't read exercises from json: $exception")
         }
         return drillPresets
+    }
+}
+
+internal suspend fun AssetManager.readJson(filename: String): String {
+    return withContext(Dispatchers.IO) {
+        return@withContext BufferedReader(
+            InputStreamReader(
+                this@readJson.open(filename),
+                "UTF-8"
+            )
+        ).readText()
     }
 }

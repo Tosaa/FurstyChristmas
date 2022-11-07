@@ -16,7 +16,7 @@ import java.io.InputStreamReader
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class InfoJsonParser(private val assetManager: AssetManager, private val resources: Resources) : JsonParserInterface {
+class InfoJsonParser(private val assetManager: AssetManager) : JsonParserInterface {
     private data class Page(val subtitle: String, val imageid: String, val htmltext: String)
     private data class Info(
         val date: String,
@@ -36,67 +36,30 @@ class InfoJsonParser(private val assetManager: AssetManager, private val resourc
     private val type = Types.newParameterizedType(List::class.java, Content::class.java)
     private val adapter = moshi.adapter<List<Content>>(type)
 
-    private var loadInfoContent = emptyList<InfoContent>()
-
-    suspend fun loadInfoOf(year: String): List<InfoContent> {
+    override suspend fun parseList(content: String): List<InfoContent> {
         return withContext(Dispatchers.IO) {
-            val contentPlain = loadContent(year, assetManager)
-            Timber.v("load plain infos: ${contentPlain.size}")
-            return@withContext contentPlain.mapNotNull { plainInfo ->
-                try {
+            adapter.fromJson(content)
+                ?.map { it.info }
+                ?.map { plainInfo ->
                     InfoContent(
                         date = LocalDate.parse(
                             plainInfo.date,
                             DateTimeFormatter.ISO_LOCAL_DATE
                         ),
                         title = plainInfo.title,
-                            pages = plainInfo.pages.map {
-                                InfoPageContent(
-                                    it.subtitle,
-                                    it.imageid,
-                                    it.htmltext
-                                )
-                            }
-                        )
-                    } catch (exception: Exception) {
-                        Timber.e(exception.fillInStackTrace())
-                        null
-                    }
-                }
-            }
-    }
-
-    private suspend fun loadContent(year: String, assetManager: AssetManager): List<Info> {
-        val path = "calendar${year}_info.json"
-        return withContext(Dispatchers.IO) {
-            try {
-                val json = BufferedReader(
-                    InputStreamReader(
-                        assetManager.open(path),
-                        "UTF-8"
-                    )
-                ).readText()
-                val infos = adapter.fromJson(json)
-                return@withContext infos?.map { it.info }
-            } catch (exception: Exception) {
-                Timber.e(exception.fillInStackTrace())
-                return@withContext emptyList<Info>()
-            }
-        } ?: emptyList()
-    }
-
-    private suspend fun fetchContent(): List<InfoContent> {
-        val loadedContent = loadInfoOf("2021")
-            .plus(loadInfoOf("2022"))
-        loadInfoContent = loadedContent
-        return loadedContent
-    }
-
-    override suspend fun getContent(): List<AppContent> {
-        return if (loadInfoContent.isEmpty()) {
-            fetchContent()
-        } else {
-            loadInfoContent
+                        pages = plainInfo.pages.map {
+                            InfoPageContent(
+                                it.subtitle,
+                                it.imageid,
+                                it.htmltext
+                            )
+                        })
+                } ?: emptyList()
         }
+    }
+
+    override suspend fun parse(content: String): InfoContent? {
+        // t.b.d.
+        return null
     }
 }

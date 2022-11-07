@@ -4,6 +4,7 @@ import redtoss.example.furstychristmas.domain.info.util.AppContent
 
 interface JsonParserInterface {
 
-    suspend fun getContent(): List<AppContent>
+    suspend fun parseList(content: String): List<AppContent>
+    suspend fun parse(content:String): AppContent?
 
 }

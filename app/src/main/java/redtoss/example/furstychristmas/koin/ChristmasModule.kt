@@ -56,13 +56,13 @@ val myModule = module {
     }
 
     single { Exercise2020JsonParser(androidApplication().assets) }
-    single { ExerciseJsonParser(androidApplication().assets) }
-    single { WorkoutJsonParser(androidApplication().assets) }
-    single { InfoJsonParser(androidApplication().assets, resources = androidApplication().resources) }
+    single { ExerciseJsonParser() }
+    single { WorkoutJsonParser() }
+    single { InfoJsonParser(androidApplication().assets) }
 
-    single { ExerciseRepository(get()) }
-    single { WorkoutRepository(get(), get(), get()) }
-    single { InfoRepository(get()) }
+    single { ExerciseRepository(get(),androidApplication().assets) }
+    single { WorkoutRepository(get(), get(), get(),androidApplication().assets) }
+    single { InfoRepository(get(), androidApplication().assets) }
     single { DayCompletionRepository(get()) }
 
     single { LoadExerciseUseCase(get()) }

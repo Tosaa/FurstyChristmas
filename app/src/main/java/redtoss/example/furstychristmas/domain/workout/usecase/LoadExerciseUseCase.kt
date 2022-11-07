@@ -15,6 +15,6 @@ class LoadExerciseUseCase(private val exerciseRepository: ExerciseRepository) {
 
     suspend fun loadAllExercises(): List<Exercise> {
         Timber.i("load all exercises")
-        return exerciseRepository.getAllExercises()
+        return exerciseRepository.getContent()
     }
 }
