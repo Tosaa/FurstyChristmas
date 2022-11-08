@@ -8,4 +8,6 @@ data class Exercise(
     val muscles: List<Muscle>,
     val startPosition: String,
     val execution: String
-) : AppContent
+) : AppContent {
+    val isPause: Boolean = exerciseName.lowercase() == "pause"
+}

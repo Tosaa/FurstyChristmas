@@ -1,7 +1,6 @@
 package redtoss.example.furstychristmas.domain.info.util
 
 import android.content.res.AssetManager
-import android.content.res.Resources
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -11,8 +10,6 @@ import redtoss.example.furstychristmas.domain.info.model.InfoContent
 import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
 import redtoss.example.furstychristmas.domain.jsonparser.JsonParserInterface
 import timber.log.Timber
-import java.io.BufferedReader
-import java.io.InputStreamReader
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -37,8 +34,16 @@ class InfoJsonParser(private val assetManager: AssetManager) : JsonParserInterfa
     private val adapter = moshi.adapter<List<Content>>(type)
 
     override suspend fun parseList(content: String): List<InfoContent> {
+        Timber.d("parseList()")
         return withContext(Dispatchers.IO) {
-            adapter.fromJson(content)
+            var list: List<Content>? = emptyList<Content>()
+            try {
+                list = adapter.fromJson(content)
+            } catch (e: Exception) {
+                Timber.e(e, "cannot read json")
+                Timber.d("bad json: $content")
+            }
+            list
                 ?.map { it.info }
                 ?.map { plainInfo ->
                     InfoContent(

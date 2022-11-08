@@ -8,6 +8,7 @@ import kotlinx.coroutines.withContext
 import redtoss.example.furstychristmas.domain.info.util.AppContent
 import redtoss.example.furstychristmas.domain.jsonparser.JsonParserInterface
 import redtoss.example.furstychristmas.domain.workout.model.Exercise
+import timber.log.Timber
 
 class ExerciseJsonParser : JsonParserInterface {
 
@@ -27,6 +28,7 @@ class ExerciseJsonParser : JsonParserInterface {
     private val adapter = moshi.adapter<List<PlainExercise>>(type)
 
     override suspend fun parseList(content: String): List<Exercise> {
+        Timber.d("parseList()")
         return withContext(Dispatchers.IO) {
             return@withContext adapter.fromJson(content)?.map { plain ->
                 Exercise(

@@ -3,7 +3,6 @@ package redtoss.example.furstychristmas.persistence
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import redtoss.example.furstychristmas.domain.day.model.Day
-import redtoss.example.furstychristmas.util.Util
 import java.time.LocalDate
 
 @Dao
@@ -24,13 +23,13 @@ interface DayCompletedDao {
     @Query("SELECT * FROM day WHERE day=:date")
     fun getCardLD(date: LocalDate): LiveData<Day>
 
-    suspend fun getCard(dayInDecember: Int): Day {
-        return getCard(Util.intToDayInDecember(dayInDecember))
+    /*suspend fun getCard(dayInDecember: Int): Day {
+        //return getCard(Util.intToDayInDecember(dayInDecember))
     }
 
     fun getCardLD(dayInDecember: Int): LiveData<Day> {
-        return getCardLD(Util.intToDayInDecember(dayInDecember))
-    }
+        //return getCardLD(Util.intToDayInDecember(dayInDecember))
+    }*/
 
     @Insert
     suspend fun insertDays(days: List<Day>)

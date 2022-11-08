@@ -1,6 +1,5 @@
 package redtoss.example.furstychristmas.domain.workout.util
 
-import android.content.res.AssetManager
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -13,8 +12,6 @@ import redtoss.example.furstychristmas.domain.workout.model.Exercise
 import redtoss.example.furstychristmas.model.Repetition
 import redtoss.example.furstychristmas.model.Seconds
 import timber.log.Timber
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 private data class Content(
     val type: String,
@@ -61,8 +58,9 @@ class WorkoutJsonParser() : JsonParserInterface {
     }
 
     public override suspend fun parseList(content: String): List<WorkoutPlain> {
+        Timber.d("parseList()")
         return withContext(Dispatchers.IO) {
-            return@withContext adapter.fromJson(content)?.mapNotNull { it.workout } ?: emptyList()
+            return@withContext adapter.fromJson(content)?.map { it.workout } ?: emptyList()
         }
     }
 

@@ -19,10 +19,7 @@ import redtoss.example.furstychristmas.domain.workout.util.Exercise2020JsonParse
 import redtoss.example.furstychristmas.domain.workout.util.ExerciseJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutJsonParser
 import redtoss.example.furstychristmas.persistence.DayDatabase
-import redtoss.example.furstychristmas.ui.viewmodel.ExerciseViewModel
-import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
-import redtoss.example.furstychristmas.ui.viewmodel.OverviewViewModel
-import redtoss.example.furstychristmas.ui.viewmodel.WorkoutViewModel
+import redtoss.example.furstychristmas.ui.viewmodel.*
 
 val dbModule = module {
     single {
@@ -60,8 +57,8 @@ val myModule = module {
     single { WorkoutJsonParser() }
     single { InfoJsonParser(androidApplication().assets) }
 
-    single { ExerciseRepository(get(),androidApplication().assets) }
-    single { WorkoutRepository(get(), get(), get(),androidApplication().assets) }
+    single { ExerciseRepository(get(), androidApplication().assets) }
+    single { WorkoutRepository(get(), get(), get(), androidApplication().assets) }
     single { InfoRepository(get(), androidApplication().assets) }
     single { DayCompletionRepository(get()) }
 
@@ -75,4 +72,5 @@ val myModule = module {
     viewModel { InfoViewModel(get(), get()) }
     viewModel { WorkoutViewModel(get(), get()) }
     viewModel { ExerciseViewModel(get()) }
+    viewModel { ChristmasViewModel(get(), get()) }
 }
