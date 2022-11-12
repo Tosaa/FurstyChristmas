@@ -147,8 +147,12 @@ import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
 internal fun InfoPageContent.resolveImageId(imageid: String?): Int? {
     return when (imageid) {
 $mapText
-        else -> null
-    }
+        else -> {
+            if (!imageid.isNullOrBlank()) {
+                Timber.w("Imageid: $imageid could not be resolved!")
+            }
+            null
+        }
 }
     """
 

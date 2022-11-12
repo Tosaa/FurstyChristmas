@@ -17,7 +17,7 @@ internal fun InfoPageContent.resolveImageId(imageid: String?): Int? {
         "linebacker" -> R.drawable.linebacker
         "defensebasics" -> R.drawable.defensebasics
         else -> {
-            if (imageid != null) {
+            if (!imageid.isNullOrBlank()) {
                 Timber.w("Imageid: $imageid could not be resolved!")
             }
             null
