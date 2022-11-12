@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlinx.coroutines.flow.map
 import org.koin.androidx.compose.get
 import redtoss.example.furstychristmas.domain.workout.model.Exercise
 import redtoss.example.furstychristmas.model.Execution
@@ -26,7 +25,8 @@ fun ChristmasDay(
     year: Int,
     onClose: () -> Unit,
 ) {
-    val completed = viewmodel.completedExercises.map { it.entries.toList() }.collectAsState(initial = emptyList<Map.Entry<Exercise, Execution>>())
+    val completedState = viewmodel.completedExercises.collectAsState(initial = mapOf<Exercise, Execution>())
+    val completed = completedState.value.entries.toList()
     Column {
         Text(
             text = "Merry Christmas $year",
@@ -41,7 +41,7 @@ fun ChristmasDay(
             fontSize = 20.sp
         )
         LazyColumn(modifier = Modifier.padding(8.dp)) {
-            items(items = completed.value) { entry ->
+            items(items = completed) { entry ->
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.End,

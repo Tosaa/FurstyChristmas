@@ -1,3 +1,6 @@
+import java.io.FilenameFilter
+import java.nio.charset.Charset
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -104,4 +107,53 @@ dependencies {
     implementation("com.squareup.moshi", "moshi", "1.11.0") // MOSHI
     // TIMBER
     implementation("com.jakewharton.timber", "timber", "4.7.1") // TIMBER
+}
+
+tasks.register("generateImageMap") {
+    println("generateImageMap")
+    val pathForImageExtention = "$rootDir/app/src/main/java/redtoss/example/furstychristmas/ui/util/InfoPageUtil.kt"
+    val pathForDrawables = "$rootDir/app/src/main/res/drawable-v24/"
+
+    val map = mutableMapOf<String, String>()
+    try {
+        val files = File(pathForDrawables).listFiles(FilenameFilter { _, name -> name.endsWith(".png") })
+        files.forEach {
+            map.put(it.name.replace(".png", ""), "R.drawable.${it.name.replace(".png", "")}")
+        }
+    } catch (e: Exception) {
+        println("could not read drawable ressources")
+    }
+    val mapText = map.entries.joinToString(separator = "\n") { "\t\t\"${it.key}\" -> ${it.value}" }
+    try {
+        val file = File(pathForImageExtention)
+        if (!file.parentFile.exists()) {
+            file.parentFile.createNewFile()
+            println("${file.parentFile} created")
+        }
+        if (file.exists()) {
+            file.delete()
+            println("${file} deleted")
+        }
+        if (!file.exists()) {
+            file.createNewFile()
+            println("${file} created")
+        }
+        val content = """
+package redtoss.example.furstychristmas.ui.util
+
+import redtoss.example.furstychristmas.R
+import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
+
+internal fun InfoPageContent.resolveImageId(imageid: String?): Int? {
+    return when (imageid) {
+$mapText
+        else -> null
+    }
+}
+    """
+
+        file.writeText(text = content, charset = Charset.defaultCharset())
+    } catch (e: Exception) {
+        println("creating Mapping for Images failed: $e")
+    }
 }

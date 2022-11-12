@@ -24,7 +24,6 @@ import redtoss.example.furstychristmas.util.DateUtil
 import redtoss.example.furstychristmas.util.DateUtil.season
 import timber.log.Timber
 import java.time.LocalDate
-import java.time.Month
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 
@@ -74,8 +73,7 @@ class FurstyApplication : Application() {
         val activeSeason = today.season()
         if (!dayCompletionStatusUseCase.isDataBaseSetupForSeason(activeSeason)) {
             Timber.d("setupDatabaseIfNecessary(): Add Entries to Database for year (${today.year}) / season ($activeSeason)")
-            val days = IntRange(1, 24).map { day -> LocalDate.of(activeSeason, Month.DECEMBER, day) }.toList()
-            addDayCompletionUseCase.addDefaultEntriesForDates(days)
+            addDayCompletionUseCase.addDefaultEntriesForSeason(activeSeason)
         } else {
             Timber.d("setupDatabaseIfNecessary(): Entries for year ${today.year} / season ($activeSeason) exist already")
         }

@@ -47,13 +47,12 @@ class SetupTest {
             Timber.i("nukeDB(): All Entries in Database removed")
         }
 
-        private suspend fun addEntriesForYears(years: List<Int>) {
-            years.forEach { year ->
-                Timber.v("addEntriesForYears(): Add Entries for year: $year")
-                val days = IntRange(1, 24).map { day -> LocalDate.of(year, Month.DECEMBER, day) }.toList()
-                addDayCompletionUseCase.addDefaultEntriesForDates(days)
+        private suspend fun addEntriesForSeasons(seasons: List<Int>) {
+            seasons.forEach { season ->
+                Timber.v("addEntriesForSeasons(): Add Entries for season: $season")
+                addDayCompletionUseCase.addDefaultEntriesForSeason(season)
             }
-            Timber.i("addEntriesForYears(): Entries for years: ${years.joinToString()} added")
+            Timber.i("addEntriesForYears(): Entries for years: ${seasons.joinToString()} added")
         }
 
         @BeforeClass
@@ -67,7 +66,7 @@ class SetupTest {
                 Timber.v("beforeSetupTest(): Database will be prepared for tests")
                 ioScope.launch { nukeDB() }.join()
                 launch {
-                    addEntriesForYears((2020..2022).toList())
+                    addEntriesForSeasons((2020..2023).toList())
                     databaseSetupLatch.countDown()
                 }.join()
                 assertTrue("Database is still not setup after 10 seconds", dayCompletionStatusUseCase.isDataBaseSetupForSeason(2021))
