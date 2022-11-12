@@ -9,10 +9,12 @@ import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUse
 import redtoss.example.furstychristmas.domain.workout.model.Exercise
 import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
 import redtoss.example.furstychristmas.model.Execution
+import redtoss.example.furstychristmas.util.DateUtil
+import redtoss.example.furstychristmas.util.DateUtil.season
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ChristmasViewModel(dayCompletionStatusUseCase: DayCompletionStatusUseCase, workoutUseCase: LoadWorkoutUseCase) : ViewModel() {
-    private val completedDays = dayCompletionStatusUseCase.getDaysToComplete.asFlow().map { list -> list.filter { it.isDone } }
+    private val completedDays = dayCompletionStatusUseCase.getDaysToCompleteForSeason(DateUtil.today().season()).asFlow().map { list -> list.filter { it.isDone } }
     private val completedWorkouts = completedDays.map { list -> list.mapNotNull { day -> workoutUseCase.getWorkoutAtDay(day.day) } }
     val completedExercises = completedWorkouts.mapLatest { workouts ->
         val exercises = mutableMapOf<Exercise, Execution>()

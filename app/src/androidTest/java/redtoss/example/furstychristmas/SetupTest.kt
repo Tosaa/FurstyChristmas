@@ -16,6 +16,7 @@ import redtoss.example.furstychristmas.domain.day.usecase.AddDayCompletionUseCas
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import redtoss.example.furstychristmas.persistence.DayDatabase
 import redtoss.example.furstychristmas.util.DateUtil
+import redtoss.example.furstychristmas.util.DateUtil.season
 import timber.log.Timber
 import java.time.LocalDate
 import java.time.Month
@@ -69,7 +70,8 @@ class SetupTest {
                     addEntriesForYears((2020..2022).toList())
                     databaseSetupLatch.countDown()
                 }.join()
-                assertTrue("Database is still not setup after 10 seconds", dayCompletionStatusUseCase.isDatabaseSetup)
+                assertTrue("Database is still not setup after 10 seconds", dayCompletionStatusUseCase.isDataBaseSetupForSeason(2021))
+                assertTrue("Database is still not setup after 10 seconds", dayCompletionStatusUseCase.isDataBaseSetupForSeason(2022))
                 Timber.i("beforeSetupTest(): Database is setup for tests")
             }
             databaseSetupLatch.await(11, TimeUnit.SECONDS)
@@ -112,7 +114,7 @@ class SetupTest {
             DateUtil.setDevDay(date)
             assertDatabaseIsSetup(dayCompletionStatusUseCase)
             handler.post {
-                dayCompletionStatusUseCase.getDaysToComplete.observeForever(observerForDays)
+                dayCompletionStatusUseCase.getDaysToCompleteForSeason(date.season()).observeForever(observerForDays)
             }
             true
         }
@@ -120,7 +122,7 @@ class SetupTest {
             assertTrue("Test did not run trough successfully", testRun.await())
         }
         testLatch.await(1, TimeUnit.SECONDS)
-        handler.post { dayCompletionStatusUseCase.getDaysToComplete.removeObserver(observerForDays) }
+        handler.post { dayCompletionStatusUseCase.getDaysToCompleteForSeason(date.season()).removeObserver(observerForDays) }
         assertTrue("Test did not run trough successfully", testLatch.count == 0L)
     }
 
@@ -131,7 +133,12 @@ class SetupTest {
 
     @Test
     fun testSetupInSummer() {
-        runTestForValues(2022, Month.AUGUST, 25, expectedClickableDays = 0)
+        runTestForValues(2022, Month.AUGUST, 25, expectedClickableDays = 24)
+    }
+
+    @Test
+    fun testSeasonStart() {
+        runTestForValues(2022, Month.OCTOBER, 1, expectedClickableDays = 0)
     }
 
     @Test
@@ -151,7 +158,7 @@ class SetupTest {
 
     fun assertDatabaseIsSetup(dayCompletionStatusUseCase: DayCompletionStatusUseCase) {
         Timber.v("assertDatabaseIsSetup()")
-        assertTrue("Database should be setup", dayCompletionStatusUseCase.isDatabaseSetup)
+        assertTrue("Database should be setup", dayCompletionStatusUseCase.isDataBaseSetupForSeason(2021))
     }
 
     fun assertAvailableDays(days: List<Day>, amount: Int) {

@@ -96,4 +96,12 @@ object DateUtil {
             handler.removeCallbacksAndMessages(null)
         }
     }
+
+    fun LocalDate.season(): Int {
+        return if (this.month in listOf(Month.OCTOBER, Month.NOVEMBER, Month.DECEMBER)) {
+            this.year + 1
+        } else {
+            this.year
+        }
+    }
 }

@@ -8,6 +8,7 @@ import java.time.LocalDate
 
 class LoadWorkoutUseCase(private val workoutRepository: WorkoutRepository) {
     private var loadedWorkouts: MutableList<WorkoutContent> = mutableListOf()
+
     private fun retrieveWorkout(date: LocalDate, workouts: List<WorkoutContent>): WorkoutContent? {
         val workout = workouts.firstOrNull { it.date.sameDayAs(date) }
         if (workout == null) {

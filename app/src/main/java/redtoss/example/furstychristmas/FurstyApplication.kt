@@ -21,6 +21,7 @@ import redtoss.example.furstychristmas.koin.dbModule
 import redtoss.example.furstychristmas.koin.myModule
 import redtoss.example.furstychristmas.receiver.DailyNotificationReceiver
 import redtoss.example.furstychristmas.util.DateUtil
+import redtoss.example.furstychristmas.util.DateUtil.season
 import timber.log.Timber
 import java.time.LocalDate
 import java.time.Month
@@ -70,12 +71,13 @@ class FurstyApplication : Application() {
     private suspend fun setupDatabaseIfNecessary() {
         Timber.d("setupDatabaseIfNecessary()")
         val today = DateUtil.today()
-        if (!dayCompletionStatusUseCase.isDatabaseSetup) {
-            Timber.d("setupDatabaseIfNecessary(): Add Entries to Database for this year (${today.year})")
-            val days = IntRange(1, 24).map { day -> LocalDate.of(today.year, Month.DECEMBER, day) }.toList()
+        val activeSeason = today.season()
+        if (!dayCompletionStatusUseCase.isDataBaseSetupForSeason(activeSeason)) {
+            Timber.d("setupDatabaseIfNecessary(): Add Entries to Database for year (${today.year}) / season ($activeSeason)")
+            val days = IntRange(1, 24).map { day -> LocalDate.of(activeSeason, Month.DECEMBER, day) }.toList()
             addDayCompletionUseCase.addDefaultEntriesForDates(days)
         } else {
-            Timber.d("setupDatabaseIfNecessary(): Entries for year ${today.year} exist already")
+            Timber.d("setupDatabaseIfNecessary(): Entries for year ${today.year} / season ($activeSeason) exist already")
         }
     }
 
