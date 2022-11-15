@@ -116,9 +116,10 @@ tasks.register("generateImageMap") {
 
     val map = mutableMapOf<String, String>()
     try {
-        val files = File(pathForDrawables).listFiles(FilenameFilter { _, name -> name.endsWith(".png") })
+        val files = File(pathForDrawables).listFiles(FilenameFilter { _, name -> name.endsWith(".png") || name.endsWith(".jpg") || name.endsWith(".jpeg") })
         files.forEach {
-            map.put(it.name.replace(".png", ""), "R.drawable.${it.name.replace(".png", "")}")
+            val newName = it.name.replace(".png", "").replace(".jpg", "").replace(".jpeg", "")
+            map.put(newName, "R.drawable.$newName")
         }
     } catch (e: Exception) {
         println("could not read drawable ressources")
@@ -149,7 +150,7 @@ internal fun InfoPageContent.resolveImageId(imageid: String?): Int? {
 $mapText
         else -> {
             if (!imageid.isNullOrBlank()) {
-                Timber.w("Imageid: $imageid could not be resolved!")
+                Timber.w("Imageid: ${'$'}imageid could not be resolved!")
             }
             null
         }
@@ -159,5 +160,44 @@ $mapText
         file.writeText(text = content, charset = Charset.defaultCharset())
     } catch (e: Exception) {
         println("creating Mapping for Images failed: $e")
+    }
+}
+
+tasks.register("checkImageMap") {
+    dependsOn("generateImageMap")
+    shouldRunAfter("generateImageMap")
+    println("checkImageMap")
+    doLast {
+        val mapFunctionFile = File("$rootDir/app/src/main/java/redtoss/example/furstychristmas/ui/util/InfoPageUtil.kt")
+        val infoJsonFiles = File("$rootDir/app/src/main/assets/").listFiles(FilenameFilter { _, name -> name.endsWith("_info.json") })
+        val imagesInJsonFiles = mutableSetOf<String>()
+        val imagesInFunction = mutableSetOf<String>()
+        infoJsonFiles.forEach { file ->
+            file.useLines() { lines ->
+                lines.filter { it.contains("\"imageid\"") }.forEach {
+                    it.split(":").forEach { line ->
+                        val existingStringRes = line.replace("\"imageid\"", "").replace(",", "").replace("\"", "").trim()
+                        if (!existingStringRes.isNullOrBlank()) {
+                            imagesInJsonFiles.add(existingStringRes)
+                        }
+                    }
+                }
+            }
+        }
+        mapFunctionFile.useLines { lines ->
+            val images = lines
+                .filter { it.contains("->") && !it.contains("else") }
+                .map { it.split("->")[0].replace(",", "").replace("\"", "").trim() }
+                .toList()
+            imagesInFunction.addAll(images)
+        }
+
+        if (imagesInFunction.size < imagesInJsonFiles.size) {
+            val unmappedImages = mutableSetOf(imagesInJsonFiles)
+            unmappedImages.removeAll(imagesInFunction)
+            println("Not all images are mapped by function. The following Images are not mapped: ${unmappedImages.joinToString()}")
+            println("From Json Files   : ${imagesInJsonFiles.sorted().joinToString()}")
+            println("From Mapped values: ${imagesInFunction.sorted().joinToString()}")
+        }
     }
 }
