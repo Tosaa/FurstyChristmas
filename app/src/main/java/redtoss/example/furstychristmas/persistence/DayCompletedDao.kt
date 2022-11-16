@@ -23,14 +23,6 @@ interface DayCompletedDao {
     @Query("SELECT * FROM day WHERE day=:date")
     fun getCardLD(date: LocalDate): LiveData<Day>
 
-    /*suspend fun getCard(dayInDecember: Int): Day {
-        //return getCard(Util.intToDayInDecember(dayInDecember))
-    }
-
-    fun getCardLD(dayInDecember: Int): LiveData<Day> {
-        //return getCardLD(Util.intToDayInDecember(dayInDecember))
-    }*/
-
     @Insert
     suspend fun insertDays(days: List<Day>)
 
