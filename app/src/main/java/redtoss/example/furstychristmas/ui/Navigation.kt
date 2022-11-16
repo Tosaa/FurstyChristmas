@@ -34,6 +34,7 @@ import redtoss.example.furstychristmas.ui.screens.*
 import redtoss.example.furstychristmas.util.DateUtil
 import timber.log.Timber
 import java.time.LocalDate
+import java.time.Month
 
 @Composable
 fun MyAppNavHost(
@@ -44,7 +45,8 @@ fun MyAppNavHost(
     workoutUseCase: LoadWorkoutUseCase = get(),
 ) {
     Column {
-        MyAppBar(onBackIconClicked = { navController.popBackStack() },
+        MyAppBar(
+            onBackIconClicked = { navController.popBackStack() },
             onEditClicked = {
                 Timber.d("Navigation::onNavigateToDebug")
                 if (BuildConfig.DEBUG) {
@@ -64,6 +66,10 @@ fun MyAppNavHost(
                     onNavigateToCard = { date ->
                         overviewScope.launch {
                             Timber.d("Navigation::onNavigateToCard: $date")
+                            if (date.month == Month.DECEMBER && date.dayOfMonth == 24) {
+                                navController.navigate("calendar/christmas/${date.year}")
+                                return@launch
+                            }
                             infoUseCase.getInfoAtDay(date)?.let {
                                 Timber.d("Navigation::onNavigateToCard: Content on Day: $date is 'Info'")
                                 navController.navigate("calendar/${date.toEpochDay()}/info")
@@ -77,6 +83,20 @@ fun MyAppNavHost(
                         }
                     }
                 )
+            }
+            composable(
+                "calendar/christmas/{year}",
+                arguments = listOf(navArgument("year") { type = NavType.IntType })
+            ) { backStackEntry ->
+                backStackEntry.arguments?.getInt("year")?.let { year ->
+                    ChristmasDay(
+                        year = year,
+                        onClose = {
+                            Timber.d("Navigation::onClose")
+                            popBackstackToOverview(navController)
+                        }
+                    )
+                }
             }
             composable(
                 "calendar/{date}/info",
@@ -150,7 +170,15 @@ fun MyAppBar(
     onEditClicked: () -> Unit,
 ) {
     val date = DateUtil.todayAsLiveData.asFlow().collectAsState(initial = LocalDate.now())
-    val motto = if (BuildConfig.DEBUG) date.value.toString() else stringResource(id = R.string.motto)
+    val motto = if (BuildConfig.DEBUG) {
+        date.value.toString()
+    } else {
+        if (date.value.month in listOf(Month.OCTOBER, Month.NOVEMBER, Month.DECEMBER)) {
+            stringResource(id = R.string.motto, (date.value.year + 1).toString().takeLast(2))
+        } else {
+            stringResource(id = R.string.motto, date.value.year.toString().takeLast(2))
+        }
+    }
     TopAppBar(
         title = {
             Text(text = motto)
@@ -164,8 +192,10 @@ fun MyAppBar(
             IconButton(onClick = { onInfoClicked() }) {
                 Icon(Icons.Filled.Info, "infoButton")
             }
-            IconButton(onClick = { onEditClicked() }) {
-                Icon(Icons.Filled.Edit, "editButton")
+            if (BuildConfig.DEBUG) {
+                IconButton(onClick = { onEditClicked() }) {
+                    Icon(Icons.Filled.Edit, "editButton")
+                }
             }
         }
     )

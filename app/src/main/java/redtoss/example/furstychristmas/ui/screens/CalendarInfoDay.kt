@@ -24,7 +24,6 @@ import org.koin.androidx.compose.get
 import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
-import timber.log.Timber
 import java.time.LocalDate
 
 @Composable
@@ -72,7 +71,7 @@ private fun ContentPager(pages: State<List<InfoPageContent>>, onDayCompleted: ()
         state = pagerState
     ) { page ->
         val pageContent = pages.value[page]
-        Timber.d("Show Page: $pageContent")
+        // Timber.d("Show Page: $page - $pageContent")
         DailyContent(
             title = pageContent.title,
             content = pageContent.text,

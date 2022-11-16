@@ -9,5 +9,5 @@
     </string>
     <string name="warn_notification">Führe die Übungen nur aus wenn du dich Fit dafür fühlst!</string>
     <string name="runden">Runden</string>
-    <string name="motto">READY FOR 2K22</string>
+    <string name="motto">READY FOR 2K%1$s</string>
 </resources>

@@ -26,6 +26,10 @@ object DateUtil {
         }
     }
 
+    fun LocalDate.sameDayAs(other: LocalDate): Boolean {
+        return other.year == this.year && other.dayOfYear == this.dayOfYear
+    }
+
     fun dayAsIsoDate(localDate: LocalDate): String {
         return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE)
     }
@@ -90,6 +94,14 @@ object DateUtil {
         override fun onInactive() {
             super.onInactive()
             handler.removeCallbacksAndMessages(null)
+        }
+    }
+
+    fun LocalDate.season(): Int {
+        return if (this.month in listOf(Month.OCTOBER, Month.NOVEMBER, Month.DECEMBER)) {
+            this.year + 1
+        } else {
+            this.year
         }
     }
 }

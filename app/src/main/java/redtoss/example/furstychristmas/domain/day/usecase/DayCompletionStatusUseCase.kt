@@ -9,9 +9,9 @@ import java.time.LocalDate
 
 class DayCompletionStatusUseCase(private val dayCompletionRepository: DayCompletionRepository) {
 
-    val isDatabaseSetup = dayCompletionRepository.isDatabaseSetupForThisYear
+    fun isDataBaseSetupForSeason(season: Int) = dayCompletionRepository.isDataBaseSetup(season - 1)
 
-    val getDaysToComplete = dayCompletionRepository.allDaysToComplete
+    fun getDaysToCompleteForSeason(season: Int) = dayCompletionRepository.getDaysToComplete(season - 1)
 
     suspend fun isDayDone(date: LocalDate): Boolean = withContext(Dispatchers.IO) {
         val isDone = dayCompletionRepository.getDay(date)?.isDone == true
