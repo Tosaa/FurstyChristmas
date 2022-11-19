@@ -68,6 +68,35 @@
       "date": "2022-12-06",
       "pages": [
         {
+          "htmltext": "Vermutlich fragst du dich manchmal, warum du dir das eigentlich antust. Du gehst regelmäßig ins Training, hast anschließend Muskelkater und lernst Spielzüge aus dem Playbook, die vermutlich nie gespielt werden. Und es ist schwer jeden Tag erneut das Ziel nicht aus den Augen zu verlieren. Aber die folgenden Tipps werden dir vielleicht helfen das in Zukunft anders zu sehen.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Alles was du jetzt tust, wird dir erst später zu gute kommen. Es wird dir erst später wirklich helfen. Muskeln wachsen nicht von dem einen auf den anderen Tag, sondern entstehen durch regelmäßige Be- und Überlastung. Vorallem aber auch durch Regenerations und Ruhepausen. Und entsprechend bringt es nur sehr wenig, wenige Wochen vor dem ersten Spiel anzufangen seinen Körper in Form zu bringen.<br/><br/>Gleiches gilt übrigens auch für Spielzüge. Spielzüge lassen sich nicht so einfach von einem auf den anderen Tag lernen und umsetzen. Oft sieht ein Spielzug auf Papier auch ganz anders aus als er sich dann auf dem Feld anfühlt. Spielzüge müssen häufig trainiert werden. Mit verschiedenen Spielerkombinationen und verschiedenen Defense/Offense Aufstellungen. Und ob ein Spielzug effektiv und gutgenug trainiert wurde, wird sich erst im Spiel zeigen.",
+          "imageid": "",
+          "subtitle": "Für die Zukunft"
+        },
+        {
+          "htmltext": "Du tust die Dinge auch nicht für deine Coaches, deine Eltern, die Fans, die Helfer, deine Geschwister oder um andere zu beeindrucken. In erster Linie tust du es für dich. Jedes Workout dass du Ausführst, wird am Ende vor allem dir helfen. Selbst deine Mitspieler haben nicht viel davon wenn du 30 Liegestütze am Stück schaffst. Zumindest nicht im ersten Moment.<br/><br/>Wenn man weiter drüber nachdenkt, dann kommt man zu dem Entschluss, \"was mir hilft, hilft auch den anderen\". Weil deine Mitspieler einen Vorteil davon haben, wenn du Kräftig, Ausdauernd und Smart bist. Sie profitieren auch davon, wenn du das Playbook kannst und dich auf dem Feld durch deine Athletik von den anderen Spielern abhebst. Und wenn das jeder macht, steht einem Sieg vor heimischem Publikum nichts mehr im Wege!",
+          "imageid": "",
+          "subtitle": "Für Dich"
+        },
+        {
+          "htmltext": "Und für diese Punkte ist es notwendig, dass du deine Ziele nicht aus den Augen verlierst. In der Regel ist das das nächste Spiel das ansteht. Ob es noch einige Monate entfernt ist oder nur wenige Tage oder Stunden. Wenn du mal wieder das Gefühl hast, gar keine Lust auf Training oder ein Workout hast, dann stelle dir vor wie das nächste Spiel ablaufen wird. Vielleicht ist es ja sogar ein Heimspiel. Du stehst mit deinen Teamkollegen und vermutlich besten Freunden im Stadion, auf dem Feld und...<br/>Ja das ist jetzt dir überlassen, seid ihr alle Bereit für das Spiel?<br/>Seid ihr und vor allem bist du stärker und schneller als dein Gegenüber?<br/>Ist dein Gegenüber in deiner Vorstellung größer oder kleiner als du? Besser als jemand schwaches zu sein kann jeder! Also im besten Fall ist er in deiner Vorstellung der stärkste Spieler den du je getroffen hast und du lieferst dir ein hartes Duell mit ihm. Aber am Ende...<br/>Das liegt eben genau jetzt in deiner Hand. Am Besten du packst deine Sachen und gehst zum Training, oder schaust dir schonmal das Playbook an oder gehst die Fundamentals für deine Position im Kopf durch.",
+          "imageid": "",
+          "subtitle": "Vorstellungskraft"
+        }
+      ],
+      "title": "Ziele"
+    }
+  },
+  {
+    "type": "INFO",
+    "info": {
+      "date": "2022-12-09",
+      "pages": [
+        {
           "htmltext": "Folgende Begriffe sollten für euch in der Offense jederzeit klar sein.<br/>Gaps, Split, Man-/Zone-Coverage<br/><br/>Außerdem stellen wir euch an einem anderen Tag verschiedene Passrouten, Formationen und Motions vor.",
           "imageid": "",
           "subtitle": ""
@@ -99,7 +128,7 @@
   {
     "type": "INFO",
     "info": {
-      "date": "2022-12-09",
+      "date": "2022-12-11",
       "pages": [
         {
           "htmltext": "Hier werden Begriffe erklärt, welche für die Defense (unsere und allgemein) wichtig sind. Einige dieser Begriffe werden im weiteren Verlauf dieses Kalenders benutzt.",
@@ -132,13 +161,13 @@
           "subtitle": "Wie zählen wir Receiver in der Defense: "
         }
       ],
-      "title": "Begriffe - Defense"
+      "title": "Defense Basic Begriffe"
     }
   },
   {
     "type": "INFO",
     "info": {
-      "date": "2022-12-11",
+      "date": "2022-12-13",
       "pages": [
         {
           "htmltext": "Das Blocken des Gegners ist beim Football eine der wichtigsten Aufgaben.<br/><br/>Das gilt nicht nur für die Offense-Line, sondern auch für Tight-Ends, Receiver, Runningbacks und Spieler in den Special Teams.<br/><br/>Ein Foul beim Blocken kann das eigene Team einige Yards kosten.<br/>Festhalten (Holding) kostet 5 Yards.<br/>Ein Griff ins Gesichtsgitter (Facemask) kostet 15 Yards. Bei einem illegalen Block in den Rücken (Block in the back) gehen 10 Yards dafür drauf.",
@@ -167,7 +196,61 @@
   {
     "type": "INFO",
     "info": {
-      "date": "2022-12-13",
+      "date": "2022-12-16",
+      "pages": [
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Receiver"
+        },
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Quaterbacks"
+        },
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Offense Line"
+        },
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Runningbacks"
+        },
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Tight Ends"
+        },
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Defense Backs"
+        },
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Linebacker"
+        },
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Safeties"
+        },
+        {
+          "htmltext": "",
+          "imageid": "",
+          "subtitle": "Defense Line"
+        }
+      ],
+      "title": "Fundamentals"
+    }
+  },
+  {
+    "type": "INFO",
+    "info": {
+      "date": "2022-12-18",
       "pages": [
         {
           "htmltext": "So viele Coverages, wie es im American Football gibt, könnten wir euch nicht mal eben in 24 Türchen vorstellen (wer Interesse hat, der Larry freut sich sicher euch mehr Defenses beizubringen). Im Allgemeinen unterscheidet man zwischen 2 grundsätzlich verschiedenen Coverages: Zone- und Man-Coverage. Im Folgenden zeigen wir euch 3 der für uns wichtigsten Defensive-Coverages:<br/>Die Offense (Blau) steht in einer normalen Doubles Formation zur Veranschaulichung.",
@@ -196,7 +279,7 @@
   {
     "type": "INFO",
     "info": {
-      "date": "2022-12-16",
+      "date": "2022-12-20",
       "pages": [
         {
           "htmltext": "Neben der Offense und der Defense besteht ein Football Team auch aus einem dritten Teil: den Special Teams.",
@@ -225,7 +308,7 @@
   {
     "type": "INFO",
     "info": {
-      "date": "2022-12-18",
+      "date": "2022-12-21",
       "pages": [
         {
           "htmltext": "Eine Cover 3 kann man daran erkennen, dass nur ein Safety auf dem Feld steht und 2 tiefe CBs außen stehen. Außerdem stehen die äußeren Spieler außerhalb von ihrem Receiver und schauen nach innen Richtung Quarterback.",
@@ -244,34 +327,6 @@
         }
       ],
       "title": "Wie erkennt man Coverages"
-    }
-  },
-  {
-    "type": "INFO",
-    "info": {
-      "date": "2022-12-20",
-      "pages": [
-        {
-          "htmltext": "",
-          "imageid": "",
-          "subtitle": ""
-        }
-      ],
-      "title": ""
-    }
-  },
-  {
-    "type": "INFO",
-    "info": {
-      "date": "2022-12-21",
-      "pages": [
-        {
-          "htmltext": "",
-          "imageid": "",
-          "subtitle": ""
-        }
-      ],
-      "title": ""
     }
   },
   {
