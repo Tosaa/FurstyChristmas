@@ -25,7 +25,7 @@ class Content2022Test {
         val koin = GlobalContext.get()
         private val testDate = LocalDate.of(YEAR, Month.DECEMBER, 25)
         private val allDaysInDecember = (1..23).map { LocalDate.of(YEAR, Month.DECEMBER, it) }.toSet()
-        val workoutsInDecember = listOf(1, 3, 5, 7, 8, 10, 12, 14, 15, 17, 19, 21, 22).map { LocalDate.of(YEAR, Month.DECEMBER, it) }.toSet()
+        val workoutsInDecember = listOf(1, 3, 5, 7, 8, 10, 12, 14, 15, 17, 19, 22).map { LocalDate.of(YEAR, Month.DECEMBER, it) }.toSet()
         val infosInDecember = allDaysInDecember.minus(workoutsInDecember).toSet()
 
         @BeforeClass
