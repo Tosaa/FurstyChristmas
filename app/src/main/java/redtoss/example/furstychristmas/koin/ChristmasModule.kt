@@ -7,6 +7,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import redtoss.example.furstychristmas.domain.day.repository.DayCompletionRepository
 import redtoss.example.furstychristmas.domain.day.usecase.AddDayCompletionUseCase
+import redtoss.example.furstychristmas.domain.day.usecase.ContentTypeUseCase
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import redtoss.example.furstychristmas.domain.info.repository.InfoRepository
 import redtoss.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
@@ -67,6 +68,7 @@ val myModule = module {
     single { LoadInfoUseCase(get()) }
     single { DayCompletionStatusUseCase(get()) }
     single { AddDayCompletionUseCase(get()) }
+    single { ContentTypeUseCase(get(), get()) }
 
     viewModel { OverviewViewModel(get()) }
     viewModel { InfoViewModel(get(), get()) }
