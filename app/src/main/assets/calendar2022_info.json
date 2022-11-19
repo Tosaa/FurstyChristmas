@@ -5,12 +5,32 @@
       "date": "2022-12-02",
       "pages": [
         {
-          "htmltext": "",
-          "imageid": "",
+          "htmltext": "Im Groben werden die Positionen in der Offense in vier Gruppen unterteilt. <br/>Offense-Line, Quarterback, Runningback und Wide Receiver.<br/>Die einzelnen Positionen werden intern erneut unterteilt. Zur besseren Verständlichkeit zeigt das Bild <b><u>KEINE</u></b> tatsächliche Formation sondern zeigt lediglich jede Position mit Ihrem Namen.",
+          "imageid": "offensepositions",
           "subtitle": ""
+        },
+        {
+          "htmltext": "Die Offense-Line besteht aus einem Center, zwei Guards und keinem, einem oder zwei Tight-Ends.<br/>Der Center hat die Aufgabe den Ball zum Quarterback zu snappen. Anschließend muss er blocken.<br/>Die Guards sind für die Lücke zwischen ihnen und dem Center oder zwischen ihnen und dem Tight-End verantwortlich.<br/><br/>Die Tight-Ends können entweder blocken oder auf Passroute gehen.",
+          "imageid": "",
+          "subtitle": "Offense-Line:"
+        },
+        {
+          "htmltext": "Die Runningbacks stehen je nach Formation entweder neben oder hinter dem Quarterback. <br/>Die Runningbacks können unterschieden werden in Fullbacks und Halfbacks. <br/>Bei Laufspielzügen erhält ein Runningback (Halfback) den Ball, ggf. blockt ein zweiter (Fullback) den Weg frei. Bei Passpielzügen blocken die Runningbacks entweder um dem Quarterback mehr Zeit zu verschaffen oder Sie gehen auf eine Passroute um eine Anspielstation für den Quarterback darzustellen.",
+          "imageid": "",
+          "subtitle": "Runningback:"
+        },
+        {
+          "htmltext": "Sind die äußersten Spieler auf dem Feld. Sie werden unterteilt in Wide-Out und Slot-Receiver. Der Wide-Out stellt sich auf Höhe der Nummern auf, während der Slot-Receiver die Distanz zwischen dem Wide-Out und dem letzten Spieler an der Line (Tight-End/Guard) halbiert. Je nach Spielzug, kann auch ein Running Back mit einer Motion auf die Slot-Receiver Position rutschen. <br/>Bei Laufspielzügen ist die Hauptaufgabe eines Receivers seinen Gegenspieler zu blocken.<br/>Bei Passspielzügen laufen die Receiver sich mit unterschiedlichen Passrouten-Konzepten frei und versuchen den geworfenen Ball des Quarterbacks zu fangen.",
+          "imageid": "",
+          "subtitle": "Wide Receiver:"
+        },
+        {
+          "htmltext": "Der Quarterback ist das Herzstück der Offense. Vor jedem Spielzug erhält er vom Coach an der Seitenlinie den neuen Spielzug und teilt diesen dann der restlichen Offense im Huddle mit. Er erhält den Snap vom Center und übergibt den Ball entweder an die Runningbacks oder wirft den Ball zu einem der Receiver.",
+          "imageid": "",
+          "subtitle": "Quarterback:"
         }
       ],
-      "title": ""
+      "title": "Offense-Positionen"
     }
   },
   {
@@ -19,12 +39,27 @@
       "date": "2022-12-04",
       "pages": [
         {
-          "htmltext": "",
+          "htmltext": "In der Defense unterscheiden wir grob zwischen 3 Positionsarten: Defensive-Lineman, Linebacker, Defensive-Backs.<br/>Was diese tun und wie sie benannt werden wird im Folgenden erklärt:",
           "imageid": "",
           "subtitle": ""
+        },
+        {
+          "htmltext": "Die DL sind die direkten Gegenspieler der Offensive-Line und sind bei Run dafür verantwortlich, dass keiner durch die Lücke rennt, in welcher sie stehen. Bei Pass müssen sie vor allem Druck auf den Quarterback ausüben, ihn nicht frei laufen lassen und im Optimalfall zu Boden bringen. Sie haben keine Verantwortung in der Coverage, aber dazu mehr unter Coverages.<br/><br/>Die mittleren DL heißen <b>Defensive Tackle</b>. In unserer Defense heißen die DT auf der Strong Side <b>Tackle</b> und auf der Weak Side <b>Nose</b>. Wenn nur 3 DL auf dem Spielfeld sind (was bei uns meistens der Fall sein wird), fällt der Nose weg.<br/><br/>Die äußeren DL heißen <b>Defensive Ends</b>. Sie haben normalerweise zusätzlich noch die Aufgabe des <b>Outside Contains</b>. In unserer Defense heißen die DE auf der Strong Side <b>Strike</b>",
+          "imageid": "dline",
+          "subtitle": "Defensive-Lineman (DL)"
+        },
+        {
+          "htmltext": "Die Linebacker sind die Reihe hinter der DL und hauptsächlich für den Run verantwortlich. Beim Pass verteidigen sie kürzere Zonen oder Receiver die eher kurze Routen nehmen. Mehr dazu unter Coverages.<br/><br/>Der innere Linebacker heißt <b>Middle Linebacker</b> und hat, wie der Name schon sagt, die Mitte. Er arbeitet stark mit dem <b>Tackle</b> zusammen. In unserer Defense heißt der MLB <b>Mike</b>. <br/><br/>Die äußeren Linebacker heißen <b>Outside Linebacker</b> und stehen außerhalb vom Nr. 2 Receiver oder vom <b>Tight End</b> und haben zudem <b>Outside Contain</b>. In unserer Defense heißen die OLB auf der Strong Side <b>Bandit</b> und auf der",
+          "imageid": "linebacker",
+          "subtitle": "Linebacker (LB)"
+        },
+        {
+          "htmltext": "Die DBs sind die tieferen Spieler und vor allem für tiefe Pässe verantwortlich. Bei Run haben sie eher eine unterstützende, aber auf keinen Fall vernachlässigbare, Rolle.<br/><br/>Der tiefste und mittlere DB heißt <b>Safety</b> und ist für die tiefe Mitte zuständig und heißt in unserer Defense auch einfach <b>Safety</b>.<br/><br/>Die äußeren DBs heißen <b>Cornerbacks</b> und sind für die tiefen Zonen außen zuständig. Sie haben bei einem Run auf ihre Seite <b>Outside Contain</b>. In unserer Defense heißt der CB auf der Strong Side <b>Hit</b> und auf",
+          "imageid": "defensebacks",
+          "subtitle": "Defensive-Backs (DB)"
         }
       ],
-      "title": ""
+      "title": "Defense-Positionen"
     }
   },
   {
@@ -33,12 +68,32 @@
       "date": "2022-12-06",
       "pages": [
         {
-          "htmltext": "",
+          "htmltext": "Folgende Begriffe sollten für euch in der Offense jederzeit klar sein.<br/>Gaps, Split, Man-/Zone-Coverage<br/><br/>Außerdem stellen wir euch an einem anderen Tag verschiedene Passrouten, Formationen und Motions vor.",
           "imageid": "",
           "subtitle": ""
+        },
+        {
+          "htmltext": "Um in der Offense klar zu kommunizieren, wo wir mit dem Ball entlang laufen verwenden wir Ziffern. Diese geben die Lücke (englisch: Gap) an, wo wir durch laufen.<br/><br/>Dafür zählen wir vom Center aus die Lücken nach außen. Direkt <b>links</b> vom Center befindet sich die 1. Die nächste Lücke ist die 3 und die darauf folgende die 5. Außerdem werden Spielzüge über weit außen über die 9 gespielt. Die 7 gibt es nicht.<br/><br/>Auf der rechten Seite vom Center befinden sich die Lücken 2, 4, 6 und 8.<br/><br/>Auf der inken Seite sind also nur ungerade Zahlen und auf der <b>rechten</b> Seite nur gerade Zahlen.<br/><br/>Die zweite Zahl in einem Spielzug gibt bei uns das Gap an, durch das wir laufen.<br/><br/>Enthält ein Spielzug also 04 (“zero-four”) oder 24 (“twenty-four”) im Namen, dann wissen wir, dass wir durch das Gap zwischen Guard und Tight-End auf der <b><u>rechten</u></b> S",
+          "imageid": "gaps",
+          "subtitle": "Gaps"
+        },
+        {
+          "htmltext": "Ein Split (englisch: Abstand) gibt an wie viel Abstand zwischen zwei Spielern sein muss.<br/><br/>Zwischen dem Center und dem Guard sollten im normalfall 1,5 Fußlängen Abstand sein. <br/>Zwischen Guard und Tightend 2 Fußlängen. <br/><br/>",
+          "imageid": "",
+          "subtitle": "Splits"
+        },
+        {
+          "htmltext": "Die Defense versucht die Offense durch zwei verschiedene Arten von Passverteidigungen zu stoppen.<br/><br/>Wenn die Defense eine Man-Coverage spielt, dann versucht immer mindestens ein Verteidiger einen Receiver zu decken. Dafür konzentriert er sich nur auf diesen einen Receiver und auf keinen anderen Spieler.<br/><br/>Bei einer Zone-Coverage hat jeder Verteidiger eine Zone, die es zu verteidigen gilt. Wenn ein Receiver diese Zone betritt, achtet der Verteidiger nur auf diesen Receiver.",
+          "imageid": "",
+          "subtitle": "Man-/Zone-Coverage"
+        },
+        {
+          "htmltext": "Wann immer ein Spieler den Ball in der Hand hat und ihn verliert oder ihm dieser aus der Hand geschlagen wird, ist der Ball frei. Das Fallenlassen des Balls nennt sich Fumble. Wenn sich ein Spieler auf den Ball wirft oder ihn aufhebt bekommt sein Team danach das Angriffsrecht. <b>Also drauf werfen wenn Ihr seht der Ball liegt am Boden! (Auch wenn Ihr euch nicht sicher seid ob es ein Fumble ist oder nicht!)</b>",
+          "imageid": "",
+          "subtitle": "Fumble:"
         }
       ],
-      "title": ""
+      "title": "Offense Basic Begriffe"
     }
   },
   {
@@ -47,12 +102,37 @@
       "date": "2022-12-09",
       "pages": [
         {
-          "htmltext": "",
+          "htmltext": "Hier werden Begriffe erklärt, welche für die Defense (unsere und allgemein) wichtig sind. Einige dieser Begriffe werden im weiteren Verlauf dieses Kalenders benutzt.",
           "imageid": "",
           "subtitle": ""
+        },
+        {
+          "htmltext": "<b>Outside Contain</b> bedeutet den Ballträger unter allen Umständen immer <b>innerhalb von dir</b> zu halten. Dadurch zwingen wir den Ballträger zurück nach innen zu unseren Mitspielern.<br/>",
+          "imageid": "",
+          "subtitle": "Outside Contain:"
+        },
+        {
+          "htmltext": "Wenn ein Offense Spieler <b>eligible</b> ist, bedeutet das, dass er beim Pass einen Ball fangen darf.<br/>Jeder Offense Spieler hinter der Line-Of-Scrimmage (offline) ist <b>eligible</b>. Außerdem ist immer der äußerste Spieler auf der Line-Of-Scrimmage (online) <b>eligible</b>.<br/>",
+          "imageid": "",
+          "subtitle": "Eligible:"
+        },
+        {
+          "htmltext": "Diese Begriffe sind immer an die Ballposition angelegt. <b>Außen</b> heißt vom Ball aus Richtung Sideline, <b>innen</b> heißt von der Sideline aus Richtung Ball, parallel zur Line-Of-Scrimmage.<br/>Sagt beispielsweise einer der Coaches “Stell dich weiter außen auf”, dann musst du mehr in Richtung deiner Sideline.<br/><b>Tief/Hinten</b> heißt von der Line-Of-Scrimmage aus Richtung unserer Endzone, <b>kurz/vorne</b> heißt Richtung Line-Of-Scrimmage, parallel zur Sideline.<br/>Sagt beispielsweise einer der Coaches “Du stehst zu tief”, dann musst du näher zur Line-Of-Scrimmage.<br/>Klingt etwas kompliziert, ist aber eigentlich",
+          "imageid": "defensebasics",
+          "subtitle": "Was heißt tief, kurz, außen, innen:"
+        },
+        {
+          "htmltext": "Zwischen 2 Offense Spielern oder zwischen einem Offense Spieler und der Sideline ist eine Lücke, durch welche ein Ballträger durchlaufen kann, ein sogenanntes <b>Gap</b>. Die <b> Gap Responsibility</b> bezeichnet die Aufgabe dieses Gap zu schließen, sodass kein Ballträger durchlaufen kann.",
+          "imageid": "",
+          "subtitle": "Gap Responsibility:"
+        },
+        {
+          "htmltext": "Wir zählen an beiden Sidelines von außen nach innen. Somit ist der äußerste Receiver Nr 1, der nächste Receiver Nr 2 und so weiter. Runningbacks und Tight Ends werden mitgezählt.",
+          "imageid": "",
+          "subtitle": "Wie zählen wir Receiver in der Defense: "
         }
       ],
-      "title": ""
+      "title": "Begriffe - Defense"
     }
   },
   {
@@ -61,12 +141,27 @@
       "date": "2022-12-11",
       "pages": [
         {
-          "htmltext": "",
+          "htmltext": "Das Blocken des Gegners ist beim Football eine der wichtigsten Aufgaben.<br/><br/>Das gilt nicht nur für die Offense-Line, sondern auch für Tight-Ends, Receiver, Runningbacks und Spieler in den Special Teams.<br/><br/>Ein Foul beim Blocken kann das eigene Team einige Yards kosten.<br/>Festhalten (Holding) kostet 5 Yards.<br/>Ein Griff ins Gesichtsgitter (Facemask) kostet 15 Yards. Bei einem illegalen Block in den Rücken (Block in the back) gehen 10 Yards dafür drauf.",
           "imageid": "",
           "subtitle": ""
+        },
+        {
+          "htmltext": "Die wichtigste Regel beim Blocken lautet: “Nimm den Kopf aus dem Block!”<br/><br/>Dein Kopf ist sehr wichtig und du brauchst ihn auch noch für viele andere Dinge als Football. Deshalb ist es sehr vernünftig nicht mit dem Helm zu blocken. Außerdem solltest du deinen Kopf immer in den Nacken nehmen, sodass du nach vorne schauen kannst. <br/><br/>Das ist besonders wichtig, weil Schläge/ein Aufprall auf den Helm sonst zu schweren Wirbelverletzungen führen kann. <br/><br/>Schütze dich und nimm den Kopf in den Nacken!",
+          "imageid": "",
+          "subtitle": "Kopf in den Nacken!"
+        },
+        {
+          "htmltext": "Oft blocken Spieler mit der Schulter. Vermutlich weil sie Angst vor dem Kontakt haben und dann den Kontakt nicht mehr sehen, weil der Kopf ja nicht mehr am Block beteiligt ist.<br/><br/>Das ist aber ebenfalls sehr gefährlich und auch sehr nutzlos. Dadurch hat man keine Kontrolle über den Block und gewinnt diesen damit auch nicht.<br/><br/>Eine Faustregel lautet: Die Daumen zeigen nach oben. <br/><br/>Die Handflächen liegen auf Brusthöhe des Gegners auf seinem Shoulderpad. Die Fingerspitzen zeigen nach außen und die Daumen nach oben. Dadurch hat man volle Kontrolle über den Gegner.<br/><br/>Sollten die Hände weiter außen am Shoulderpad sein, wird dein Gegner seine Hände bei dir innen platzieren und den Block gewinnen.",
+          "imageid": "",
+          "subtitle": "Verwende die Hände"
+        },
+        {
+          "htmltext": "Oft heißt es “Low Man wins”. Das bedeutet so viel, wie der tiefere Spieler gewinnt. Das liegt daran, dass der Spieler mit dem tieferen Körper, den anderen besser aufstellen kann und dadurch vor sich her schieben kann. <br/><br/>Der Grund hierfür liegt darin, dass der tiefere Spieler seine Beinmuskulatur besser einsetzen kann. Er blockt also nicht nur mit den Armen, sondern nimmt alle Muskeln, was dafür sorgt, das er deutlich stärker ist. <br/><br/>Sobald ein Gegner aufgestellt ist, wird er seine Beinmuskulatur nicht mehr so gut nutzen können und wird den Zweikampf verlieren.",
+          "imageid": "",
+          "subtitle": "Tiefer Körper"
         }
       ],
-      "title": ""
+      "title": "Den Gegner blocken"
     }
   },
   {
@@ -75,12 +170,27 @@
       "date": "2022-12-13",
       "pages": [
         {
-          "htmltext": "",
+          "htmltext": "So viele Coverages, wie es im American Football gibt, könnten wir euch nicht mal eben in 24 Türchen vorstellen (wer Interesse hat, der Larry freut sich sicher euch mehr Defenses beizubringen). Im Allgemeinen unterscheidet man zwischen 2 grundsätzlich verschiedenen Coverages: Zone- und Man-Coverage. Im Folgenden zeigen wir euch 3 der für uns wichtigsten Defensive-Coverages:<br/>Die Offense (Blau) steht in einer normalen Doubles Formation zur Veranschaulichung.",
           "imageid": "",
           "subtitle": ""
+        },
+        {
+          "htmltext": "Cover 3, DIE Fursty Defense, ist eine Zone-Coverage. Das bedeutet, die Defense Spieler verteidigen bei Pass Zonen, welche das gesamte Spielfeld abdecken. Hierbei wird das tiefe Feld in 3 Zonen unterteilt. Jeder der 3 DBs übernimmt eine der 3 tiefen Zonen. Das kürzere Feld wird in die übrigen Spieler unterteilt (mit Ausnahme der DL natürlich), hier sind es auch 3.<br/><br/>Für fortgeschrittenere Spieler: <br/>Eine Cover 3 ist eine Gap-Sound-Defense, also sind in der Box immer genug Spieler vorhanden,",
+          "imageid": "cover3man",
+          "subtitle": "Cover 3"
+        },
+        {
+          "htmltext": "Cover 2, vor allem bei anderen Teams zu sehen, ist wie Cover 3 eine Zone-Coverage. Bei dieser Coverage wird das tiefe Feld in 2 Zonen geteilt, welche von 2 Safetys verteidigt werden. Das kurze Feld wird wieder unter den übrigen Spielern unterteilt, hier sind es 4.<br/><br/>Für fortgeschrittene Spieler: <br/>Eine Cover 2 ist keine Gap-Sound-Defense, heißt die LBs müssen mehr als ein Gap übernehmen, bzw. sich als",
+          "imageid": "cover2man",
+          "subtitle": "Cover 2"
+        },
+        {
+          "htmltext": "Cover 1 Man ist, wie der Name schon sagt, eine Man-Coverage. Das bedeutet, die Defense Spieler verteidigen jeweils einen Gegenspieler. Bei Cover 1 Man ist der Safety frei. Das bedeutet er hat keinen Gegenspieler und kann seinen Mitspielern beim Verteidigen aushelfen. Dies können bei Man-Coverage generell auch 2 oder kein Safety übernehmen. Außerdem stehen bei dieser Coverage mehr DL auf dem Feld.<br/><br/>Für fortgeschrittenere Spieler: <br/>Man wird vor allem gespielt, wenn man Druck auf den Quarterback ausüben möchte,",
+          "imageid": "cover1man",
+          "subtitle": "Cover 1 Man"
         }
       ],
-      "title": ""
+      "title": "Defensive-Coverages"
     }
   },
   {
@@ -89,12 +199,27 @@
       "date": "2022-12-16",
       "pages": [
         {
-          "htmltext": "",
+          "htmltext": "Neben der Offense und der Defense besteht ein Football Team auch aus einem dritten Teil: den Special Teams.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Jedes Footballspiel beginnt mit einem Kickoff. <br/>Hierbei wird der Ball von einer Mannschaft zur anderen Mannschaft gekickt. Der Kickoff erfolgt von der 35 yard Linie des kickenden Teams. 5 yards hinter dem Ball stehen zu jeder Seite 4 Spieler, welche nach erfolgtem Kick das Feld in vorab festgelegten Laufwegen herunterlaufen und den gegnerischen Ballträger so früh wie möglich stoppen wollen.<br/>Sobald der Ball nach dem Kick eine Distanz von 10 Yards erreicht hat, ist dieser für beide Mannschaften ‘frei’. Das bedeutet, das Team, welches den Ball als erstes sichern kann, erhält das Angriffsrecht. <br/><br/>Sollte der Ball aus dem Spielfeld gekickt werden, so zieht das eine Strafe mit sich, woraufhin der Kick entweder 5 yards weiter hinten (eigene 30 Yard Linie) wiederholt wird oder das Angriffsrecht der returnenden Mannschaft startet dort, wo der Ball ins Aus ging.<br/><br/>Auf dem Bild seht ihr, wie wir uns beim Kickoff aufstellen. Wir nummerieren unsere Spieler auf beiden Seiten von außen nach innen. Auch die Platzierung auf dem Feld, welcher Spieler Wo auf dem Feld steht entspricht unserem Kickoff Team.",
+          "imageid": "kickoff",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Das Gegenstück zum Kickoff ist der Kickoff-return. <br/>Das retunierende Team will mit seinen Returnern den Ball so früh wie möglich aufnehmen und in Richtung der gegnerischen Endzone zurücktragen. Die Spieler, welche nicht den Ball tragen, blocken den Weg für den Ballträger frei. <br/><br/>Sollte der Returner, bevor er den Ball fängt, seine Hand in die Luft heben und winken ist dies ein sogenanntes “Fair-Catch-Signal”. Dies bedeutet, dass der Spielzug in dem Moment endet, in welchem der Returner den Ball fängt. Er darf also nicht mehr mit dem Ball in Richtung gegnerischer Endzone laufen, sondern seine Offense startet an dem Punkt des Catches mit ihrem ersten Spielzug. <br/>Wichtig zu beachten ist, dass der Spieler, welcher ein Fair-Catch-Signal gegeben hat und den Ball gefangen hat im Anschluss nicht getackelt werden darf! <br/>Nicht vergessen: Der Ball ist nach 10 Yards frei. Sollte der Kickoff also nur kurz erfolgen muss der Spieler, welcher am nähesten am Ball ist, diesen sichern.",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Falls die Offense nach 3 Versuchen kein neues First-Down erzielen konnte, kann sie sich entscheiden einen 4. Versuch zu spielen oder den Ball zum Gegner zu kicken. Das nennt sich Punt.<br/><br/>Die Offense gibt das Angriffsrecht ab. Der Ball wird möglichst weit in die gegnerische Hälfte gekickt.<br/><br/>Wenn der Gegner den Ball berührt, beispielsweise beim Versuch ihn zu fangen, ihn aber nicht sicher fängt, ist der Ball frei. Deshalb sollte man sich immer auf den Ball werfen, wenn der Gegner ihn berührt hat, ihn aber nicht sicher in seinen Besitz gebracht hat!",
           "imageid": "",
           "subtitle": ""
         }
       ],
-      "title": ""
+      "title": "Was ist Kickoff/Kickoff Return / Punt"
     }
   },
   {
@@ -103,12 +228,22 @@
       "date": "2022-12-18",
       "pages": [
         {
-          "htmltext": "",
-          "imageid": "",
+          "htmltext": "Eine Cover 3 kann man daran erkennen, dass nur ein Safety auf dem Feld steht und 2 tiefe CBs außen stehen. Außerdem stehen die äußeren Spieler außerhalb von ihrem Receiver und schauen nach innen Richtung Quarterback.",
+          "imageid": "cover3man",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Eine Cover 2 kann man sehr leicht an den 2 tiefen Safetys erkennen. Außerdem stehen die äußeren Spieler außerhalb von ihrem Receiver und schauen nach innen Richtung Quarterback.",
+          "imageid": "cover2man",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Eine Cover 1 Man, bzw eine Man-Coverage generell kann man am besten daran erkennen, dass die äußeren Verteidiger innerhalb von ihren Receivern stehen und nach außen auf ihre Gegenspieler schauen.",
+          "imageid": "cover1man",
           "subtitle": ""
         }
       ],
-      "title": ""
+      "title": "Wie erkennt man Coverages"
     }
   },
   {
@@ -128,7 +263,7 @@
   {
     "type": "INFO",
     "info": {
-      "date": "2022-12-23",
+      "date": "2022-12-21",
       "pages": [
         {
           "htmltext": "",
@@ -137,6 +272,35 @@
         }
       ],
       "title": ""
+    }
+  },
+  {
+    "type": "INFO",
+    "info": {
+      "date": "2022-12-23",
+      "pages": [
+        {
+          "htmltext": "3 Tips um ein erfolgreicher Sportler zu sein",
+          "imageid": "",
+          "subtitle": ""
+        },
+        {
+          "htmltext": "Ein entscheidender Faktor zwischen Sieg und Niederlage liegt nicht im Spiel selbst sondern Wochen und Monate vor dem Spiel.<br/> Jedes Training, jedes Workout,jede Videoanalyse und jedes Playbook durchlesen tragen dazu bei ein Spiel für sich und sein Team zu entscheiden.<br/><br/>  Dabei kann es hart sein, bei jedem Wetter ins Training zu kommen. Es kann auch ermüdend und deprimierend sein, sich alle Plays auswendig merken zu müssen. Aber all diese schwierigen Momente tragen dazu bei am Spieltag zu gewinnen.<br/><br/>  Also wenn es sich hart anfühlt weiter zu machen, dann bist du grade dabei zu wachsen und du solltest nicht aufgeben.",
+          "imageid": "",
+          "subtitle": "Disziplin:"
+        },
+        {
+          "htmltext": "Routinen sorgen dafür, dass ihr die Dinge die ihr tut, zuverlässig tut. Eine Routine ist ein wiederholter Ablauf, der immer wieder gleich ist.<br/> Man sagt: “Um etwas zu 99% zu können, muss man es 10.000 mal wiederholen”.<br/> Das klingt erstmal nach sehr vielen Wiederholungen. Aber überleg mal wie oft du schon in den Dreipunktstand gegangen bist, <br/> wie oft du schon Bälle gefangen hast, <br/> wie oft du schon Bälle geworfen hast, <br/> wie oft du schon tackles gemacht hast, <br/> wie oft du schon Spielzüge ausgeführt hast …<br/><br/>  Du siehst, 10.000 Wiederholungen sind vielleicht viel, aber durch jedes Training und jede Wiederholung wirst du besser. <br/><br/>  Und durch das Wöchentliche Training bekommst du diese Wiederholungen und diese Routine. Setze deshalb auch alles daran, so gut wie kein Training aus zu lassen, um so viele Wiederholungen wie möglich wahr zu nehmen.",
+          "imageid": "",
+          "subtitle": "Routinen:"
+        },
+        {
+          "htmltext": "Fokus ist die Konzentration auf eine Ausführung einer Tätigkeit in genau diesem Moment. Und Fokus ist unheimlich schwierig!<br/><br/>  Fokus ist deshalb so schwierig, weil es so viel gibt was in deinem Kopf passieren kann. Du kannst stress in der Schule, streit mit deiner Familie, oder einen sehr schönen Moment mit Freunden haben, bei dem du die Zeit (oder den Fokus) verlierst.<br/> Außerdem könnte deine Familie bei einem Spiel da sein, nur um dich zu sehen, oder deine neue Freundin schaut dir zu und all diese Gedanken hängen während dem Spiel in deinem Kopf.<br/> Und genau in diesen Momenten ist es unheimlich wichtig sich zu fokussieren! Es ist wichtig, dass du dich ganz auf den Moment und auf das Spiel, den Sport oder das Training konzentrierst.<br/><br/>  Versuche es also zu vermeiden in Pausen zu deinen Fans zu gehen oder andere Dinge zu organisieren.<br/> Vermeide es auch deine Kollegen ab zu lenken und höre deinen Coaches zu!",
+          "imageid": "",
+          "subtitle": "Fokus:"
+        }
+      ],
+      "title": "Erfolg"
     }
   }
 ]

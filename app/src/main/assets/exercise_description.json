@@ -209,6 +209,15 @@
     ]
   },
   {
+    "id": "HEEL_TAPS",
+    "name": "Heel taps",
+    "start_position": "Lege dich auf den Rücken und winkle die Beine etwas an. Die Füße berühren den Boden.",
+    "execution": "Beuge deinen Oberkörper nach rechts, sodass du mit deiner rechten Hand den Knöchel deines rechten Fuß berühren kannst. Anschließend beugst du einen Oberkörper nach links und berührst mit deiner linken Hand den Knöchel des linken Fußes. Das stellt eine Wiederholung dar.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
     "id": "V-UPS",
     "name": "V-Ups",
     "start_position": "Lege dich auf den Rücken, strecke deine Beine ganz aus und hebe die Füße leicht vom Boden. Hebe deine Schultern vom Boden ab und strecke deine Arme zur Seite.",
@@ -231,6 +240,24 @@
     "name": "Sit ups",
     "start_position": "Setz dich auf den Boden, bilde einen graden Rücken, winkle die Beine etwas an. Die Füße berühren den Boden.",
     "execution": "Lehne dich mit deinem Oberkörper nach hinten, bis du mit den Schultern den Boden berührst. Dann drückst du deinen Oberkörper wieder in die Ausgangsposition. Achte dabei darauf nicht mit Schwung zu arbeiten, sondern mit der Kraft deiner Bauchmuskeln.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
+    "id": "CRUNCHES",
+    "name": "Crunches",
+    "start_position": "Lege dich auf den Rücken und winkle die Beine etwas an. Die Füße berühren den Boden.",
+    "execution": "Aus dieser Position führst du kurze Sit ups aus. Nur dass nicht der gesamte Oberkörper den Boden verlässt, sondern nur kurz die Schultern und der obere Rückenbereich. Bei einer Höhe von knapp 5-10 cm senkst du deinen Oberkörper wieder und führst die nächste Wiederholung durch.",
+    "muscles": [
+      "abs"
+    ]
+  },
+  {
+    "id": "SUPERMAN",
+    "name": "Superman",
+    "start_position": "TODO",
+    "execution": "TODO",
     "muscles": [
       "abs"
     ]

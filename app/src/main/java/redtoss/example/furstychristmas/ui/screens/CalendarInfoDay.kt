@@ -11,6 +11,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
@@ -114,7 +115,10 @@ private fun DailyContent(
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Bottom
+            verticalArrangement = Arrangement.Bottom,
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(4.dp)
         ) {
             if (title.isNotBlank())
                 Text(
@@ -126,7 +130,8 @@ private fun DailyContent(
                 Image(
                     painter = painterResource(id = imageID),
                     contentDescription = imageID.toString(),
-                    modifier = Modifier.padding(8.dp)
+                    modifier = Modifier.fillMaxWidth(),
+                    contentScale = ContentScale.FillWidth,
                 )
             if (content.isNotBlank()) {
                 Spacer(modifier = Modifier.height(16.dp))
