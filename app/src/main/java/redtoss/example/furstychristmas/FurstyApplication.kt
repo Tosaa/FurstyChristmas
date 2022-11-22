@@ -27,6 +27,9 @@ import java.time.LocalDate
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 
+const val PREFERENCES_EULA_ACCEPTED = "eulaAccepted"
+const val PREFERENCES_APP_VERSION = "version_code"
+
 class FurstyApplication : Application() {
     private lateinit var backgroundScope: CoroutineScope
     private val preferences: SharedPreferences by inject()
@@ -53,12 +56,12 @@ class FurstyApplication : Application() {
                 DateUtil.setDevDay(date)
             }
             setupDatabaseIfNecessary()
-            activateDayIfNecessary()
+            activateAlarmIfInDecember()
         }
     }
 
 
-    private suspend fun activateDayIfNecessary() {
+    private suspend fun activateAlarmIfInDecember() {
         val today = DateUtil.today()
         if (DateUtil.isDateInRange(today, DateUtil.firstDayForAlarm, DateUtil.lastDayForAlarm)) {
             Timber.d("set alarm for $today")
@@ -81,11 +84,10 @@ class FurstyApplication : Application() {
 
     private fun setRecurringAlarm(context: Context, dayForAlarm: LocalDate) {
         Timber.d("setRecurringAlarm()")
-        var updateTime = dayForAlarm.atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
-        val now = System.currentTimeMillis()
-        if (now > updateTime) {
-            Timber.d("change Day to tomorrow:$now - $updateTime")
-            updateTime = dayForAlarm.plusDays(1).atTime(17, 30).toInstant(ZoneOffset.ofHours(1)).toEpochMilli()
+        var alarm = dayForAlarm.atTime(17, 30)
+        if (System.currentTimeMillis() > alarm.toInstant(ZoneOffset.ofHours(1)).toEpochMilli()) {
+            Timber.d("setRecurringAlarm(): change alarm: $alarm to tomorrow: ${alarm.plusDays(1)}")
+            alarm = alarm.plusDays(1)
         }
         val repeatedNotificationIntent = Intent(context, DailyNotificationReceiver::class.java)
         val pendingNotificationIntent = PendingIntent.getBroadcast(
@@ -97,11 +99,11 @@ class FurstyApplication : Application() {
         ) as AlarmManager
         alarms.setRepeating(
             AlarmManager.RTC_WAKEUP,
-            updateTime,
+            alarm.toInstant(ZoneOffset.ofHours(1)).toEpochMilli(),
             AlarmManager.INTERVAL_DAY,
             pendingNotificationIntent
         )
-        Timber.d("set Wakeup Alarm for $updateTime")
+        Timber.d("setRecurringAlarm(): set Wakeup Alarm for ($alarm)")
     }
 
     override fun onTerminate() {
