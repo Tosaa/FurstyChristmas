@@ -1,5 +1,7 @@
 package redtoss.example.furstychristmas.ui
 
+import android.content.Intent
+import android.os.Bundle
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Icon
@@ -29,6 +31,7 @@ import org.koin.androidx.compose.get
 import redtoss.example.furstychristmas.BuildConfig
 import redtoss.example.furstychristmas.R
 import redtoss.example.furstychristmas.domain.day.usecase.ContentTypeUseCase
+import redtoss.example.furstychristmas.eula.EulaActivity
 import redtoss.example.furstychristmas.ui.screens.*
 import redtoss.example.furstychristmas.util.DateUtil
 import timber.log.Timber
@@ -42,6 +45,7 @@ fun MyAppNavHost(
     startDestination: String = "overview",
     contentTypeUseCase: ContentTypeUseCase = get(),
 ) {
+    val context = LocalContext.current
     Column {
         MyAppBar(
             onBackIconClicked = { navController.popBackStack() },
@@ -51,7 +55,14 @@ fun MyAppNavHost(
                     navController.navigate("debug")
                 }
             },
-            onInfoClicked = {}
+            onInfoClicked = {
+                val intent = Intent(context, EulaActivity::class.java)
+                val bundle = Bundle()
+                val eula = R.raw.eula2021
+                bundle.putInt("eula", eula)
+                intent.putExtras(bundle)
+                context.startActivity(intent)
+            }
         )
         NavHost(
             modifier = modifier,

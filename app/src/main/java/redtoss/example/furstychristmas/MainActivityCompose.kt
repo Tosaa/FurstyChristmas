@@ -22,12 +22,18 @@ class MainActivityCompose : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val currentAppVersion = BuildConfig.VERSION_CODE
+        val storedVersionCode = getStoredVersion()
+        Timber.d("currentAppVersion: $currentAppVersion, storedAppVersion: $storedVersionCode")
+        if (storedVersionCode != currentAppVersion) {
+            resetAppWithVersion(currentAppVersion)
+        }
+        checkEula()
     }
 
     override fun onResume() {
         super.onResume()
         Timber.d("onResume")
-        // checkEula()
         setContent {
             FurstyChrismasTheme {
                 // A surface container using the 'background' color from the theme
@@ -38,9 +44,20 @@ class MainActivityCompose : ComponentActivity() {
         }
     }
 
+    private fun getStoredVersion(): Int {
+        return preferences.getInt(PREFERENCES_APP_VERSION, -1)
+    }
+
+    private fun resetAppWithVersion(version: Int) {
+        Timber.d("resetAppWithVersion(): $version")
+        preferences.edit()
+            .putInt(PREFERENCES_APP_VERSION, version)
+            .putBoolean(PREFERENCES_EULA_ACCEPTED, false)
+            .commit()
+    }
+
     private fun checkEula() {
-        Timber.d("checkEula()")
-        val isEulaAccepted = preferences.getBoolean("eulaAccepted", false)
+        val isEulaAccepted = preferences.getBoolean(PREFERENCES_EULA_ACCEPTED, false)
         if (!isEulaAccepted) {
             Timber.d("checkEula(): Eula has not been Accepted yet -> show Eula")
 
@@ -55,6 +72,8 @@ class MainActivityCompose : ComponentActivity() {
             bundle.putInt("eula", eula)
             intent.putExtras(bundle)
             eulaResultLauncher.launch(intent)
+        } else {
+            Timber.d("checkEula(): Eula has been Accepted")
         }
     }
 }
