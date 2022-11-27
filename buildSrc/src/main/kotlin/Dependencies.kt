@@ -1,6 +1,6 @@
 object Dependencies {
     object Versions {
-        const val gradle = "7.2.2"
+        const val gradle = "7.3.1"
         const val kotlin = "1.7.10"
         const val koin = "3.2.0"
         const val navigationSafeArgs = "2.3.0"
