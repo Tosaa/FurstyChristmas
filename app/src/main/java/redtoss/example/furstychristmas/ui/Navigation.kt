@@ -12,6 +12,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.List
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
@@ -62,6 +63,9 @@ fun MyAppNavHost(
                 bundle.putInt("eula", eula)
                 intent.putExtras(bundle)
                 context.startActivity(intent)
+            },
+            onSportClicked = {
+                navController.navigate("exercisesOverview")
             }
         )
         NavHost(
@@ -167,6 +171,13 @@ fun MyAppNavHost(
                     context = LocalContext.current,
                 )
             }
+            composable(
+                "exercisesOverview",
+            ) {
+                ExerciseOverviewScreen(onExerciseClicked = {
+                    navController.navigate("exercise/${it.exerciseId}")
+                })
+            }
         }
     }
 }
@@ -181,6 +192,7 @@ fun MyAppBar(
     onBackIconClicked: () -> Unit,
     onInfoClicked: () -> Unit,
     onEditClicked: () -> Unit,
+    onSportClicked: () -> Unit,
 ) {
     val date = DateUtil.todayAsLiveData.asFlow().collectAsState(initial = LocalDate.now())
     val motto = if (BuildConfig.DEBUG) {
@@ -204,6 +216,9 @@ fun MyAppBar(
         actions = {
             IconButton(onClick = { onInfoClicked() }) {
                 Icon(Icons.Filled.Info, "infoButton")
+            }
+            IconButton(onClick = { onSportClicked() }) {
+                Icon(Icons.Filled.List, "exercisesButton")
             }
             if (BuildConfig.DEBUG) {
                 IconButton(onClick = { onEditClicked() }) {

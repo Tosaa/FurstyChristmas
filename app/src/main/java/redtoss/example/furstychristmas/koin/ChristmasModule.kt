@@ -75,4 +75,5 @@ val myModule = module {
     viewModel { WorkoutViewModel(get(), get()) }
     viewModel { ExerciseViewModel(get()) }
     viewModel { ChristmasViewModel(get(), get()) }
+    viewModel { ExerciseOverviewViewModel(get()) }
 }

@@ -167,7 +167,7 @@ private fun DoneButton(isDayCompleted: State<Boolean>, onDoneClicked: () -> Unit
 fun Preview() {
     FurstyChrismasTheme(true) {
         Column {
-            MyAppBar(onBackIconClicked = { }, onInfoClicked = { }, onEditClicked = { })
+            MyAppBar(onBackIconClicked = { }, onInfoClicked = { }, onEditClicked = { }, onSportClicked = {})
             CalendarWorkoutContent(
                 date = LocalDate.of(2021, 12, 16),
                 isDayCompleted = mutableStateOf(false),
