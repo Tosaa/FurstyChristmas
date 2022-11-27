@@ -8,6 +8,7 @@ data class InfoPageContent(val title: String, val imageid: String?, private val 
 
     private fun parseHTMLtoMarkdownText(text: String): String {
         val newText = text
+            .replace("<br/> ", "\n")
             .replace("<br/>", "\n")
             .replace(Regex("<.*>"), "")
         return newText

@@ -1,5 +1,7 @@
 package redtoss.example.furstychristmas.ui
 
+import android.content.Intent
+import android.os.Bundle
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Icon
@@ -10,6 +12,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.List
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
@@ -28,8 +31,8 @@ import kotlinx.coroutines.launch
 import org.koin.androidx.compose.get
 import redtoss.example.furstychristmas.BuildConfig
 import redtoss.example.furstychristmas.R
-import redtoss.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
-import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
+import redtoss.example.furstychristmas.domain.day.usecase.ContentTypeUseCase
+import redtoss.example.furstychristmas.eula.EulaActivity
 import redtoss.example.furstychristmas.ui.screens.*
 import redtoss.example.furstychristmas.util.DateUtil
 import timber.log.Timber
@@ -41,9 +44,9 @@ fun MyAppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
     startDestination: String = "overview",
-    infoUseCase: LoadInfoUseCase = get(),
-    workoutUseCase: LoadWorkoutUseCase = get(),
+    contentTypeUseCase: ContentTypeUseCase = get(),
 ) {
+    val context = LocalContext.current
     Column {
         MyAppBar(
             onBackIconClicked = { navController.popBackStack() },
@@ -53,7 +56,17 @@ fun MyAppNavHost(
                     navController.navigate("debug")
                 }
             },
-            onInfoClicked = {}
+            onInfoClicked = {
+                val intent = Intent(context, EulaActivity::class.java)
+                val bundle = Bundle()
+                val eula = R.raw.eula2021
+                bundle.putInt("eula", eula)
+                intent.putExtras(bundle)
+                context.startActivity(intent)
+            },
+            onSportClicked = {
+                navController.navigate("exercisesOverview")
+            }
         )
         NavHost(
             modifier = modifier,
@@ -65,20 +78,24 @@ fun MyAppNavHost(
                 OverviewScreen(
                     onNavigateToCard = { date ->
                         overviewScope.launch {
-                            Timber.d("Navigation::onNavigateToCard: $date")
-                            if (date.month == Month.DECEMBER && date.dayOfMonth == 24) {
-                                navController.navigate("calendar/christmas/${date.year}")
-                                return@launch
-                            }
-                            infoUseCase.getInfoAtDay(date)?.let {
-                                Timber.d("Navigation::onNavigateToCard: Content on Day: $date is 'Info'")
-                                navController.navigate("calendar/${date.toEpochDay()}/info")
-                                return@launch
-                            }
-                            workoutUseCase.getWorkoutAtDay(date)?.let {
-                                Timber.d("Navigation::onNavigateToCard: Content on Day: $date is 'Workout'")
-                                navController.navigate("calendar/${date.toEpochDay()}/workout")
-                                return@launch
+                            contentTypeUseCase.getTypeForDate(date).let {
+                                return@launch when {
+                                    it == ContentTypeUseCase.Type.INFO -> {
+                                        Timber.d("Navigation::onNavigateToCard: Content on Day: $date is 'Info'")
+                                        navController.navigate("calendar/${date.toEpochDay()}/info")
+                                    }
+                                    it == ContentTypeUseCase.Type.WORKOUT -> {
+                                        Timber.d("Navigation::onNavigateToCard: Content on Day: $date is 'Workout'")
+                                        navController.navigate("calendar/${date.toEpochDay()}/workout")
+                                    }
+                                    date.month == Month.DECEMBER && date.dayOfMonth == 24 -> {
+                                        Timber.d("Navigation::onNavigateToCard: Content on Day: $date is 'Christmas'")
+                                        navController.navigate("calendar/christmas/${date.year}")
+                                    }
+                                    else -> {
+                                        Timber.w("card was clicked but it was not christmas neither workout or info was provided for that day")
+                                    }
+                                }
                             }
                         }
                     }
@@ -154,6 +171,13 @@ fun MyAppNavHost(
                     context = LocalContext.current,
                 )
             }
+            composable(
+                "exercisesOverview",
+            ) {
+                ExerciseOverviewScreen(onExerciseClicked = {
+                    navController.navigate("exercise/${it.exerciseId}")
+                })
+            }
         }
     }
 }
@@ -168,6 +192,7 @@ fun MyAppBar(
     onBackIconClicked: () -> Unit,
     onInfoClicked: () -> Unit,
     onEditClicked: () -> Unit,
+    onSportClicked: () -> Unit,
 ) {
     val date = DateUtil.todayAsLiveData.asFlow().collectAsState(initial = LocalDate.now())
     val motto = if (BuildConfig.DEBUG) {
@@ -191,6 +216,9 @@ fun MyAppBar(
         actions = {
             IconButton(onClick = { onInfoClicked() }) {
                 Icon(Icons.Filled.Info, "infoButton")
+            }
+            IconButton(onClick = { onSportClicked() }) {
+                Icon(Icons.Filled.List, "exercisesButton")
             }
             if (BuildConfig.DEBUG) {
                 IconButton(onClick = { onEditClicked() }) {

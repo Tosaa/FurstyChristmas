@@ -4,6 +4,8 @@ package redtoss.example.furstychristmas.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
@@ -11,6 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
@@ -107,39 +110,52 @@ private fun DailyContent(
     onNextPage: () -> Unit,
     onContentRead: () -> Unit
 ) {
+    val cardScroll = rememberScrollState()
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(8.dp)
+            .padding(4.dp)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Bottom
+            verticalArrangement = Arrangement.Bottom,
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(4.dp)
         ) {
             if (title.isNotBlank())
                 Text(
                     text = title,
                     textAlign = TextAlign.Center,
-                    fontSize = 20.sp
+                    fontSize = 20.sp,
+                    modifier = Modifier.padding(bottom = 16.dp)
                 )
-            if (imageID != 0)
-                Image(
-                    painter = painterResource(id = imageID),
-                    contentDescription = imageID.toString(),
-                    modifier = Modifier.padding(8.dp)
-                )
-            if (content.isNotBlank()) {
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(text = content)
+            Column(
+                modifier = Modifier
+                    .verticalScroll(cardScroll)
+                    .weight(1f)
+            ) {
+                if (imageID != 0) {
+                    Image(
+                        painter = painterResource(id = imageID),
+                        contentDescription = imageID.toString(),
+                        modifier = Modifier.fillMaxWidth(),
+                        contentScale = ContentScale.FillWidth,
+                    )
+                }
+                if (content.isNotBlank()) {
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(text = content)
+                }
             }
-            Spacer(modifier = Modifier.weight(1f))
             if (isLastPage) {
                 Button(
                     onClick = onContentRead,
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = DayCompleted,
                         contentColor = MaterialTheme.colors.onPrimary
-                    )
+                    ),
+                    modifier = Modifier.padding(top = 8.dp)
                 ) {
                     Text("Gelesen")
                 }
@@ -149,7 +165,8 @@ private fun DailyContent(
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = MaterialTheme.colors.secondary,
                         contentColor = MaterialTheme.colors.onSecondary
-                    )
+                    ),
+                    modifier = Modifier.padding(top = 8.dp)
                 ) {
                     Text("Weiter")
                 }

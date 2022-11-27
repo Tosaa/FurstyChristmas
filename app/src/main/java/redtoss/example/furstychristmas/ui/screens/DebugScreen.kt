@@ -19,13 +19,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.asFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.koin.androidx.compose.get
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
+import redtoss.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
+import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.theme.DayLocked
 import redtoss.example.furstychristmas.util.DateUtil
 import redtoss.example.furstychristmas.util.DateUtil.season
+import timber.log.Timber
 import java.time.LocalDate
+import java.time.Month
 import java.time.format.DateTimeFormatter
 
 @Composable
@@ -33,6 +38,8 @@ fun DebugScreen(
     context: Context,
 ) {
     val dayCompletionStatusUseCase: DayCompletionStatusUseCase = get()
+    val infoUseCase: LoadInfoUseCase = get()
+    val workoutUseCase: LoadWorkoutUseCase = get()
     val preferences: SharedPreferences = get()
     val debugScope = rememberCoroutineScope()
     val days = dayCompletionStatusUseCase.getDaysToCompleteForSeason(DateUtil.today().season()).asFlow().collectAsState(initial = emptyList())
@@ -57,6 +64,26 @@ fun DebugScreen(
                 Text("Change Debug Date")
             }
             Text(text = debugDate.value.toString())
+        }
+        Button(
+            onClick = {
+                val yearOfSeason = DateUtil.today().season() - 1
+                (1..23).forEach {
+                    val date = LocalDate.of(yearOfSeason, Month.DECEMBER, it)
+                    debugScope.launch {
+                        runBlocking {
+                            infoUseCase.getInfoAtDay(date)?.let { info -> Timber.i("${info.date} : INFO: ${info.title}") }
+                            workoutUseCase.getWorkoutAtDay(date)?.let { workout -> Timber.i("${workout.date} : Workout : ${workout.motto}") }
+                        }
+                    }
+                }
+
+            },
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = DayCompleted
+            )
+        ) {
+            Text("Log all days")
         }
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
