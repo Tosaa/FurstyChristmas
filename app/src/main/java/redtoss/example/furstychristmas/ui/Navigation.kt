@@ -74,7 +74,7 @@ fun MyAppNavHost(
                 OverviewScreen(
                     onNavigateToCard = { date ->
                         overviewScope.launch {
-                            contentTypeUseCase.getTypeForDate(date)?.let {
+                            contentTypeUseCase.getTypeForDate(date).let {
                                 return@launch when {
                                     it == ContentTypeUseCase.Type.INFO -> {
                                         Timber.d("Navigation::onNavigateToCard: Content on Day: $date is 'Info'")

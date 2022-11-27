@@ -3,11 +3,13 @@ package redtoss.example.furstychristmas.domain.day.usecase
 import redtoss.example.furstychristmas.domain.info.repository.InfoRepository
 import redtoss.example.furstychristmas.domain.workout.repository.WorkoutRepository
 import redtoss.example.furstychristmas.util.DateUtil.sameDayAs
+import timber.log.Timber
 import java.time.LocalDate
 
 class ContentTypeUseCase(private val workoutRepository: WorkoutRepository, private val infoRepository: InfoRepository) {
 
-    suspend fun getTypeForDate(date: LocalDate): Type? {
+    suspend fun getTypeForDate(date: LocalDate): Type {
+        Timber.d("getTypeForDate(): date = $date")
         return when {
             workoutRepository.getContent().find { it.date.sameDayAs(date) } != null ->
                 Type.WORKOUT
@@ -16,11 +18,11 @@ class ContentTypeUseCase(private val workoutRepository: WorkoutRepository, priva
                 Type.INFO
 
             else ->
-                null
+                Type.NONE
         }
     }
 
     enum class Type {
-        WORKOUT, INFO
+        WORKOUT, INFO, NONE
     }
 }

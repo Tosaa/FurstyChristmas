@@ -3,8 +3,6 @@ package redtoss.example.furstychristmas
 /*
 Important:
 Add Workouts and Infos for 2022 Calendar version
-Add Image resolving
-Add Eula again
 Create FurstyTheme and apply it on each screen
 
 Less Important:
@@ -19,13 +17,4 @@ Cool maybe thing:
 Use Player Trikos as Calendar doors
 Add Animation when Calenar door is opened
 Workouts for not Christmas season
- */
-
-/*
-* CLEANUP JSON READER STUFF
-*
-* */
-
-/**
-
  */
