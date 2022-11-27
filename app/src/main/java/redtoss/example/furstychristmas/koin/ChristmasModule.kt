@@ -7,6 +7,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import redtoss.example.furstychristmas.domain.day.repository.DayCompletionRepository
 import redtoss.example.furstychristmas.domain.day.usecase.AddDayCompletionUseCase
+import redtoss.example.furstychristmas.domain.day.usecase.ContentTypeUseCase
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import redtoss.example.furstychristmas.domain.info.repository.InfoRepository
 import redtoss.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
@@ -19,10 +20,7 @@ import redtoss.example.furstychristmas.domain.workout.util.Exercise2020JsonParse
 import redtoss.example.furstychristmas.domain.workout.util.ExerciseJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutJsonParser
 import redtoss.example.furstychristmas.persistence.DayDatabase
-import redtoss.example.furstychristmas.screen.day.info.InfoViewModel
-import redtoss.example.furstychristmas.screen.day.workout.WorkoutViewModel
-import redtoss.example.furstychristmas.screen.overview.CardViewModel
-import java.time.LocalDate
+import redtoss.example.furstychristmas.ui.viewmodel.*
 
 val dbModule = module {
     single {
@@ -56,13 +54,13 @@ val myModule = module {
     }
 
     single { Exercise2020JsonParser(androidApplication().assets) }
-    single { ExerciseJsonParser(androidApplication().assets) }
-    single { WorkoutJsonParser(androidApplication().assets) }
-    single { InfoJsonParser(androidApplication().assets, resources = androidApplication().resources) }
+    single { ExerciseJsonParser() }
+    single { WorkoutJsonParser() }
+    single { InfoJsonParser(androidApplication().assets) }
 
-    single { ExerciseRepository(get()) }
-    single { WorkoutRepository(get(), get(), get()) }
-    single { InfoRepository(get()) }
+    single { ExerciseRepository(get(), androidApplication().assets) }
+    single { WorkoutRepository(get(), get(), get(), androidApplication().assets) }
+    single { InfoRepository(get(), androidApplication().assets) }
     single { DayCompletionRepository(get()) }
 
     single { LoadExerciseUseCase(get()) }
@@ -70,18 +68,12 @@ val myModule = module {
     single { LoadInfoUseCase(get()) }
     single { DayCompletionStatusUseCase(get()) }
     single { AddDayCompletionUseCase(get()) }
+    single { ContentTypeUseCase(get(), get()) }
 
-
-    viewModel { (date: LocalDate) ->
-        WorkoutViewModel(
-            date, get(), get()
-        )
-    }
-    viewModel { (date: LocalDate) ->
-        InfoViewModel(
-            date, get(), get()
-        )
-    }
-
-    viewModel { CardViewModel(get()) }
+    viewModel { OverviewViewModel(get()) }
+    viewModel { InfoViewModel(get(), get()) }
+    viewModel { WorkoutViewModel(get(), get()) }
+    viewModel { ExerciseViewModel(get()) }
+    viewModel { ChristmasViewModel(get(), get()) }
+    viewModel { ExerciseOverviewViewModel(get()) }
 }

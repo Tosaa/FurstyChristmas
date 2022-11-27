@@ -2,18 +2,12 @@ package redtoss.example.furstychristmas.util
 
 import androidx.navigation.NavController
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import redtoss.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
 import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
-import redtoss.example.furstychristmas.screen.overview.CardsOverviewFragmentDirections
-import java.time.LocalDate
-import java.time.Month
-import java.time.format.DateTimeFormatter
 
 class NavigationHelper(private val navController: NavController, private val loadInfoUseCase: LoadInfoUseCase, private val loadWorkoutUseCase: LoadWorkoutUseCase, private val coroutineScope: CoroutineScope) {
 
+    /*
     fun navigateToDay(date: LocalDate) {
         coroutineScope.launch {
             withContext(Dispatchers.IO) {
@@ -26,4 +20,5 @@ class NavigationHelper(private val navController: NavController, private val loa
             }
         }
     }
+     */
 }

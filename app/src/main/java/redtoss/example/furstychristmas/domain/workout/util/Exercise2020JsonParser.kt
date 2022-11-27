@@ -1,18 +1,54 @@
 package redtoss.example.furstychristmas.domain.workout.util
 
 import android.content.res.AssetManager
+import android.util.Log
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import redtoss.example.furstychristmas.domain.workout.model.Drill
 import redtoss.example.furstychristmas.domain.workout.model.WorkoutContent
 import redtoss.example.furstychristmas.model.Workout
-import redtoss.example.furstychristmas.util.Util
+import redtoss.example.furstychristmas.util.DrillAdapter
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.time.LocalDate
 import java.time.Month
 import java.util.*
 
 class Exercise2020JsonParser(private val assetManager: AssetManager) {
-    private val workouts = Util.getDrillPresets(assetManager)
+
+    private val moshi = Moshi.Builder()
+        .add(DrillAdapter())
+        .add(KotlinJsonAdapterFactory())
+        .build()
+
+    private val type = Types.newParameterizedType(
+        Map::class.java,
+        String::class.java,
+        Types.newParameterizedType(List::class.java, Drill::class.java)
+    )
+
+    private val drillAdapter = moshi.adapter<Map<String, List<Drill>>>(type)
+
+    private fun getDrillPresets(assetManager: AssetManager): Map<String, List<Drill>> {
+        var drillPresets = emptyMap<String, List<Drill>>()
+        try {
+            val json = BufferedReader(
+                InputStreamReader(
+                    assetManager.open("excersises_2020.json"),
+                    "UTF-8"
+                )
+            ).readText()
+            drillPresets = drillAdapter.failOnUnknown().fromJson(json) ?: emptyMap()
+        } catch (exception: Exception) {
+            Log.w("Util", "can't read exercises from json: $exception")
+        }
+        return drillPresets
+    }
+
+    private val workouts = getDrillPresets(assetManager)
 
     suspend fun getContentOf(year: String): List<WorkoutContent> = withContext(Dispatchers.IO) {
         if (year == "2020") {
@@ -91,7 +127,7 @@ class Exercise2020JsonParser(private val assetManager: AssetManager) {
             time = 10
         }
         drills.addAll(workouts.getOrDefault(motto, emptyList()))
-        val workout = Workout(day, drills, sets, motto.split(" ").first().toUpperCase(), time)
+        val workout = Workout(day, drills, sets, motto.split(" ").first().uppercase(Locale.getDefault()), time)
         return workout
     }
 

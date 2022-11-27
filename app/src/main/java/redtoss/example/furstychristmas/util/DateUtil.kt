@@ -3,6 +3,9 @@ package redtoss.example.furstychristmas.util
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.LiveData
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import redtoss.example.furstychristmas.BuildConfig
 import timber.log.Timber
 import java.time.Duration
@@ -16,7 +19,15 @@ object DateUtil {
     private var dev_day: LocalDate? = null
 
     fun setDevDay(date: LocalDate) {
+        Timber.d("Set DevDate to $date")
         dev_day = date
+        CoroutineScope(Dispatchers.Main).launch {
+            (todayAsLiveData as TodayLiveData).updateDate(date)
+        }
+    }
+
+    fun LocalDate.sameDayAs(other: LocalDate): Boolean {
+        return other.year == this.year && other.dayOfYear == this.dayOfYear
     }
 
     fun dayAsIsoDate(localDate: LocalDate): String {
@@ -67,6 +78,10 @@ object DateUtil {
             handler.post { postAndRefreshTimer() }
         }
 
+        fun updateDate(date: LocalDate) {
+            value = date
+        }
+
         private fun postAndRefreshTimer() {
             val now = today()
             if (value != now) {
@@ -79,6 +94,14 @@ object DateUtil {
         override fun onInactive() {
             super.onInactive()
             handler.removeCallbacksAndMessages(null)
+        }
+    }
+
+    fun LocalDate.season(): Int {
+        return if (this.month in listOf(Month.OCTOBER, Month.NOVEMBER, Month.DECEMBER)) {
+            this.year + 1
+        } else {
+            this.year
         }
     }
 }

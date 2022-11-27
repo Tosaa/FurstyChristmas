@@ -9,9 +9,9 @@ import java.time.LocalDate
 
 class DayCompletionStatusUseCase(private val dayCompletionRepository: DayCompletionRepository) {
 
-    val isDatabaseSetup = dayCompletionRepository.isDatabaseSetupForThisYear
+    fun isDataBaseSetupForSeason(season: Int) = dayCompletionRepository.isDataBaseSetup(season - 1)
 
-    val getDaysToComplete = dayCompletionRepository.allDaysToComplete
+    fun getDaysToCompleteForSeason(season: Int) = dayCompletionRepository.getDaysToComplete(season - 1)
 
     suspend fun isDayDone(date: LocalDate): Boolean = withContext(Dispatchers.IO) {
         val isDone = dayCompletionRepository.getDay(date)?.isDone == true
@@ -20,7 +20,13 @@ class DayCompletionStatusUseCase(private val dayCompletionRepository: DayComplet
     }
 
     suspend fun markDayAsDone(date: LocalDate) = withContext(Dispatchers.IO) {
+        Timber.d("DayCompletionStatusUseCase markDayAsDone(): date = $date")
         dayCompletionRepository.updateDay(Day(date, true))
+    }
+
+    suspend fun markDayAsNotDone(date: LocalDate) = withContext(Dispatchers.IO) {
+        Timber.d("DayCompletionStatusUseCase markDayAsNotDone(): date = $date")
+        dayCompletionRepository.updateDay(Day(date, false))
     }
 
 }

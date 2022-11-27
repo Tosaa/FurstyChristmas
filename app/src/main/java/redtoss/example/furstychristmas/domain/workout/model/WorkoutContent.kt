@@ -1,5 +1,6 @@
 package redtoss.example.furstychristmas.domain.workout.model
 
+import redtoss.example.furstychristmas.domain.info.util.AppContent
 import java.time.LocalDate
 
 data class WorkoutContent(
@@ -9,7 +10,7 @@ data class WorkoutContent(
     val bodyparts: List<String>,
     val motto: String = "",
     val durationInMinutes: Int
-) {
+) : AppContent {
     override fun toString(): String {
         return "$date,${drills.map { it.exercise.exerciseId }},$rounds"
     }
