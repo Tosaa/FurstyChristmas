@@ -5,19 +5,24 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
     primary = FurstyBlack,
     onPrimary = FurstyWhite,
     secondary = FurstySecondaryDark,
     onSecondary = FurstyWhite,
+    //background = FurstyBlack,
+    //onBackground = FurstyWhite,
 )
 
 private val LightColorPalette = lightColors(
-    primary = FurstyWhite,
+    primary = Color.White,
     onPrimary = FurstyBlack,
     secondary = FurstySecondary,
-    onSecondary = FurstyBlack
+    onSecondary = FurstyBlack,
+    //background = FurstyWhite,
+    //onBackground = FurstyBlack,
     /*
 transparent">#00ffffff</color>
 <color name="colorText">#dbd8e3</color>

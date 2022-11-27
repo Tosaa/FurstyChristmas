@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
@@ -37,12 +38,14 @@ class EulaActivity : ComponentActivity() {
         Timber.d("onCreate()")
         setContent {
             FurstyChrismasTheme {
-                val coroutineScope = rememberCoroutineScope()
-                val snackbarHostState = remember { SnackbarHostState() }
-                Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-                    Eula(modifier = Modifier.padding(8.dp))
-                    SnackbarHost(hostState = snackbarHostState, Modifier.padding(5.dp))
-                    Buttons(coroutineScope, snackbarHostState)
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
+                    val coroutineScope = rememberCoroutineScope()
+                    val snackbarHostState = remember { SnackbarHostState() }
+                    Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+                        Eula(modifier = Modifier.padding(8.dp))
+                        SnackbarHost(hostState = snackbarHostState, Modifier.padding(5.dp))
+                        Buttons(coroutineScope, snackbarHostState)
+                    }
                 }
             }
         }
@@ -107,9 +110,16 @@ class EulaActivity : ComponentActivity() {
         val inputStream: InputStream = resources.openRawResource(eula)
         val bytes = ByteArray(inputStream.available())
         inputStream.read(bytes)
+        val backgroundColor = MaterialTheme.colors.background.toArgb()
+        val textColor = MaterialTheme.colors.onBackground.toArgb()
         AndroidView(
             modifier = modifier,
-            factory = { context -> TextView(context) },
+            factory = { context ->
+                TextView(context).also {
+                    it.setBackgroundColor(backgroundColor)
+                    it.setTextColor(textColor)
+                }
+            },
             update = { it.text = HtmlCompat.fromHtml(String(bytes), HtmlCompat.FROM_HTML_MODE_LEGACY) }
         )
     }
