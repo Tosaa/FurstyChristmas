@@ -1,8 +1,6 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id("kotlin-android-extensions")
-    //kotlin("android.extensions")
 
     id("kotlin-kapt")
     // id("koin")
@@ -26,7 +24,6 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        dataBinding = true
         compose = true
     }
 
