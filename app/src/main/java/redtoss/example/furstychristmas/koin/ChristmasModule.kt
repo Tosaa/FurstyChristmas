@@ -3,7 +3,7 @@ package redtoss.example.furstychristmas.koin
 import android.content.Context
 import androidx.room.Room
 import org.koin.android.ext.koin.androidApplication
-import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 import redtoss.example.furstychristmas.domain.day.repository.DayCompletionRepository
 import redtoss.example.furstychristmas.domain.day.usecase.AddDayCompletionUseCase
@@ -20,7 +20,12 @@ import redtoss.example.furstychristmas.domain.workout.util.Exercise2020JsonParse
 import redtoss.example.furstychristmas.domain.workout.util.ExerciseJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutJsonParser
 import redtoss.example.furstychristmas.persistence.DayDatabase
-import redtoss.example.furstychristmas.ui.viewmodel.*
+import redtoss.example.furstychristmas.ui.viewmodel.ChristmasViewModel
+import redtoss.example.furstychristmas.ui.viewmodel.ExerciseOverviewViewModel
+import redtoss.example.furstychristmas.ui.viewmodel.ExerciseViewModel
+import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
+import redtoss.example.furstychristmas.ui.viewmodel.OverviewViewModel
+import redtoss.example.furstychristmas.ui.viewmodel.WorkoutViewModel
 
 val dbModule = module {
     single {

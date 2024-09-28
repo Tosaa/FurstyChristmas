@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.koin.androidx.compose.get
+import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.domain.day.model.Day
 import redtoss.example.furstychristmas.domain.day.model.isAvailableOn
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
@@ -30,8 +30,8 @@ import java.time.LocalDate
 
 @Composable
 fun OverviewScreen(
-    overviewViewModel: OverviewViewModel = get(),
-    calendarViewModel: InfoViewModel = get(),
+    overviewViewModel: OverviewViewModel = koinViewModel(),
+    calendarViewModel: InfoViewModel = koinViewModel(),
     onNavigateToCard: (LocalDate) -> Unit,
 ) {
     val days = overviewViewModel.allCalendarCards.collectAsState(initial = emptyList())

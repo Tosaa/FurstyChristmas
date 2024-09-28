@@ -20,7 +20,6 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.koin.androidx.compose.get
 import redtoss.example.furstychristmas.domain.workout.model.Drill
 import redtoss.example.furstychristmas.domain.workout.model.Exercise
 import redtoss.example.furstychristmas.model.Repetition
@@ -32,10 +31,11 @@ import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.theme.FurstyChrismasTheme
 import redtoss.example.furstychristmas.ui.viewmodel.WorkoutViewModel
 import java.time.LocalDate
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun CalendarWorkoutDay(
-    viewmodel: WorkoutViewModel = get(),
+    viewmodel: WorkoutViewModel = koinViewModel(),
     day: LocalDate,
     onClose: () -> Unit,
     onExerciseClicked: (String) -> Unit,

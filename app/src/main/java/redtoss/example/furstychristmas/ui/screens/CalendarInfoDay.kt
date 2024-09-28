@@ -23,15 +23,15 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
-import org.koin.androidx.compose.get
 import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
 import java.time.LocalDate
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun CalendarInfoDay(
-    viewmodel: InfoViewModel = get(),
+    viewmodel: InfoViewModel = koinViewModel(),
     day: LocalDate,
     onClose: () -> Unit,
 ) {

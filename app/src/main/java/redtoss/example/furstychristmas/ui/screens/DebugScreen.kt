@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.asFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import org.koin.androidx.compose.get
+import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import redtoss.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
 import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
@@ -32,15 +32,16 @@ import timber.log.Timber
 import java.time.LocalDate
 import java.time.Month
 import java.time.format.DateTimeFormatter
+import org.koin.compose.koinInject
 
 @Composable
 fun DebugScreen(
     context: Context,
 ) {
-    val dayCompletionStatusUseCase: DayCompletionStatusUseCase = get()
-    val infoUseCase: LoadInfoUseCase = get()
-    val workoutUseCase: LoadWorkoutUseCase = get()
-    val preferences: SharedPreferences = get()
+    val dayCompletionStatusUseCase: DayCompletionStatusUseCase = koinInject()
+    val infoUseCase: LoadInfoUseCase = koinInject()
+    val workoutUseCase: LoadWorkoutUseCase = koinInject()
+    val preferences: SharedPreferences = koinInject()
     val debugScope = rememberCoroutineScope()
     val activeSeason = remember { DateUtil.today().season() }
     val days = remember { dayCompletionStatusUseCase.getDaysToCompleteForSeason(activeSeason).asFlow() }.collectAsState(initial = emptyList())

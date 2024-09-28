@@ -9,6 +9,8 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Info
@@ -28,7 +30,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import kotlinx.coroutines.launch
-import org.koin.androidx.compose.get
 import redtoss.example.furstychristmas.BuildConfig
 import redtoss.example.furstychristmas.R
 import redtoss.example.furstychristmas.domain.day.usecase.ContentTypeUseCase
@@ -38,13 +39,14 @@ import redtoss.example.furstychristmas.util.DateUtil
 import timber.log.Timber
 import java.time.LocalDate
 import java.time.Month
+import org.koin.compose.koinInject
 
 @Composable
 fun MyAppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
     startDestination: String = "overview",
-    contentTypeUseCase: ContentTypeUseCase = get(),
+    contentTypeUseCase: ContentTypeUseCase = koinInject(),
 ) {
     val context = LocalContext.current
     Column {
@@ -210,7 +212,7 @@ fun MyAppBar(
         },
         navigationIcon = {
             IconButton(onClick = onBackIconClicked, Modifier.padding(start = 5.dp)) {
-                Icon(Icons.Filled.ArrowBack, "back button")
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, "back button")
             }
         },
         actions = {
@@ -218,7 +220,7 @@ fun MyAppBar(
                 Icon(Icons.Filled.Info, "infoButton")
             }
             IconButton(onClick = { onSportClicked() }) {
-                Icon(Icons.Filled.List, "exercisesButton")
+                Icon(Icons.AutoMirrored.Filled.List, "exercisesButton")
             }
             if (BuildConfig.DEBUG) {
                 IconButton(onClick = { onEditClicked() }) {

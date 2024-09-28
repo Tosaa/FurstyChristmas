@@ -17,12 +17,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.koin.androidx.compose.get
+import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.ui.viewmodel.ExerciseViewModel
 
 @Composable
 fun ExercisePreview(
-    viewmodel: ExerciseViewModel = get(),
+    viewmodel: ExerciseViewModel = koinViewModel(),
     selectedExercise: String,
     onClose: () -> Unit
 ) {

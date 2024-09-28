@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.koin.androidx.compose.get
+import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.domain.workout.model.Exercise
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.ExerciseOverviewViewModel
@@ -19,7 +19,7 @@ import redtoss.example.furstychristmas.ui.viewmodel.ExerciseOverviewViewModel
 @Composable
 fun ExerciseOverviewScreen(
     onExerciseClicked: (Exercise) -> Unit,
-    overviewViewModel: ExerciseOverviewViewModel = get()
+    overviewViewModel: ExerciseOverviewViewModel = koinViewModel()
 ) {
     val exercises = overviewViewModel.exercises.collectAsState(initial = emptyList())
     LazyColumn() {

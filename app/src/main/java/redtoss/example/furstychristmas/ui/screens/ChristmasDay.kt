@@ -14,14 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.koin.androidx.compose.get
+import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.domain.workout.model.Exercise
 import redtoss.example.furstychristmas.model.Execution
 import redtoss.example.furstychristmas.ui.viewmodel.ChristmasViewModel
 
 @Composable
 fun ChristmasDay(
-    viewmodel: ChristmasViewModel = get(),
+    viewmodel: ChristmasViewModel = koinViewModel(),
     year: Int,
     onClose: () -> Unit,
 ) {
