@@ -42,7 +42,8 @@ fun DebugScreen(
     val workoutUseCase: LoadWorkoutUseCase = get()
     val preferences: SharedPreferences = get()
     val debugScope = rememberCoroutineScope()
-    val days = dayCompletionStatusUseCase.getDaysToCompleteForSeason(DateUtil.today().season()).asFlow().collectAsState(initial = emptyList())
+    val activeSeason = remember { DateUtil.today().season() }
+    val days = remember { dayCompletionStatusUseCase.getDaysToCompleteForSeason(activeSeason).asFlow() }.collectAsState(initial = emptyList())
 
     Column(modifier = Modifier.padding(16.dp)) {
         val debugDate = remember { mutableStateOf(DateUtil.today()) }
@@ -54,6 +55,7 @@ fun DebugScreen(
             }, debugDate.value.year, debugDate.value.monthValue - 1, debugDate.value.dayOfMonth)
         }
         Text("Debug Screen", fontSize = 26.sp)
+        Text("Season: $activeSeason", Modifier.fillMaxWidth())
         Row(Modifier.fillMaxWidth(), verticalAlignment = CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
             Button(
                 onClick = { datePickerDialog.show() },
@@ -67,9 +69,8 @@ fun DebugScreen(
         }
         Button(
             onClick = {
-                val yearOfSeason = DateUtil.today().season() - 1
                 (1..23).forEach {
-                    val date = LocalDate.of(yearOfSeason, Month.DECEMBER, it)
+                    val date = LocalDate.of(activeSeason, Month.DECEMBER, it)
                     debugScope.launch {
                         runBlocking {
                             infoUseCase.getInfoAtDay(date)?.let { info -> Timber.i("${info.date} : INFO: ${info.title}") }
@@ -86,7 +87,7 @@ fun DebugScreen(
             Text("Log all days")
         }
         LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
+            columns = GridCells.Fixed(4),
             modifier = Modifier
                 .scrollable(rememberScrollState(), Orientation.Vertical)
                 .fillMaxWidth()
@@ -94,8 +95,7 @@ fun DebugScreen(
             items(items = days.value) {
                 val isDayCompleted = remember { mutableStateOf(it.isDone) }
                 Row(verticalAlignment = CenterVertically) {
-                    Text(it.day.toString())
-                    Switch(
+                    Checkbox(
                         checked = isDayCompleted.value,
                         onCheckedChange = { dayCompleted ->
                             debugScope.launch {
@@ -107,11 +107,12 @@ fun DebugScreen(
                                 }
                             }
                         },
-                        colors = SwitchDefaults.colors(
-                            checkedThumbColor = DayCompleted,
-                            uncheckedThumbColor = DayLocked,
+                        colors = CheckboxDefaults.colors(
+                            checkedColor = DayCompleted,
+                            uncheckedColor = DayLocked,
                         )
                     )
+                    Text(it.day.dayOfMonth.toString())
                 }
             }
         }
