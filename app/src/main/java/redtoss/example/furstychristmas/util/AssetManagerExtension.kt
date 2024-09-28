@@ -1,11 +1,11 @@
 package redtoss.example.furstychristmas.util
 
 import android.content.res.AssetManager
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 internal suspend fun AssetManager.readJson(filename: String): String {
     Timber.d("readJson(): $filename")

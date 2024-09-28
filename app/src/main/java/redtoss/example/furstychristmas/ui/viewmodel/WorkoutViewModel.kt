@@ -2,12 +2,12 @@ package redtoss.example.furstychristmas.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import java.time.LocalDate
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
-import java.time.LocalDate
 
 class WorkoutViewModel(val workoutUseCase: LoadWorkoutUseCase, val dayCompletionUseCase: DayCompletionStatusUseCase) : ViewModel() {
 

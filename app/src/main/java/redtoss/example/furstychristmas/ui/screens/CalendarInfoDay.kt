@@ -3,10 +3,21 @@
 package redtoss.example.furstychristmas.ui.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
@@ -22,12 +33,12 @@ import androidx.compose.ui.unit.sp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
+import java.time.LocalDate
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
-import java.time.LocalDate
-import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun CalendarInfoDay(

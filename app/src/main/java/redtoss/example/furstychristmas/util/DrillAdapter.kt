@@ -3,7 +3,12 @@ package redtoss.example.furstychristmas.util
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
 import redtoss.example.furstychristmas.domain.workout.model.Drill
-import redtoss.example.furstychristmas.model.*
+import redtoss.example.furstychristmas.model.Execution
+import redtoss.example.furstychristmas.model.ExerciseOLD
+import redtoss.example.furstychristmas.model.Repetition
+import redtoss.example.furstychristmas.model.RepetitionPerSide
+import redtoss.example.furstychristmas.model.Seconds
+import redtoss.example.furstychristmas.model.SecondsPerSide
 
 class DrillAdapter {
 

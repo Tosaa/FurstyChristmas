@@ -4,14 +4,14 @@ import android.content.res.AssetManager
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import redtoss.example.furstychristmas.domain.info.model.InfoContent
 import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
 import redtoss.example.furstychristmas.domain.jsonparser.JsonParserInterface
 import timber.log.Timber
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 class InfoJsonParser(private val assetManager: AssetManager) : JsonParserInterface {
     private data class Page(val subtitle: String, val imageid: String, val htmltext: String)

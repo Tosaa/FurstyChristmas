@@ -1,6 +1,7 @@
 package redtoss.example.furstychristmas.domain.workout.repository
 
 import android.content.res.AssetManager
+import java.time.LocalDate
 import redtoss.example.furstychristmas.domain.workout.model.Exercise
 import redtoss.example.furstychristmas.domain.workout.model.WorkoutContent
 import redtoss.example.furstychristmas.domain.workout.util.Exercise2020JsonParser
@@ -8,7 +9,6 @@ import redtoss.example.furstychristmas.domain.workout.util.ExerciseJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutPlain
 import redtoss.example.furstychristmas.util.readJson
-import java.time.LocalDate
 
 class WorkoutRepository(
     private val parser2020: Exercise2020JsonParser,

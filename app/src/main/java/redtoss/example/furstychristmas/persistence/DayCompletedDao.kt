@@ -1,9 +1,13 @@
 package redtoss.example.furstychristmas.persistence
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
-import redtoss.example.furstychristmas.domain.day.model.Day
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
 import java.time.LocalDate
+import redtoss.example.furstychristmas.domain.day.model.Day
 
 @Dao
 interface DayCompletedDao {

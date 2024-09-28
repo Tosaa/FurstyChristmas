@@ -5,17 +5,18 @@ import android.util.Log
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.time.LocalDate
+import java.time.Month
+import java.util.Calendar
+import java.util.Locale
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import redtoss.example.furstychristmas.domain.workout.model.Drill
 import redtoss.example.furstychristmas.domain.workout.model.WorkoutContent
 import redtoss.example.furstychristmas.model.Workout
 import redtoss.example.furstychristmas.util.DrillAdapter
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.time.LocalDate
-import java.time.Month
-import java.util.*
 
 class Exercise2020JsonParser(private val assetManager: AssetManager) {
 

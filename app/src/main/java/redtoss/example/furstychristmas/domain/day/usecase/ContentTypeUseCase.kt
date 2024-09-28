@@ -1,10 +1,10 @@
 package redtoss.example.furstychristmas.domain.day.usecase
 
+import java.time.LocalDate
 import redtoss.example.furstychristmas.domain.info.repository.InfoRepository
 import redtoss.example.furstychristmas.domain.workout.repository.WorkoutRepository
 import redtoss.example.furstychristmas.util.DateUtil.sameDayAs
 import timber.log.Timber
-import java.time.LocalDate
 
 class ContentTypeUseCase(private val workoutRepository: WorkoutRepository, private val infoRepository: InfoRepository) {
 

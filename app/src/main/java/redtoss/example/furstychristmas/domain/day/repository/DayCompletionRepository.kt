@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.distinctUntilChanged
 import androidx.lifecycle.liveData
+import java.time.LocalDate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import redtoss.example.furstychristmas.domain.day.model.Day
 import redtoss.example.furstychristmas.persistence.DayDatabase
 import timber.log.Timber
-import java.time.LocalDate
 
 class DayCompletionRepository(db: DayDatabase) {
 

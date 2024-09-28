@@ -1,11 +1,21 @@
 package redtoss.example.furstychristmas.ui.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.runtime.Composable
@@ -17,6 +27,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import java.time.LocalDate
 import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.domain.day.model.Day
 import redtoss.example.furstychristmas.domain.day.model.isAvailableOn
@@ -26,7 +37,6 @@ import redtoss.example.furstychristmas.ui.theme.DayNotCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
 import redtoss.example.furstychristmas.ui.viewmodel.OverviewViewModel
 import redtoss.example.furstychristmas.util.DateUtil
-import java.time.LocalDate
 
 @Composable
 fun OverviewScreen(

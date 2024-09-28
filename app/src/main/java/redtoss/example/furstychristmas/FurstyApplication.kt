@@ -6,6 +6,9 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import java.time.LocalDate
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -23,9 +26,6 @@ import redtoss.example.furstychristmas.receiver.DailyNotificationReceiver
 import redtoss.example.furstychristmas.util.DateUtil
 import redtoss.example.furstychristmas.util.DateUtil.season
 import timber.log.Timber
-import java.time.LocalDate
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
 
 const val PREFERENCES_EULA_ACCEPTED = "eulaAccepted"
 const val PREFERENCES_APP_VERSION = "version_code"

@@ -1,12 +1,12 @@
 package redtoss.example.furstychristmas.domain.day.usecase
 
+import java.time.LocalDate
+import java.time.Month
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import redtoss.example.furstychristmas.domain.day.model.Day
 import redtoss.example.furstychristmas.domain.day.repository.DayCompletionRepository
 import timber.log.Timber
-import java.time.LocalDate
-import java.time.Month
 
 class AddDayCompletionUseCase(private val dayCompletionRepository: DayCompletionRepository) {
 

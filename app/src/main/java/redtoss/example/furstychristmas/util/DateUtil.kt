@@ -3,16 +3,16 @@ package redtoss.example.furstychristmas.util
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.LiveData
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import redtoss.example.furstychristmas.BuildConfig
-import timber.log.Timber
 import java.time.Duration
 import java.time.LocalDate
 import java.time.Month
 import java.time.Period
 import java.time.format.DateTimeFormatter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import redtoss.example.furstychristmas.BuildConfig
+import timber.log.Timber
 
 object DateUtil {
 

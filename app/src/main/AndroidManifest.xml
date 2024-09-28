@@ -18,12 +18,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".eula.EulaActivity"
-            android:exported="false"
-            android:label="eula" />
-
-        <receiver android:name=".receiver.DailyNotificationReceiver" />
     </application>
 
 </manifest>
