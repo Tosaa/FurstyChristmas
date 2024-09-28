@@ -13,7 +13,7 @@ import redtoss.example.furstychristmas.ui.screens.Screen
 fun MyAppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    startDestination: String = "overview",
+    startDestination: String = Screen.OVERVIEW.basicRoute,
 ) {
     NavHost(
         modifier = modifier,
