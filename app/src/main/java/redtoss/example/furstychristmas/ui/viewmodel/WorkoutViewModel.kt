@@ -12,7 +12,7 @@ import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
 class WorkoutViewModel(val workoutUseCase: LoadWorkoutUseCase, val dayCompletionUseCase: DayCompletionStatusUseCase) : ViewModel() {
 
     var date: LocalDate = LocalDate.now()
-    private val workout = flow {
+    val workout = flow {
         emit(workoutUseCase.getWorkoutAtDay(date))
     }
 

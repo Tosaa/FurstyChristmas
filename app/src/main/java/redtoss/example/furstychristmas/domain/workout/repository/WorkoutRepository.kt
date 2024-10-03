@@ -8,7 +8,9 @@ import redtoss.example.furstychristmas.domain.workout.util.Exercise2020JsonParse
 import redtoss.example.furstychristmas.domain.workout.util.ExerciseJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutJsonParser
 import redtoss.example.furstychristmas.domain.workout.util.WorkoutPlain
+import redtoss.example.furstychristmas.util.DateUtil
 import redtoss.example.furstychristmas.util.readJson
+import timber.log.Timber
 
 class WorkoutRepository(
     private val parser2020: Exercise2020JsonParser,
@@ -23,8 +25,15 @@ class WorkoutRepository(
             val fetchedWorkouts = mutableListOf<WorkoutPlain>()
             val exercises = mutableListOf<Exercise>()
             exercises.addAll(exerciseJsonParser.parseList(assetManager.readJson("exercise_description.json")))
-            listOf("2021", "2022").forEach { year ->
-                fetchedWorkouts.addAll(workoutJsonParser.parseList(assetManager.readJson("calendar${year}_workout.json")))
+            (2021..(DateUtil.today().year + 1)).forEach { year ->
+                val filename = "calendar${year}_workout.json"
+                val foundJson = try {
+                    assetManager.readJson(filename)
+                } catch (e: Exception) {
+                    Timber.d("getContent(): cannot find $filename")
+                    return@forEach
+                }
+                fetchedWorkouts.addAll(workoutJsonParser.parseList(foundJson))
             }
             workouts = createContent(fetchedWorkouts, exercises) + parser2020.getContentOf("2020")
         }

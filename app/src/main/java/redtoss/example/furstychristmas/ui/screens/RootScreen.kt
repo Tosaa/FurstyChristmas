@@ -50,7 +50,7 @@ fun RootScreen() {
 @Composable
 fun TopBar(navController: NavHostController) {
     MyAppBar(
-        onBackIconClicked = { navController.popBackStack(route = Screen.OVERVIEW.route(), inclusive = false) },
+        onBackIconClicked = { navController.popBackStack() },
         onEditClicked = {
             Timber.d("Navigation::onNavigateToDebug")
             if (BuildConfig.DEBUG) {
