@@ -14,5 +14,4 @@
 
 ### Cool maybe thing:
 - [] Use Player Trikos as Calendar doors
-- [] Add Animation when Calenar door is opened
 - [] Workouts for not Christmas season

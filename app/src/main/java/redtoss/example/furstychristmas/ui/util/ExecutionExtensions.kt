@@ -21,9 +21,7 @@ private fun String.asIconId(): Int {
         "ic_arm" -> R.drawable.ic_arm
         "ic_chest" -> R.drawable.ic_chest
         "ic_abs" -> R.drawable.ic_abs
-        "ball" -> R.drawable.ball
         "ic_back" -> R.drawable.ic_back
-        "ball" -> R.drawable.ball
         "ball" -> R.drawable.ball
         "ic_flex" -> R.drawable.ic_flex
         "ic_timer" -> R.drawable.ic_timer

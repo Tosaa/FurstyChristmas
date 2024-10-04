@@ -1,0 +1,42 @@
+[versions]
+compose = "2024.09.02"
+[libraries]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.7.0" }
+
+andoidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version = "1.9.2" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose.bom", version.ref = "compose" }
+androidx-material = { group = "androidx.compose.material", name = "material" }
+androidx-material-icons = { group = "androidx.compose.material", name = "material-icons-core" }
+androidx-animation = { group = "androidx.compose.animation", name = "animation" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version = "2.8.6" }
+androidx-navigation = { group = "androidx.navigation", name = "navigation-compose", version = "2.8.1" }
+androidx-ui-test-junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version = "1.6.2" }
+androidx-test-rules = { group = "androidx.test", name = "rules", version = "1.6.1" }
+androidx-test-core = { group = "androidx.test", name = "core", version = "1.6.1" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version = "2.8.6" } # LIFECYCLE_VIEWMODEL
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version = "2.8.6" } # LIFECYCLE_LIVEDATA
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.13.1" } # CORE_KTX
+junit = { group = "junit", name = "junit", version = "4.13" } # JUNIT
+androidx-ext-junit = { group = "androidx.test.ext", name = "junit", version = "1.1.3" } # JUNIT_EXT
+
+koin-bom = { group = "io.insert-koin", name = "koin-bom", version = "4.0.0" } # KOIN_CORE
+koin-core = { group = "io.insert-koin", name = "koin-core" } # KOIN_CORE
+koin-core-viewmodel = { group = "io.insert-koin", name = "koin-core-viewmodel" } # KOIN_CORE
+koin-test = { group = "io.insert-koin", name = "koin-test" } # KOIN_TEST
+koin-test-jvm = { group = "io.insert-koin", name = "koin-test-jvm" } # KOIN_TEST
+koin-test-junit4 = { group = "io.insert-koin", name = "koin-test-junit4" }
+koin-android = { group = "io.insert-koin", name = "koin-android" } # KOIN_ANDROID
+koin-android-compat = { group = "io.insert-koin", name = "koin-android-compat" } # KOIN_ANDROID_COMPAT
+koin-androidx-workmanager = { group = "io.insert-koin", name = "koin-androidx-workmanager" } # KOIN_WORKMANAGER
+koin-androidx-navigation = { group = "io.insert-koin", name = "koin-androidx-navigation" } # KOIN_NAVIGATION
+koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose" } # KOIN_COMPOSE
+koin-androidx-compose-navigation = { group = "io.insert-koin", name = "koin-androidx-compose-navigation" } # KOIN_COMPOSE_NAVIGATION
+google-material = { group = "com.google.android.material", name = "material", version = "1.12.0" } # GOOGLE_MATERIAL
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version = "2.6.1" } # ROOM_RUNTIME
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version = "2.6.1" } # ROOM_KTX
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version = "2.6.1" }
+timber = { group = "com.jakewharton.timber", name = "timber", version = "5.0.1" } # TIMBER

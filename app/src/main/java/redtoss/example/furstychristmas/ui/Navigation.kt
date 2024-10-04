@@ -32,7 +32,7 @@ fun MyAppNavHost(
         ).forEach {
             composable(
                 route = it.basicRoute,
-                arguments = it.arguments
+                arguments = it.arguments,
             ) { navBackStackEntry ->
                 it.screen(navBackStackEntry, navController)
             }

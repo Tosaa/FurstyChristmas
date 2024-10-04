@@ -1,4 +1,3 @@
-@file:OptIn(ExperimentalPagerApi::class, ExperimentalPagerApi::class)
 
 package redtoss.example.furstychristmas.ui.screens
 
@@ -10,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
@@ -31,9 +32,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.HorizontalPager
-import com.google.accompanist.pager.rememberPagerState
 import java.time.LocalDate
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
@@ -77,10 +75,9 @@ private fun Info(
 
 @Composable
 private fun ContentPager(pages: State<List<InfoPageContent>>, onDayCompleted: () -> Unit) {
-    val pagerState = rememberPagerState()
+    val pagerState = rememberPagerState(pageCount = {pages.value.size})
     val pagerScope = rememberCoroutineScope()
     HorizontalPager(
-        count = pages.value.size,
         verticalAlignment = Alignment.Top,
         modifier = Modifier
             .padding(8.dp)

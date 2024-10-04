@@ -10,8 +10,14 @@ plugins{
 }
 buildscript {
     repositories {
+        mavenCentral()
         google()
     }
+}
+
+repositories {
+    mavenCentral()
+    google()
 }
 
 tasks.register("clean") {

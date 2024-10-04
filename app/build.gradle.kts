@@ -1,5 +1,3 @@
-import org.gradle.api.artifacts.dsl.Dependencies
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -36,6 +34,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    composeOptions{
+        kotlinCompilerExtensionVersion = libs.versions.compose.get()
+    }
     packagingOptions {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -55,66 +56,68 @@ composeCompiler {
 
 dependencies {
     // COMPAT
-    implementation("androidx.appcompat", "appcompat", "1.7.0")
+    implementation(libs.androidx.appcompat)
 
     // COMPOSE
-    implementation("androidx.activity", "activity-compose", "1.9.2")
-    implementation(platform("androidx.compose:compose-bom:2024.09.02"))
-    implementation("androidx.compose.material", "material")
-    implementation("androidx.compose.material", "material-icons-core")
-    implementation("androidx.compose.animation", "animation")
-    implementation("androidx.compose.ui", "ui")
-    implementation("androidx.compose.ui", "ui-tooling-preview")
-    debugImplementation("androidx.compose.ui", "ui-test-manifest")
-    implementation("androidx.lifecycle", "lifecycle-viewmodel-compose", "2.8.6")
-    implementation("androidx.navigation", "navigation-compose", "2.8.1")
-    // inofficial, experimental ViewPager
-    implementation("com.google.accompanist:accompanist-pager:0.22.0-rc")
+    implementation(libs.andoidx.activity.compose)
+    api(platform("androidx.compose:compose-bom:2024.09.03"))
+    implementation(libs.androidx.material)
+    implementation(libs.androidx.material.icons)
+    implementation(libs.androidx.animation)
+    implementation(libs.androidx.ui )
+    implementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.lifecycle)
+    implementation(libs.androidx.navigation)
+
     // Test
-    testImplementation("androidx.compose.ui", "ui-test-junit4")
-    androidTestImplementation("androidx.test", "runner", "1.6.2")
-    androidTestImplementation("androidx.test", "rules", "1.6.1")
-    androidTestImplementation("androidx.test", "core", "1.6.1")
+    implementation(libs.androidx.ui.test.junit)
+    implementation(libs.androidx.test.runner)
+    implementation(libs.androidx.test.rules)
+    implementation(libs.androidx.test.core)
 
 
     // LIFECYCLE
-    implementation("androidx.lifecycle", "lifecycle-viewmodel-ktx", "2.8.6") // LIFECYCLE_VIEWMODEL
-    implementation("androidx.lifecycle", "lifecycle-livedata-ktx", "2.8.6") // LIFECYCLE_LIVEDATA
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.core.ktx)
 
-    implementation("androidx.core", "core-ktx", "1.13.1") // CORE_KTX
-    testImplementation("junit", "junit", "4.13") // JUNIT
-    androidTestImplementation("androidx.test.ext", "junit", "1.1.3") // JUNIT_EXT
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.ext.junit)
 
     //KOIN
-    implementation(project.dependencies.platform("io.insert-koin:koin-bom:4.0.0"))
-    implementation("io.insert-koin", "koin-core") // KOIN_CORE
-    implementation("io.insert-koin", "koin-core-viewmodel") // KOIN_CORE
-    testImplementation("io.insert-koin", "koin-test") // KOIN_TEST
-    testImplementation("io.insert-koin", "koin-test-jvm") // KOIN_TEST
-    testImplementation("io.insert-koin", "koin-test-junit4")
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.core.viewmodel)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.koin.test.jvm)
+    testImplementation(libs.koin.test.junit4)
+    implementation(libs.koin.android)
+    implementation(libs.koin.android.compat)
 
-    implementation("io.insert-koin", "koin-android") // KOIN_ANDROID
-    implementation("io.insert-koin", "koin-android-compat") // KOIN_ANDROID_COMPAT
-    implementation("io.insert-koin", "koin-androidx-workmanager") // KOIN_WORKMANAGER
-    implementation("io.insert-koin", "koin-androidx-navigation") // KOIN_NAVIGATION
-    implementation("io.insert-koin", "koin-androidx-compose") // KOIN_COMPOSE
-    implementation("io.insert-koin", "koin-androidx-compose-navigation") // KOIN_COMPOSE_NAVIGATION
+    implementation(libs.koin.androidx.workmanager)
+    implementation(libs.koin.androidx.navigation)
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.androidx.compose.navigation)
 
-    implementation("com.google.android.material", "material", "1.12.0") // GOOGLE_MATERIAL
+    // GOOGLE_MATERIAL
+    implementation(libs.google.material)
 
     // ROOM
-    implementation("androidx.room", "room-runtime", "2.6.1") // ROOM_RUNTIME
-    implementation("androidx.room", "room-ktx", "2.6.1") // ROOM_KTX
-    ksp("androidx.room", "room-compiler", "2.6.1")
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
     // TIMBER
-    implementation("com.jakewharton.timber", "timber", "5.0.1") // TIMBER
-
+    implementation(libs.timber)
     implementation(project(":calendarcontent"))
+}
+repositories {
+    mavenCentral()
+    google()
 }
 
 tasks.register<ImageMappingTask>("ImageMappingTask") {
-    this.folderWithDrawables.set(File("$rootDir/app/src/main/res/drawable-v24/"))
+    this.folderWithDrawables.set(File("$rootDir/app/src/main/res/drawable.v24/"))
 }
 
 tasks.register<CheckImageMappingTask>("CheckImageMappingTask") {
