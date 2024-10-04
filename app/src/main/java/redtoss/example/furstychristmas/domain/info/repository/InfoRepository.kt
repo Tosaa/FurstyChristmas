@@ -1,13 +1,13 @@
 package redtoss.example.furstychristmas.domain.info.repository
 
 import android.content.res.AssetManager
-import redtoss.example.furstychristmas.domain.info.model.InfoContent
-import redtoss.example.furstychristmas.domain.info.util.InfoJsonParser
+import redtoss.example.furstychristmas.calendar.content.info.InfoContent
+import redtoss.example.furstychristmas.calendar.content.parser.KInfoJsonParser
 import redtoss.example.furstychristmas.util.DateUtil
 import redtoss.example.furstychristmas.util.readJson
 import timber.log.Timber
 
-class InfoRepository(private val infoParser: InfoJsonParser, private val assetManager: AssetManager) {
+class InfoRepository(private val infoParser: KInfoJsonParser, private val assetManager: AssetManager) {
     private var infos = mutableListOf<InfoContent>()
 
     suspend fun getContent(): List<InfoContent> {

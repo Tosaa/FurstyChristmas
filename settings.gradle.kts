@@ -11,3 +11,4 @@ pluginManagement {
 
 include("app")
 rootProject.name = "FurstyChrismas"
+include(":calendarcontent")

@@ -1,6 +1,6 @@
-package redtoss.example.furstychristmas.domain.jsonparser
+package redtoss.example.furstychristmas.calendar.content.parser
 
-import redtoss.example.furstychristmas.domain.info.util.AppContent
+import redtoss.example.furstychristmas.calendar.content.AppContent
 
 interface JsonParserInterface {
 

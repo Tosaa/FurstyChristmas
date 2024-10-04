@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.sp
 import java.time.LocalDate
 import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.R
-import redtoss.example.furstychristmas.domain.workout.model.Drill
+import redtoss.example.furstychristmas.calendar.content.workout.Drill
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.WorkoutViewModel
 

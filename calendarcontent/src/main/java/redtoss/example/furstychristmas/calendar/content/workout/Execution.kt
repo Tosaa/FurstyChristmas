@@ -1,7 +1,4 @@
-package redtoss.example.furstychristmas.model
-
-import android.text.SpannableStringBuilder
-import androidx.core.text.bold
+package redtoss.example.furstychristmas.calendar.content.workout
 
 abstract class Execution(val amount: Int) {
 
@@ -10,10 +7,6 @@ abstract class Execution(val amount: Int) {
     abstract fun withOther(execution: Execution): Execution
 
     abstract fun unit(): String
-
-    fun formattedString(): SpannableStringBuilder = SpannableStringBuilder("")
-        .bold { append(amount.toString()) }
-        .append(" ${unit()}")
 }
 
 class Repetition(amount: Int) : Execution(amount) {

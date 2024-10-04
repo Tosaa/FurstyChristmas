@@ -38,8 +38,9 @@ import java.time.LocalDate
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 import redtoss.example.furstychristmas.R
-import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
+import redtoss.example.furstychristmas.calendar.content.info.InfoPageContent
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
+import redtoss.example.furstychristmas.ui.util.image
 import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
 
 @Composable

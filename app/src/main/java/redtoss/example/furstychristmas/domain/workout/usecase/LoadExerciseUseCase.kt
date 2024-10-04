@@ -1,6 +1,6 @@
 package redtoss.example.furstychristmas.domain.workout.usecase
 
-import redtoss.example.furstychristmas.domain.workout.model.Exercise
+import redtoss.example.furstychristmas.calendar.content.workout.Exercise
 import redtoss.example.furstychristmas.domain.workout.repository.ExerciseRepository
 import timber.log.Timber
 

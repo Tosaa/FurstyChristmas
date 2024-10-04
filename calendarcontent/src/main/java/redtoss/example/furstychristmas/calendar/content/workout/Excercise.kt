@@ -1,6 +1,6 @@
-package redtoss.example.furstychristmas.domain.workout.model
+package redtoss.example.furstychristmas.calendar.content.workout
 
-import redtoss.example.furstychristmas.domain.info.util.AppContent
+import redtoss.example.furstychristmas.calendar.content.AppContent
 
 data class Exercise(
     val exerciseId: String,

@@ -6,9 +6,9 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapLatest
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
-import redtoss.example.furstychristmas.domain.workout.model.Exercise
+import redtoss.example.furstychristmas.calendar.content.workout.Exercise
 import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
-import redtoss.example.furstychristmas.model.Execution
+import redtoss.example.furstychristmas.calendar.content.workout.Execution
 import redtoss.example.furstychristmas.util.DateUtil
 import redtoss.example.furstychristmas.util.DateUtil.season
 

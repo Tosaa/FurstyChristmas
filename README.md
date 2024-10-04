@@ -11,5 +11,5 @@ Every day from Dez. first until the 24th, a new calendar day can be opened, cont
 
 ## App info
 
-The app is for Android only and written in Kotlin. The app is using KOIN, Timber, Room, Moshi and some Android developed dependencies. The App reads workouts by json and provides the different workouts on different days with different repetition
+The app is for Android only and written in Kotlin. The app is using KOIN, Timber, Room, and some Android developed dependencies. The App reads workouts by json and provides the different workouts on different days with different repetition
 times.

@@ -1,9 +1,6 @@
-package redtoss.example.furstychristmas.domain.info.model
-
-import redtoss.example.furstychristmas.ui.util.resolveImageId
+package redtoss.example.furstychristmas.calendar.content.info
 
 data class InfoPageContent(val title: String, val imageid: String?, private val rawText: String) {
-    val image: Int? = resolveImageId(imageid)
     val text = parseHTMLtoMarkdownText(rawText)
 
     private fun parseHTMLtoMarkdownText(text: String): String {

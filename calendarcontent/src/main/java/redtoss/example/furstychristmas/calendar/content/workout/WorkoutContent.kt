@@ -1,7 +1,7 @@
-package redtoss.example.furstychristmas.domain.workout.model
+package redtoss.example.furstychristmas.calendar.content.workout
 
 import java.time.LocalDate
-import redtoss.example.furstychristmas.domain.info.util.AppContent
+import redtoss.example.furstychristmas.calendar.content.AppContent
 
 data class WorkoutContent(
     val date: LocalDate,

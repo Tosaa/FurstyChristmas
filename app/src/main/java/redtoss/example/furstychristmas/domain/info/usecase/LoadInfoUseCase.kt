@@ -1,7 +1,7 @@
 package redtoss.example.furstychristmas.domain.info.usecase
 
 import java.time.LocalDate
-import redtoss.example.furstychristmas.domain.info.model.InfoContent
+import redtoss.example.furstychristmas.calendar.content.info.InfoContent
 import redtoss.example.furstychristmas.domain.info.repository.InfoRepository
 import redtoss.example.furstychristmas.util.DateUtil.sameDayAs
 
