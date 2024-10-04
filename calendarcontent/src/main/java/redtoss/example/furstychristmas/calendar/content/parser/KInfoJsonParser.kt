@@ -4,53 +4,29 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
-import redtoss.example.furstychristmas.calendar.content.info.InfoContent
+import redtoss.example.furstychristmas.calendar.content.AppContent
 import redtoss.example.furstychristmas.calendar.content.info.InfoPageContent
 
-class KInfoJsonParser : JsonParserInterface {
-    @Serializable
-    data class Page(val subtitle: String, val imageid: String, val htmltext: String)
+class KInfoJsonParser : JsonParserInterface<AppContent.Info> {
 
     @Serializable
-    data class Info(
-        val date: String,
-        val title: String,
-        val pages: List<Page>
-    )
-
-    @Serializable
-    data class Content(
+    data class InfoWrapper(
         val type: String,
-        val info: Info
+        val info: AppContent.Info
     )
 
-    override suspend fun parseList(content: String): List<InfoContent> {
+    override suspend fun parseList(content: String): List<AppContent.Info> {
 
         return try {
-            Json.decodeFromString<List<Content>>(content)
+            Json.decodeFromString<List<InfoWrapper>>(content)
                 .map { it.info }
-                .map { plainInfo ->
-                    InfoContent(
-                        date = LocalDate.parse(
-                            plainInfo.date,
-                            DateTimeFormatter.ISO_LOCAL_DATE
-                        ),
-                        title = plainInfo.title,
-                        pages = plainInfo.pages.map {
-                            InfoPageContent(
-                                it.subtitle,
-                                it.imageid,
-                                it.htmltext
-                            )
-                        })
-                }
         } catch (e: Exception) {
             e.printStackTrace()
-            emptyList<InfoContent>()
+            emptyList()
         }
     }
 
-    override suspend fun parse(content: String): InfoContent? {
+    override suspend fun parse(content: String): AppContent.Info? {
         // t.b.d.
         return null
     }

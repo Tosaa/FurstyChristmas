@@ -2,16 +2,3 @@ package redtoss.example.furstychristmas.calendar.content.workout
 
 import java.time.LocalDate
 import redtoss.example.furstychristmas.calendar.content.AppContent
-
-data class WorkoutContent(
-    val date: LocalDate,
-    val drills: List<Drill>,
-    val rounds: Int,
-    val bodyparts: List<String>,
-    val motto: String = "",
-    val durationInMinutes: Int
-) : AppContent {
-    override fun toString(): String {
-        return "$date,${drills.map { it.exercise.exerciseId }},$rounds"
-    }
-}

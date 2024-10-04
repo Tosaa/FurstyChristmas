@@ -1,6 +1,8 @@
 package redtoss.example.furstychristmas
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import java.time.LocalDate
+import java.time.Month
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,12 +15,10 @@ import org.koin.core.context.GlobalContext
 import redtoss.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
 import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
 import redtoss.example.furstychristmas.util.DateUtil
-import java.time.LocalDate
-import java.time.Month
 
 
 @RunWith(AndroidJUnit4::class)
-class Content2021Test {
+class InfoWrapper2021Test {
     companion object {
         private const val YEAR = 2021
         val koin = GlobalContext.get()

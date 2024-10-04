@@ -12,13 +12,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
-import redtoss.example.furstychristmas.calendar.content.workout.Exercise
+import redtoss.example.furstychristmas.calendar.content.AppContent
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.ExerciseOverviewViewModel
 
 @Composable
 fun ExerciseOverviewScreen(
-    onExerciseClicked: (Exercise) -> Unit,
+    onExerciseClicked: (AppContent.Exercise) -> Unit,
     overviewViewModel: ExerciseOverviewViewModel = koinViewModel()
 ) {
     val exercises = overviewViewModel.exercises.collectAsState(initial = emptyList())

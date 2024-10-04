@@ -1,6 +1,16 @@
 package redtoss.example.furstychristmas.calendar.content.info
 
-data class InfoPageContent(val title: String, val imageid: String?, private val rawText: String) {
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class InfoPageContent(
+    @SerialName("subtitle")
+    val title: String,
+    val imageid: String? = null,
+    @SerialName("htmltext")
+    val rawText: String
+) {
     val text = parseHTMLtoMarkdownText(rawText)
 
     private fun parseHTMLtoMarkdownText(text: String): String {

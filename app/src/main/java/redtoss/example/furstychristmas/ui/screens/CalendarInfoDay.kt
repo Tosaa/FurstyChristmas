@@ -52,14 +52,14 @@ fun CalendarInfoDay(
     viewmodel.date = day
     val title = viewmodel.title.collectAsState(initial = "")
     val pages = viewmodel.pages.collectAsState(initial = emptyList())
-    CalendarInfoContent(viewmodel.date, viewmodel.isDone, title, pages) {
+    Info(date = viewmodel.date, isDone = viewmodel.isDone, title = title, pages = pages) {
         viewmodel.setDateAsDone(day)
         onClose()
     }
 }
 
 @Composable
-private fun CalendarInfoContent(
+private fun Info(
     date: LocalDate,
     isDone: Boolean,
     title: State<String>,

@@ -1,11 +1,11 @@
 package redtoss.example.furstychristmas.domain.workout.repository
 
 import android.content.res.AssetManager
-import java.time.LocalDate
-import redtoss.example.furstychristmas.calendar.content.workout.Exercise
-import redtoss.example.furstychristmas.calendar.content.workout.WorkoutContent
+import redtoss.example.furstychristmas.calendar.content.AppContent
 import redtoss.example.furstychristmas.calendar.content.parser.KExerciseJsonParser
 import redtoss.example.furstychristmas.calendar.content.parser.KWorkoutJsonParser
+import redtoss.example.furstychristmas.calendar.content.workout.Drill
+import redtoss.example.furstychristmas.calendar.content.workout.RawDrill
 import redtoss.example.furstychristmas.util.DateUtil
 import redtoss.example.furstychristmas.util.readJson
 import timber.log.Timber
@@ -15,12 +15,12 @@ class WorkoutRepository(
     private val workoutJsonParser: KWorkoutJsonParser,
     private val assetManager: AssetManager
 ) {
-    private var workouts: List<WorkoutContent> = emptyList()
+    private var workouts: List<AppContent.Workout> = emptyList()
 
-    suspend fun getContent(): List<WorkoutContent> {
+    suspend fun getContent(): List<AppContent.Workout> {
         if (workouts.isEmpty()) {
-            val fetchedWorkouts = mutableListOf<KWorkoutJsonParser.WorkoutPlain>()
-            val exercises = mutableListOf<Exercise>()
+            val fetchedWorkouts = mutableListOf<AppContent.RawWorkout>()
+            val exercises = mutableListOf<AppContent.Exercise>()
             exercises.addAll(exerciseJsonParser.parseList(assetManager.readJson("exercise_description.json")))
             (2021..(DateUtil.today().year + 1)).forEach { year ->
                 val filename = "calendar${year}_workout.json"
@@ -37,18 +37,25 @@ class WorkoutRepository(
         return workouts
     }
 
-    private suspend fun createContent(workouts: List<KWorkoutJsonParser.WorkoutPlain>, exercises: List<Exercise>): List<WorkoutContent> {
+    private suspend fun createContent(workouts: List<AppContent.RawWorkout>, exercises: List<AppContent.Exercise>): List<AppContent.Workout> {
         return workouts.map { it.toWorkoutContent(exercises) }
     }
 
-    private fun KWorkoutJsonParser.WorkoutPlain.toWorkoutContent(exercises: List<Exercise>): WorkoutContent {
-        return WorkoutContent(
-            date = LocalDate.parse(this.date),
-            drills = this.drills.map { it.toDrill(exercises) },
+    private fun AppContent.RawWorkout.toWorkoutContent(exercises: List<AppContent.Exercise>): AppContent.Workout {
+        return AppContent.Workout(
+            date = this.date,
+            drills = this.drills.mapNotNull { it.toDrill(exercises) },
             rounds = this.rounds,
             bodyparts = this.bodyparts,
             motto = this.motto,
             durationInMinutes = this.durationInMinutes,
+        )
+    }
+
+    private fun RawDrill.toDrill(exercises: List<AppContent.Exercise>): Drill? {
+        return Drill(
+            repetition = this.repetition,
+            exercise = exercises.firstOrNull { this.exerciseId == it.exerciseId } ?: return null
         )
     }
 }

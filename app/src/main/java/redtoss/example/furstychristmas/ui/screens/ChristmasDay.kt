@@ -21,7 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.koin.androidx.compose.koinViewModel
-import redtoss.example.furstychristmas.calendar.content.workout.Exercise
+import redtoss.example.furstychristmas.calendar.content.AppContent
 import redtoss.example.furstychristmas.calendar.content.workout.Execution
 import redtoss.example.furstychristmas.ui.util.formattedString
 import redtoss.example.furstychristmas.ui.viewmodel.ChristmasViewModel
@@ -32,7 +32,7 @@ fun ChristmasDay(
     year: Int,
     onClose: () -> Unit,
 ) {
-    val completedState = viewmodel.completedExercises.collectAsState(initial = mapOf<Exercise, Execution>())
+    val completedState = viewmodel.completedExercises.collectAsState(initial = mapOf<AppContent.Exercise, Execution>())
     val completed = completedState.value.entries.toList()
     Column {
         Text(
