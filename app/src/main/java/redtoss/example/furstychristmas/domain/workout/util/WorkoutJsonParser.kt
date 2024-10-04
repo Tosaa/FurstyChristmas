@@ -43,7 +43,7 @@ data class DrillPlain(
     }
 }
 
-class WorkoutJsonParser() : JsonParserInterface {
+class WorkoutJsonParser : JsonParserInterface {
 
     private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
@@ -52,12 +52,12 @@ class WorkoutJsonParser() : JsonParserInterface {
     val type = Types.newParameterizedType(List::class.java, Content::class.java)
     private val adapter = moshi.adapter<List<Content>>(type)
 
-    public override suspend fun parse(content: String): WorkoutPlain? {
+    override suspend fun parse(content: String): WorkoutPlain? {
         // t.b.d.
         return null
     }
 
-    public override suspend fun parseList(content: String): List<WorkoutPlain> {
+    override suspend fun parseList(content: String): List<WorkoutPlain> {
         Timber.d("parseList()")
         return withContext(Dispatchers.IO) {
             return@withContext adapter.fromJson(content)?.map { it.workout } ?: emptyList()

@@ -22,7 +22,7 @@ fun ExerciseOverviewScreen(
     overviewViewModel: ExerciseOverviewViewModel = koinViewModel()
 ) {
     val exercises = overviewViewModel.exercises.collectAsState(initial = emptyList())
-    LazyColumn() {
+    LazyColumn {
         items(exercises.value) { exercise ->
             Button(
                 onClick = { onExerciseClicked(exercise) },
