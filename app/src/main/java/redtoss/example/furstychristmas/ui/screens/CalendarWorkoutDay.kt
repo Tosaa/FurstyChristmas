@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -84,70 +85,74 @@ private fun CalendarWorkoutContent(
                     textAlign = TextAlign.Center,
                     fontSize = 26.sp
                 )
-                Exercises(exercises, onExerciseClicked)
-                Spacer(Modifier.height(10.dp))
-                Text(text = "$rounds-Runden", fontSize = 20.sp, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
-                Spacer(modifier = Modifier.weight(1f))
-                DoneButton(isDayCompleted) {
-                    onDayCompletedClicked(date)
+                LazyColumn {
+                    Exercises(exercises, onExerciseClicked)
+                    item {
+                        Spacer(Modifier.height(10.dp))
+                    }
+                    item { Text(text = "$rounds-Runden", fontSize = 20.sp, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center) }
+                    item { Spacer(modifier = Modifier.weight(1f)) }
+                    item {
+                        DoneButton(isDayCompleted) {
+                            onDayCompletedClicked(date)
+                        }
+                    }
                 }
+
             }
         }
     }
 }
 
 
-@Composable
-private fun Exercises(
+private fun LazyListScope.Exercises(
     exercises: List<Drill>,
     onExerciseClicked: (String) -> Unit
 ) {
-    LazyColumn() {
-        itemsIndexed(exercises) { index, drill ->
-            Column(Modifier.padding(vertical = 5.dp)) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.End,
-                    modifier = Modifier
-                        .padding(horizontal = 8.dp, vertical = 4.dp)
-                        .fillMaxWidth()
-                        .clickable {
-                            onExerciseClicked(drill.exercise.exerciseId)
-                        }
-                ) {
-                    Text("${index + 1}.", fontSize = 20.sp)
-                    Text(
-                        text = drill.exercise.exerciseName,
-                        modifier = Modifier
-                            .padding(6.dp)
-                            .width(200.dp),
-                        fontSize = 20.sp,
-                        maxLines = 2,
-                        softWrap = true
-                    )
-                    Spacer(Modifier.weight(1f))
-                    Column(Modifier.width(IntrinsicSize.Max)) {
-                        Text(
-                            text = drill.repetition.formattedAmount(),
-                            modifier = Modifier
-                                .fillMaxWidth(),
-                            fontSize = 20.sp,
-                            textAlign = TextAlign.Center,
-                            maxLines = 1
-                        )
-                        Text(
-                            text = drill.repetition.unit(),
-                            modifier = Modifier
-                                .fillMaxWidth(),
-                            fontSize = 20.sp,
-                            textAlign = TextAlign.Center,
-                            maxLines = 1
-                        )
+    itemsIndexed(exercises) { index, drill ->
+        Column(Modifier.padding(vertical = 5.dp)) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.End,
+                modifier = Modifier
+                    .padding(horizontal = 8.dp, vertical = 4.dp)
+                    .fillMaxWidth()
+                    .clickable {
+                        onExerciseClicked(drill.exercise.exerciseId)
                     }
+            ) {
+                Text("${index + 1}.", fontSize = 20.sp)
+                Text(
+                    text = drill.exercise.exerciseName,
+                    modifier = Modifier
+                        .padding(6.dp)
+                        .width(200.dp),
+                    fontSize = 20.sp,
+                    maxLines = 2,
+                    softWrap = true
+                )
+                Spacer(Modifier.weight(1f))
+                Column(Modifier.width(IntrinsicSize.Max)) {
+                    Text(
+                        text = drill.repetition.formattedAmount(),
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        fontSize = 20.sp,
+                        textAlign = TextAlign.Center,
+                        maxLines = 1
+                    )
+                    Text(
+                        text = drill.repetition.unit(),
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        fontSize = 20.sp,
+                        textAlign = TextAlign.Center,
+                        maxLines = 1
+                    )
                 }
             }
-            Divider()
         }
+        Divider()
     }
 }
 

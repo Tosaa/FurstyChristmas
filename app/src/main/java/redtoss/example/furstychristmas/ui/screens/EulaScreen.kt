@@ -26,6 +26,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import java.io.InputStream
 import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
@@ -34,7 +36,7 @@ import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.theme.DayNotCompleted
 
 @Composable
-fun EulaScreen(eulaResource: Int, onClose: () -> Unit) {
+fun EulaScreen(eulaResource: Int, onClose: (eulaAgreed:Boolean) -> Unit) {
     val snackbarHostState = remember { SnackbarHostState() }
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Eula(modifier = Modifier.padding(8.dp), eulaResource)
@@ -67,7 +69,7 @@ private fun Eula(
 }
 
 @Composable
-private fun EulaButtons(snackbarHostState: SnackbarHostState, finish: () -> Unit) {
+private fun EulaButtons(snackbarHostState: SnackbarHostState, finish: (eulaAgreed:Boolean) -> Unit) {
     val coroutineScope = rememberCoroutineScope()
     val preferences: SharedPreferences = koinInject()
     val isEulaAccepted = preferences.getBoolean(PREFERENCES_EULA_ACCEPTED, false)
@@ -95,7 +97,10 @@ private fun EulaButtons(snackbarHostState: SnackbarHostState, finish: () -> Unit
                 Text("Nein", maxLines = 1)
             }
             Button(
-                onClick = { confirmEULA(preferences = preferences) },
+                onClick = {
+                    confirmEULA(preferences = preferences)
+                    finish(true)
+                },
                 modifier = Modifier
                     .padding(vertical = 4.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -108,7 +113,7 @@ private fun EulaButtons(snackbarHostState: SnackbarHostState, finish: () -> Unit
         } else {
             Spacer(Modifier)
             Button(
-                onClick = { finish() },
+                onClick = { finish(true) },
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = DayCompleted,
                     contentColor = MaterialTheme.colors.onPrimary,

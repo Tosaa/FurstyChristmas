@@ -32,10 +32,10 @@ import redtoss.example.furstychristmas.util.DateUtil
 import timber.log.Timber
 
 @Composable
-fun RootScreen() {
+fun RootScreen(finishActivity: () -> Unit) {
     val navController: NavHostController = rememberNavController()
     Scaffold(topBar = { TopBar(navController) }) { paddingValues ->
-        MyAppNavHost(modifier = Modifier.padding(paddingValues), navController = navController)
+        MyAppNavHost(modifier = Modifier.padding(paddingValues), navController = navController, finishActivity = finishActivity)
     }
     val preferences = koinInject<SharedPreferences>()
     val isEulaAccepted = preferences.getBoolean(PREFERENCES_EULA_ACCEPTED, false)
@@ -50,7 +50,12 @@ fun RootScreen() {
 @Composable
 fun TopBar(navController: NavHostController) {
     MyAppBar(
-        onBackIconClicked = { navController.popBackStack() },
+        onBackIconClicked = {
+            val backStackIsNotEmpty = navController.popBackStack()
+            if (!backStackIsNotEmpty) {
+                navController.navigate(Screen.Dialog.CLOSE_APP.route())
+            }
+        },
         onEditClicked = {
             Timber.d("Navigation::onNavigateToDebug")
             if (BuildConfig.DEBUG) {

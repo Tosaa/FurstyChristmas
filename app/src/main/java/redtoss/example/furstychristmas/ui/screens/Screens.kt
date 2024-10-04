@@ -1,7 +1,23 @@
 package redtoss.example.furstychristmas.ui.screens
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.displayCutoutPadding
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
@@ -64,7 +80,11 @@ sealed class Screen(val basicRoute: String, val arguments: List<NamedNavArgument
             navBackStackEntry.arguments?.getInt("eulaResource")?.let { eula ->
                 EulaScreen(eulaResource = eula, onClose = {
                     Timber.d("Navigation::onClose")
-                    popBackstackToOverview(navController)
+                    if (it) {
+                        popBackstackToOverview(navController)
+                    } else {
+                        Timber.d("EULA not agreed // Do nothing")
+                    }
                 })
             }
         }
@@ -155,8 +175,54 @@ sealed class Screen(val basicRoute: String, val arguments: List<NamedNavArgument
         }
     }
 
+    object Dialog {
+        object CLOSE_APP : Screen("closeapp", emptyList()) {
+            fun route(): String = basicRoute
+
+            @Composable
+            fun screen(closeApp: () -> Unit, doNotCloseApp: () -> Unit) {
+                Column(Modifier.padding(20.dp)) {
+                    Text("App beenden ?", modifier = Modifier.fillMaxWidth(), fontSize = 26.sp, textAlign = TextAlign.Center)
+                    Spacer(Modifier.height(20.dp))
+                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
+                        Button(
+                            {
+                                Timber.d("denied to close app")
+                                doNotCloseApp()
+                            },
+                            colors = ButtonDefaults.buttonColors(
+                                backgroundColor = MaterialTheme.colors.secondary,
+                                contentColor = MaterialTheme.colors.onSecondary
+                            ),
+                        ) {
+                            Text("Nein", fontSize = 20.sp)
+                        }
+                        Button(
+                            {
+                                Timber.d("confirmed to close app")
+                                closeApp()
+                            },
+                            colors = ButtonDefaults.buttonColors(
+                                backgroundColor = MaterialTheme.colors.secondary,
+                                contentColor = MaterialTheme.colors.onSecondary
+                            ),
+                        ) {
+                            Text("Ja", fontSize = 20.sp)
+                        }
+                    }
+                }
+            }
+
+            @Composable
+            override fun screen(navBackStackEntry: NavBackStackEntry, navController: NavHostController) {
+
+            }
+
+        }
+    }
+
     fun popBackstackToOverview(navController: NavHostController) {
         Timber.d("Navigation::popBackstackToOverview: from ${navController.currentBackStackEntry?.destination?.route}")
-        navController.popBackStack("overview", inclusive = false)
+        navController.popBackStack(route = OVERVIEW.route(), inclusive = false)
     }
 }

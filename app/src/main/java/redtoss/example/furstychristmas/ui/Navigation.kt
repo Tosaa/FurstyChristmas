@@ -13,7 +13,8 @@ import redtoss.example.furstychristmas.ui.screens.Screen
 fun MyAppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    startDestination: String = Screen.OVERVIEW.basicRoute,
+    startDestination: String = Screen.OVERVIEW.route(),
+    finishActivity: ()->Unit,
 ) {
     NavHost(
         modifier = modifier,
@@ -36,6 +37,10 @@ fun MyAppNavHost(
                 it.screen(navBackStackEntry, navController)
             }
         }
+        composable(Screen.Dialog.CLOSE_APP.basicRoute) {
+            Screen.Dialog.CLOSE_APP.screen(closeApp = finishActivity, doNotCloseApp = {navController.navigate(Screen.OVERVIEW.route())})
+        }
+
         composable(
             "debug",
         ) {

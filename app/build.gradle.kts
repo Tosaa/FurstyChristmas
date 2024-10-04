@@ -101,13 +101,13 @@ dependencies {
     implementation("io.insert-koin", "koin-androidx-compose-navigation") // KOIN_COMPOSE_NAVIGATION
 
     implementation("com.google.android.material", "material", "1.12.0") // GOOGLE_MATERIAL
+
     // ROOM
     implementation("androidx.room", "room-runtime", "2.6.1") // ROOM_RUNTIME
     implementation("androidx.room", "room-ktx", "2.6.1") // ROOM_KTX
     ksp("androidx.room", "room-compiler", "2.6.1") // ROOM_COMPILER
 
     // MOSHI
-
     ksp("com.squareup.moshi", "moshi-kotlin-codegen", "1.15.1") // MOSHI_KOTLIN_CODEGEN
     implementation("com.squareup.moshi", "moshi-kotlin", "1.15.1") // MOSHI_KOTLIN
     implementation("com.squareup.moshi", "moshi", "1.15.1") // MOSHI

@@ -30,7 +30,7 @@ class MainActivityCompose : ComponentActivity() {
             KoinContext {
                 FurstyChrismasTheme {
                     // A surface container using the 'background' color from the theme
-                    RootScreen()
+                    RootScreen(finishActivity = { finish() })
                 }
             }
         }
