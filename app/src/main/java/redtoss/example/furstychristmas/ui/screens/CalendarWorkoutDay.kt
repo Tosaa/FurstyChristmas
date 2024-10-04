@@ -27,11 +27,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.time.LocalDate
 import org.koin.androidx.compose.koinViewModel
+import redtoss.example.furstychristmas.R
 import redtoss.example.furstychristmas.domain.workout.model.Drill
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.WorkoutViewModel
@@ -90,7 +92,7 @@ private fun CalendarWorkoutContent(
                     item {
                         Spacer(Modifier.height(10.dp))
                     }
-                    item { Text(text = "$rounds-Runden", fontSize = 20.sp, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center) }
+                    item { Text(text = stringResource(R.string.calendar_workout_rounds, rounds), fontSize = 20.sp, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center) }
                     item { Spacer(modifier = Modifier.weight(1f)) }
                     item {
                         DoneButton(isDayCompleted) {
@@ -172,7 +174,7 @@ private fun DoneButton(isDayCompleted: Boolean, onDoneClicked: () -> Unit) {
                     contentColor = MaterialTheme.colors.onPrimary
                 )
             ) {
-                Text(text = "Done", fontSize = 28.sp, modifier = Modifier.padding(10.dp))
+                Text(text = stringResource(R.string.calendar_workout_completed), fontSize = 28.sp, modifier = Modifier.padding(10.dp))
             }
         }
     }

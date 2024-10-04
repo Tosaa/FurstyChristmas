@@ -27,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.asFlow
@@ -36,6 +37,7 @@ import java.time.format.DateTimeFormatter
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.koin.compose.koinInject
+import redtoss.example.furstychristmas.R
 import redtoss.example.furstychristmas.domain.day.usecase.DayCompletionStatusUseCase
 import redtoss.example.furstychristmas.domain.info.usecase.LoadInfoUseCase
 import redtoss.example.furstychristmas.domain.workout.usecase.LoadWorkoutUseCase
@@ -66,8 +68,8 @@ fun DebugScreen(
                 debugScope.launch { preferences.edit().putString("developer_date", debugDate.value.format(DateTimeFormatter.ISO_LOCAL_DATE)).apply() }
             }, debugDate.value.year, debugDate.value.monthValue - 1, debugDate.value.dayOfMonth)
         }
-        Text("Debug Screen", fontSize = 26.sp)
-        Text("Season: $activeSeason", Modifier.fillMaxWidth())
+        Text(stringResource(R.string.calendar_debug_title), fontSize = 26.sp)
+        Text(stringResource(R.string.calendar_debug_active_season, activeSeason), Modifier.fillMaxWidth())
         Row(Modifier.fillMaxWidth(), verticalAlignment = CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
             Button(
                 onClick = { datePickerDialog.show() },

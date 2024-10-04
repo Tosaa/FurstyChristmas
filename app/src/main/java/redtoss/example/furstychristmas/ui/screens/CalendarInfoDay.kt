@@ -26,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
@@ -36,6 +37,7 @@ import com.google.accompanist.pager.rememberPagerState
 import java.time.LocalDate
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
+import redtoss.example.furstychristmas.R
 import redtoss.example.furstychristmas.domain.info.model.InfoPageContent
 import redtoss.example.furstychristmas.ui.theme.DayCompleted
 import redtoss.example.furstychristmas.ui.viewmodel.InfoViewModel
@@ -168,7 +170,7 @@ private fun DailyContent(
                     ),
                     modifier = Modifier.padding(top = 8.dp)
                 ) {
-                    Text("Gelesen")
+                    Text(stringResource(R.string.calendar_info_completed))
                 }
             } else {
                 Button(
@@ -179,34 +181,9 @@ private fun DailyContent(
                     ),
                     modifier = Modifier.padding(top = 8.dp)
                 ) {
-                    Text("Weiter")
+                    Text(stringResource(R.string.calendar_info_next_page))
                 }
             }
         }
     }
 }
-
-
-/*
-@Preview
-@Composable
-fun Preview() {
-    FurstyChrismasTheme(false) {
-        Column {
-            MyAppBar(onBackIconClicked = { }, onInfoClicked = { }, onEditClicked = { })
-            CalendarInfoContent(
-                date = LocalDate.of(2021, 12, 16),
-                isDone = true,
-                title = mutableStateOf("TestTitle"),
-                pages = mutableStateOf(
-                    listOf(
-                        InfoPageContent("Page 1", null, "Text to display on Page 1"),
-                        InfoPageContent("Page 2", null, "Text to display on Page 2"),
-                        InfoPageContent("Page 3", "dline", "Text to display on Page 3")
-                    )
-                )
-            )
-        }
-    }
-}
- */

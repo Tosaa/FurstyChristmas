@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -15,6 +14,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,6 +27,7 @@ import java.time.LocalDate
 import java.time.Month
 import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
+import redtoss.example.furstychristmas.R
 import redtoss.example.furstychristmas.domain.day.usecase.ContentTypeUseCase
 import timber.log.Timber
 
@@ -182,7 +183,7 @@ sealed class Screen(val basicRoute: String, val arguments: List<NamedNavArgument
             @Composable
             fun screen(closeApp: () -> Unit, doNotCloseApp: () -> Unit) {
                 Column(Modifier.padding(20.dp)) {
-                    Text("App beenden ?", modifier = Modifier.fillMaxWidth(), fontSize = 26.sp, textAlign = TextAlign.Center)
+                    Text(stringResource(R.string.calendar_dialog_close_app_dialog_title), modifier = Modifier.fillMaxWidth(), fontSize = 26.sp, textAlign = TextAlign.Center)
                     Spacer(Modifier.height(20.dp))
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
                         Button(
@@ -195,7 +196,7 @@ sealed class Screen(val basicRoute: String, val arguments: List<NamedNavArgument
                                 contentColor = MaterialTheme.colors.onSecondary
                             ),
                         ) {
-                            Text("Nein", fontSize = 20.sp)
+                            Text(stringResource(R.string.calendar_dialog_common_deny), fontSize = 20.sp)
                         }
                         Button(
                             {
@@ -207,7 +208,7 @@ sealed class Screen(val basicRoute: String, val arguments: List<NamedNavArgument
                                 contentColor = MaterialTheme.colors.onSecondary
                             ),
                         ) {
-                            Text("Ja", fontSize = 20.sp)
+                            Text(stringResource(R.string.calendar_dialog_common_confirm), fontSize = 20.sp)
                         }
                     }
                 }

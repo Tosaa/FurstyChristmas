@@ -204,4 +204,13 @@
     <string name="arm_rotation_start_position">
     Stell dich schulterbreit hin und strecke die Arme zu beiden Seiten aus.
         </string>
+    <string name="calendar_info_completed">Gelesen</string>
+    <string name="calendar_info_next_page">Weiter</string>
+    <string name="calendar_workout_completed">Fertig</string>
+    <string name="calendar_workout_rounds">%1$s-Runden</string>
+    <string name="calendar_debug_title">Debug Screen</string>
+    <string name="calendar_debug_active_season">Season: %1$s</string>
+    <string name="calendar_dialog_close_app_dialog_title">App beenden ?</string>
+    <string name="calendar_dialog_common_deny">Nein</string>
+    <string name="calendar_dialog_common_confirm">Ja</string>
 </resources>
